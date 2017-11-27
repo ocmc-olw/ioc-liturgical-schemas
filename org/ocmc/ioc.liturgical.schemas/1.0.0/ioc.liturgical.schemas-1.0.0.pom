@@ -35,6 +35,18 @@
 	        <url>file://${project.build.directory}/mvn-repo</url>
 	    </repository>
 	</distributionManagement>
+	
+		<repositories>
+	    <repository>
+	        <id>ioc.liturgical.utils</id>
+	        <url>https://raw.github.com/OCMC-Translation-Projects/ioc-liturgical-utils/mvn-repo/</url>
+	        <snapshots>
+	            <enabled>true</enabled>
+	            <updatePolicy>always</updatePolicy>
+	        </snapshots>
+	    </repository>
+	</repositories>
+	
 
   <dependencies>
 	<dependency>
@@ -48,6 +60,11 @@
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
+	</dependency>
+	<dependency>
+	  <groupId>org.ocmc</groupId>
+	  <artifactId>ioc.liturgical.utils</artifactId>
+	  <version>1.0.0</version>
     </dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
