@@ -7,7 +7,7 @@ import com.google.gson.annotations.Expose;
 import org.ocmc.ioc.liturgical.schemas.constants.LIBRARIES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDb;
-import org.ocmc.ioc.liturgical.schemas.utils.Tuple;
+import org.ocmc.ioc.liturgical.utils.Tuple;
 import org.ocmc.ioc.liturgical.schemas.constants.nlp.DEPENDENCY_LABELS;
 import org.ocmc.ioc.liturgical.schemas.constants.nlp.DEPENDENCY_LABEL_MAPPER;
 

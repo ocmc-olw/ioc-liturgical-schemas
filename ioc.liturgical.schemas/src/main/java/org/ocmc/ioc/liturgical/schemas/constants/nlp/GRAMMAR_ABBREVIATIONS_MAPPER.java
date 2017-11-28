@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import org.apache.commons.lang3.StringUtils;
-import org.ocmc.ioc.liturgical.schemas.utils.GeneralUtils;
+import org.ocmc.ioc.liturgical.utils.GeneralUtils;
 
 /**
  * Maps Perseus Grammatical abbreviations to Leipzig

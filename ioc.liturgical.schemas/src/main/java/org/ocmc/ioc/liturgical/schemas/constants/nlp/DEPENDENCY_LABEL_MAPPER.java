@@ -3,7 +3,7 @@ package org.ocmc.ioc.liturgical.schemas.constants.nlp;
 import java.util.Map;
 import java.util.TreeMap;
 
-import org.ocmc.ioc.liturgical.schemas.utils.GeneralUtils;
+import org.ocmc.ioc.liturgical.utils.GeneralUtils;
 
 /**
  * Maps punctuation marks and words to their dependency tree label

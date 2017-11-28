@@ -7,9 +7,9 @@ import org.ocmc.ioc.liturgical.schemas.constants.Constants;
 import org.ocmc.ioc.liturgical.schemas.constants.ID_PART_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.LIBRARIES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
-import org.ocmc.ioc.liturgical.schemas.error.handling.ErrorUtils;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDb;
-import org.ocmc.ioc.liturgical.schemas.utils.GeneralUtils;
+import org.ocmc.ioc.liturgical.utils.ErrorUtils;
+import org.ocmc.ioc.liturgical.utils.GeneralUtils;
 
 import java.text.Normalizer;
 import java.util.regex.Pattern;

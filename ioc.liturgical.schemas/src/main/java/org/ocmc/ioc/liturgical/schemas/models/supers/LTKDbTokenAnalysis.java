@@ -8,7 +8,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 import org.ocmc.ioc.liturgical.schemas.constants.Constants;
 import org.ocmc.ioc.liturgical.schemas.constants.LIBRARIES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
-import org.ocmc.ioc.liturgical.schemas.utils.GeneralUtils;
+import org.ocmc.ioc.liturgical.utils.GeneralUtils;
 
 import com.github.reinert.jjschema.Attributes;
 

@@ -11,9 +11,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.ocmc.ioc.liturgical.schemas.annotations.UiWidget;
 import org.ocmc.ioc.liturgical.schemas.constants.Constants;
-import org.ocmc.ioc.liturgical.schemas.error.handling.ErrorUtils;
 import org.ocmc.ioc.liturgical.schemas.models.exceptions.SchemaException;
 import org.ocmc.ioc.liturgical.schemas.models.exceptions.SchemaExceptionDescription;
+import org.ocmc.ioc.liturgical.utils.ErrorUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

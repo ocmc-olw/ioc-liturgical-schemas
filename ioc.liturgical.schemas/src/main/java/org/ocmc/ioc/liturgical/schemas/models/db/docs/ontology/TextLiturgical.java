@@ -6,7 +6,6 @@ import org.ocmc.ioc.liturgical.schemas.annotations.UiWidget;
 import org.ocmc.ioc.liturgical.schemas.constants.Constants;
 import org.ocmc.ioc.liturgical.schemas.constants.ID_PART_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
-import org.ocmc.ioc.liturgical.schemas.error.handling.ErrorUtils;
 import org.ocmc.ioc.liturgical.schemas.id.managers.IdManager;
 
 import java.text.Normalizer;
@@ -14,7 +13,8 @@ import java.util.regex.Pattern;
 
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextLiturgicalTranslationCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDb;
-import org.ocmc.ioc.liturgical.schemas.utils.GeneralUtils;
+import org.ocmc.ioc.liturgical.utils.ErrorUtils;
+import org.ocmc.ioc.liturgical.utils.GeneralUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

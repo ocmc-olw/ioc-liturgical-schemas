@@ -11,7 +11,7 @@ import org.ocmc.ioc.liturgical.schemas.constants.ID_PART_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.STATUS;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
 import org.ocmc.ioc.liturgical.schemas.constants.VISIBILITY;
-import org.ocmc.ioc.liturgical.schemas.error.handling.ErrorUtils;
+import org.ocmc.ioc.liturgical.utils.ErrorUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
