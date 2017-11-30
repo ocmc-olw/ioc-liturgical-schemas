@@ -59,6 +59,7 @@ public class KeyArraysCollectionBuilder {
 	 * @param key the key
 	 * @param value the value
 	 * @param seq the sequence
+	 * @throws MissingSeparatorException if there is no separator
 	 */
 	public void addTemplateKey(
 			String topic
@@ -79,6 +80,7 @@ public class KeyArraysCollectionBuilder {
 	 * @param key is actually topic + ~ + key
 	 * @param value the value
 	 * @param seq the sequence
+	 * @throws MissingSeparatorException if there is no separator
 	 */
 	public void addTemplateKey(
 			String key

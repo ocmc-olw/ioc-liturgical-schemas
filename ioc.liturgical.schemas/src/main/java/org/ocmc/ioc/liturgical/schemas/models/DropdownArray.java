@@ -35,7 +35,7 @@ public class DropdownArray extends AbstractModel {
 
 	/**
 	 * Adds an option using the same string for both the value and label.
-	 * @param s
+	 * @param s the string to use for both the value and label
 	 */
 	public void addSingleton(String s) {
 		items.add(new DropdownItem(s,s));
