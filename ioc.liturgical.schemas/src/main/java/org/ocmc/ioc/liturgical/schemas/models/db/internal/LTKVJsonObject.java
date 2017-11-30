@@ -31,7 +31,7 @@ public class LTKVJsonObject extends LTK {
 	 * Constructor
 	 * The JsonObject value must include a property _id
 	 * whose value is of the form library|topic|key
-	 * @param value
+	 * @param value to be saved
 	 */
 	public LTKVJsonObject(JsonObject value) throws BadIdException {
 		super(value.get("_id").getAsString());
@@ -46,10 +46,10 @@ public class LTKVJsonObject extends LTK {
 	 * Constructor
 	 * The JsonObject value must include a property _id
 	 * whose value is of the form library|topic|key
-	 * @param _id
+	 * @param _id the id
 	 * @param schema id
-	 * @param value
-	 * @throws BadIdException
+	 * @param value the value
+	 * @throws BadIdException if ID not formatted properly
 	 */
 	public LTKVJsonObject(
 			String _id
@@ -64,12 +64,12 @@ public class LTKVJsonObject extends LTK {
 	
 	/**
 	 * Constructor
-	 * @param library
-	 * @param topic
-	 * @param key
-	 * @param schema id
-	 * @param value
-	 * @throws BadIdException
+	 * @param library the library
+	 * @param topic the topic
+	 * @param key the key
+	 * @param schema id the id
+	 * @param value the value
+	 * @throws BadIdException if ID not formatted properly
 	 */
 	public LTKVJsonObject(
 			String library
@@ -175,8 +175,8 @@ public class LTKVJsonObject extends LTK {
 	/**
 	 * Returns the labels as a delimited path.
 	 * For Neo4j, the delimiter should be a colon :
-	 * @param delimiter
-	 * @return
+	 * @param delimiter to separate labels
+	 * @return the labels delimited
 	 */
 	public String getDelimitedLabels(String delimiter) {
 		StringBuffer sb = new StringBuffer();

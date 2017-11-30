@@ -15,8 +15,7 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
  * but it would be better for you to use the LTK classes instead.
  * 
  * Note: this class must be extended by another class
- * that adds
- * 	@Expose <t> value member
+ * that has an Expose annotation for the type of the value member
  * and appropriate set and get methods.
  * 
  * Important! Any class that implements this must have a

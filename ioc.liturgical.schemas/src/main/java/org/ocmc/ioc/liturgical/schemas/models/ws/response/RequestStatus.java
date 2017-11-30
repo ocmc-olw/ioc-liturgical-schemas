@@ -51,8 +51,8 @@ public class RequestStatus extends AbstractModel {
 	
 	/**
 	 * Both developerMessage and userMessage will be set to the value of message
-	 * @param code
-	 * @param message
+	 * @param code the code
+	 * @param message the message
 	 */
 	public RequestStatus(int code, String message) {
 		super();

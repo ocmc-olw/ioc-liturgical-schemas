@@ -53,8 +53,8 @@ public class WordListResult {
 	
 	/**
 	 * Add a concordance line for the specified key
-	 * @param key
-	 * @param value
+	 * @param key the key
+	 * @param value the value
 	 */
 	public void addConcordanceLine(String key, ConcordanceLine value) {
 		List<ConcordanceLine> list = null;

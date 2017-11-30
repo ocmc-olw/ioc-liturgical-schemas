@@ -22,8 +22,8 @@ public enum ROLES {
 		
 	/**
 	 * Find the Role for this string
-	 * @param rolename
-	 * @return Role
+	 * @param rolename rolename
+	 * @return Role the role
 	 */
 	public static ROLES forWsname(String rolename) {
 		for (ROLES r : ROLES.values()) {
@@ -34,12 +34,6 @@ public enum ROLES {
 		return null;
 	}
 	
-	/**
-	 * Creates a delimited string id for this role, library, and user 
-	 * @param library
-	 * @param user
-	 * @return
-	 */
 	public String toId(String library, String user) {
 		return Joiner.on(Constants.ID_DELIMITER).join(this.keyname, library, user);
 	}

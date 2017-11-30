@@ -35,7 +35,7 @@ public class ResultJsonObjectArray extends AbstractModel {
 	
 	/**
 	 * Add a JsonObject to the list of  values
-	 * @param value
+	 * @param value to be saved
 	 */
 	public void addValue(JsonObject value) {
 		this.values.add(value);
@@ -46,8 +46,8 @@ public class ResultJsonObjectArray extends AbstractModel {
 	 * Add a JsonObject to the list of values, storing it with the key
 	 * This actually creates a new JsonObject with key = key
 	 * and value = value, then adds the new object to the list.
-	 * @param key
-	 * @param value
+	 * @param key the key
+	 * @param value the value
 	 */
 	public void addValue(String key, JsonObject value) {
 		JsonObject o = new JsonObject();
@@ -128,7 +128,7 @@ public class ResultJsonObjectArray extends AbstractModel {
 
 	/**
 	 * Sets status developer message and user message to the same message
-	 * @param message
+	 * @param message the message
 	 */
 	public void setStatusMessage(String message) {
 		this.status.developerMessage = message;
@@ -155,7 +155,7 @@ public class ResultJsonObjectArray extends AbstractModel {
 	 * Gets the value property from the first JsonObject in the list
 	 * as a String.  In other words, the value store there is expected to be a string.
 	 * If there are none, will return null
-	 * @return
+	 * @return  the value property from the first JsonObject in the list
 	 */
 	public String getFirstObjectValueAsString() {
 		if (this.valueCount > 0) {
@@ -174,7 +174,7 @@ public class ResultJsonObjectArray extends AbstractModel {
 	 * as a JsonObject.  
 	 * In other words, the value stored there is expected to be a JsonObject.
 	 * If there are none, will return null
-	 * @return
+	 * @return the value property from the first JsonObject in the list
 	 */
 	public JsonObject getFirstObjectValueAsObject() {
 		JsonObject result = null;
@@ -195,7 +195,7 @@ public class ResultJsonObjectArray extends AbstractModel {
 
 	/**
 	 * Gets the first object in the values list
-	 * @return
+	 * @return the first object in the values list
 	 */
 	public JsonObject getFirstObject() {
 		if (this.valueCount > 0) {

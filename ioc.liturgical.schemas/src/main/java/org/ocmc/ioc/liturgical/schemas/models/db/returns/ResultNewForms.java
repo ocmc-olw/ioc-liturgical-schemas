@@ -104,7 +104,7 @@ public class ResultNewForms extends AbstractModel {
 
 	/**
 	 * Sets status developer message and user message to the same message
-	 * @param message
+	 * @param message the message
 	 */
 	public void setStatusMessage(String message) {
 		this.status.developerMessage = message;

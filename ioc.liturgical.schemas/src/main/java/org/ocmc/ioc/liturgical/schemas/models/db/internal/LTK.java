@@ -12,8 +12,7 @@ import com.google.gson.annotations.Expose;
  * Provides a means to have library|topic|Key as _id of a json object.
  * 
  * Note: this class must be extended by another class
- * that adds
- * 	@Expose <t> value member
+ * that exposes the type for the value member
  * and appropriate set and get methods.
  * 
  * Important! Any class that implements this must have a
@@ -43,10 +42,10 @@ public class LTK extends org.ocmc.ioc.liturgical.schemas.models.supers.AbstractM
 	/**
 	 * Constructs an id in the format of library + delimiter + topic + delimiter + key.
 	 * Any of the parts (library, topic, or key) may be an embedded ID.
-	 * @param library
-	 * @param topic
-	 * @param key
-	 * @throws BadIdException
+	 * @param library the library
+	 * @param topic the topic
+	 * @param key the key
+	 * @throws BadIdException if id not formatted properly
 	 */
 	public LTK(
 			String library
@@ -81,7 +80,7 @@ public class LTK extends org.ocmc.ioc.liturgical.schemas.models.supers.AbstractM
 	/**
 	 * For working with Guava tables,
 	 * call this to get the columnKey
-	 * @return key
+	 * @return key 
 	 */
 	public String getColumnKey() {
 		return this.key;

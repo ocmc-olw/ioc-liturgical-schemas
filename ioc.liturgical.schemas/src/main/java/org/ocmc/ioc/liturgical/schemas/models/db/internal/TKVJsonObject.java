@@ -21,7 +21,7 @@ public class TKVJsonObject extends TK {
 	/**
 	 * The JsonObject value must include a property _id
 	 * whose value is of the form topic|key
-	 * @param value
+	 * @param value to be saved
 	 */
 	public TKVJsonObject(JsonObject value) {
 		super(value.get("_id").getAsString());
