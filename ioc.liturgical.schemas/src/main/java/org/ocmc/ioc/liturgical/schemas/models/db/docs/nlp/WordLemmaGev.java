@@ -3,7 +3,6 @@ package org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp;
 import org.apache.commons.lang.StringUtils;
 import org.ocmc.ioc.liturgical.schemas.constants.LIBRARIES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
-import org.ocmc.ioc.liturgical.schemas.models.supers.LTK;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDb;
 
 import com.github.reinert.jjschema.Attributes;

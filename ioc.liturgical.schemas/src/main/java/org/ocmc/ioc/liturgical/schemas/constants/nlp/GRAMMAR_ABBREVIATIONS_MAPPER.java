@@ -84,9 +84,6 @@ public class GRAMMAR_ABBREVIATIONS_MAPPER {
      * @return Leipzig abbreviations for that parse
      */
     public static String convertToLeipzig(String splitter, String parse, String delimiter) {
-    	if (parse.contains("1") || parse.contains("2") || parse.contains("3")) {
-    		String why = parse;
-    	}
     	List<String> result = new ArrayList<String>();
     	String[] parts = parse.trim().toLowerCase().split(splitter);
     	for (String part : parts) {

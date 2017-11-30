@@ -66,7 +66,7 @@ public enum UTILITIES {
 	 * value = enum.name
 	 * label = enum.keyname
 	 * 
-	 * @return
+	 * @return JsonArray of DropdownItems
 	 */
     public static JsonArray toDropdownJsonArray() {
     	JsonArray result = new JsonArray();
@@ -77,12 +77,12 @@ public enum UTILITIES {
     }
 
 	/**
-	 * Converts the enumeration a List of DropdownItems
+	 * Converts the enumeration to a List of DropdownItems
 	 * where the dropdown item's
 	 * value = enum.name
 	 * label = enum.keyname
 	 * 
-	 * @return
+	 * @return List of DropdownItems
 	 */
     public static List<DropdownItem> toDropdownList() {
     	List<DropdownItem> result = new ArrayList<DropdownItem>();
@@ -95,7 +95,7 @@ public enum UTILITIES {
     /**
      * Creates a set of instances of Utility using
      * the information from the enum values
-     * @return
+     * @return set of instances of Utility
      */
     public static List<Utility> toUtilityList() {
     	List<Utility> result = new ArrayList<Utility>();

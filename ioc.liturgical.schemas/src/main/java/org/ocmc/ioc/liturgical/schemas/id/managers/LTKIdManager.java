@@ -1,8 +1,6 @@
 package org.ocmc.ioc.liturgical.schemas.id.managers;
 
 import org.ocmc.ioc.liturgical.schemas.constants.Constants;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Manages Library-Topic-Key IDs, where parts are delimited by Constants.ID_DELIMITER.
@@ -11,8 +9,6 @@ import org.slf4j.LoggerFactory;
  *
  */
 public class LTKIdManager {
-	private static final Logger logger = LoggerFactory.getLogger(LTKIdManager.class);
-
 	private String delimiter =  Constants.ID_DELIMITER;
 	private String splitter = Constants.ID_SPLITTER;
 	private IdManager library;

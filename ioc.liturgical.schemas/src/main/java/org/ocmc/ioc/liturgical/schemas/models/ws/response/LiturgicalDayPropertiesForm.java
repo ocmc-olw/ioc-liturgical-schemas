@@ -7,7 +7,7 @@ import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
-import org.ocmc.ioc.liturgical.schemas.models.ws.ldp.LiturgicalDayProperties;
+import org.ocmc.ioc.liturgical.utils.LiturgicalDayProperties;
 
 /**
  * Model for return a Resource description to a REST requestor.

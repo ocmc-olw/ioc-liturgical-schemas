@@ -1,7 +1,5 @@
 package org.ocmc.ioc.liturgical.schemas.models.forms.ontology;
 
-import com.google.gson.annotations.Expose;
-
 import org.ocmc.ioc.liturgical.schemas.constants.ID_PART_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKOntologyCreateFormEntry;

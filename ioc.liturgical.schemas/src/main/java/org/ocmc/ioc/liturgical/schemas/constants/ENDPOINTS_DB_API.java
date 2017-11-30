@@ -379,23 +379,15 @@ public enum ENDPOINTS_DB_API {
 
 	/**
 	 * Returns a REST path that expects a specific key
-	 * @return
+	 * @return REST path expecting a specific key
 	 */
 	public String toLibraryTopicKeyPath() {
 		return this.pathname + Constants.PATH_LIBRARY_TOPIC_KEY_WILDCARD;
 	}
 	
-	/**
-	 * 
-	 * @return
-	 */
 	public String toLibraryTopicPath() {
 		return this.pathname + Constants.PATH_LIBRARY_TOPIC_WILDCARD;
 	}
-	/**
-	 * 
-	 * @return
-	 */
 	public String toLibraryPath() {
 		return this.pathname + Constants.PATH_LIBRARY_WILDCARD;
 	}

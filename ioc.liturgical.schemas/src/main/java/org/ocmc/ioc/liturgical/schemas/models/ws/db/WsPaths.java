@@ -1,8 +1,5 @@
 package org.ocmc.ioc.liturgical.schemas.models.ws.db;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.google.gson.annotations.Expose;
 
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
@@ -15,7 +12,6 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
  *
  */
 public class WsPaths extends AbstractModel {
-	private static final Logger logger = LoggerFactory.getLogger(WsPaths.class);
 
 	@Expose public String get;
 	@Expose public String post;

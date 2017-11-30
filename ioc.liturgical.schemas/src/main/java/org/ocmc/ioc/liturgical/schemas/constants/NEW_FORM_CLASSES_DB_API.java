@@ -283,21 +283,21 @@ public enum NEW_FORM_CLASSES_DB_API {
 	
 	/**
 	 * Get the path to use for handling an http get
-	 * @return
+	 * @return the path to use for handling an http get
 	 */
 	public String toGetPath() {
 		return this.endpoint.pathname;
 	}
 	/**
 	 * Get the path to use for handling an http post
-	 * @return
+	 * @return path to use for handling an http post
 	 */
 	public String toPostPath() {
 		return this.endpoint.pathname;
 	}
 	/**
 	 * Get the path to use for handling an http put
-	 * @return
+	 * @return path to use for handling an http put
 	 */
 	public String toPutPath() {
 		return this.endpoint.toLibraryTopicKeyPath();
@@ -306,8 +306,8 @@ public enum NEW_FORM_CLASSES_DB_API {
 	/**
 	 * Finds the enum whose object matches the parameter
 	 * and returns the post path for that object.
-	 * @param m
-	 * @return
+	 * @param m what to match
+	 * @return the matching enum
 	 */
 	public static WsPaths getEndpointPathsForAbstractModel(Class<? extends AbstractModel> class1) {
 		WsPaths result = new WsPaths();

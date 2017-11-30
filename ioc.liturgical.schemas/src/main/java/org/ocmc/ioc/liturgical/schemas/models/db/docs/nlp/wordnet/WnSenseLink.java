@@ -13,7 +13,6 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.LTKLink;
 public class WnSenseLink extends LTKLink {
 	
 	private static TOPICS topic = TOPICS.WN_LEXICAL_SENSE;
-	private static RELATIONSHIP_TYPES type = null;
 	private static String schema = WnLexicalSense.class.getSimpleName();
 	private static double version = 1.1;
 	
@@ -44,7 +43,6 @@ public class WnSenseLink extends LTKLink {
 		this.wid = wid;
 		this.senseNbr = senseNbr;
 		this.sid = sid;
-		this.type = type;
 	}
 
 }

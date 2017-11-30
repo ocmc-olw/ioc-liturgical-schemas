@@ -2,7 +2,6 @@ package org.ocmc.ioc.liturgical.schemas.models.db.docs.ontology;
 
 import org.ocmc.ioc.liturgical.schemas.constants.ID_PART_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
-import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.BeingCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.GodCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbOntologyEntry;
 

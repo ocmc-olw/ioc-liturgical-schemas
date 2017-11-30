@@ -36,7 +36,7 @@ public enum DOMAIN_TYPES {
 	 * value = enum.name
 	 * label = enum.keyname
 	 * 
-	 * @return
+	 * @return JsonArray of Dropdowns
 	 */
     public static JsonArray toDropdownJsonArray() {
     	JsonArray result = new JsonArray();
@@ -52,7 +52,7 @@ public enum DOMAIN_TYPES {
 	 * value = enum.name
 	 * label = enum.keyname
 	 * 
-	 * @return
+	 * @return List of Dropdowns
 	 */
     public static List<DropdownItem> toDropdownList() {
     	List<DropdownItem> result = new ArrayList<DropdownItem>();

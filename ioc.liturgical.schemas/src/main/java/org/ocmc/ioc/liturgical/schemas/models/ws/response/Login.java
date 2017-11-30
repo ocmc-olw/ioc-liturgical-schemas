@@ -2,7 +2,6 @@ package org.ocmc.ioc.liturgical.schemas.models.ws.response;
 
 import com.google.gson.annotations.Expose;
 
-import org.ocmc.ioc.liturgical.schemas.annotations.UiWidget;
 import org.ocmc.ioc.liturgical.schemas.constants.Constants;
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
 

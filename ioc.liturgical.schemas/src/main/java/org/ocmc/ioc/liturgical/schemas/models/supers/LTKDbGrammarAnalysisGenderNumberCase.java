@@ -2,8 +2,6 @@ package org.ocmc.ioc.liturgical.schemas.models.supers;
 
 import com.google.gson.annotations.Expose;
 
-import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
-
 import com.github.reinert.jjschema.Attributes;
 
 /**
@@ -15,8 +13,6 @@ import com.github.reinert.jjschema.Attributes;
 @Attributes(title = "LTKDb Grammar Analysis for Parts of Speech with Gender, Number, and Case", description = "Abstract Grammar Analysis for parts of speech that have gender, number, and case, e.g. adjectives and nouns.")
 public class LTKDbGrammarAnalysisGenderNumberCase extends LTKDbGrammarAnalysis {
 	
-	private static TOPICS topic = TOPICS.GRAMMAR;
-
 	@Attributes(required = true, description = "Gramatical gender, i.e. Masculine, Feminine, or Neuter")
 	@Expose public String gender = "";
 

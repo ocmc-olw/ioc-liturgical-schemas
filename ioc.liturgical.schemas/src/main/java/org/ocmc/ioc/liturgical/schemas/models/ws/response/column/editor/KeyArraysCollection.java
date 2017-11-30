@@ -133,7 +133,6 @@ public class KeyArraysCollection extends AbstractModel {
 	@Expose List<LibraryTopicKey> libraryKeys = new ArrayList<LibraryTopicKey>();
 	@Expose Map<String,List<LibraryTopicKeyValue>> libraryKeyValues = new TreeMap<String,List<LibraryTopicKeyValue>>();
 	@Expose List<String> topics = new ArrayList<String>();
-	private Map<String, Integer> indexMap = new TreeMap<String,Integer>();
 	
 	public KeyArraysCollection() {
 		super();

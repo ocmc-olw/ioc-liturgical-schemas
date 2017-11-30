@@ -4,7 +4,6 @@ import java.time.Instant;
 
 import org.ocmc.ioc.liturgical.schemas.constants.Constants;
 import org.ocmc.ioc.liturgical.schemas.exceptions.BadIdException;
-import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDb;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKLite;
 
 import com.google.gson.annotations.Expose;

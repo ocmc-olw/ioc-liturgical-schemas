@@ -18,8 +18,8 @@ public enum LITURGICAL_CALENDAR_TYPE {
 		
 	/**
 	 * Find the Role for this string
-	 * @param rolename
-	 * @return Role
+	 * @param rolename to match
+	 * @return Role matching rolename
 	 */
 	public static LITURGICAL_CALENDAR_TYPE forWsname(String code) {
 		for (LITURGICAL_CALENDAR_TYPE e : LITURGICAL_CALENDAR_TYPE.values()) {

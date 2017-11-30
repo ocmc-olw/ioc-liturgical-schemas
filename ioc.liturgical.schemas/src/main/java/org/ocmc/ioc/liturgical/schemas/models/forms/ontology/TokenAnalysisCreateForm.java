@@ -1,10 +1,7 @@
 package org.ocmc.ioc.liturgical.schemas.models.forms.ontology;
 
-import com.google.gson.annotations.Expose;
-
 import org.ocmc.ioc.liturgical.schemas.constants.LIBRARIES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
-import org.ocmc.ioc.liturgical.schemas.models.supers.LTK;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKTokenAnalysisCreateForm;
 
 import com.github.reinert.jjschema.Attributes;

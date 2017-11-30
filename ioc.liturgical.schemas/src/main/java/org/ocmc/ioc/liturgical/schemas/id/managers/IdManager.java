@@ -43,9 +43,8 @@ public class IdManager {
 	private boolean libraryIsDomain = false;
 	private String delimiter = Constants.ID_DELIMITER;
 	private String splitter = Constants.ID_SPLITTER;
-	private String domainSplitter = Constants.DOMAIN_SPLITTER;
-	private int topicIndex = 1;
-	private int keyIndex = 2;
+//	private int topicIndex = 1;
+//	private int keyIndex = 2;
 	
 	/**
 	 * Parameterless constructor allowed
@@ -90,8 +89,6 @@ public class IdManager {
 	 * @param keyIndex the position at which the key part of the id starts
 	 */
 	public IdManager(String id, int topicIndex, int keyIndex) {
-		this.topicIndex = topicIndex;
-		this.keyIndex = keyIndex;
 		try {
 			String[] parts = id.split(splitter);
 			for (String part : parts) {
@@ -199,7 +196,6 @@ public class IdManager {
 	 * @return the number of parts for this key
 	 */
 	public int partCount() {
-		int i = idParts.size();
 		return idParts.size();
 	}
 	

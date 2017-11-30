@@ -1,15 +1,9 @@
 package org.ocmc.ioc.liturgical.schemas.models.ws.response;
 
-import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-import org.ocmc.ioc.liturgical.schemas.annotations.UiWidget;
-import org.ocmc.ioc.liturgical.schemas.constants.Constants;
 import org.ocmc.ioc.liturgical.schemas.constants.DOMAIN_TYPES;
-import org.ocmc.ioc.liturgical.schemas.constants.FormFieldLengths;
-import org.ocmc.ioc.liturgical.schemas.constants.FormRegExConstants;
 import org.ocmc.ioc.liturgical.schemas.constants.STATUS;
-import org.ocmc.ioc.liturgical.schemas.models.exceptions.SchemaException;
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
 
 public class DomainWorkflowInfo extends AbstractModel {

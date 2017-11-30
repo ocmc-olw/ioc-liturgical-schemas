@@ -1,15 +1,11 @@
 package org.ocmc.ioc.liturgical.schemas.models.ws.db;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.Expose;
 
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
 
 public class ValueSchema extends AbstractModel {
-	private static final Logger logger = LoggerFactory.getLogger(ValueSchema.class);
 
 	@Expose public JsonObject schema;
 	@Expose public JsonObject uiSchema;
