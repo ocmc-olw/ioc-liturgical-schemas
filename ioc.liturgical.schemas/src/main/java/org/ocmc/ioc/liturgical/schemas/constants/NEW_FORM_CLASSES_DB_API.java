@@ -304,10 +304,9 @@ public enum NEW_FORM_CLASSES_DB_API {
 	}
 	
 	/**
-	 * Finds the enum whose object matches the parameter
-	 * and returns the post path for that object.
-	 * @param m what to match
-	 * @return the matching enum
+	 * 
+	 * @param class1 for which to get endpoint paths
+	 * @return the endpoint paths
 	 */
 	public static WsPaths getEndpointPathsForAbstractModel(Class<? extends AbstractModel> class1) {
 		WsPaths result = new WsPaths();

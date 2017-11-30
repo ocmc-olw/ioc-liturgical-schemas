@@ -77,8 +77,7 @@ public class User extends AbstractModel {
 	 * Use this method if you are starting from a hashed password.
 	 * This is not the typical case.  Normally you will be starting with
 	 * a plain text password.  if so, call setPassword instead.
-	 * @param hashedPassword
-	 * @return the hashed version of the password
+	 * @param hashedPassword the hashed password
 	 */
 	public void setHashedPassword(String hashedPassword) {
 		this.hashedPassword = hashedPassword;

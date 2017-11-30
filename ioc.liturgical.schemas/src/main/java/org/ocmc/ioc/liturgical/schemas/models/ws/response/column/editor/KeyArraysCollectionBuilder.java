@@ -55,10 +55,10 @@ public class KeyArraysCollectionBuilder {
 	/**
 	 * Convenience method for when we have the topic and key 
 	 * as separate values. 
-	 * @param topic
-	 * @param key
-	 * @param value
-	 * @param seq
+	 * @param topic the topic
+	 * @param key the key
+	 * @param value the value
+	 * @param seq the sequence
 	 */
 	public void addTemplateKey(
 			String topic
@@ -77,6 +77,8 @@ public class KeyArraysCollectionBuilder {
 	 * Add the template key and update the
 	 * library keys as well
 	 * @param key is actually topic + ~ + key
+	 * @param value the value
+	 * @param seq the sequence
 	 */
 	public void addTemplateKey(
 			String key

@@ -16,7 +16,7 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
  * 
  * @author mac002
  *
- * @param <T>
+ * @param <T> the type of Abstract Model
  */
 public class AbstractResponse <T extends AbstractModel> extends AbstractModel {
 	@Expose public JsonObject uiSchema;
