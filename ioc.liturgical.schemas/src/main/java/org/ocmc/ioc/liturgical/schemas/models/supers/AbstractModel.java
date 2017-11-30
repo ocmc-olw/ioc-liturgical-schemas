@@ -11,8 +11,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.ocmc.ioc.liturgical.schemas.annotations.UiWidget;
 import org.ocmc.ioc.liturgical.schemas.constants.Constants;
+import org.ocmc.ioc.liturgical.schemas.constants.NEW_FORM_CLASSES_DB_API;
 import org.ocmc.ioc.liturgical.schemas.models.exceptions.SchemaException;
 import org.ocmc.ioc.liturgical.schemas.models.exceptions.SchemaExceptionDescription;
+import org.ocmc.ioc.liturgical.schemas.models.ws.db.WsPaths;
 import org.ocmc.ioc.liturgical.utils.ErrorUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -282,6 +284,15 @@ public class AbstractModel {
 	    	} else {
 	        	gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();        		
 	    	}
+	}
+	public WsPaths resolveEndpointPaths() {
+		WsPaths result = new WsPaths();
+		try {
+			result = NEW_FORM_CLASSES_DB_API.getEndpointPathsForAbstractModel(this.getClass());
+		} catch (Exception e) {
+			ErrorUtils.report(logger, e);
+		}
+		return result;
 	}
 	
 
