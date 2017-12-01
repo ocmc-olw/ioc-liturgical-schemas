@@ -19,11 +19,6 @@ public enum VERBS {
 		this.description = description;
 	}
 		
-	/**
-	 * Find the Verb for this string
-	 * @param name
-	 * @return Verb
-	 */
 	public static VERBS forWsname(String name) {
 		for (VERBS v : VERBS.values()) {
 			if (v.keyname.equals(name)) {

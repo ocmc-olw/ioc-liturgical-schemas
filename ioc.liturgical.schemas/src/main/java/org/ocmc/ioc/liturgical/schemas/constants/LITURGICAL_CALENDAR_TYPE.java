@@ -16,11 +16,6 @@ public enum LITURGICAL_CALENDAR_TYPE {
 		this.description = description;
 	}
 		
-	/**
-	 * Find the Role for this string
-	 * @param rolename
-	 * @return Role
-	 */
 	public static LITURGICAL_CALENDAR_TYPE forWsname(String code) {
 		for (LITURGICAL_CALENDAR_TYPE e : LITURGICAL_CALENDAR_TYPE.values()) {
 			if (e.code.equals(code)) {

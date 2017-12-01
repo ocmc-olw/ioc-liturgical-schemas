@@ -32,6 +32,7 @@ public class LTKVJsonObject extends LTK {
 	 * The JsonObject value must include a property _id
 	 * whose value is of the form library|topic|key
 	 * @param value to be saved
+	 * @throws BadIdException of ID not formatted correctly
 	 */
 	public LTKVJsonObject(JsonObject value) throws BadIdException {
 		super(value.get("_id").getAsString());

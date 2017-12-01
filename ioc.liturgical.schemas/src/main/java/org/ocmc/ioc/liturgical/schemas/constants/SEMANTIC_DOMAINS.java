@@ -3702,7 +3702,7 @@ public enum SEMANTIC_DOMAINS {
 		
 	/**
 	 * Find the Topic for this string
-	 * @param topicname
+	 * @param name to search for
 	 * @return ONTOLOGY_TOPICS topic
 	 */
 	public static SEMANTIC_DOMAINS forName(String name) {
@@ -3715,29 +3715,24 @@ public enum SEMANTIC_DOMAINS {
 	}
 	
 	/**
-	 * Creates a delimited string id for this role, library, and user 
-	 * @param library
-	 * @param user
-	 * @return
+	 * @param library to use
+	 * @param user to use
+	 * @return a delimited string id for this role, library, and user 
 	 */
 	public String toId(String library, String user) {
 		return Joiner.on(Constants.ID_DELIMITER).join(this.keyname, library, user);
 	}
 
 	/**
-	 * Gets a colon delimited set of strings that represent
-	 * the ontology hierarchy for this entry,
-	 * from more generic to less.
-	 * @return
+	 * @return  a colon delimited set of strings that represent the ontology hierarchy for this entry,from more generic to less.
+
 	 */
 	public String toDelimitedLabels() {
 		return toLabels(this);
 	}
 
 	/**
-	 * Returns the ontology hierarchy for this entry,
-	 * from more generic to less.
-	 * @return
+	 * @return Returns the ontology hierarchy for this entry, from more generic to less.
 	 */
 	public List<String> toLabelsList() {
 		List<String> result = new ArrayList<String>();
@@ -3778,10 +3773,6 @@ public enum SEMANTIC_DOMAINS {
 		return result;
 	}
 
-	/**
-	 * Get the keynames as a JsonArray of DropDownItem
-	 * @return
-	 */
 	public static JsonArray keyNamesToJsonArrayDropdown() {
 		JsonArray result = new JsonArray();
 		TreeSet<String> values = new TreeSet<String>();

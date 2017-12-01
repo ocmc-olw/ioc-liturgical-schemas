@@ -81,16 +81,7 @@ public class DAYS_OF_PENTECOSTARION {
     public static String get(String key) {
     	return map.get(key);
     }
-    
-    /**
-     * Convenience method for when you don't want to bother to
-     * see if the key exists in the map.
-     * 
-     * If it does not, the label will be set to the value of the key.
-     * If it does exist, the label will have the value from the map.
-     * @param key
-     * @return
-     */
+
     public static String getLabel(String key) {
     	if (map.containsKey(key)) {
     		return get(key);

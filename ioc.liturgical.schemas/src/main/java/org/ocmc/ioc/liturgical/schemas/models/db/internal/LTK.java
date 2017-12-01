@@ -33,6 +33,7 @@ public class LTK extends org.ocmc.ioc.liturgical.schemas.models.supers.AbstractM
 	/**
 	 * 
 	 * @param id format must be library + delimiter + topic + delimiter + key and cannot have an embedded ID 
+	 * @throws BadIdException if ID is not delimited properly
 	 */
 	public LTK(String id) throws BadIdException {
 		super();
@@ -88,7 +89,7 @@ public class LTK extends org.ocmc.ioc.liturgical.schemas.models.supers.AbstractM
 
 	/**
 	 * Returns the delimiter used for the id parts
-	 * @return
+	 * @return the delimiter used for the id parts
 	 */
 	public String getDelimiter() {
 		return delimiter;
