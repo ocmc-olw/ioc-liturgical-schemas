@@ -43,6 +43,26 @@ public class WordSenseGev extends LTKDb {
 		this.senseNbr = senseNbr;
 	}
 
+	public WordSenseGev(
+			String lemma
+			, String pos
+			, String senseNbr
+			, boolean printPretty
+			) {
+			super(
+					LIBRARIES.LINGUISTICS.toSystemDomain()
+					, lemma
+					, pos + Constants.DOMAIN_DELIMITER + senseNbr
+					, schema
+					,  serialVersion
+					, topic
+					);
+		this.lemma = lemma;
+		this.pos = getPosAbbreviation(pos);
+		this.senseNbr = senseNbr;
+		this.setPrettyPrint(printPretty);
+	}
+
 	/**
 	 * Convert the full name of the part of speech to the appropriate abbreviation
 	 * If not found, the POS will be set to TBD

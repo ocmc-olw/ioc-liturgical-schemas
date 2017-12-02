@@ -4,7 +4,6 @@
 
   <groupId>org.ocmc</groupId>
   <artifactId>ioc.liturgical.schemas</artifactId>
-  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>ioc.liturgical.schemas</name>
@@ -49,12 +48,6 @@
 	
 
   <dependencies>
-	<dependency>
-	  <groupId>org.apache.maven.plugins</groupId>
-	  <artifactId>maven-site-plugin</artifactId>
-	  <version>3.6</version>
-	  <type>maven-plugin</type>
-	</dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -64,13 +57,13 @@
 	<dependency>
 	  <groupId>org.ocmc</groupId>
 	  <artifactId>ioc.liturgical.utils</artifactId>
-	  <version>1.0.0</version>
+	  <version>1.0-SNAPSHOT</version>
     </dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.4</version>
-		</dependency>
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-lang3</artifactId>
+		<version>3.4</version>
+	</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
@@ -150,6 +143,20 @@
 		            <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
 		        </configuration>
 		    </plugin>
+		    <plugin>
+		      <groupId>org.apache.maven.plugins</groupId>
+		      <artifactId>maven-gpg-plugin</artifactId>
+		      <version>1.5</version>
+		      <executions>
+		        <execution>
+		          <id>sign-artifacts</id>
+		          <phase>verify</phase>
+		          <goals>
+		            <goal>sign</goal>
+		          </goals>
+		        </execution>
+		      </executions>
+		    </plugin>
 	       <plugin>
 	            <groupId>com.github.github</groupId>
 	            <artifactId>site-maven-plugin</artifactId>
@@ -176,4 +183,5 @@
 	        </plugin>
         </plugins>
     </build>
+   <version>1.0-SNAPSHOT</version>
 </project>
