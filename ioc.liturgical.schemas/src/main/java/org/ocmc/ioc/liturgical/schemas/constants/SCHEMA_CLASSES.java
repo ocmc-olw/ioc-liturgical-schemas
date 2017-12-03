@@ -40,6 +40,8 @@ import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextLiturgicalSourc
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextLiturgicalTranslationCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TokenAnalysisCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.UserNoteCreateForm;
+import org.ocmc.ioc.liturgical.schemas.models.db.doc.templates.Section;
+import org.ocmc.ioc.liturgical.schemas.models.db.doc.templates.Template;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.ConcordanceLine;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.PtbSentence;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.PtbWord;
@@ -214,9 +216,17 @@ public enum SCHEMA_CLASSES {
 			new RoleCreateForm(" ")
 			, new Role(" ")
 			)
+	, SECTION(
+			new Section(" ", "", "")
+			, new Section(" ", "", "")
+			)
 	, TABLE_DATA_FOR_REACT_BOOTSTRAP(
 			new ReactBootstrapTableData(TOPICS.TABLES_ROOT, "")
 			, new ReactBootstrapTableData(TOPICS.TABLES_ROOT,"")
+			)
+	, TEMPLATE(
+			new Template(" ", "", "")
+			, new Template(" ", "", "")
 			)
 	, TEXT_BIBLICAL_SOURCE(
 			new TextBiblicalSourceCreateForm(" "," ", " ")

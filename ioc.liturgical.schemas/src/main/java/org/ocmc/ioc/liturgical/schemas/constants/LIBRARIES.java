@@ -18,6 +18,7 @@ public enum LIBRARIES {
 	LINGUISTICS("linguistics", "Library for linguistic information about the texts in the database.")
 	, ONTOLOGY("ontology", "Library for entries in the database ontology.")
 	, TABLES("tables", "Json data stored in a format that can be used by a React js table component")
+	, TEMPLATES("templates", "Library for templates used to generate books and services")
 	, WORDNET("wordnet", "A lexical database developed by Princeton University.")
 	;
 

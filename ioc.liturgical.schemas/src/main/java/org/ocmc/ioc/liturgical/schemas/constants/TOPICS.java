@@ -136,6 +136,16 @@ public enum TOPICS {
 			, "A lexicon containing lemmas and their senses"
 			, TOPICS.TABLES_ROOT
 			)
+	, TEMPLATE_ROOT(
+			"Template"
+			, "Information to generate a book or service."
+			, TOPICS.ROOT
+			)
+	, SECTION(
+			"Section"
+			, "A part of a template."
+			, TOPICS.TEMPLATE_ROOT
+			)
 	, TEXT(
 			"Text"
 			, "A document containing written words."

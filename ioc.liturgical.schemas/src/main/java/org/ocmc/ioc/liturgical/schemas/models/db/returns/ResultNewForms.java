@@ -39,6 +39,13 @@ public class ResultNewForms extends AbstractModel {
 	@Expose public List<DropdownItem> biblicalChaptersDropdown = new ArrayList<DropdownItem>();
 	@Expose public List<DropdownItem> biblicalVersesDropdown = new ArrayList<DropdownItem>();
 	@Expose public List<DropdownItem> biblicalSubversesDropdown = new ArrayList<DropdownItem>();
+	@Expose public JsonArray templatePartsDropdown;
+	@Expose public JsonArray templateWhenDayNameCasesDropdown;
+	@Expose public JsonArray templateWhenDayOfMonthCasesDropdown;
+	@Expose public JsonArray templateWhenDayOfSeasonCasesDropdown;
+	@Expose public JsonArray templateWhenCasesDropdown;
+	@Expose public JsonArray templateWhenModeOfWeekCasesDropdown;
+	@Expose public JsonArray templateWhenMonthNameCasesDropdown;
 
 	public ResultNewForms(boolean prettyPrint) {
 		super();
@@ -215,5 +222,61 @@ public class ResultNewForms extends AbstractModel {
 
 	public void setBiblicalSubversesDropdown(List<DropdownItem> biblicalSubversesDropdown) {
 		this.biblicalSubversesDropdown = biblicalSubversesDropdown;
+	}
+
+	public JsonArray getTemplatePartsDropdown() {
+		return templatePartsDropdown;
+	}
+
+	public void setTemplatePartsDropdown(JsonArray templatePartsDropdown) {
+		this.templatePartsDropdown = templatePartsDropdown;
+	}
+
+	public JsonArray getTemplateWhenDayNameCasesDropdown() {
+		return templateWhenDayNameCasesDropdown;
+	}
+
+	public void setTemplateWhenDayNameCasesDropdown(JsonArray templateWhenDayNameCasesDropdown) {
+		this.templateWhenDayNameCasesDropdown = templateWhenDayNameCasesDropdown;
+	}
+
+	public JsonArray getTemplateWhenDayOfMonthCasesDropdown() {
+		return templateWhenDayOfMonthCasesDropdown;
+	}
+
+	public void setTemplateWhenDayOfMonthCasesDropdown(JsonArray templateWhenDayOfMonthCasesDropdown) {
+		this.templateWhenDayOfMonthCasesDropdown = templateWhenDayOfMonthCasesDropdown;
+	}
+
+	public JsonArray getTemplateWhenDayOfSeasonCasesDropdown() {
+		return templateWhenDayOfSeasonCasesDropdown;
+	}
+
+	public void setTemplateWhenDayOfSeasonCasesDropdown(JsonArray templateWhenDayOfSeasonCasesDropdown) {
+		this.templateWhenDayOfSeasonCasesDropdown = templateWhenDayOfSeasonCasesDropdown;
+	}
+
+	public JsonArray getTemplateWhenCasesDropdown() {
+		return templateWhenCasesDropdown;
+	}
+
+	public void setTemplateWhenCasesDropdown(JsonArray templateWhenCasesDropdown) {
+		this.templateWhenCasesDropdown = templateWhenCasesDropdown;
+	}
+
+	public JsonArray getTemplateWhenModeOfWeekCasesDropdown() {
+		return templateWhenModeOfWeekCasesDropdown;
+	}
+
+	public void setTemplateWhenModeOfWeekCasesDropdown(JsonArray templateWhenModeOfWeekCasesDropdown) {
+		this.templateWhenModeOfWeekCasesDropdown = templateWhenModeOfWeekCasesDropdown;
+	}
+
+	public JsonArray getTemplateWhenMonthNameCasesDropdown() {
+		return templateWhenMonthNameCasesDropdown;
+	}
+
+	public void setTemplateWhenMonthNameCasesDropdown(JsonArray templateWhenMonthNameCasesDropdown) {
+		this.templateWhenMonthNameCasesDropdown = templateWhenMonthNameCasesDropdown;
 	}
 }

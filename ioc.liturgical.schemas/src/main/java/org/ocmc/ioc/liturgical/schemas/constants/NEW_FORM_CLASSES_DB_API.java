@@ -2,6 +2,8 @@ package org.ocmc.ioc.liturgical.schemas.constants;
 
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.WsPaths;
+import org.ocmc.ioc.liturgical.schemas.models.db.doc.templates.Section;
+import org.ocmc.ioc.liturgical.schemas.models.db.doc.templates.Template;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.ConcordanceLine;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.WordAnalysis;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.AnimalCreateForm;
@@ -184,6 +186,18 @@ public enum NEW_FORM_CLASSES_DB_API {
 , NEW_PLACE(
 		"Place"
 		, new PlaceCreateForm("")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		)
+, NEW_TEMPLATE(
+		"Template"
+		, new Template("","","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		)
+, NEW_SECTION(
+		"Section"
+		, new Section("","","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
 		)
