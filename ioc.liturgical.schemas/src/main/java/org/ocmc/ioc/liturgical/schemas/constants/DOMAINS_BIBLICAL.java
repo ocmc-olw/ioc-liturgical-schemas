@@ -19,7 +19,6 @@ public class DOMAINS_BIBLICAL {
 		map.put("gr_eg_lxxupccatth", "LXX - Greek - Theodotion (UPC-CAT)");
 		map.put("gr_eg_lxxupccat", "LXX - Greek - Rahlfs (UPC-CAT)");
         map.put("gr_gr_ntpt", "NT - Greek - Patriarcal");
-//        map = Collections.unmodifiableMap(map);
 	}
     
     public static boolean containsKey(String key) {
