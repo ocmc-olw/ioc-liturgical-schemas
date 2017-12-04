@@ -2,10 +2,10 @@ package org.ocmc.ioc.liturgical.schemas.constants;
 
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.WsPaths;
-import org.ocmc.ioc.liturgical.schemas.models.db.doc.templates.Section;
-import org.ocmc.ioc.liturgical.schemas.models.db.doc.templates.Template;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.ConcordanceLine;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.WordAnalysis;
+import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.Section;
+import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.Template;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.AnimalCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.BeingCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.ConceptCreateForm;

@@ -8,12 +8,15 @@ import org.ocmc.ioc.liturgical.schemas.models.DropdownItem;
 import com.google.gson.JsonArray;
 
 /**
- * Names of component parts for a template used to 
- * generate a book or service
+ * Names of component parts for a section of a template used to 
+ * generate a book or service.
+ * 
+ * Historical note: these correspond to the atem.xtext grammar file used to generate
+ * the grammar, editor, and generator for the atem DSL in AGES Liturgical Workbench.
  * @author mac002
  *
  */
-public enum TEMPLATE_PARTS {
+public enum SECTION_PARTS {
 	ACTOR("Actor", "Actor")
 	, DIALOG("Dialog", "Dialog")
 	, HYMN("Hymn", "Hymn")
@@ -41,7 +44,7 @@ public enum TEMPLATE_PARTS {
 	public String keyname = "";
 	public String fullname = "";
 	
-	private TEMPLATE_PARTS(
+	private SECTION_PARTS(
 			String keyname
 			, String fullname
 			) {
@@ -59,7 +62,7 @@ public enum TEMPLATE_PARTS {
 	 */
     public static JsonArray toDropdownJsonArray() {
     	JsonArray result = new JsonArray();
-    	for (TEMPLATE_PARTS e : TEMPLATE_PARTS.values()) {
+    	for (SECTION_PARTS e : SECTION_PARTS.values()) {
     		result.add(new DropdownItem(e.keyname, e.name()).toJsonObject());
     	}
     	return result;
@@ -75,7 +78,7 @@ public enum TEMPLATE_PARTS {
 	 */
     public static List<DropdownItem> toDropdownList() {
     	List<DropdownItem> result = new ArrayList<DropdownItem>();
-    	for (TEMPLATE_PARTS e : TEMPLATE_PARTS.values()) {
+    	for (SECTION_PARTS e : SECTION_PARTS.values()) {
     		result.add(new DropdownItem(e.keyname, e.name()));
     	}
     	return result;

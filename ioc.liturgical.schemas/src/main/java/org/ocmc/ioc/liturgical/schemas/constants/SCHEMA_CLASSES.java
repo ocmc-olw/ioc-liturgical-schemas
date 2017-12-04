@@ -40,8 +40,6 @@ import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextLiturgicalSourc
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextLiturgicalTranslationCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TokenAnalysisCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.UserNoteCreateForm;
-import org.ocmc.ioc.liturgical.schemas.models.db.doc.templates.Section;
-import org.ocmc.ioc.liturgical.schemas.models.db.doc.templates.Template;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.ConcordanceLine;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.PtbSentence;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.PtbWord;
@@ -64,6 +62,8 @@ import org.ocmc.ioc.liturgical.schemas.models.db.docs.ontology.TextBiblical;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.ontology.TextLiturgical;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.personal.UserNote;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.tables.ReactBootstrapTableData;
+import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.Section;
+import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.Template;
 import org.ocmc.ioc.liturgical.schemas.models.db.links.LinkRefersToAnimal;
 import org.ocmc.ioc.liturgical.schemas.models.db.links.LinkRefersToBeing;
 import org.ocmc.ioc.liturgical.schemas.models.db.links.LinkRefersToBiblicalText;

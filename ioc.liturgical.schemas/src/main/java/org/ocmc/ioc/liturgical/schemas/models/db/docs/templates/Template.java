@@ -1,8 +1,12 @@
-package org.ocmc.ioc.liturgical.schemas.models.db.doc.templates;
+package org.ocmc.ioc.liturgical.schemas.models.db.docs.templates;
 
 import com.google.gson.annotations.Expose;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.ocmc.ioc.liturgical.schemas.constants.LIBRARIES;
+import org.ocmc.ioc.liturgical.schemas.constants.TEMPLATE_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
 import org.ocmc.ioc.liturgical.schemas.constants.nlp.DEPENDENCY_LABELS;
 import org.ocmc.ioc.liturgical.schemas.constants.nlp.PARTS_OF_SPEECH;
@@ -15,18 +19,22 @@ import com.github.reinert.jjschema.Attributes;
  * @author mac002
  *
  */
-@Attributes(title = "Section", description = "Section of a Template for generation of a book or service")
-public class Section extends LTKDb {
-	private static String schema = Section.class.getSimpleName();
+@Attributes(title = "Template", description = "Template for generation of a book or service")
+public class Template extends LTKDb {
+	private static String schema = Template.class.getSimpleName();
 	private static double version = 1.1;
-	private static TOPICS enumTopic = TOPICS.SECTION;
+	private static TOPICS enumTopic = TOPICS.TEMPLATE_ROOT;
 
-	@Attributes(required = true, description = "A description of the section")
+	@Attributes(required = true, description = "The type of template")
+	@Expose TEMPLATE_TYPES type = TEMPLATE_TYPES.SERVICE;
+
+	@Attributes(required = true, description = "A description of the template")
 	@Expose String description = "";
-	@Attributes(readonly = true, required = true, description = "A json string of the components of the section")
-	@Expose String value = "";
 	
-	public Section(
+	@Attributes(readonly = true, required = true, description = "A list of the IDs of sections used by this template")
+	@Expose List<String> sectionIds = new ArrayList<String>();
+
+	public Template(
 			String library
 			, String topic
 			, String key
@@ -47,14 +55,6 @@ public class Section extends LTKDb {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public String getValue() {
-		return value;
-	}
-
-	public void setValue(String value) {
-		this.value = value;
 	}
 
 }

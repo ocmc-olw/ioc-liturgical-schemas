@@ -37,8 +37,8 @@ public class DOMAINS_LITURGICAL {
      * 
      * If it does not, the label will be set to the value of the key.
      * If it does exist, the label will have the value from the map.
-     * @param key
-     * @return
+     * @param key to search for
+     * @return label for the key
      */
     public static String getLabel(String key) {
     	if (map.containsKey(key)) {
