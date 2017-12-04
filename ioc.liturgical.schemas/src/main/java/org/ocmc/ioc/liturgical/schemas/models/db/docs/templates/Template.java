@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.ocmc.ioc.liturgical.schemas.constants.LIBRARIES;
+import org.ocmc.ioc.liturgical.schemas.constants.TEMPLATE_NODE_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.TEMPLATE_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
 import org.ocmc.ioc.liturgical.schemas.constants.nlp.DEPENDENCY_LABELS;
@@ -31,9 +32,9 @@ public class Template extends LTKDb {
 	@Attributes(required = true, description = "A description of the template")
 	@Expose String description = "";
 	
-	@Attributes(readonly = true, required = true, description = "A list of the IDs of sections used by this template")
-	@Expose List<String> sectionIds = new ArrayList<String>();
-
+	@Attributes(required = true, description = "A description of the template")
+	@Expose TemplateNode node = new TemplateNode();
+	
 	public Template(
 			String library
 			, String topic
@@ -47,6 +48,12 @@ public class Template extends LTKDb {
 				,  version
 				, enumTopic
 				);
+		this.node.setTitle(TEMPLATE_NODE_TYPES.TEMPLATE);
+		this.node.setSubtitle(this.id);
+	}
+
+	public void appendNode(TemplateNode node) {
+		this.node.appendNode(node);
 	}
 
 	public String getDescription() {
@@ -55,6 +62,22 @@ public class Template extends LTKDb {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public TEMPLATE_TYPES getType() {
+		return type;
+	}
+
+	public void setType(TEMPLATE_TYPES type) {
+		this.type = type;
+	}
+
+	public TemplateNode getNode() {
+		return node;
+	}
+
+	public void setNode(TemplateNode node) {
+		this.node = node;
 	}
 
 }

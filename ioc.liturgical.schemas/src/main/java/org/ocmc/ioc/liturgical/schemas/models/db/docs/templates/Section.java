@@ -5,7 +5,8 @@ import com.google.gson.annotations.Expose;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.ocmc.ioc.liturgical.schemas.constants.SECTION_PARTS;
+import org.ocmc.ioc.liturgical.schemas.constants.Constants;
+import org.ocmc.ioc.liturgical.schemas.constants.TEMPLATE_NODE_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDb;
 
@@ -21,17 +22,11 @@ public class Section extends LTKDb {
 	private static double version = 1.1;
 	private static TOPICS enumTopic = TOPICS.SECTION;
 
-	@Attributes(readonly = true, required = true, description = "A description of the section")
-	@Expose SECTION_PARTS title = SECTION_PARTS.SECTION;
-
-	@Attributes(readonly = true, required = true, description = "A description of the section")
-	@Expose String subtitle = "";
-
 	@Attributes(required = true, description = "A description of the section")
 	@Expose String description = "";
 	
-	@Attributes(required = true, description = "A description of the section")
-	@Expose List<SectionPart> children = new ArrayList<SectionPart>();
+	@Attributes(required = true, description = "A description of the template")
+	@Expose TemplateNode node = new TemplateNode();
 	
 	public Section(
 			String library
@@ -46,9 +41,14 @@ public class Section extends LTKDb {
 				,  version
 				, enumTopic
 				);
-		this.subtitle = this.getId();
+		this.node.setTitle(TEMPLATE_NODE_TYPES.SECTION);
+		this.node.setSubtitle(this.getTopic() + Constants.ID_DELIMITER + this.getKey());
 	}
 
+	public void appendNode(TemplateNode node) {
+		this.node.appendNode(node);
+	}
+	
 	public String getDescription() {
 		return description;
 	}
@@ -57,28 +57,12 @@ public class Section extends LTKDb {
 		this.description = description;
 	}
 
-	public String getSubtitle() {
-		return subtitle;
+	public TemplateNode getNode() {
+		return node;
 	}
 
-	public void setSubtitle(String subtitle) {
-		this.subtitle = subtitle;
-	}
-
-	public List<SectionPart> getChildren() {
-		return children;
-	}
-
-	public void setChildren(List<SectionPart> children) {
-		this.children = children;
-	}
-
-	public SECTION_PARTS getTitle() {
-		return title;
-	}
-
-	public void setTitle(SECTION_PARTS title) {
-		this.title = title;
+	public void setNode(TemplateNode node) {
+		this.node = node;
 	}
 
 }
