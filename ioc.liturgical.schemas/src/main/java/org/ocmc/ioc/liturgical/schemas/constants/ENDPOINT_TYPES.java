@@ -11,5 +11,6 @@ public enum ENDPOINT_TYPES {
 	, PDF
 	, RELATIONSHIP
 	, TABLE // these are json objects whose values are arrays of Json objects.  For React js tables
+	, TEMPLATE
 	, VIEW // a list of keys and sometimes the values for a library~topic or a template
 }

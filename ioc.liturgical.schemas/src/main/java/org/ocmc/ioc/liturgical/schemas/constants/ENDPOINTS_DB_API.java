@@ -264,11 +264,23 @@ public enum ENDPOINTS_DB_API {
 			, "Roles"
 			,"Endpoint for role docs"
 			)
+	, SECTIONS(
+			"sections"
+			, ENDPOINT_TYPES.TEMPLATE
+			, "Section"
+			,"Endpoint for template sections"
+			)
 	, TABLES(
 			"tables"
 			, ENDPOINT_TYPES.TABLE
 			, "Table"
 			,"Endpoint for tables"
+			)
+	, TEMPLATES(
+			"templates"
+			, ENDPOINT_TYPES.TEMPLATE
+			, "Template"
+			,"Endpoint for templates"
 			)
 	, TEXTS(
 			"texts"
