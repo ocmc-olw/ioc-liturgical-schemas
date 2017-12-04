@@ -401,13 +401,15 @@ public enum TEMPLATE_NODE_TYPES {
     	return result;
     }
 
-    public static List<DropdownItem> toDayNameCasesDropdownList() {
-    	List<DropdownItem> result = new ArrayList<DropdownItem>();
+    public static JsonArray toDaysOfWeekDropdownJsonArray() {
+    	JsonArray result = new JsonArray();
     	for (TEMPLATE_NODE_TYPES e : getDaysOfWeek()) {
-	    		result.add(new DropdownItem(e.keyname, e.name()));
+           result.add(new DropdownItem(e.keyname, e.name()).toJsonObject());
     	}
     	return result;
     }
+
+
 
     /**
      * 
