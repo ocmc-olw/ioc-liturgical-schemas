@@ -26,6 +26,7 @@ public enum SECTION_PARTS {
 	, READING("Reading", "Reading")
 	, RUBRIC("Rubric", "Rubric")
 	, SECTION("Section", "Section")
+	, TEMPLATE("Template", "Template")	
 	, TITLE("Title", "Title")	
 	, VERSE("Verse", "Verse")
 	, WHEN_DATE("WhenDate", "when-date-is")
@@ -63,7 +64,9 @@ public enum SECTION_PARTS {
     public static JsonArray toDropdownJsonArray() {
     	JsonArray result = new JsonArray();
     	for (SECTION_PARTS e : SECTION_PARTS.values()) {
-    		result.add(new DropdownItem(e.keyname, e.name()).toJsonObject());
+    		if (e != SECTION_PARTS.TEMPLATE) {
+        		result.add(new DropdownItem(e.keyname, e.name()).toJsonObject());
+    		}
     	}
     	return result;
     }
