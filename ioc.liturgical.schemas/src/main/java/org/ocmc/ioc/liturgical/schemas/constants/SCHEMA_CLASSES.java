@@ -64,6 +64,7 @@ import org.ocmc.ioc.liturgical.schemas.models.db.docs.personal.UserNote;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.tables.ReactBootstrapTableData;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.Section;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.Template;
+import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.TemplateNode;
 import org.ocmc.ioc.liturgical.schemas.models.db.links.LinkRefersToAnimal;
 import org.ocmc.ioc.liturgical.schemas.models.db.links.LinkRefersToBeing;
 import org.ocmc.ioc.liturgical.schemas.models.db.links.LinkRefersToBiblicalText;
@@ -225,8 +226,8 @@ public enum SCHEMA_CLASSES {
 			, new ReactBootstrapTableData(TOPICS.TABLES_ROOT,"")
 			)
 	, TEMPLATE(
-			new Template(" ", "", "")
-			, new Template(" ", "", "")
+			new Template(" ", "")
+			, new Template(" ", "")
 			)
 	, TEXT_BIBLICAL_SOURCE(
 			new TextBiblicalSourceCreateForm(" "," ", " ")

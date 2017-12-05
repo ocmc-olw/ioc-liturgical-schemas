@@ -39,6 +39,7 @@ public class ResultNewForms extends AbstractModel {
 	@Expose public List<DropdownItem> biblicalChaptersDropdown = new ArrayList<DropdownItem>();
 	@Expose public List<DropdownItem> biblicalVersesDropdown = new ArrayList<DropdownItem>();
 	@Expose public List<DropdownItem> biblicalSubversesDropdown = new ArrayList<DropdownItem>();
+	@Expose public JsonArray templateNewTemplateDropdown;
 	@Expose public JsonArray templatePartsDropdown;
 	@Expose public JsonArray templateWhenDayNameCasesDropdown;
 	@Expose public JsonArray templateWhenDayOfMonthCasesDropdown;
@@ -278,5 +279,13 @@ public class ResultNewForms extends AbstractModel {
 
 	public void setTemplateWhenMonthNameCasesDropdown(JsonArray templateWhenMonthNameCasesDropdown) {
 		this.templateWhenMonthNameCasesDropdown = templateWhenMonthNameCasesDropdown;
+	}
+
+	public JsonArray getTemplateNewTemplateDropdown() {
+		return templateNewTemplateDropdown;
+	}
+
+	public void setTemplateNewTemplateDropdown(JsonArray templateNewTemplateDropdown) {
+		this.templateNewTemplateDropdown = templateNewTemplateDropdown;
 	}
 }

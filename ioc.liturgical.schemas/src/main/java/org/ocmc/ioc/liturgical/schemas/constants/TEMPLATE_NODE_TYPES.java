@@ -38,8 +38,10 @@ public enum TEMPLATE_NODE_TYPES {
 	, VERSE("Verse", "Verse")
 	, WHEN_DATE_IS("WhenDate", "when-date-is")
 	, WHEN_DAY_NAME_IS("WhenDayName", "when-name-of-day-is")
+	, WHEN_DAY_OF_MONTH_IS("WhenDayOfMonth", "when-day-of-month-is")
 	, WHEN_EXISTS("WhenExists", "when-exists")
 	, WHEN_LUKAN_CYCLE_DAY_IS("WhenLukanCycleDay", "when-Lukan-Cycle-Day-is")
+	, WHEN_MONTH_NAME_IS("WhenMonth", "when-month-is")
 	, WHEN_MODE_OF_WEEK_IS("WhenModeOfWeek", "when-mode-of-week")
 	, WHEN_PASCHA("WhenPascha", "when-pascha-is")
 	, WHEN_MOVABLE_CYCLE_DAY_IS("WhenMovableCycleDay", "when-movable-cycle-day-is")
@@ -54,7 +56,7 @@ public enum TEMPLATE_NODE_TYPES {
 	, THURSDAY("D5","Thursday use")
 	, FRIDAY("D6","Friday use")
 	, SATURDAY("D7","Saturday use")
-	, OTHERWISE("","otherwise use")
+	, OTHERWISE("Otherwise","otherwise use")
 	, DAY_01("D01", "Day 01")
 	, DAY_02("D02", "Day 02")
 	, DAY_03("D03", "Day 03")
@@ -125,14 +127,14 @@ public enum TEMPLATE_NODE_TYPES {
 	, DAY_68("D68", "Day 68")
 	, DAY_69("D69", "Day 69")
 	, DAY_70("D70", "Day 70")
-    , MODE1("M1", "Mode 1 (Ἦχος αʹ)")
-    , MODE2("M2", "Mode 2 (Ἦχος βʹ)")
-    , MODE3("M3", "Mode 3 (Ἦχος γʹ)")
-    , MODE4("M4", "Mode 4 (Ἦχος δʹ)")
-    , MODE5("M5", "Mode 5 (Ἦχος πλ. αʹ)")
-    , MODE6("M6", "Mode 6 (Ἦχος πλ. βʹ)")
-    , MODE7("M7", "Mode 7 (Ἦχος βαρύς)")
-    , MODE8("M8", "Mode 8 (Ἦχος πλ. δʹ)")
+    , MODE_1("M1", "Mode 1 (Ἦχος αʹ)")
+    , MODE_2("M2", "Mode 2 (Ἦχος βʹ)")
+    , MODE_3("M3", "Mode 3 (Ἦχος γʹ)")
+    , MODE_4("M4", "Mode 4 (Ἦχος δʹ)")
+    , MODE_5("M5", "Mode 5 (Ἦχος πλ. αʹ)")
+    , MODE_6("M6", "Mode 6 (Ἦχος πλ. βʹ)")
+    , MODE_7("M7", "Mode 7 (Ἦχος βαρύς)")
+    , MODE_8("M8", "Mode 8 (Ἦχος πλ. δʹ)")
 	, JAN("Jan", "January")
 	, FEB("Feb", "February")
 	, MAR("Mar", "March")
@@ -277,13 +279,11 @@ public enum TEMPLATE_NODE_TYPES {
     			case DEC:
             		result.add(e);
     				break;
-    			case OTHERWISE:
-            		result.add(e);
-    				break;
     			default:
     				break;
         		}
         	}
+    	result.add(OTHERWISE);
     	return result;
     }
 
@@ -311,6 +311,14 @@ public enum TEMPLATE_NODE_TYPES {
     	return result;
     }
 
+    public static JsonArray toNewTemplateDropdownJsonArray() {
+    	JsonArray result = new JsonArray();
+    	for (DropdownItem e : toNewTemplateDropdownList()) {
+        		result.add(e.toJsonObject());
+    	}
+    	return result;
+    }
+    
     public static List<DropdownItem> toNewTemplateDropdownList() {
     	List<DropdownItem> result = new ArrayList<DropdownItem>();
     	for (TEMPLATE_NODE_TYPES e : TEMPLATE_NODE_TYPES.values()) {
@@ -330,6 +338,9 @@ public enum TEMPLATE_NODE_TYPES {
 	    		result.add(new DropdownItem(e.keyname, e.name()));
 				break;
 			case WHEN_DAY_NAME_IS:
+	    		result.add(new DropdownItem(e.keyname, e.name()));
+				break;
+			case WHEN_DAY_OF_MONTH_IS:
 	    		result.add(new DropdownItem(e.keyname, e.name()));
 				break;
 			case WHEN_EXISTS:

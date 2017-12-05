@@ -36,6 +36,8 @@ public class Constants {
 	public static final String PATH_LIBRARY_TOPIC_WILDCARD = "/*/*";
 	public static final String PATH_LIBRARY_TOPIC_KEY_WILDCARD = "/*/*/*";
 
+	public static final String TEMPLATE_KEY = "head";
+	
 	public static final String UI_WIDGET_TEXTAREA = "textarea";
 	public static final String UI_WIDGET_PASSWORD = "password";
 	public static final String UI_WIDGET_USERS = "users";

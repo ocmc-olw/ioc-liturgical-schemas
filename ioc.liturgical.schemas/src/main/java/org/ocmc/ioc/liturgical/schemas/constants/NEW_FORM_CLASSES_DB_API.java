@@ -6,6 +6,7 @@ import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.ConcordanceLine;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.WordAnalysis;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.Section;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.Template;
+import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.TemplateNode;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.AnimalCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.BeingCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.ConceptCreateForm;
@@ -191,10 +192,16 @@ public enum NEW_FORM_CLASSES_DB_API {
 		)
 , NEW_TEMPLATE(
 		"Template"
-		, new Template("","","")
+		, new Template("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
 		)
+//, NEW_TEMPLATE_NODE(
+//		"TemplateNode"
+//		, new TemplateNode()
+//		, ENDPOINTS_DB_API.DOCS
+//		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+//		)
 , NEW_SECTION(
 		"Section"
 		, new Section("","","")

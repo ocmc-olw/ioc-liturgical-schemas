@@ -20,9 +20,13 @@ import com.google.gson.annotations.Expose;
  */
 @Attributes(title = "Template Node", description = "A part of a template.  Templates are used to generation of a book or service")
 public class TemplateNode  extends AbstractModel {
-	@Expose TEMPLATE_NODE_TYPES title = null;
-	@Expose String subtitle = "";
-	@Expose List<TemplateNode> children = new ArrayList<TemplateNode>();
+	@Expose public TEMPLATE_NODE_TYPES title = null;
+	@Expose public String subtitle = "";
+	@Expose public List<TemplateNode> children = new ArrayList<TemplateNode>();
+	
+	public TemplateNode() {
+		super();
+	}
 	
 	public void appendNode(TemplateNode child) {
 		this.children.add(child);
@@ -45,4 +49,29 @@ public class TemplateNode  extends AbstractModel {
 	public void setChildren(List<TemplateNode> children) {
 		this.children = children;
 	}
+	
+	/**
+	 * 
+	 * @param type to filter for
+	 * @return children nodes that match the specified type
+	 */
+	public List<TemplateNode> filter(TEMPLATE_NODE_TYPES type) {
+		return filter(this, type);
+	}
+
+	private List<TemplateNode> filter(
+			TemplateNode node
+			, TEMPLATE_NODE_TYPES type
+			) {
+		List<TemplateNode> result = new ArrayList<TemplateNode>();
+		if (node.title == type) {
+			result.add(node);
+		} else {
+			for (TemplateNode child : node.children) {
+				result.addAll(filter(child, type));
+			}
+		}
+		return result;
+	}
+
 }
