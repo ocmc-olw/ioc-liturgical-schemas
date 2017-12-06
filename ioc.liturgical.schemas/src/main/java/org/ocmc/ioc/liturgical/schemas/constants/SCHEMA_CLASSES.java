@@ -511,7 +511,7 @@ public enum SCHEMA_CLASSES {
 		result.add(new DropdownItem("Any","*").toJsonObject());
 		for (SCHEMA_CLASSES s : SCHEMA_CLASSES.values()) {
 			if (s.ltkDb instanceof org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbGenerationUnit) {
-				LTKDbNote entry = (LTKDbNote) s.ltkDb;
+				LTKDbGenerationUnit entry = (LTKDbGenerationUnit) s.ltkDb;
 				result.add(new DropdownItem(entry.getOntologyTopic().label).toJsonObject());
 			}
 		}
