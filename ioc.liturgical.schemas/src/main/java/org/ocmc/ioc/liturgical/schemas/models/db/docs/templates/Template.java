@@ -49,7 +49,12 @@ public class Template extends LTKDbGenerationUnit {
 				, enumTopic
 				);
 		try {
-			TemplateNode tNode = new TemplateNode();
+			TemplateNode tNode = TemplateNodeFactory.getTemplateRootNode(
+					library
+					, topic
+					, TEMPLATE_TYPES.SERVICE
+					, TEMPLATE_NODE_TYPES.SECTION
+					);
 			tNode.setTitle(TEMPLATE_NODE_TYPES.TEMPLATE);
 			tNode.setSubtitle(this.id);
 			this.node = tNode.toJsonString();
