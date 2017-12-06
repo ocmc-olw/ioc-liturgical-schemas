@@ -15,6 +15,7 @@ import org.ocmc.ioc.liturgical.schemas.constants.nlp.PARTS_OF_SPEECH;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.ontology.Animal;
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDb;
+import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbGenerationUnit;
 import org.ocmc.ioc.liturgical.utils.ErrorUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,21 +27,15 @@ import com.github.reinert.jjschema.Attributes;
  *
  */
 @Attributes(title = "Template", description = "Template for generation of a book or service")
-public class Template extends LTKDb {
+public class Template extends LTKDbGenerationUnit {
     private static final Logger logger = LoggerFactory.getLogger(Template.class);
 	private static String schema = Template.class.getSimpleName();
 	private static double version = 1.1;
-	private static TOPICS enumTopic = TOPICS.TEMPLATE_ROOT;
+	private static TOPICS enumTopic = TOPICS.TEMPLATE;
 
 	@Attributes(required = true, description = "The type of template")
 	@Expose public TEMPLATE_TYPES type = TEMPLATE_TYPES.SERVICE;
 
-	@Attributes(required = true, description = "A description of the template")
-	@Expose public String description = "";
-	
-	@Attributes(readonly = true, required = true, description = "A string representation of the hierarchical structure of a book or service.  It uses the TemplateNode schema.")
-	@Expose public String node = "";
-	
 	public Template(
 			String library
 			, String topic
@@ -63,48 +58,12 @@ public class Template extends LTKDb {
 		}
 	}
 
-	public TemplateNode fetchNode() {
-		TemplateNode result = new TemplateNode();
-		try {
-			if (this.node.length() > 0) {
-				result = gson.fromJson(this.node, TemplateNode.class);
-			}
-		} catch (Exception e) {
-		}
-		return result;
-	}
-	
-	public void appendNode(TemplateNode node) {
-		try {
-			TemplateNode tNode = this.fetchNode();
-			tNode.appendNode(node);
-			this.node = tNode.toJsonString();
-		} catch (Exception e) {
-		}
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	public TEMPLATE_TYPES getType() {
 		return type;
 	}
 
 	public void setType(TEMPLATE_TYPES type) {
 		this.type = type;
-	}
-
-	public String getNode() {
-		return node;
-	}
-
-	public void setNode(String node) {
-		this.node = node;
 	}
 
 }

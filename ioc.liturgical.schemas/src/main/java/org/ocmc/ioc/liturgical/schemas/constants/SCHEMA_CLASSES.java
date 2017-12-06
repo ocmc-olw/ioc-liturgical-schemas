@@ -83,6 +83,7 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDb;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbNote;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbOntologyEntry;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbTokenAnalysis;
+import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbGenerationUnit;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKLink;
 import org.ocmc.ioc.liturgical.schemas.models.DropdownItem;
 import org.ocmc.ioc.liturgical.schemas.models.ModelHelpers;
@@ -474,6 +475,42 @@ public enum SCHEMA_CLASSES {
 		result.add(new DropdownItem("Any","*").toJsonObject());
 		for (SCHEMA_CLASSES s : SCHEMA_CLASSES.values()) {
 			if (s.ltkDb instanceof org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbNote) {
+				LTKDbNote entry = (LTKDbNote) s.ltkDb;
+				result.add(new DropdownItem(entry.getOntologyTopic().label).toJsonObject());
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * Creates a Json Object with keys that are the typename and
+	 * values that are a JsonArray of the property names for the
+	 * schema assocated with that typename.
+	 * @return JsonObject with keys that are the typename and prop names as a JsonArray
+	 */
+	public static JsonObject templatePropertyJson() {
+		JsonObject result = new JsonObject();
+		JsonArray anyProps = new JsonArray();
+		anyProps.add(new DropdownItem("Any","*").toJsonObject());
+		anyProps.add(new DropdownItem("id","id").toJsonObject());
+		result.add("*", anyProps);
+		for (SCHEMA_CLASSES s : SCHEMA_CLASSES.values()) {
+			if (s.ltkDb instanceof org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbGenerationUnit) {
+				LTKDbGenerationUnit entry = (LTKDbGenerationUnit) s.ltkDb;
+				result.add(
+						entry.getOntologyTopic().label
+						, ModelHelpers.getPropertiesAsDropdownItems(entry)
+				);
+			}
+		}
+		return result;
+	}
+
+	public static JsonArray templateTypesJson() {
+		JsonArray result = new JsonArray();
+		result.add(new DropdownItem("Any","*").toJsonObject());
+		for (SCHEMA_CLASSES s : SCHEMA_CLASSES.values()) {
+			if (s.ltkDb instanceof org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbGenerationUnit) {
 				LTKDbNote entry = (LTKDbNote) s.ltkDb;
 				result.add(new DropdownItem(entry.getOntologyTopic().label).toJsonObject());
 			}

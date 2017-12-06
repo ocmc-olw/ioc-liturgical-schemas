@@ -108,6 +108,12 @@ public enum ENDPOINTS_DB_API {
 			, "domain"
 			,"Endpoint for dropdown values to search docs of type text."
 			)
+	, DROPDOWNS_TEMPLATES(
+			"templates"
+			, ENDPOINT_TYPES.DROPDOWN
+			, "templates"
+			,"Endpoint for dropdown values to search docs of type template."
+			)
 	, DROPDOWNS_GR_LIB_TOPICS(
 			"grlibtopics"
 			, ENDPOINT_TYPES.DROPDOWN

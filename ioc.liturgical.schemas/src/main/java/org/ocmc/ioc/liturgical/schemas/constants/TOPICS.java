@@ -136,15 +136,20 @@ public enum TOPICS {
 			, "A lexicon containing lemmas and their senses"
 			, TOPICS.TABLES_ROOT
 			)
-	, TEMPLATE_ROOT(
-			"Template"
-			, "Information to generate a book or service."
+	, GENERATION_UNIT_ROOT(
+			"GenerationUnit"
+			, "A container of information to generate a book or service."
 			, TOPICS.ROOT
 			)
 	, SECTION(
 			"Section"
-			, "A part of a template."
-			, TOPICS.TEMPLATE_ROOT
+			, "A subunit of a template."
+			, TOPICS.GENERATION_UNIT_ROOT
+			)
+	, TEMPLATE(
+			"Template"
+			, "The topmost unit for generating a book or service."
+			, TOPICS.GENERATION_UNIT_ROOT
 			)
 	, TEXT(
 			"Text"
