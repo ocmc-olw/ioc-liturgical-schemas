@@ -5,6 +5,10 @@ import java.util.List;
 
 import org.ocmc.ioc.liturgical.schemas.constants.TEMPLATE_NODE_TYPES;
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
+import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractSchemaModel;
+import org.ocmc.ioc.liturgical.utils.ErrorUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
@@ -20,12 +24,19 @@ import com.google.gson.annotations.Expose;
  */
 @Attributes(title = "Template Node", description = "A part of a template.  Templates are used to generation of a book or service")
 public class TemplateNode  extends AbstractModel {
+    private static final Logger logger = LoggerFactory.getLogger(TemplateNode.class);
 	@Expose public TEMPLATE_NODE_TYPES title = null;
 	@Expose public String subtitle = "";
+	@Expose public String config = "";
 	@Expose public List<TemplateNode> children = new ArrayList<TemplateNode>();
 	
 	public TemplateNode() {
 		super();
+	}
+	
+	public TemplateNode(TEMPLATE_NODE_TYPES type) {
+		super();
+		this.title = type;
 	}
 	
 	public void appendNode(TemplateNode child) {
@@ -74,4 +85,32 @@ public class TemplateNode  extends AbstractModel {
 		return result;
 	}
 
+	/**
+	 * The configuration for this node.
+	 * @return the string representation of the json for this node.  A subclass of AbstractSchemaModel.
+	 */
+	public String getConfig() {
+		return config;
+	}
+
+	public void setConfig(String config) {
+		this.config = config;
+	}
+
+	/**
+	 * 
+	 * @return the AbstractSchemaModel for the config string. You must cast it to the appropriate subclass.
+	 */
+	public AbstractSchemaModel toAbstractSchemaModel() {
+		AbstractSchemaModel result = null;
+		try {
+			result = AbstractModel.gson.fromJson(
+					this.config
+					, AbstractSchemaModel.class
+					);
+		} catch (Exception e) {
+			ErrorUtils.report(logger, e);
+		}
+		return result;
+	}
 }

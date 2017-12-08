@@ -118,5 +118,17 @@ public class TemplateTest {
 		System.out.println(json);
 		assertTrue(json.length() > 0);
 	}
+	@Test
+	public void testTemplateInstantiation() {
+		// create a Template
+		Template template = new Template(
+				"en_us_ages"
+				, "se.m01.d01.ma"
+				);
+		template.setPrettyPrint(true);
+		String json = template.fetchNode().toJsonString();
+		System.out.println(json);
+		assertTrue(json.length() > 0);
+	}
 	
 }

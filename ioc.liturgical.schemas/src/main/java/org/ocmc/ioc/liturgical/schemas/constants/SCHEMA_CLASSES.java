@@ -40,6 +40,7 @@ import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextLiturgicalSourc
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextLiturgicalTranslationCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TokenAnalysisCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.UserNoteCreateForm;
+import org.ocmc.ioc.liturgical.schemas.models.forms.template.TemplateConfig;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.ConcordanceLine;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.PtbSentence;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.PtbWord;

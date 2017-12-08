@@ -33,8 +33,19 @@ public class Template extends LTKDbGenerationUnit {
 	private static double version = 1.1;
 	private static TOPICS enumTopic = TOPICS.TEMPLATE;
 
-	@Attributes(required = true, description = "The type of template")
+	@Attributes(id = "top", required = true, description = "The type of template")
 	@Expose public TEMPLATE_TYPES type = TEMPLATE_TYPES.SERVICE;
+	
+	@Attributes(id = "top", minimum = 1, maximum = 12, description = "Month number, starting with 1 for January")
+	@Expose public int month = 1;
+
+	@Attributes(id = "top", minimum = 1, maximum = 31, description = "The day of the month as a number, starting with 1.")
+	@Expose public int day = 1;
+
+	@Attributes(id = "top", minimum = 2000, maximum = 3000, description = "The year as a number")
+	@Expose public int year = 1;
+
+
 
 	public Template(
 			String library
@@ -69,6 +80,30 @@ public class Template extends LTKDbGenerationUnit {
 
 	public void setType(TEMPLATE_TYPES type) {
 		this.type = type;
+	}
+
+	public int getMonth() {
+		return month;
+	}
+
+	public void setMonth(int month) {
+		this.month = month;
+	}
+
+	public int getDay() {
+		return day;
+	}
+
+	public void setDay(int day) {
+		this.day = day;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
 	}
 
 }

@@ -20,10 +20,10 @@ import com.github.reinert.jjschema.Attributes;
 public class LTKDbGenerationUnit extends LTKDb {
     private static final Logger logger = LoggerFactory.getLogger(LTKDbGenerationUnit.class);
 
-	@Attributes(required = true, description = "A description of the generation unit")
+	@Attributes(id = "top", required = true, description = "A description of the generation unit")
 	@Expose public String description = "";
 	
-	@Attributes(readonly = true, required = true, description = "A string representation of the hierarchical structure of a book or service.  It uses the TemplateNode schema.")
+	@Attributes(id = "bottom", readonly = true, required = true, description = "A string representation of the hierarchical structure of a book or service.  It uses the TemplateNode schema.")
 	@Expose public String node = "";
 	
 	public LTKDbGenerationUnit(

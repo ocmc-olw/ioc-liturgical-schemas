@@ -139,8 +139,16 @@ public class ResultNewForms extends AbstractModel {
 				try {
 					String value = entry.getKey();
 					String label = entry.getValue().get("schema").getAsJsonObject().get("title").getAsString();
-					DropdownItem d = new DropdownItem(label,value);
-					dropdownMap.put(label, d);
+					if (! entry.getValue()
+							.get("schema")
+							.getAsJsonObject()
+							.get("properties")
+							.getAsJsonObject()
+							.has("excludeFromNewFormDropdown")
+							) {
+						DropdownItem d = new DropdownItem(label,value);
+						dropdownMap.put(label, d);
+					}
 				} catch (Exception entryException) {
 					ErrorUtils.report(logger, entryException, entry.getKey() + " bad schema");
 				}

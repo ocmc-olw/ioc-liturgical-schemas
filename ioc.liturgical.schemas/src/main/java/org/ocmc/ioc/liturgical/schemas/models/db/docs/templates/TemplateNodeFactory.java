@@ -207,9 +207,10 @@ public class TemplateNodeFactory {
 			}
 			break;
 		default: // SECTION
-			node.setTitle(TEMPLATE_NODE_TYPES.SECTION);
-			break;
-		
+			TemplateNode sectionNode = new TemplateNode(TEMPLATE_NODE_TYPES.SECTION);
+			sectionNode.setSubtitle("section01");
+			node.appendNode(sectionNode);
+			break;		
 		}
 		return node;
 	}
@@ -224,8 +225,7 @@ public class TemplateNodeFactory {
 			, String library
 			, String topic
 			) {
-		TemplateNode childNode = new TemplateNode();
-		childNode.setTitle(theType);
+		TemplateNode childNode = new TemplateNode(theType);
 		Section section = new Section(
 				library
 				, topic
