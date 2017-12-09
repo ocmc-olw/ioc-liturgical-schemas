@@ -36,16 +36,14 @@ public class Template extends LTKDbGenerationUnit {
 	@Attributes(id = "top", required = true, description = "The type of template")
 	@Expose public TEMPLATE_TYPES type = TEMPLATE_TYPES.SERVICE;
 	
-	@Attributes(id = "top", minimum = 1, maximum = 12, description = "Month number, starting with 1 for January")
-	@Expose public int month = 1;
+	@Attributes(id = "top", minimum = 0, maximum = 12, description = "Month number, starting with 1 for January.  Use zero if not a dated service.")
+	@Expose public int month = 0;
 
-	@Attributes(id = "top", minimum = 1, maximum = 31, description = "The day of the month as a number, starting with 1.")
-	@Expose public int day = 1;
+	@Attributes(id = "top", minimum = 0, maximum = 31, description = "The day of the month as a number, starting with 1.  Use zero if not a dated service.")
+	@Expose public int day = 0;
 
-	@Attributes(id = "top", minimum = 2000, maximum = 3000, description = "The year as a number")
-	@Expose public int year = 1;
-
-
+	@Attributes(id = "top",  minimum = 0, maximum = 3000, description = "The year as a number. Use zero if not a dated service.")
+	@Expose public int year = 0;
 
 	public Template(
 			String library
