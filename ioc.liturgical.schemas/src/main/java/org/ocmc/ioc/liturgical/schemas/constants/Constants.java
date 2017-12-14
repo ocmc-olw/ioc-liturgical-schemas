@@ -19,6 +19,8 @@ public class Constants {
 	public static final String TOPIC_SYNCH = "cypher";
 	public static final String TOPIC_SYNCH_LOG = "synch";
 	public static final String KEY_SYNCH_LOG = "log";
+	public static final String GITHUB = "github";
+	public static final String REPOS = "repos";
 
 	public static final String INTERNAL_DATASTORE_API_PATH = "/admin/api/v1";
 

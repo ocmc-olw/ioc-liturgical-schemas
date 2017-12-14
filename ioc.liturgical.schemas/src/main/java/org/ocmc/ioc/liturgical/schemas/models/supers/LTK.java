@@ -220,10 +220,6 @@ public class LTK extends AbstractModel {
 		this.ontologyTopic = ontologyTopic;
 	}
 
-	public List<String> fetchOntologyLabelsList() {
-		return ontologyTopic.toLabelsList();
-	}
-	
 	/**
 	 * Get the ontology labels.  They will be in the proper order.
 	 * However, note that Neo4j does not use this order.
@@ -235,7 +231,7 @@ public class LTK extends AbstractModel {
 	 * For Liturgical, it will create a label for each  part of the topic.
 	 * @return the ontology labels
 	 */
-	public String fetchOntologyLabels() {
+	public List<String> fetchOntologyLabelsList() {
 		List<String> labels = ontologyTopic.toLabelsList();
 		labels.add(library);
 		if (ontologyTopic.equals(TOPICS.TEXT_BIBLICAL)) { // add label for book and chapter
@@ -258,9 +254,24 @@ public class LTK extends AbstractModel {
 			} else {
 				labels.add(this.topic);
 			}
-
 		}
-		return StringUtils.join(labels,":");
+		labels.add(this.toSchemaAsLabel());
+		return labels;
+	}
+	
+	/**
+	 * Get the ontology labels.  They will be in the proper order.
+	 * However, note that Neo4j does not use this order.
+	 * It creates an internal ID for each label and uses the ID order.
+	 * It is out of our control how they are stored.
+	 * 
+	 * Also, if the ontology type is Biblical or Liturgical text, additional labels
+	 * will be created.  For Biblical, it will add the book abbreviation and chapter number.
+	 * For Liturgical, it will create a label for each  part of the topic.
+	 * @return the ontology labels
+	 */
+	public String fetchOntologyLabels() {
+		return StringUtils.join(this.fetchOntologyLabelsList(),":");
 	}
 	
 	public ID_PART_TYPES getPartTypeOfTopic() {

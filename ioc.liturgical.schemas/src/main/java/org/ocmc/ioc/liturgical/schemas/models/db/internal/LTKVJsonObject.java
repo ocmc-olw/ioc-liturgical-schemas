@@ -186,6 +186,7 @@ public class LTKVJsonObject extends LTK {
 			sb.append(delimiter);
 		}
 		sb.append(labels.get(labels.size()-1));
+		sb.append(this.getSchemaAsLabel());
 		return sb.toString();
 	}
 

@@ -150,6 +150,12 @@ public enum ENDPOINTS_DB_API {
 			, "label"
 			,"Endpoint for labels."
 			)
+	, LITURGICAL_DOCUMENT_OBJECT_MODEL(
+			"ldom"
+			, ENDPOINT_TYPES.HTML
+			, "LDOM"
+			,"Endpoint for Liturgical Document Object Model"
+			)
 	, LINKS(
 			""
 			, ENDPOINT_TYPES.RELATIONSHIP
