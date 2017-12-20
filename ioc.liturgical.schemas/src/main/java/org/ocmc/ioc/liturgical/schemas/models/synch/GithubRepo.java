@@ -23,6 +23,9 @@ public class GithubRepo extends LTKLite {
 	private static String schema = GithubRepo.class.getSimpleName();
 	private static double version = 1.1;
 
+	@Attributes(readonly = true, required = false, description = "Name of the Github account")
+	@Expose public String account = "";
+
 	@Attributes(readonly = true, required = false, description = "Name of the Repository")
 	@Expose public String name = "";
 
@@ -45,32 +48,21 @@ public class GithubRepo extends LTKLite {
 	@Expose public String lastFetchLocalPath = "";
 
 	public GithubRepo(
-			String url
+			String account
+			, String name
 			)  {
 		super(
 				Constants.LIBRARY_SYNCH
 				, Constants.GITHUB
-				, urlToName(url)
+				, account + "/" + name
 				, schema
 				, version
 				);
 		this.setPrettyPrint(false);
-		this.url = url;
-		this.name = this.key;
+		this.account = account;
+		this.name = name;
 	}
 
-	private static String urlToName(String url) {
-		String result = url;
-		try {
-			result = FilenameUtils.getName(url);
-			if (result.endsWith(".git")) {
-				result = result.substring(0, result.length()-4);
-			}
-		} catch (Exception e) {
-			ErrorUtils.report(logger, e);
-		}
-		return result;
-	}
 	public String getName() {
 		return name;
 	}
@@ -125,6 +117,14 @@ public class GithubRepo extends LTKLite {
 
 	public void setLastFetchLocalPath(String lastFetchLocalPath) {
 		this.lastFetchLocalPath = lastFetchLocalPath;
+	}
+
+	public String getAccount() {
+		return account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 }

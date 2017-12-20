@@ -228,7 +228,7 @@ public class LTK extends AbstractModel {
 	 * 
 	 * Also, if the ontology type is Biblical or Liturgical text, additional labels
 	 * will be created.  For Biblical, it will add the book abbreviation and chapter number.
-	 * For Liturgical, it will create a label for each  part of the topic.
+	 * 2017-12-20 Removed: For Liturgical, it will create a label for each  part of the topic.
 	 * @return the ontology labels
 	 */
 	public List<String> fetchOntologyLabelsList() {
@@ -240,20 +240,27 @@ public class LTK extends AbstractModel {
 			if (parts.length == 2) {
 				labels.add(parts[0]); // this is the chapter number
 			}
-		} else if (ontologyTopic.equals(TOPICS.TEXT_LITURGICAL)) { // add labels from topic
-			String[] parts = this.topic.split("\\.");
-			if (parts.length > 1) {
-				if (parts[0].equals("le")) { // only use the first two parts as labels for lectionary
-					labels.add(parts[0]);
-					labels.add(parts[1]);
-				} else {
-					for (String s : parts) {
-						labels.add(s);
-					}
-				}
-			} else {
-				labels.add(this.topic);
-			}
+			/**
+			 * 2017-12-20 For Liturgical text we will not create labels from topics
+			 * because if the topic is renamed, it will become unnecessarily 
+			 * complicated trying to rename the labels.  And, we now have
+			 * an index on n.topic.  And, it is possible to use a regex on n.id
+			 * for find things.
+			 */
+//		} else if (ontologyTopic.equals(TOPICS.TEXT_LITURGICAL)) { // add labels from topic
+//			String[] parts = this.topic.split("\\.");
+//			if (parts.length > 1) {
+//				if (parts[0].equals("le")) { // only use the first two parts as labels for lectionary
+//					labels.add(parts[0]);
+//					labels.add(parts[1]);
+//				} else {
+//					for (String s : parts) {
+//						labels.add(s);
+//					}
+//				}
+//			} else {
+//				labels.add(this.topic);
+//			}
 		}
 		labels.add(this.toSchemaAsLabel());
 		return labels;

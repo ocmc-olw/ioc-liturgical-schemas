@@ -4,10 +4,11 @@ package org.ocmc.ioc.liturgical.schemas.models.synch;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.ocmc.ioc.liturgical.schemas.constants.Constants;
-import org.ocmc.ioc.liturgical.schemas.models.supers.LTKLite;
+import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
+import org.ocmc.ioc.liturgical.utils.ErrorUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
 /**
@@ -16,33 +17,17 @@ import com.google.gson.annotations.Expose;
  * @author mac002
  *
  */
-public class GithubRepositories extends LTKLite {
-	private static String schema = GithubRepositories.class.getSimpleName();
-	private static double version = 1.1;
+public class GithubRepositories extends AbstractModel {
+	private static final Logger logger = LoggerFactory.getLogger(GithubRepositories.class);
 
-	@Attributes(readonly = true, required = false, description = "Name of the Repository")
 	@Expose List<GithubRepo> repos = new ArrayList<GithubRepo>();
 	
 	public GithubRepositories(
 			)  {
-		super(
-				Constants.LIBRARY_SYNCH
-				, Constants.GITHUB
-				, Constants.REPOS
-				, schema
-				, version
-				);
+		super();
 		this.setPrettyPrint(false);
 	}
 
-	public List<GithubRepo> getRepos() {
-		return repos;
-	}
-
-	public void setRepos(List<GithubRepo> repos) {
-		this.repos = repos;
-	}
-	
 	public void addRepo(GithubRepo repo) {
 		if (! this.repos.contains(repo)) {
 			this.repos.add(repo);
@@ -53,6 +38,14 @@ public class GithubRepositories extends LTKLite {
 		if (this.repos.contains(repo)) {
 			this.repos.remove(repo);
 		}
+	}
+
+	public List<GithubRepo> getRepos() {
+		return repos;
+	}
+
+	public void setRepos(List<GithubRepo> repos) {
+		this.repos = repos;
 	}
 
 }

@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.ocmc.ioc.liturgical.schemas.annotations.UiWidget;
 import org.ocmc.ioc.liturgical.schemas.constants.Constants;
+import org.ocmc.ioc.liturgical.schemas.constants.DATA_SOURCES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
 
 import com.github.reinert.jjschema.Attributes;
@@ -35,6 +36,9 @@ public class LTKDb extends LTK {
 
 	@Attributes(id="bottom",readonly=true, description="The date/time when it was last modified.")
 	@Expose public String modifiedWhen = "";
+
+	@Attributes(id="bottom",readonly=true, description="Where the data for this doc originated from.")
+	@Expose public DATA_SOURCES dataSource = DATA_SOURCES.ONLINE;
 
 	public LTKDb(
 			String library
@@ -110,6 +114,14 @@ public class LTKDb extends LTK {
 	 */
 	public void setSubClassProperties(String json) {
 		
+	}
+
+	public DATA_SOURCES getDataSource() {
+		return dataSource;
+	}
+
+	public void setDataSource(DATA_SOURCES dataSource) {
+		this.dataSource = dataSource;
 	}
 
 }

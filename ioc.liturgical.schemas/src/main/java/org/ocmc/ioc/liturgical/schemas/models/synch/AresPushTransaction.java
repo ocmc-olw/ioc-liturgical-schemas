@@ -36,6 +36,7 @@ public class AresPushTransaction extends LTKLite {
 	@Expose public String whenTransactionRecordedInThisDatabase = "";
 	@Expose public String requestingServer = "";
 	@Expose public String requestingMac = "";
+	@Expose public String requestingUser = "";
 	
 	@Expose public String fromLibrary = "";
 	@Expose public String fromTopic = "";
@@ -212,6 +213,14 @@ public class AresPushTransaction extends LTKLite {
 
 	public void setToComment(String toComment) {
 		this.toComment = toComment;
+	}
+
+	public String getRequestingUser() {
+		return requestingUser;
+	}
+
+	public void setRequestingUser(String requestingUser) {
+		this.requestingUser = requestingUser;
 	}
 
 }
