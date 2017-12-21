@@ -49,5 +49,11 @@ public class Constants {
 	public static final String UI_WIDGET_SELECT = "select";	
 
 	public static final String VALUE_SCHEMA_ID = "_valueSchemaId";
+	
+	/**
+	 * We do not delete docs.  Instead we do a soft delete by renaming the doc's
+	 * labels so they are prefixed with the value of DELETED_LABEL_PREFIX
+	 */
+	public static final String DELETED_LABEL_PREFIX = "DELETED_";
 
 }
