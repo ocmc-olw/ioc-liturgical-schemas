@@ -293,4 +293,14 @@ public enum RELATIONSHIP_TYPES {
 		return result;
 	}
 
+	/**
+	 * 
+	 * @return those relationship types that can be used with docs of type TextLiturgical
+	 */
+	public static List<RELATIONSHIP_TYPES> filterByLiturgicalRelations() {
+		List<RELATIONSHIP_TYPES> result = new ArrayList<RELATIONSHIP_TYPES>();
+		result.addAll(Links());
+		result.add(HAS_NOTE);
+		return result;
+	}
 }
