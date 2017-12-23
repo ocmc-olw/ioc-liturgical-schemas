@@ -9,7 +9,7 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.LTKLite;
 import com.google.gson.annotations.Expose;
 
 /**
- * Provides a model for transactions pushed from synchronization of an ares file.  
+ * Provides a model for transactions used to synch an ares file and a database.  
  * An ares file is an ALWB library file. 
  * 
  * The database should have a constraint on n:AresTransaction property timestamp.
@@ -17,9 +17,11 @@ import com.google.gson.annotations.Expose;
  * @author mac002
  *
  */
-public class AresPushTransaction extends LTKLite {
-	private static String schema = AresPushTransaction.class.getSimpleName();
+public class AresTransaction extends LTKLite {
+	private static String schema = AresTransaction.class.getSimpleName();
 	private static double version = 1.1;
+	
+	public enum SOURCES {DB, GIT};
 	
 	public enum TYPES {
 		ADD_KEY_VALUE
@@ -32,8 +34,12 @@ public class AresPushTransaction extends LTKLite {
 		, UNKNOWN
 	}
 
+	@Expose public SOURCES source = SOURCES.DB; 
 	@Expose public TYPES type = TYPES.UNKNOWN; 
 	@Expose public String whenTransactionRecordedInThisDatabase = "";
+	@Expose public String fromCommitId = "";
+	@Expose public String toCommitId = "";
+
 	@Expose public String requestingServer = "";
 	@Expose public String requestingMac = "";
 	@Expose public String requestingUser = "";
@@ -50,7 +56,7 @@ public class AresPushTransaction extends LTKLite {
 	@Expose public String toValue = "";
 	@Expose public String toComment = "";
 
-	public AresPushTransaction(
+	public AresTransaction(
 			String requestingServer
 			, String requestingMac
 			, String timestamp
@@ -221,6 +227,30 @@ public class AresPushTransaction extends LTKLite {
 
 	public void setRequestingUser(String requestingUser) {
 		this.requestingUser = requestingUser;
+	}
+
+	public SOURCES getSource() {
+		return source;
+	}
+
+	public void setSource(SOURCES source) {
+		this.source = source;
+	}
+
+	public String getFromCommitId() {
+		return fromCommitId;
+	}
+
+	public void setFromCommitId(String fromCommitId) {
+		this.fromCommitId = fromCommitId;
+	}
+
+	public String getToCommitId() {
+		return toCommitId;
+	}
+
+	public void setToCommitId(String toCommitId) {
+		this.toCommitId = toCommitId;
 	}
 
 }

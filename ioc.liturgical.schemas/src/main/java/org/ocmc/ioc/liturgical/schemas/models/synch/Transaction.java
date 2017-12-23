@@ -27,6 +27,7 @@ public class Transaction extends LTKLite {
 	@Expose public String requestingMac = "";
 	@Expose public String cypher = "";
 	@Expose public boolean fromAres = false;
+	@Expose public String aresTransId = "";
 	
 	/**
 	 * Constructor for a Cypher transaction that creates or updates a doc
@@ -154,6 +155,14 @@ public class Transaction extends LTKLite {
 
 	public void setFromAres(boolean fromAres) {
 		this.fromAres = fromAres;
+	}
+
+	public String getAresTransId() {
+		return aresTransId;
+	}
+
+	public void setAresTransId(String aresTransId) {
+		this.aresTransId = aresTransId;
 	}
 
 }

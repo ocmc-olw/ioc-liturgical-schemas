@@ -1,10 +1,7 @@
 package org.ocmc.ioc.liturgical.schemas.models.synch;
 
-
-import org.apache.commons.io.FilenameUtils;
 import org.ocmc.ioc.liturgical.schemas.constants.Constants;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKLite;
-import org.ocmc.ioc.liturgical.utils.ErrorUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,19 +30,31 @@ public class GithubRepo extends LTKLite {
 	@Expose public String url = "";
 
 	@Attributes(readonly = true, required = false, description = "Timestamp of last synch")
-	@Expose public String lastSynchTime = "";
+	@Expose public String lastGitToDbSynchTime = "";
 	
-	@Attributes(readonly = true, required = false, description = "Commit ID used for the last synch")
-	@Expose public String lastSynchCommitId = "";
+	@Attributes(readonly = true, required = false, description = "Commit ID used for the last synch GitToDb")
+	@Expose public String lastGitToDbSynchCommitId = "";
 
-	@Attributes(readonly = true, required = false, description = "Timestamp of last fetch from remote repo")
-	@Expose public String lastFetchTime = "";
+	@Attributes(readonly = true, required = false, description = "Timestamp of last fetch from remote repo for GitToDb")
+	@Expose public String lastGitToDbFetchTime = "";
 	
-	@Attributes(readonly = true, required = false, description = "Commit ID from last fetch from remote repo")
-	@Expose public String lastFetchCommitId = "";
+	@Attributes(readonly = true, required = false, description = "Commit ID from last fetch from remote repo for GitToDb")
+	@Expose public String lastGitToDbFetchCommitId = "";
+
+	@Attributes(readonly = true, required = false, description = "Timestamp of last synch DbToGit")
+	@Expose public String lastDbToGitSynchTime = "";
+	
+	@Attributes(readonly = true, required = false, description = "Commit ID used for the last synch  DbToGit")
+	@Expose public String lastDbToGitSynchCommitId = "";
+
+	@Attributes(readonly = true, required = false, description = "Timestamp of last fetch from remote repo for DbToGit")
+	@Expose public String lastDbToGitFetchTime = "";
+	
+	@Attributes(readonly = true, required = false, description = "Commit ID from last fetch from remote repo for DbToGit")
+	@Expose public String lastDbToGitFetchCommitId = "";
 
 	@Attributes(readonly = true, required = false, description = "Last local repo path that was used for the clone or fetch")
-	@Expose public String lastFetchLocalPath = "";
+	@Expose public String localRepoPath = "";
 
 	public GithubRepo(
 			String account
@@ -79,52 +88,84 @@ public class GithubRepo extends LTKLite {
 		this.url = url;
 	}
 
-	public String getLastSynchTime() {
-		return lastSynchTime;
-	}
-
-	public void setLastSynchTime(String lastSynchTime) {
-		this.lastSynchTime = lastSynchTime;
-	}
-
-	public String getLastSynchCommitId() {
-		return lastSynchCommitId;
-	}
-
-	public void setLastSynchCommitId(String lastSynchCommitId) {
-		this.lastSynchCommitId = lastSynchCommitId;
-	}
-
-	public String getLastFetchTime() {
-		return lastFetchTime;
-	}
-
-	public void setLastFetchTime(String lastFetchTime) {
-		this.lastFetchTime = lastFetchTime;
-	}
-
-	public String getLastFetchCommitId() {
-		return lastFetchCommitId;
-	}
-
-	public void setLastFetchCommitId(String lastFetchCommitId) {
-		this.lastFetchCommitId = lastFetchCommitId;
-	}
-
-	public String getLastFetchLocalPath() {
-		return lastFetchLocalPath;
-	}
-
-	public void setLastFetchLocalPath(String lastFetchLocalPath) {
-		this.lastFetchLocalPath = lastFetchLocalPath;
-	}
-
 	public String getAccount() {
 		return account;
 	}
 
 	public void setAccount(String account) {
 		this.account = account;
+	}
+
+	public String getLastGitToDbSynchTime() {
+		return lastGitToDbSynchTime;
+	}
+
+	public void setLastGitToDbSynchTime(String lastGitToDbSynchTime) {
+		this.lastGitToDbSynchTime = lastGitToDbSynchTime;
+	}
+
+	public String getLastGitToDbSynchCommitId() {
+		return lastGitToDbSynchCommitId;
+	}
+
+	public void setLastGitToDbSynchCommitId(String lastGitToDbSynchCommitId) {
+		this.lastGitToDbSynchCommitId = lastGitToDbSynchCommitId;
+	}
+
+	public String getLastGitToDbFetchTime() {
+		return lastGitToDbFetchTime;
+	}
+
+	public void setLastGitToDbFetchTime(String lastGitToDbFetchTime) {
+		this.lastGitToDbFetchTime = lastGitToDbFetchTime;
+	}
+
+	public String getLastGitToDbFetchCommitId() {
+		return lastGitToDbFetchCommitId;
+	}
+
+	public void setLastGitToDbFetchCommitId(String lastGitToDbFetchCommitId) {
+		this.lastGitToDbFetchCommitId = lastGitToDbFetchCommitId;
+	}
+
+	public String getLocalRepoPath() {
+		return localRepoPath;
+	}
+
+	public void setLocalRepoPath(String localRepoPath) {
+		this.localRepoPath = localRepoPath;
+	}
+
+	public String getLastDbToGitSynchTime() {
+		return lastDbToGitSynchTime;
+	}
+
+	public void setLastDbToGitSynchTime(String lastDbToGitSynchTime) {
+		this.lastDbToGitSynchTime = lastDbToGitSynchTime;
+	}
+
+	public String getLastDbToGitSynchCommitId() {
+		return lastDbToGitSynchCommitId;
+	}
+
+	public void setLastDbToGitSynchCommitId(String lastDbToGitSynchCommitId) {
+		this.lastDbToGitSynchCommitId = lastDbToGitSynchCommitId;
+	}
+
+	public String getLastDbToGitFetchTime() {
+		return lastDbToGitFetchTime;
+	}
+
+	public void setLastDbToGitFetchTime(String lastDbToGitFetchTime) {
+		this.lastDbToGitFetchTime = lastDbToGitFetchTime;
+	}
+
+	public String getLastDbToGitFetchCommitId() {
+		return lastDbToGitFetchCommitId;
+	}
+
+	public void setLastDbToGitFetchCommitId(String lastDbToGitFetchCommitId) {
+		this.lastDbToGitFetchCommitId = lastDbToGitFetchCommitId;
 	}
 
 }
