@@ -18,39 +18,39 @@ import org.ocmc.ioc.liturgical.utils.LiturgicalDayProperties;
 @Attributes(title = "Liturgical Day Properties", description = "For the date shown below, this gives you the liturgical properties applicable for the date you requested.")
 public class LiturgicalDayPropertiesForm extends AbstractModel {
 	@Attributes(readonly = true, description = "The liturgical date used for the properties")
-	@Expose public String theLiturgicalDate = "";
+	@Expose String theLiturgicalDate = "";
 	@Attributes(readonly = true, description = "The Julian date of the liturgical date")
-	@Expose public String theJulianDate = "";
+	@Expose String theJulianDate = "";
 	@Attributes(readonly = true, description = "The Gregorian date of the liturgical date")
-	@Expose public String theGregorianDate = "";
+	@Expose String theGregorianDate = "";
 	@Attributes(readonly = true, description = "")
-	@Expose public String dayOfWeek = "";
+	@Expose String dayOfWeek = "";
 	@Attributes(readonly = true, description = "")
-	@Expose public int modeOfWeek = 1;
+	@Expose int modeOfWeek = 1;
 	@Attributes(readonly = true, description = "")
-	@Expose public String eothinonNumber = "";
+	@Expose int eothinonNumber = 0;
 	@Attributes(readonly = true, description = "")
-	@Expose public String triodionStartDateLastYear = "";
+	@Expose String triodionStartDateLastYear = "";
 	@Attributes(readonly = true, description = "")
-	@Expose public String triodionStartDateThisYear = "";
+	@Expose String triodionStartDateThisYear = "";
 	@Attributes(readonly = true, description = "")
-	@Expose public String triodionStartDateNextYear = "";
+	@Expose String triodionStartDateNextYear = "";
 	@Attributes(readonly = true, description = "")
-	@Expose public String paschaDateThisYear = "";
+	@Expose String paschaDateThisYear = "";
 	@Attributes(readonly = true, description = "")
-	@Expose public String allSaintsDateThisYear = "";
+	@Expose String allSaintsDateThisYear = "";
 	@Attributes(readonly = true, description = "")
-	@Expose public int numberOfSundaysBeforeStartOfTriodion = 0;
+	@Expose int numberOfSundaysBeforeStartOfTriodion = 0;
 	@Attributes(readonly = true, description = "")
-	@Expose public int daysUntilStartOfTriodion = 0;
+	@Expose int daysUntilStartOfTriodion = 0;
 	@Attributes(readonly = true, description = "")
-	@Expose public String lastSundayAfterElevationOfCross = "";
+	@Expose String lastSundayAfterElevationOfCross = "";
 	@Attributes(readonly = true, description = "")
-	@Expose public int daysSinceLastSundayAfterElevationOfCross = 0;
+	@Expose int daysSinceLastSundayAfterElevationOfCross = 0;
 	@Attributes(readonly = true, description = "")
-	@Expose public boolean isTriodion = false;
+	@Expose boolean isTriodion = false;
 	@Attributes(readonly = true, description = "")
-	@Expose public boolean isPentecostarion = false;
+	@Expose boolean isPentecostarion = false;
 	
 	SimpleDateFormat ymd = new SimpleDateFormat("yyyy/MM/dd");
 	SimpleDateFormat eymd = new SimpleDateFormat("EEEE yyyy/MM/dd");
@@ -69,9 +69,26 @@ public class LiturgicalDayPropertiesForm extends AbstractModel {
 		 * Just like below, for each property in this class, set it by using the day parameter.
 		 */
 		this.theLiturgicalDate = formattedDate(day.getGregorianCalendar(), ymd);
-		this.theJulianDate = formattedDate(day.getTheDayJulian(), ymd);
-		this.theGregorianDate = formattedDate(day.getTheDayGregorian(), eymd);
-		// complete the rest of the properties
+		this.theJulianDate     = formattedDate(day.getTheDayJulian(), ymd);
+		this.theGregorianDate  = formattedDate(day.getTheDayGregorian(), eymd);
+
+		// PFB Done - completed the rest of the properties
+	    this.dayOfWeek  = day.getDayOfWeek();
+	    this.modeOfWeek = day.getModeOfWeek();
+
+	    this.eothinonNumber = day.getEothinonNumber();
+	    
+	    this.triodionStartDateLastYear       = formattedDate(day.getTriodionStartDateLastYear(), ymd);
+	    this.triodionStartDateThisYear       = formattedDate(day.getTriodionStartDateThisYear(), ymd);
+	    this.triodionStartDateNextYear       = formattedDate(day.getTriodionStartDateNextYear(), ymd);
+	    this.paschaDateThisYear              = formattedDate(day.getPaschaDateThisYear(), ymd);
+	    this.allSaintsDateThisYear           = formattedDate(day.getAllSaintsDateThisYear(), ymd);
+	    this.lastSundayAfterElevationOfCross = formattedDate(day.getSundayAfterElevationOfCrossDateLast(), ymd);
+	    this.numberOfSundaysBeforeStartOfTriodion     = day.getNumberOfSundaysBeforeStartOfTriodion();
+	    this.daysUntilStartOfTriodion                 = day.getDaysUntilStartOfTriodion();
+	    this.daysSinceLastSundayAfterElevationOfCross = day.getDaysSinceSundayAfterLastElevationOfCross();
+	    this.isTriodion = day.getIsTriodion();
+	    this.isPentecostarion = day.getIsPentecostarion();
 	}
 	public String getDayOfWeek() {
 		return dayOfWeek;
@@ -85,10 +102,10 @@ public class LiturgicalDayPropertiesForm extends AbstractModel {
 	public void setModeOfWeek(int modeOfWeek) {
 		this.modeOfWeek = modeOfWeek;
 	}
-	public String getEothinonNumber() {
+	public int getEothinonNumber() {
 		return eothinonNumber;
 	}
-	public void setEothinonNumber(String eothinonNumber) {
+	public void setEothinonNumber(int eothinonNumber) {
 		this.eothinonNumber = eothinonNumber;
 	}
 	public String getTriodionStartDateLastYear() {
