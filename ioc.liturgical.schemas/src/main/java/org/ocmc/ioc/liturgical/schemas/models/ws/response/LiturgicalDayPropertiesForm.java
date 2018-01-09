@@ -18,39 +18,39 @@ import org.ocmc.ioc.liturgical.utils.LiturgicalDayProperties;
 @Attributes(title = "Liturgical Day Properties", description = "For the date shown below, this gives you the liturgical properties applicable for the date you requested.")
 public class LiturgicalDayPropertiesForm extends AbstractModel {
 	@Attributes(readonly = true, description = "The liturgical date used for the properties")
-	@Expose String theLiturgicalDate = "";
+	@Expose public String theLiturgicalDate = "";
 	@Attributes(readonly = true, description = "The Julian date of the liturgical date")
-	@Expose String theJulianDate = "";
+	@Expose public String theJulianDate = "";
 	@Attributes(readonly = true, description = "The Gregorian date of the liturgical date")
-	@Expose String theGregorianDate = "";
+	@Expose public String theGregorianDate = "";
 	@Attributes(readonly = true, description = "")
-	@Expose String dayOfWeek = "";
+	@Expose public String dayOfWeek = "";
 	@Attributes(readonly = true, description = "")
-	@Expose int modeOfWeek = 1;
+	@Expose public int modeOfWeek = 1;
 	@Attributes(readonly = true, description = "")
-	@Expose int eothinonNumber = 0;
+	@Expose public int eothinonNumber = 0;
 	@Attributes(readonly = true, description = "")
-	@Expose String triodionStartDateLastYear = "";
+	@Expose public String triodionStartDateLastYear = "";
 	@Attributes(readonly = true, description = "")
-	@Expose String triodionStartDateThisYear = "";
+	@Expose public String triodionStartDateThisYear = "";
 	@Attributes(readonly = true, description = "")
-	@Expose String triodionStartDateNextYear = "";
+	@Expose public String triodionStartDateNext = "";
 	@Attributes(readonly = true, description = "")
-	@Expose String paschaDateThisYear = "";
+	@Expose public String paschaDateThisYear = "";
 	@Attributes(readonly = true, description = "")
-	@Expose String allSaintsDateThisYear = "";
+	@Expose public String allSaintsDateThisYear = "";
 	@Attributes(readonly = true, description = "")
-	@Expose int numberOfSundaysBeforeStartOfTriodion = 0;
+	@Expose public int numberOfSundaysBeforeStartOfTriodion = 0;
 	@Attributes(readonly = true, description = "")
-	@Expose int daysUntilStartOfTriodion = 0;
+	@Expose public int daysUntilStartOfTriodion = 0;
 	@Attributes(readonly = true, description = "")
-	@Expose String lastSundayAfterElevationOfCross = "";
+	@Expose public String lastSundayAfterElevationOfCross = "";
 	@Attributes(readonly = true, description = "")
-	@Expose int daysSinceLastSundayAfterElevationOfCross = 0;
+	@Expose public int daysSinceLastSundayAfterElevationOfCross = 0;
 	@Attributes(readonly = true, description = "")
-	@Expose boolean isTriodion = false;
+	@Expose public boolean isTriodion = false;
 	@Attributes(readonly = true, description = "")
-	@Expose boolean isPentecostarion = false;
+	@Expose public boolean isPentecostarion = false;
 	
 	SimpleDateFormat ymd = new SimpleDateFormat("yyyy/MM/dd");
 	SimpleDateFormat eymd = new SimpleDateFormat("EEEE yyyy/MM/dd");
@@ -80,7 +80,7 @@ public class LiturgicalDayPropertiesForm extends AbstractModel {
 	    
 	    this.triodionStartDateLastYear       = formattedDate(day.getTriodionStartDateLastYear(), ymd);
 	    this.triodionStartDateThisYear       = formattedDate(day.getTriodionStartDateThisYear(), ymd);
-	    this.triodionStartDateNextYear       = formattedDate(day.getTriodionStartDateNextYear(), ymd);
+	    this.triodionStartDateNext       = formattedDate(day.getTriodionStartDateNextYear(), ymd);
 	    this.paschaDateThisYear              = formattedDate(day.getPaschaDateThisYear(), ymd);
 	    this.allSaintsDateThisYear           = formattedDate(day.getAllSaintsDateThisYear(), ymd);
 	    this.lastSundayAfterElevationOfCross = formattedDate(day.getSundayAfterElevationOfCrossDateLast(), ymd);
@@ -120,11 +120,11 @@ public class LiturgicalDayPropertiesForm extends AbstractModel {
 	public void setTriodionStartDateThisYear(String triodionStartDateThisYear) {
 		this.triodionStartDateThisYear = triodionStartDateThisYear;
 	}
-	public String getTriodionStartDateNextYear() {
-		return triodionStartDateNextYear;
+	public String getTriodionStartDateNext() {
+		return triodionStartDateNext;
 	}
-	public void setTriodionStartDateNextYear(String triodionStartDateNextYear) {
-		this.triodionStartDateNextYear = triodionStartDateNextYear;
+	public void setTriodionStartDateNext(String triodionStartDateNext) {
+		this.triodionStartDateNext = triodionStartDateNext;
 	}
 	public String getPaschaDateThisYear() {
 		return paschaDateThisYear;
