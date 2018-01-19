@@ -1,8 +1,13 @@
 package org.ocmc.ioc.liturgical.schemas.constants;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.Map.Entry;
+
+import org.ocmc.ioc.liturgical.schemas.models.DropdownItem;
 
 public class LITURGICAL_BOOKS {
     private static Map<String, String> map = new TreeMap<String,String>();
@@ -43,6 +48,15 @@ public class LITURGICAL_BOOKS {
     
     public static Map<String,String> getMap() {
     	return map;
+    }
+
+    public static List<DropdownItem> toDropdownList() {
+    	List<DropdownItem> result = new ArrayList<DropdownItem>();
+    	result.add(new DropdownItem("Any", "*"));
+    	for (Entry<String,String> entry : map.entrySet()) {
+    		result.add(new DropdownItem(entry.getValue(), entry.getKey()));
+    	}
+    	return result;
     }
 
 }

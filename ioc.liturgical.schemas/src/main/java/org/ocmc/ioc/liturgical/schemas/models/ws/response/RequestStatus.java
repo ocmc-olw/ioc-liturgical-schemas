@@ -2,6 +2,9 @@ package org.ocmc.ioc.liturgical.schemas.models.ws.response;
 
 import com.google.gson.annotations.Expose;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.ocmc.ioc.liturgical.schemas.constants.HTTP_RESPONSE_CODES;
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
 
@@ -32,6 +35,7 @@ public class RequestStatus extends AbstractModel {
 	@Expose public int relationshipsDeleted = 0;
 	@Expose public int counterTotal = 0;
 	@Expose public boolean containsUpdates = false;
+	@Expose public List<String> notifications = new ArrayList<String>();
 	
 	public boolean wasSuccessful() {
 		return this.counterTotal > 0 || this.containsUpdates;
@@ -168,5 +172,11 @@ public class RequestStatus extends AbstractModel {
 	}
 	public void setCounterTotal(int counterTotal) {
 		this.counterTotal = counterTotal;
+	}
+	public List<String> getNotifications() {
+		return notifications;
+	}
+	public void setNotifications(List<String> notifications) {
+		this.notifications = notifications;
 	}
 }

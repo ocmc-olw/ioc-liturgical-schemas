@@ -23,11 +23,14 @@ public class TextLiturgicalTranslationCreateForm extends LTK {
 	private static String schema = TextLiturgicalTranslationCreateForm.class.getSimpleName();
 
 	@UiWidget(Constants.UI_WIDGET_TEXTAREA)
-	@Attributes(required = true, description = "Translation of the source text.")
+	@Attributes(id = "top", required = true, description = "Translation of the source text.")
 	@Expose  public String value = "";
 
-	@Attributes(required = false, readonly = true, description = "Line sequence number for this text within its topic.")
+	@Attributes(id = "top", required = false, readonly = true, description = "Line sequence number for this text within its topic.")
 	@Expose  public String seq = "";
+
+	@Attributes(id = "bottom", required = false, readonly = true, description = "ID of the record this one redirects to")
+	@Expose  public String redirectId = "";
 
 	public TextLiturgicalTranslationCreateForm(
 			String library
@@ -68,6 +71,14 @@ public class TextLiturgicalTranslationCreateForm extends LTK {
 			IdManager idManager = new IdManager(this.getLibrary(), this.getTopic(), parts[2]);
 			this.setSeq(idManager.getId());
 		}
+	}
+
+	public String getRedirectId() {
+		return redirectId;
+	}
+
+	public void setRedirectId(String redirectId) {
+		this.redirectId = redirectId;
 	}
 
 }

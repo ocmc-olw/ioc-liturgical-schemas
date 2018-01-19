@@ -48,13 +48,16 @@ public class AresTransaction extends LTKLite {
 	@Expose public String fromTopic = "";
 	@Expose public String fromKey = "";
 	@Expose public String fromValue = "";
+	@Expose public boolean fromValueIsRedirect = false;
 	@Expose public String fromComment = "";
 
 	@Expose public String toLibrary = "";
 	@Expose public String toTopic = "";
 	@Expose public String toKey = "";
 	@Expose public String toValue = "";
+	@Expose public boolean toValueIsRedirect = false;
 	@Expose public String toComment = "";
+
 
 	public AresTransaction(
 			String requestingServer
@@ -251,6 +254,22 @@ public class AresTransaction extends LTKLite {
 
 	public void setToCommitId(String toCommitId) {
 		this.toCommitId = toCommitId;
+	}
+
+	public boolean isFromValueIsRedirect() {
+		return fromValueIsRedirect;
+	}
+
+	public void setFromValueIsRedirect(boolean fromValueIsRedirect) {
+		this.fromValueIsRedirect = fromValueIsRedirect;
+	}
+
+	public boolean isToValueIsRedirect() {
+		return toValueIsRedirect;
+	}
+
+	public void setToValueIsRedirect(boolean toValueIsRedirect) {
+		this.toValueIsRedirect = toValueIsRedirect;
 	}
 
 }

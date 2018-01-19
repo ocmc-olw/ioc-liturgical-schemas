@@ -35,6 +35,7 @@ public class ResultNewForms extends AbstractModel {
 	@Expose public List<DropdownItem> ontologyTypesDropdown = new ArrayList<DropdownItem>();
 	@Expose public Map<String,JsonArray> ontologyDropdowns = new TreeMap<String,JsonArray>();
 	@Expose public List<JsonObject> formsDropdown = new ArrayList<JsonObject>();
+	@Expose public List<DropdownItem> liturgicalBooksDropdown = new ArrayList<DropdownItem>();
 	@Expose public List<DropdownItem> biblicalBooksDropdown = new ArrayList<DropdownItem>();
 	@Expose public List<DropdownItem> biblicalChaptersDropdown = new ArrayList<DropdownItem>();
 	@Expose public List<DropdownItem> biblicalVersesDropdown = new ArrayList<DropdownItem>();
@@ -295,5 +296,13 @@ public class ResultNewForms extends AbstractModel {
 
 	public void setTemplateNewTemplateDropdown(JsonArray templateNewTemplateDropdown) {
 		this.templateNewTemplateDropdown = templateNewTemplateDropdown;
+	}
+
+	public List<DropdownItem> getLiturgicalBooksDropdown() {
+		return liturgicalBooksDropdown;
+	}
+
+	public void setLiturgicalBooksDropdown(List<DropdownItem> liturgicalBooksDropdown) {
+		this.liturgicalBooksDropdown = liturgicalBooksDropdown;
 	}
 }

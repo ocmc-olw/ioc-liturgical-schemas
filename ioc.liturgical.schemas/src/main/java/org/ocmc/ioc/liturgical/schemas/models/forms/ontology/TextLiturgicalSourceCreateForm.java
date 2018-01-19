@@ -28,6 +28,9 @@ public class TextLiturgicalSourceCreateForm extends LTK {
 	@Attributes(required = false, readonly = false, description = "Line sequence number for this text within its topic.")
 	@Expose  public String seq = "";
 
+	@Attributes(id = "bottom", required = false, readonly = true, description = "ID of the record this one redirects to")
+	@Expose  public String redirectId = "";
+
 	public TextLiturgicalSourceCreateForm(
 			String library
 			, String topic
@@ -59,6 +62,14 @@ public class TextLiturgicalSourceCreateForm extends LTK {
 
 	public void setSeq(String seq) {
 		this.seq = seq;
+	}
+
+	public String getRedirectId() {
+		return redirectId;
+	}
+
+	public void setRedirectId(String redirectId) {
+		this.redirectId = redirectId;
 	}
 
 }

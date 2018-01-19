@@ -54,6 +54,9 @@ public class TextLiturgical extends LTKDb {
 	@Attributes(id = "bottom", required = false, readonly = true, description = "Comment from / for Alwb Library topic file")
 	@Expose  public String comment = "";
 
+	@Attributes(id = "bottom", required = false, readonly = true, description = "ID of the record this one redirects to")
+	@Expose  public String redirectId = "";
+
 	public TextLiturgical(
 			String library
 			, String topic
@@ -149,6 +152,14 @@ public class TextLiturgical extends LTKDb {
 
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+
+	public String getRedirectId() {
+		return redirectId;
+	}
+
+	public void setRedirectId(String redirectId) {
+		this.redirectId = redirectId;
 	}
 
 }
