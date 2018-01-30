@@ -24,6 +24,12 @@ public enum ENDPOINTS_DB_API {
 			, "AgesPdf"
 			,"Endpoint for an AGES html file converted to a PDF file"
 			)
+	, AGES_TEX(
+			"agestex"
+			, ENDPOINT_TYPES.TEX
+			, "AgesTex"
+			,"Endpoint for an AGES html file converted to a Tex file"
+			)
 	, AGES_READ_ONLY_TEMPLATE(
 			"agesreadonlytemplate"
 			, ENDPOINT_TYPES.HTML

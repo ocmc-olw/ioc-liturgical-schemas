@@ -47,11 +47,11 @@ import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.UserNoteCreateForm;
  *  If the form restriction is WS_ADMIN,
  * then only a user that is a web service admin is allowed to use it.
  * 
- * If it is restricted to ALL_DOMAINS_ADMIN, then only someone with
+ * If it is restricted to NONE, then only someone with
  * that authorization or higher (i.e. a WS_ADMIN) can use it.
  * 
  * If it is restricted to DOMAIN_ADMIN, then only someone with that
- * authorization or higher (i.e. ALL_DOMAINS_ADMIN, WS_ADMIN) can use it.
+ * authorization or higher (i.e. NONE, WS_ADMIN) can use it.
  * 
  * 
  * @author mac002
@@ -62,103 +62,103 @@ public enum NEW_FORM_CLASSES_DB_API {
 			"Animal"
 			, new AnimalCreateForm("")
 			, ENDPOINTS_DB_API.DOCS
-			, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+			, RESTRICTION_FILTERS.NONE
 			)
 ,	NEW_LINK_REFERS_TO_ANIMAL(
 			"doc refers animal"
 			, new LinkRefersToAnimalCreateForm("","","")
 			, ENDPOINTS_DB_API.LINKS
-			, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+			, RESTRICTION_FILTERS.NONE
 			)
 ,	NEW_BEING(
 		"Being"
 		, new BeingCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 ,	NEW_LINK_REFERS_TO_BEING(
 			"doc refers to being"
 			, new LinkRefersToBeingCreateForm("","","")
 			, ENDPOINTS_DB_API.LINKS
-			, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+			, RESTRICTION_FILTERS.NONE
 			)
 ,	NEW_LINK_REFERS_TO_BIBLICAL_TEXT(
 			"doc refers to biblical text"
 			, new LinkRefersToBiblicalTextCreateForm("","","")
 			, ENDPOINTS_DB_API.LINKS
-			, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+			, RESTRICTION_FILTERS.NONE
 			)
 , NEW_CONCEPT(
 		"Concept"
 		, new ConceptCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_CONCORDANCE_LINE(
 		"ConcordanceLine"
 		, new ConcordanceLine(" ",0,0," "," "," ")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.WS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_LINK_REFERS_TO_CONCEPT(
 		"doc refers to concept"
 		, new LinkRefersToConceptCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_EVENT(
 		"Event"
 		, new EventCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_LINK_REFERS_TO_EVENT(
 		"doc refers to event"
 		, new LinkRefersToEventCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_LINK_REFERS_TO_GOD(
 		"doc refers to God"
 		, new LinkRefersToGodCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_GROUP(
 		"Group"
 		, new GroupCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_LINK_REFERS_TO_GROUP(
 		"doc refers to group"
 		, new LinkRefersToGroupCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_HUMAN(
 		"Human"
 		, new HumanCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_LINK_REFERS_TO_HUMAN(
 		"doc refers to human"
 		, new LinkRefersToHumanCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_MYSTERY(
 		"Mystery"
 		, new MysteryCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_LINK_REFERS_TO_MYSTERY(
 		"doc refers to mystery"
 		, new LinkRefersToMysteryCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_NOTE_USER(
 		"Note (private)"
@@ -170,13 +170,13 @@ public enum NEW_FORM_CLASSES_DB_API {
 		"Object"
 		, new ObjectCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_LINK_REFERS_TO_OBJECT(
 		"doc refers to object"
 		, new LinkRefersToObjectCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_WORD_ANALYSIS(
 		"Word Analysis"
@@ -188,85 +188,85 @@ public enum NEW_FORM_CLASSES_DB_API {
 		"Place"
 		, new PlaceCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_TEMPLATE(
 		"Template"
 		, new Template("","")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 //, NEW_TEMPLATE_NODE(
 //		"TemplateNode"
 //		, new TemplateNode()
 //		, ENDPOINTS_DB_API.DOCS
-//		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+//		, RESTRICTION_FILTERS.NONE
 //		)
 , NEW_SECTION(
 		"Section"
 		, new Section("","","")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_LINK_REFERS_TO_PLACE(
 		"doc refers to place"
 		, new LinkRefersToPlaceCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_PLANT(
 		"Plant"
 		, new PlantCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_LINK_REFERS_TO_PLANT(
 		"doc refers to plant"
 		, new LinkRefersToPlantCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_ROLE(
 		"Role"
 		, new RoleCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_LINK_REFERS_TO_ROLE(
 		"doc refers to role"
 		, new LinkRefersToRoleCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_TEXT_BIBLICAL_SOURCE(
 		"Biblical Text (Source)"
 		, new TextBiblicalSourceCreateForm("","","")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_TEXT_BIBLICAL_TRANSLATION(
 		"Biblical Text (Translation)"
 		, new TextBiblicalTranslationCreateForm("","","")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_TEXT_LITURGICAL_TRANSLATION(
 		"Liturgical Text (Translation)"
 		, new TextLiturgicalTranslationCreateForm("","","")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_TEXT_LITURGICAL_SOURCE(
 		"Liturgical Text (Source)"
 		, new TextLiturgicalSourceCreateForm("","","")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_TOKEN_ANALYSIS(
 		"Token Analysis"
 		, new TokenAnalysisCreateForm("","")
 		, ENDPOINTS_DB_API.TOKEN_ANALYSIS
-		, RESTRICTION_FILTERS.ALL_DOMAINS_ADMIN
+		, RESTRICTION_FILTERS.NONE
 		)
 	;
 

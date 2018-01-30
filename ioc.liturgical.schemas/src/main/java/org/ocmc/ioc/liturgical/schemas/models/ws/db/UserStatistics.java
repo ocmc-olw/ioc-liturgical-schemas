@@ -6,20 +6,20 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
 
 @Attributes(readonly=true)
 public class UserStatistics extends AbstractModel {
+	@Attributes(description="The number of times the system has been successfully accessed using this username.  Each web service call counts as an access.")
+	@Expose public int accessCount = 0;
+	
+	@Attributes(description="The last date and time when the system was last successfully accessed using this username. The time is recorded in Zulu (Greenwhich mean time).")
+	@Expose public String lastSuccessfulAccessDateTime = "";
+	
+	@Attributes(description="The nano time when the system was last accessed using this username.")
+	@Expose public long lastAccessNanos = 0;
+
 	@Attributes(description = "The number of times someone attempted to login with this username.")
 	@Expose public int failedLoginCount = 0;
 	
 	@Attributes(description="The last date and time when someone failed to login with this username.  The time is recorded in Zulu (Greenwhich mean time).")
 	@Expose public String lastFailedAccessDateTime = "";
-	
-	@Attributes(description="The nano time when the system was last accessed using this username.")
-	@Expose public long lastAccessNanos = 0;
-
-	@Attributes(description="The last date and time when the system was last successfully accessed using this username. The time is recorded in Zulu (Greenwhich mean time).")
-	@Expose public String lastSuccessfulAccessDateTime = "";
-	
-	@Attributes(description="The number of times the system has been successfully accessed using this username.  Each web service call counts as an access.")
-	@Expose public int accessCount = 0;
 	
 	public UserStatistics() {
 		super();

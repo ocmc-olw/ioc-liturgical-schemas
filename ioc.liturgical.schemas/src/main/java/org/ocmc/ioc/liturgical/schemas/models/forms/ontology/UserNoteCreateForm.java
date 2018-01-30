@@ -3,6 +3,7 @@ package org.ocmc.ioc.liturgical.schemas.models.forms.ontology;
 
 import org.ocmc.ioc.liturgical.schemas.constants.ID_PART_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
+import org.ocmc.ioc.liturgical.schemas.constants.VISIBILITY;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKNoteCreateForm;
 
 import com.github.reinert.jjschema.Attributes;
@@ -36,6 +37,7 @@ public class UserNoteCreateForm extends LTKNoteCreateForm {
 		this.partTypeOfTopic = ID_PART_TYPES.NOTE_USING_ID_OF_SELECTED_TEXT;
 		this.partTypeOfKey = ID_PART_TYPES.TIMESTAMP;
 		this.setSeq(this.getId());
+		this.setVisibility(VISIBILITY.PERSONAL);
 	}
 
 }

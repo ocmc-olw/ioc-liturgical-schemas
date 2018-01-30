@@ -12,5 +12,6 @@ public enum ENDPOINT_TYPES {
 	, RELATIONSHIP
 	, TABLE // these are json objects whose values are arrays of Json objects.  For React js tables
 	, TEMPLATE
+	, TEX
 	, VIEW // a list of keys and sometimes the values for a library~topic or a template
 }

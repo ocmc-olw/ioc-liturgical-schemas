@@ -1,6 +1,5 @@
 package org.ocmc.ioc.liturgical.schemas.constants;
 
-import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.LinkRefersToBiblicalTextCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
 import org.ocmc.ioc.liturgical.schemas.models.ws.forms.AuthorizationCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.ws.forms.DomainCreateForm;
