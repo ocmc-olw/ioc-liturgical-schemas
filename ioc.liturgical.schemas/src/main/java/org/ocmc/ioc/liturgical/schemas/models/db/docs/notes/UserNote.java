@@ -1,4 +1,4 @@
-package org.ocmc.ioc.liturgical.schemas.models.db.docs.personal;
+package org.ocmc.ioc.liturgical.schemas.models.db.docs.notes;
 
 import java.time.Instant;
 
