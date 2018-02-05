@@ -34,6 +34,11 @@ public enum TOPICS {
 			, "The root node for notes on a text."
 			, TOPICS.ROOT
 			)
+	, NOTE_TEXTUAL(
+			"NoteTextual"
+			, "A textual note."
+			, TOPICS.NOTES_ROOT
+			)
 	, NOTE_USER(
 			"NoteUser"
 			, "The root node for personal notes made by a user."

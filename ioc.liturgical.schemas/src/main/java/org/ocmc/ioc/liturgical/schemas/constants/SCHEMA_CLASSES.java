@@ -38,6 +38,7 @@ import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextBiblicalSourceC
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextBiblicalTranslationCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextLiturgicalSourceCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextLiturgicalTranslationCreateForm;
+import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextNoteCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TokenAnalysisCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.UserNoteCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.template.TemplateConfig;
@@ -47,6 +48,8 @@ import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.PtbWord;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.TokenAnalysis;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.WordAnalysis;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.WordInflected;
+import org.ocmc.ioc.liturgical.schemas.models.db.docs.notes.TextualNote;
+import org.ocmc.ioc.liturgical.schemas.models.db.docs.notes.UserNote;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.ontology.Animal;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.ontology.Being;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.ontology.Concept;
@@ -61,7 +64,6 @@ import org.ocmc.ioc.liturgical.schemas.models.db.docs.ontology.Plant;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.ontology.Role;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.ontology.TextBiblical;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.ontology.TextLiturgical;
-import org.ocmc.ioc.liturgical.schemas.models.db.docs.personal.UserNote;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.tables.ReactBootstrapTableData;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.Section;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.Template;
@@ -186,6 +188,10 @@ public enum SCHEMA_CLASSES {
 	, MYSTERY(
 			new MysteryCreateForm(" ")
 			, new Mystery(" ")
+			)
+	, NOTE_TEXTUAL(
+			new TextNoteCreateForm(" "," ","")
+			, new TextualNote(" "," ","")
 			)
 	, NOTE_USER(
 			new UserNoteCreateForm(" "," ","")
