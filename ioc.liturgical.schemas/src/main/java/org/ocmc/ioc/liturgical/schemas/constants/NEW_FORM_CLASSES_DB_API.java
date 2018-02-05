@@ -4,6 +4,7 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.WsPaths;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.ConcordanceLine;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.WordAnalysis;
+import org.ocmc.ioc.liturgical.schemas.models.db.docs.notes.TextualNote;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.Section;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.Template;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.TemplateNode;
@@ -158,6 +159,12 @@ public enum NEW_FORM_CLASSES_DB_API {
 		"doc refers to mystery"
 		, new LinkRefersToMysteryCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
+		, RESTRICTION_FILTERS.NONE
+		)
+, NEW_NOTE_TEXTUAL(
+		"Note (textual)"
+		, new TextualNote(" ", " ", " ")
+		, ENDPOINTS_DB_API.NOTES
 		, RESTRICTION_FILTERS.NONE
 		)
 , NEW_NOTE_USER(
