@@ -318,6 +318,12 @@ public enum ENDPOINTS_DB_API {
 			, "treebanks"
 			,"Endpoint for treebanks"
 			)
+	, USER_DOCS(
+			"userdocs"
+			, ENDPOINT_TYPES.JSON
+			, "UserDocs"
+			,"Endpoint for a user to get his/her personal library as a json file"
+			)
 	, VALUE(
 			"value"
 			, ENDPOINT_TYPES.NODE

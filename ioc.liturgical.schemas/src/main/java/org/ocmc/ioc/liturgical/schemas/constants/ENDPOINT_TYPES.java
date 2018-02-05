@@ -5,6 +5,7 @@ public enum ENDPOINT_TYPES {
 	, CLONE // used when initializing a new library.  Usually we clone from the Greek
 	, FORM
 	, HTML
+    , JSON
 	, NLP
 	, NODE
 	, ONTOLOGY
