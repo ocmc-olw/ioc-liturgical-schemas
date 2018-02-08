@@ -5,54 +5,54 @@
   <version>1.0-SNAPSHOT</version>
   <versioning>
     <snapshot>
-      <timestamp>20180208.145841</timestamp>
+      <timestamp>20180208.193718</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
-    <lastUpdated>20180208145841</lastUpdated>
+    <lastUpdated>20180208193718</lastUpdated>
     <snapshotVersions>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>1.0-20180208.145841-1</value>
-        <updated>20180208145841</updated>
+        <value>1.0-20180208.193718-1</value>
+        <updated>20180208193718</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.0-20180208.145841-1</value>
-        <updated>20180208145841</updated>
+        <value>1.0-20180208.193718-1</value>
+        <updated>20180208193718</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>1.0-20180208.145841-1</value>
-        <updated>20180208145841</updated>
+        <value>1.0-20180208.193718-1</value>
+        <updated>20180208193718</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>javadoc</classifier>
         <extension>jar</extension>
-        <value>1.0-20180208.145841-1</value>
-        <updated>20180208145841</updated>
+        <value>1.0-20180208.193718-1</value>
+        <updated>20180208193718</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar.asc</extension>
-        <value>1.0-20180208.145841-1</value>
-        <updated>20180208145841</updated>
+        <value>1.0-20180208.193718-1</value>
+        <updated>20180208193718</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom.asc</extension>
-        <value>1.0-20180208.145841-1</value>
-        <updated>20180208145841</updated>
+        <value>1.0-20180208.193718-1</value>
+        <updated>20180208193718</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar.asc</extension>
-        <value>1.0-20180208.145841-1</value>
-        <updated>20180208145841</updated>
+        <value>1.0-20180208.193718-1</value>
+        <updated>20180208193718</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>javadoc</classifier>
         <extension>jar.asc</extension>
-        <value>1.0-20180208.145841-1</value>
-        <updated>20180208145841</updated>
+        <value>1.0-20180208.193718-1</value>
+        <updated>20180208193718</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
