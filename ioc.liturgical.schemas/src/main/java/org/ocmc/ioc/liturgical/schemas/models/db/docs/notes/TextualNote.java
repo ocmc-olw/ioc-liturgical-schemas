@@ -17,52 +17,38 @@ public class TextualNote extends LTKDbNote {
 	private static double version = 1.1;
 	private static TOPICS ontoTopic = TOPICS.NOTE_TEXTUAL;
 	
-	@Attributes(id = "top", required = true, readonly = false, minLength = 1, description = "The textual scope of this note.")
-	@Expose public String scope = "";
-
 	@Attributes(id = "top", required = true, readonly = false, minLength = 1, description = "The type of this note.")
 	@Expose public NOTE_TYPES noteType = NOTE_TYPES.GENERAL;
 
-	public String getScope() {
-		return scope;
-	}
-	public void setScope(String scope) {
-		this.scope = scope;
-	}
-	public NOTE_TYPES getNoteType() {
-		return noteType;
-	}
-	public void setNoteType(NOTE_TYPES noteType) {
-		this.noteType = noteType;
-	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public String getLemma() {
-		return lemma;
-	}
-	public void setLemma(String lemma) {
-		this.lemma = lemma;
-	}
-	public String getBibref() {
-		return bibref;
-	}
-	public void setBibref(String bibref) {
-		this.bibref = bibref;
-	}
+	@Attributes(id = "top", required = false, readonly = false, description = "The database ID of the liturgical Greek text referenced by this note.")
+	@Expose public String liturgicalGreekId = "";
+
+	@Attributes(id = "top", required = false, readonly = false, description = "The database ID of the liturgical Greek text referenced by this note.")
+	@Expose public String liturgicalTranslationId = "";
+
+	@Attributes(id = "top", required = true, readonly = false, minLength = 1, description = "The textual scope of this note.")
+	@Expose public String liturgicalScope = ""; 
 
 	@Attributes(id = "top", required = true, readonly = false, minLength = 1, description = "The title of this note.")
-	@Expose public String title = "";
+	@Expose public String noteTitle = "";
 
 	@Attributes(id = "top", required = false, readonly = false, description = "The lemma about which this note is made.")
-	@Expose public String lemma = "";
+	@Expose public String liturgicalLemma = "";
 
-	@Attributes(id = "top", required = false, readonly = false, description = "The Biblical reference made by the text.")
-	@Expose public String bibref = "";
+	@Attributes(id = "top", required = false, readonly = false, description = "The database ID of the Biblical Greek text referred to.")
+	@Expose public String biblicalGreekId = "";
 
+	@Attributes(id = "top", required = false, readonly = false, description = "The database ID of the Biblical translation text referred to.")
+	@Expose public String biblicalTranslationId = "";
+
+	@Attributes(id = "top", required = false, readonly = false, description = "The Biblical scope of the note.")
+	@Expose public String biblicalScope = "";
+
+	@Attributes(id = "top", required = false, readonly = false, description = "The Biblical lemma(s) referred to in the note.")
+	@Expose public String biblicalLemma = "";
+
+	@Attributes(id = "top", required = false, readonly = false, description = "The database ID of the ontological entity the liturgical Greek text refers to.")
+	@Expose public String ontologicalEntityId = "";
 
 	/**
 	 * 
@@ -133,5 +119,71 @@ public class TextualNote extends LTKDbNote {
 		this.setValue(form.getValue());		
 		this.setSeq(this.getId());
 	}
-
+	public String getLiturgicalGreekId() {
+		return liturgicalGreekId;
+	}
+	public void setLiturgicalGreekId(String liturgicalGreekId) {
+		this.liturgicalGreekId = liturgicalGreekId;
+	}
+	public String getLiturgicalTranslationId() {
+		return liturgicalTranslationId;
+	}
+	public void setLiturgicalTranslationId(String liturgicalTranslationId) {
+		this.liturgicalTranslationId = liturgicalTranslationId;
+	}
+	public String getLiturgicalScope() {
+		return liturgicalScope;
+	}
+	public void setLiturgicalScope(String liturgicalScope) {
+		this.liturgicalScope = liturgicalScope;
+	}
+	public NOTE_TYPES getNoteType() {
+		return noteType;
+	}
+	public void setNoteType(NOTE_TYPES noteType) {
+		this.noteType = noteType;
+	}
+	public String getNoteTitle() {
+		return noteTitle;
+	}
+	public void setNoteTitle(String noteTitle) {
+		this.noteTitle = noteTitle;
+	}
+	public String getLiturgicalLemma() {
+		return liturgicalLemma;
+	}
+	public void setLiturgicalLemma(String liturgicalLemma) {
+		this.liturgicalLemma = liturgicalLemma;
+	}
+	public String getBiblicalGreekId() {
+		return biblicalGreekId;
+	}
+	public void setBiblicalGreekId(String biblicalGreekId) {
+		this.biblicalGreekId = biblicalGreekId;
+	}
+	public String getBiblicalTranslationId() {
+		return biblicalTranslationId;
+	}
+	public void setBiblicalTranslationId(String biblicalTranslationId) {
+		this.biblicalTranslationId = biblicalTranslationId;
+	}
+	public String getBiblicalScope() {
+		return biblicalScope;
+	}
+	public void setBiblicalScope(String biblicalScope) {
+		this.biblicalScope = biblicalScope;
+	}
+	public String getBiblicalLemma() {
+		return biblicalLemma;
+	}
+	public void setBiblicalLemma(String biblicalLemma) {
+		this.biblicalLemma = biblicalLemma;
+	}
+	public String getOntologicalEntityId() {
+		return ontologicalEntityId;
+	}
+	public void setOntologicalEntityId(String ontologicalEntityId) {
+		this.ontologicalEntityId = ontologicalEntityId;
+	}
+	
 }

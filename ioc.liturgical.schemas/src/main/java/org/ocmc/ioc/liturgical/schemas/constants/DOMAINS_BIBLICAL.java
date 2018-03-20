@@ -19,6 +19,7 @@ public class DOMAINS_BIBLICAL {
 		map.put("gr_eg_lxxupccatth", "LXX - Greek - Theodotion (UPC-CAT)");
 		map.put("gr_eg_lxxupccat", "LXX - Greek - Rahlfs (UPC-CAT)");
         map.put("gr_gr_ntpt", "NT - Greek - Patriarcal");
+        map.put("heb_il_wlc", "OT - Hebrew - Westminster Leningrad Codex (Groves Center)");
 	}
     
     public static boolean containsKey(String key) {

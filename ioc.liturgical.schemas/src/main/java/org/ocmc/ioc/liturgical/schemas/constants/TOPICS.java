@@ -352,6 +352,41 @@ public enum TOPICS {
 		return result;
 	}
 
+	public static List<DropdownItem> keyNamesTrueOntologyToDropdown() {
+		List<DropdownItem> result = new ArrayList<DropdownItem>();
+		TreeSet<String> values = new TreeSet<String>();
+		values.add(TOPICS.ANIMAL.label);
+		values.add(TOPICS.BEING.label);
+		values.add(TOPICS.CONCEPT.label);
+		values.add(TOPICS.EVENT.label);
+		values.add(TOPICS.GOD.label);
+		values.add(TOPICS.GROUP.label);
+		values.add(TOPICS.HUMAN.label);
+		values.add(TOPICS.MYSTERY.label);
+		values.add(TOPICS.OBJECT.label);
+		values.add(TOPICS.PLACE.label);
+		values.add(TOPICS.PLANT.label);
+		values.add(TOPICS.ROLE.label);
+		for (String value : values) {
+			result.add(new DropdownItem(value, value));
+		}
+		return result;
+	}
+
+	public static List<DropdownItem> keyNamesForHyponymnToDropdown(
+			TOPICS hyponymn
+			) {
+		List<DropdownItem> result = new ArrayList<DropdownItem>();
+		TreeSet<String> values = new TreeSet<String>();
+		for (TOPICS t : filterByTopicHyponymn(hyponymn)) {
+			values.add(t.label);
+		}
+		for (String value : values) {
+			result.add(new DropdownItem(value, value));
+		}
+		return result;
+	}
+
 	/**
 	 * Get the keynames as a JsonArray of DropDownItem
 	 * @return the keynames as a JsonArray of DropDownItem
@@ -403,8 +438,17 @@ public enum TOPICS {
 	public static List<TOPICS> filterByTopicHyponymn(TOPICS hyponymn) {
 		List<TOPICS> result = new ArrayList<TOPICS>();
 		for (TOPICS t : TOPICS.values()) {
-			if (t.hyponym.equals(hyponymn)) {
-				result.add(t);
+			if (t != TOPICS.ROOT) {
+				if (t.hyponym.equals(hyponymn)) {
+					result.add(t);
+				} else {
+					if (
+							t.hyponym == TOPICS.BEING
+							|| t.hyponym == TOPICS.CONCEPT
+							) {
+						result.add(t);
+					}
+				}
 			}
 		}
 		return result;

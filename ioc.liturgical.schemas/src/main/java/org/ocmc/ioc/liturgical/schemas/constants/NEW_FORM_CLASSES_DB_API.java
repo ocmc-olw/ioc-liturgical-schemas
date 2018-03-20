@@ -64,144 +64,168 @@ public enum NEW_FORM_CLASSES_DB_API {
 			, new AnimalCreateForm("")
 			, ENDPOINTS_DB_API.DOCS
 			, RESTRICTION_FILTERS.NONE
+			, true
 			)
 ,	NEW_LINK_REFERS_TO_ANIMAL(
 			"doc refers animal"
 			, new LinkRefersToAnimalCreateForm("","","")
 			, ENDPOINTS_DB_API.LINKS
 			, RESTRICTION_FILTERS.NONE
+			, false
 			)
 ,	NEW_BEING(
 		"Being"
 		, new BeingCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		)
 ,	NEW_LINK_REFERS_TO_BEING(
 			"doc refers to being"
 			, new LinkRefersToBeingCreateForm("","","")
 			, ENDPOINTS_DB_API.LINKS
 			, RESTRICTION_FILTERS.NONE
+			, false
 			)
 ,	NEW_LINK_REFERS_TO_BIBLICAL_TEXT(
 			"doc refers to biblical text"
 			, new LinkRefersToBiblicalTextCreateForm("","","")
 			, ENDPOINTS_DB_API.LINKS
 			, RESTRICTION_FILTERS.NONE
+			, false
 			)
 , NEW_CONCEPT(
 		"Concept"
 		, new ConceptCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		)
 , NEW_CONCORDANCE_LINE(
 		"ConcordanceLine"
 		, new ConcordanceLine(" ",0,0," "," "," ")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_LINK_REFERS_TO_CONCEPT(
 		"doc refers to concept"
 		, new LinkRefersToConceptCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_EVENT(
 		"Event"
 		, new EventCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		)
 , NEW_LINK_REFERS_TO_EVENT(
 		"doc refers to event"
 		, new LinkRefersToEventCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_LINK_REFERS_TO_GOD(
 		"doc refers to God"
 		, new LinkRefersToGodCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_GROUP(
 		"Group"
 		, new GroupCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		)
 , NEW_LINK_REFERS_TO_GROUP(
 		"doc refers to group"
 		, new LinkRefersToGroupCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_HUMAN(
 		"Human"
 		, new HumanCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		)
 , NEW_LINK_REFERS_TO_HUMAN(
 		"doc refers to human"
 		, new LinkRefersToHumanCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_MYSTERY(
 		"Mystery"
 		, new MysteryCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		)
 , NEW_LINK_REFERS_TO_MYSTERY(
 		"doc refers to mystery"
 		, new LinkRefersToMysteryCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_NOTE_TEXTUAL(
 		"Note (textual)"
 		, new TextualNote(" ", " ", " ")
 		, ENDPOINTS_DB_API.NOTES
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_NOTE_USER(
 		"Note (private)"
 		, new UserNoteCreateForm(" ", " ", " ")
 		, ENDPOINTS_DB_API.NOTES
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_OBJECT(
 		"Object"
 		, new ObjectCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		)
 , NEW_LINK_REFERS_TO_OBJECT(
 		"doc refers to object"
 		, new LinkRefersToObjectCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_WORD_ANALYSIS(
 		"Word Analysis"
 		, new WordAnalysis()
 		, ENDPOINTS_DB_API.WORD_ANALYSIS
 		, RESTRICTION_FILTERS.WS_ADMIN
+		, false
 		)
 , NEW_PLACE(
 		"Place"
 		, new PlaceCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		)
 , NEW_TEMPLATE(
 		"Template"
 		, new Template("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 //, NEW_TEMPLATE_NODE(
 //		"TemplateNode"
@@ -214,66 +238,77 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, new Section("","","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_LINK_REFERS_TO_PLACE(
 		"doc refers to place"
 		, new LinkRefersToPlaceCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_PLANT(
 		"Plant"
 		, new PlantCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		)
 , NEW_LINK_REFERS_TO_PLANT(
 		"doc refers to plant"
 		, new LinkRefersToPlantCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_ROLE(
 		"Role"
 		, new RoleCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		)
 , NEW_LINK_REFERS_TO_ROLE(
 		"doc refers to role"
 		, new LinkRefersToRoleCreateForm("","","")
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_TEXT_BIBLICAL_SOURCE(
 		"Biblical Text (Source)"
 		, new TextBiblicalSourceCreateForm("","","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_TEXT_BIBLICAL_TRANSLATION(
 		"Biblical Text (Translation)"
 		, new TextBiblicalTranslationCreateForm("","","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_TEXT_LITURGICAL_TRANSLATION(
 		"Liturgical Text (Translation)"
 		, new TextLiturgicalTranslationCreateForm("","","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_TEXT_LITURGICAL_SOURCE(
 		"Liturgical Text (Source)"
 		, new TextLiturgicalSourceCreateForm("","","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 , NEW_TOKEN_ANALYSIS(
 		"Token Analysis"
 		, new TokenAnalysisCreateForm("","")
 		, ENDPOINTS_DB_API.TOKEN_ANALYSIS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		)
 	;
 
@@ -281,6 +316,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 	public ENDPOINTS_DB_API endpoint;
 	public String name;
 	public RESTRICTION_FILTERS restriction;
+	public boolean pureOntology;
 	
 	/**
 	 * 
@@ -294,11 +330,13 @@ public enum NEW_FORM_CLASSES_DB_API {
 			 , AbstractModel obj
 			 , ENDPOINTS_DB_API endpoint
 			 , RESTRICTION_FILTERS restriction
+			 , boolean pureOntology
 			) {
 		this.name = name;
 		this.obj = obj;
 		this.endpoint = endpoint;
 		this.restriction = restriction;
+		this.pureOntology = pureOntology;
 	}
 	
 	public WsPaths toEndpointPaths() {
@@ -346,5 +384,5 @@ public enum NEW_FORM_CLASSES_DB_API {
 		}
 		return result;
 	}
-	
+
 }

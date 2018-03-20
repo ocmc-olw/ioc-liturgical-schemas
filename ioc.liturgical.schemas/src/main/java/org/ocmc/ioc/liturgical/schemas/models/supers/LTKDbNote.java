@@ -2,6 +2,7 @@ package org.ocmc.ioc.liturgical.schemas.models.supers;
 
 import com.google.gson.annotations.Expose;
 
+import org.jsoup.Jsoup;
 import org.ocmc.ioc.liturgical.schemas.annotations.UiWidget;
 import org.ocmc.ioc.liturgical.schemas.constants.Constants;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
@@ -16,8 +17,12 @@ import com.github.reinert.jjschema.Attributes;
 public class LTKDbNote extends LTKDb {
 
 	@UiWidget(Constants.UI_WIDGET_TEXTAREA)
-	@Attributes(id="top", required = false, description = "A note made about the text by a user")
+	@Attributes(id="top", required = false, description = "A note made about the text by a user, with formatting removed")
 	@Expose public String value = "";
+
+	@UiWidget(Constants.UI_WIDGET_TEXTAREA)
+	@Attributes(id="top", required = false, description = "A formatted note made about the text by a user")
+	@Expose public String valueFormatted = "";
 
 	@Attributes(id="bottom", readonly=true, required = false, description = "Sequence.  Used for sort order when listing instances of notes.")
 	@Expose public String seq = "";
@@ -64,7 +69,11 @@ public class LTKDbNote extends LTKDb {
 	}
 
 	public void setValue(String value) {
-		this.value = value;
+		try {
+			this.value = Jsoup.parse(value).text();
+		} catch (Exception e) {
+			this.value = value;
+		}
 	}
 
 	public String getSeq() {
@@ -73,6 +82,15 @@ public class LTKDbNote extends LTKDb {
 
 	public void setSeq(String seq) {
 		this.seq = seq;
+	}
+
+	public String getValueFormatted() {
+		return valueFormatted;
+	}
+
+	public void setValueFormatted(String valueFormatted) {
+		this.valueFormatted = valueFormatted;
+		this.setValue(valueFormatted);
 	}
 
 

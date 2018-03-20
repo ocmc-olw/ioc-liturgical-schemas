@@ -22,6 +22,11 @@ public class Constants {
 	public static final String GITHUB = "github";
 	public static final String REPOS = "repos";
 
+	public static final String LIBRARY_BIBLIOGRAPHY = "en_sys_bibliography";
+	public static final String TOPIC_BIBLIOGRAPHY_ENTRY = "entry";
+
+	public static final String LIBRARY_ABBREVIATION = "en_sys_abbreviation";
+
 	public static final String INTERNAL_DATASTORE_API_PATH = "/admin/api/v1";
 
 	public static final String EXTERNAL_LITURGICAL_DAY_PROPERTIES_API_PATH = "/ldp/api/v1";

@@ -303,4 +303,22 @@ public enum RELATIONSHIP_TYPES {
 		result.add(HAS_NOTE);
 		return result;
 	}
+	
+	public static RELATIONSHIP_TYPES forName(String name) {
+		for (RELATIONSHIP_TYPES t : RELATIONSHIP_TYPES.values()) {
+			if (t.typename.equals(name)) {
+				return t;
+			}
+		}
+		return null;
+	}
+
+	public static TOPICS topicForName(String name) {
+		for (RELATIONSHIP_TYPES t : RELATIONSHIP_TYPES.values()) {
+			if (t.typename.equals(name)) {
+				return t.topic;
+			}
+		}
+		return null;
+	}
 }

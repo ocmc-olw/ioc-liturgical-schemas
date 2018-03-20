@@ -102,6 +102,12 @@ public enum ENDPOINTS_DB_API {
 			, "ontology"
 			,"Endpoint for dropdown values to search properties of ontology entries."
 			)
+	, DROPDOWNS_ONTOLOGY_ENTITIES(
+			"ontologyentities"
+			, ENDPOINT_TYPES.DROPDOWN
+			, "ontologyentities"
+			,"Endpoint for dropdown values for ontology entities."
+			)
 	, DROPDOWNS_RELATIONSHIPS(
 			"relationships"
 			, ENDPOINT_TYPES.DROPDOWN
