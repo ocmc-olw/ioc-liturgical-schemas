@@ -16,41 +16,46 @@ import com.google.gson.JsonArray;
  */
 public enum NOTE_TYPES {
 
-ADVICE_FOR_TRANSLATORS("TNAFT","Advice - for Translators")
-, ADVICE_FOR_TRANSLATION_CHECKERS("TNAFC","Advice - for Translation Checkers")
-, CULTURE("TNAC","Culture")
-, GENERAL("TNGEO","General")
-, GEOGRAPHY("TNGEO","Geography")
-, GRAMMAR("TNLINGGRAM","Grammar")
-, HISTORY("TNH","History")
-, LITURGICAL_USAGE("TNLITURGYUSE","Liturgical Usage")
-, MEANING("TNMEAN","Meaning")
-, REF_TO_ANIMAL("TNONTOANIMAL", "Reference - to Animal")
-, REF_TO_BEING("TNONTOBEING", "Reference - to Being")
-, REF_TO_BIBLE("TNONTOBIBLE", "Reference - to Bible")
-, REF_TO_CONCEPT("TNONTOCONC", "Reference - to Concept")
-, REF_TO_EVENT("TNONTOEVENT", "Reference - to Event")
-, REF_TO_GOD("TNONTOGOD", "Reference - to God")
-, REF_TO_GROUP("TNONTOGROUP", "Reference - to Group")
-, REF_TO_HUMAN("TNONTOHUM", "Reference - to Human")
-, REF_TO_MYSTERY("TNONTOMYS", "Reference - to Mystery")
-, REF_TO_OBJECT("TNONTOOBJ", "Reference - to Object")
-, REF_TO_PLACE("TNONTOPLACE", "Reference - to Place")
-, REF_TO_PLANT("TNONTOPLANT", "Reference - to Plant")
-, REF_TO_ROLE("TNONTOROLE", "Reference - to Role")
-, TRANSLATORS_NOTE("TNTN","Translator's Note")
-, VOCABULARY("TNV","Vocabulary")
+ADVICE_FOR_TRANSLATORS("TNAFT","Advice - for Translators", false)
+, ADVICE_FOR_TRANSLATION_CHECKERS("TNAFC","Advice - for Translation Checkers", false)
+, CULTURE("TNAC","Culture", false)
+, GENERAL("TNGEO","General", false)
+, GEOGRAPHY("TNGEO","Geography", false)
+, GRAMMAR("TNLINGGRAM","Grammar", false)
+, LEMMA("TNLEMMA","Lemma", true)
+, HISTORY("TNH","History", false)
+, LITURGICAL_USAGE("TNLITURGYUSE","Liturgical Usage", false)
+, MEANING("TNMEAN","Meaning", false)
+, REF_TO_ANIMAL("TNONTOANIMAL", "Reference - to Animal", false)
+, REF_TO_BEING("TNONTOBEING", "Reference - to Being", false)
+, REF_TO_BIBLE("TNONTOBIBLE", "Reference - to Bible", false)
+, REF_TO_CONCEPT("TNONTOCONC", "Reference - to Concept", false)
+, REF_TO_EVENT("TNONTOEVENT", "Reference - to Event", false)
+, REF_TO_GOD("TNONTOGOD", "Reference - to God", false)
+, REF_TO_GROUP("TNONTOGROUP", "Reference - to Group", false)
+, REF_TO_HUMAN("TNONTOHUM", "Reference - to Human", false)
+, REF_TO_MYSTERY("TNONTOMYS", "Reference - to Mystery", false)
+, REF_TO_OBJECT("TNONTOOBJ", "Reference - to Object", false)
+, REF_TO_PLACE("TNONTOPLACE", "Reference - to Place", false)
+, REF_TO_PLANT("TNONTOPLANT", "Reference - to Plant", false)
+, REF_TO_ROLE("TNONTOROLE", "Reference - to Role", false)
+, TRANSLATORS_NOTE("TNTN","Translator's Note", false)
+, UNIT("TNUNIT","Unit", false)
+, VOCABULARY("TNV","Vocabulary", false)
 ;
 
 	public String keyname = "";
 	public String fullname = "";
+	public boolean bible_in_liturgy = false;
 	
 	private NOTE_TYPES(
 			String keyname
 			, String fullname
+			, boolean bil
 			) {
 		this.keyname = keyname;
 		this.fullname = fullname;
+		this.bible_in_liturgy = bil;
 	}
 
 	/**
@@ -84,9 +89,23 @@ ADVICE_FOR_TRANSLATORS("TNAFT","Advice - for Translators")
     public static List<DropdownItem> toDropdownList() {
     	List<DropdownItem> result = new ArrayList<DropdownItem>();
     	for (NOTE_TYPES e : NOTE_TYPES.values()) {
-    		result.add(new DropdownItem(e.fullname, e.name()));
+    		if (! e.bible_in_liturgy) {
+        		result.add(new DropdownItem(e.fullname, e.name()));
+    		}
     	}
     	return result;
     }
 		
+    public static List<DropdownItem> toDropdownBilList() {
+    	List<DropdownItem> result = new ArrayList<DropdownItem>();
+    	for (NOTE_TYPES e : NOTE_TYPES.values()) {
+    		if (e.bible_in_liturgy 
+    				|| e == NOTE_TYPES.REF_TO_BIBLE 
+    				|| e == NOTE_TYPES.UNIT
+    				) {
+        		result.add(new DropdownItem(e.fullname, e.name()));
+    		}
+    	}
+    	return result;
+    }
 }

@@ -32,18 +32,11 @@ public class ResultNewForms extends AbstractModel {
 	@Expose public Map<String,JsonObject> valueSchemas = new TreeMap<String,JsonObject>();
 	@Expose public Map<String,JsonObject> values = new TreeMap<String,JsonObject>();
 	@Expose public JsonObject domains;
-	public List<DropdownItem> getNoteTypesDropdown() {
-		return noteTypesDropdown;
-	}
-
-	public void setNoteTypesDropdown(List<DropdownItem> noteTypesDropdown) {
-		this.noteTypesDropdown = noteTypesDropdown;
-	}
-
 	@Expose public List<DropdownItem> ontologyTypesDropdown = new ArrayList<DropdownItem>();
 	@Expose public Map<String,JsonArray> ontologyDropdowns = new TreeMap<String,JsonArray>();
 	@Expose public List<JsonObject> formsDropdown = new ArrayList<JsonObject>();
 	@Expose public List<DropdownItem> noteTypesDropdown = new ArrayList<DropdownItem>();
+	@Expose public List<DropdownItem> noteTypesBilDropdown = new ArrayList<DropdownItem>();
 	@Expose public List<DropdownItem> liturgicalBooksDropdown = new ArrayList<DropdownItem>();
 	@Expose public List<DropdownItem> biblicalBooksDropdown = new ArrayList<DropdownItem>();
 	@Expose public List<DropdownItem> biblicalChaptersDropdown = new ArrayList<DropdownItem>();
@@ -314,4 +307,21 @@ public class ResultNewForms extends AbstractModel {
 	public void setLiturgicalBooksDropdown(List<DropdownItem> liturgicalBooksDropdown) {
 		this.liturgicalBooksDropdown = liturgicalBooksDropdown;
 	}
+	public List<DropdownItem> getNoteTypesDropdown() {
+		return noteTypesDropdown;
+	}
+
+	public void setNoteTypesDropdown(List<DropdownItem> noteTypesDropdown) {
+		this.noteTypesDropdown = noteTypesDropdown;
+	}
+
+	public List<DropdownItem> getNoteTypesBilDropdown() {
+		return noteTypesBilDropdown;
+	}
+
+	public void setNoteTypesBilDropdown(List<DropdownItem> noteTypesBilDropdown) {
+		this.noteTypesBilDropdown = noteTypesBilDropdown;
+	}
+
+
 }
