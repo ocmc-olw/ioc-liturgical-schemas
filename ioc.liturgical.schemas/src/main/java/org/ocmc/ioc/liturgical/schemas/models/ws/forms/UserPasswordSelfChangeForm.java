@@ -12,27 +12,28 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
 import com.github.reinert.jjschema.Attributes;
 
 /**
- * This class provides a POJO for use in web form
+ * This class provides a POJO for use in web forms to create or update a user
  * @author mac002
  *
  */
-@Attributes(title = "User Password Change", description = "Form to Change a User's Password")
-public class UserPasswordChangeForm extends AbstractModel {
-	@Attributes(readonly=true, description="id used to login to system", minLength=FormFieldLengths.USERNAME_MIN)
+@Attributes(title = "Self-Service User Password Change", description = "")
+public class UserPasswordSelfChangeForm extends AbstractModel {
+	@Attributes(readonly=true, description="", minLength=FormFieldLengths.USERNAME_MIN)
 	@Expose public String username = "";
 	
 	@UiWidget(Constants.UI_WIDGET_PASSWORD)
-	@Attributes(required=true, description=FormRegExConstants.PASSWORD_DESCRIPTION, pattern=FormRegExConstants.PASSWORD_PATTERN)
+	@Attributes(required=true, description="", pattern=FormRegExConstants.PASSWORD_PATTERN)
+	@Expose public String currentPassword = "";
+	
+	@UiWidget(Constants.UI_WIDGET_PASSWORD)
+	@Attributes(required=true, description="New " + FormRegExConstants.PASSWORD_DESCRIPTION, pattern=FormRegExConstants.PASSWORD_PATTERN)
 	@Expose public String password = "";
 	
 	@UiWidget(Constants.UI_WIDGET_PASSWORD)
 	@Attributes(required=true, description="reenter password", pattern=FormRegExConstants.PASSWORD_PATTERN)
 	@Expose public String passwordReenter = "";
 	
-	@Attributes(readonly=true, description="user must change password after first login")
-	@Expose public boolean requiresChangeAfterLogin = true;
-		
-	public UserPasswordChangeForm() {
+	public UserPasswordSelfChangeForm() {
 		super();
 		this.serialVersionUID = 1.1;
 	}
@@ -76,11 +77,11 @@ public class UserPasswordChangeForm extends AbstractModel {
 	private boolean passwordsMatch() {
 		return (this.password.length() == this.passwordReenter.length() && this.password.startsWith(this.passwordReenter));
 	}
-	public boolean isRequiresChangeAfterLogin() {
-		return requiresChangeAfterLogin;
+	public String getCurrentPassword() {
+		return currentPassword;
 	}
-	public void setRequiresChangeAfterLogin(boolean requiresChangeAfterLogin) {
-		this.requiresChangeAfterLogin = requiresChangeAfterLogin;
+	public void setCurrentPassword(String currentPassword) {
+		this.currentPassword = currentPassword;
 	}
 	
 }

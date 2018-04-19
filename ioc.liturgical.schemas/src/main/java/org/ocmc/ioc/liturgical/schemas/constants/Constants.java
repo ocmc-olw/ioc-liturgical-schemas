@@ -15,6 +15,9 @@ public class Constants {
 	public static final String DOMAIN_DELIMITER = "_";
 	public static final String DOMAIN_SPLITTER = "_";
 	
+	public static final String LIBRARY_MESSAGES = "en_sys_messages";
+	public static final String TOPIC_MESSAGES = "digest";
+
 	public static final String LIBRARY_SYNCH = "en_sys_synch";
 	public static final String TOPIC_SYNCH = "cypher";
 	public static final String TOPIC_SYNCH_LOG = "synch";

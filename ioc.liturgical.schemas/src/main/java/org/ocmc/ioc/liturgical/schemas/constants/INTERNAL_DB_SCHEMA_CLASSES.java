@@ -15,6 +15,7 @@ import org.ocmc.ioc.liturgical.schemas.models.ws.forms.DomainCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.ws.forms.LabelCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.ws.forms.UserCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.ws.forms.UserPasswordChangeForm;
+import org.ocmc.ioc.liturgical.schemas.models.ws.forms.UserPasswordSelfChangeForm;
 import org.ocmc.ioc.liturgical.schemas.models.ws.response.LiturgicalDayPropertiesForm;
 import org.ocmc.ioc.liturgical.schemas.models.ws.response.Login;
 import org.ocmc.ioc.liturgical.schemas.models.db.returns.LTKVString;
@@ -39,6 +40,7 @@ public enum INTERNAL_DB_SCHEMA_CLASSES {
 	, USER_CONTACT(new UserContact())
 	, USER_HASH(new UserHash())
 	, USER_PASSWORD_CHANGE(new UserPasswordChangeForm())
+	, USER_PASSWORD_SELF_CHANGE(new UserPasswordSelfChangeForm())
 	, USER_NEW(new UserCreateForm())
 	, USER_STATISTICS(new UserStatistics())
 	, UTILITY(new Utility())
