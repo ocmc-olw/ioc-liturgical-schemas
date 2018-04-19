@@ -8,7 +8,7 @@ import com.google.gson.annotations.Expose;
 
 public class Message extends LTKLite {
 	
-	private static String schema = Transaction.class.getSimpleName();
+	private static String schema = Message.class.getSimpleName();
 	private static double version = 1.1;
 
 	@Expose public String message = null;
@@ -24,6 +24,7 @@ public class Message extends LTKLite {
 				, schema
 				, version
 				);
+		this.message = message;
 	}
 
 	public String getMessage() {
