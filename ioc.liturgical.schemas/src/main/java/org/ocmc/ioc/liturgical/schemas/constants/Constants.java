@@ -25,6 +25,8 @@ public class Constants {
 	public static final String GITHUB = "github";
 	public static final String REPOS = "repos";
 
+	public static final String TOPIC_CALENDAR = "calendar";
+	
 	public static final String LIBRARY_BIBLIOGRAPHY = "en_sys_bibliography";
 	public static final String TOPIC_BIBLIOGRAPHY_ENTRY = "entry";
 

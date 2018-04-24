@@ -85,8 +85,12 @@ public class TextLiturgical extends LTKDb {
 			if (! this.seq.startsWith(this.library)) {
 				try {
 					// if the sequence is using a different library, e.g. gr_gr_cog, convert it to this instance's library
-					IdManager idManager = new IdManager(this.seq);
-					this.setSeq(this.id + "~" + idManager.getTopic() + "~" + idManager.getKey());
+					if (this.seq == null || this.seq.length() == 0) {
+						this.setSeq(this.id);
+					} else {
+						IdManager idManager = new IdManager(this.seq);
+						this.setSeq(this.id + "~" + idManager.getTopic() + "~" + idManager.getKey());
+					}
 				} catch (Exception e) {
 					ErrorUtils.report(logger, e);
 				}

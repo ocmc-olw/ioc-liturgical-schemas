@@ -242,7 +242,11 @@ public class IdManager {
 		if (this.topicParts.size() > 1) {
 			return Joiner.on(Constants.ID_DELIMITER).join(this.topicParts);
 		} else {
-			return this.topicParts.get(0);
+			if (this.topicParts == null || this.topicParts.size() == 0) {
+				return "";
+			} else {
+				return this.topicParts.get(0);
+			}
 		}
 	}
 	
@@ -661,16 +665,15 @@ public String getOslwSetDomain(COLUMNS column) {
 		return library + "~" + topic + "~" + GeneralUtils.padNumber("L", 5, value);
 	}
 	
-	/**
-	 * Get the locale for this ID's language code.
-	 * If not found, uses English (en)
-	 * @return the local for this language
-	 */
 	public Locale getLocale() {
-		Locale result = Locale.forLanguageTag("en");
+		Locale result = new Locale("en","US");
 		if (this.libraryLanguage!= null && this.libraryLanguage.length() > 0) {
 			try {
-				result = Locale.forLanguageTag(IsoLangThreeToTwo.threeToTwo(this.libraryLanguage));
+				result = new Locale(
+						IsoLangThreeToTwo.threeToTwo(
+								this.libraryLanguage)
+								, this.libraryCountry
+						);
 			} catch (Exception e) {
 				ErrorUtils.report(logger, e);
 			}
@@ -683,6 +686,7 @@ public String getOslwSetDomain(COLUMNS column) {
 	 * If not found, it will be formatted for English.
 	 * Note, per the Java Locale documentation:
 	 * When a language has both an alpha-2 code and an alpha-3 code, the alpha-2 code must be used.
+	 * See also org.ocmc.ioc.liturgical.schemas.iso.lang.LocaleDate, which has more capabilities.
 	 * @param year to use
 	 * @param month to use
 	 * @param day to use
@@ -703,6 +707,29 @@ public String getOslwSetDomain(COLUMNS column) {
 			ErrorUtils.report(logger, e);
 		}
 		return result;
+	}
+	
+	public static String dataKeyToId(String dataKey) {
+		StringBuffer result = new StringBuffer();
+		try {
+			String [] parts = dataKey.split(Constants.PIPE_SPLITTER);
+			if (parts.length == 2) {
+				String key = parts[1];
+				parts = parts[0].split(Constants.DOMAIN_DELIMITER);
+				if (parts.length == 4) {
+					String topic = parts[0];
+					String library = parts[1] + "_" + parts[2] + "_" + parts[3];
+					result.append(library);
+					result.append(Constants.ID_DELIMITER);
+					result.append(topic);
+					result.append(Constants.ID_DELIMITER);
+					result.append(key);
+				}
+			}
+		} catch (Exception e) {
+			ErrorUtils.report(logger, e);
+		}
+		return result.toString();
 	}
 	
 }
