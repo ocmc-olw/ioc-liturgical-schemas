@@ -1,7 +1,34 @@
 package org.ocmc.ioc.liturgical.schemas.constants;
 
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
+import org.ocmc.ioc.liturgical.schemas.models.supers.BibliographyEntry;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.WsPaths;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryArticle;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryBook;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryBookinbook;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryBooklet;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryCollection;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryInbook;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryIncollection;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryInproceedings;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryInreference;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryManual;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryMisc;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryMvbook;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryMvcollection;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryMvproceedings;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryMvreference;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryOnline;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryPatent;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryPeriodical;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryProceedings;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryReference;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryReport;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntrySuppbook;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntrySuppcollection;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntrySuppperiodical;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryThesis;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryUnpublished;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.ConcordanceLine;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.WordAnalysis;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.notes.TextualNote;
@@ -94,6 +121,188 @@ public enum NEW_FORM_CLASSES_DB_API {
 			, RESTRICTION_FILTERS.NONE
 			, false
 			)
+,	NEW_BIBENTRY_ARTICLE(
+		"Article Bib Entry"
+		, new BibEntryArticle("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_BOOK(
+		"Book Bib Entry"
+		, new BibEntryBook("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_BOOK_IN_BOOK(
+		"Book in Book Bib Entry"
+		, new BibEntryBookinbook("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_BOOKLET(
+		"Booklet Bib Entry"
+		, new BibEntryBooklet("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_COLLECTION(
+		"Collection Bib Entry"
+		, new BibEntryCollection("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_INBOOK(
+		"In Book Bib Entry"
+		, new BibEntryInbook("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_INCOLLECTION(
+		"In Collection Bib Entry"
+		, new BibEntryIncollection("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_INPROCEEDINGS(
+		"In Proceedings Bib Entry"
+		, new BibEntryInproceedings("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_INREFERENCE(
+		"In Reference Bib Entry"
+		, new BibEntryInreference("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_MANUAL(
+		"Manual Bib Entry"
+		, new BibEntryManual("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_MISC(
+		"Micsellaneous Bib Entry"
+		, new BibEntryMisc("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_MVBOOK(
+		"Multi-Volume Book Bib Entry"
+		, new BibEntryMvbook("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_MVCOLLECTION(
+		"Multi-Volume Collection Bib Entry"
+		, new BibEntryMvcollection("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_MVPROCEEDINGS(
+		"Multi-Volume Proceedings Bib Entry"
+		, new BibEntryMvproceedings("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_MVREFERENCE(
+		"Multi-Volume Reference Bib Entry"
+		, new BibEntryMvreference("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_ONLINE(
+		"Online Bib Entry"
+		, new BibEntryOnline("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_PATENT(
+		"Patent Bib Entry"
+		, new BibEntryPatent("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_PERIODICAL(
+		"Periodical Bib Entry"
+		, new BibEntryPeriodical("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_PROCEEDINGS(
+		"Proceedings Bib Entry"
+		, new BibEntryProceedings("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_REFERENCE(
+		"Reference Bib Entry"
+		, new BibEntryReference("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_REPORT(
+		"Report Bib Entry"
+		, new BibEntryReport("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_SUPPBOOK(
+		"Book Supplement Bib Entry"
+		, new BibEntrySuppbook("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_SUPPCOLLECTION(
+		"Collection Supplement Bib Entry"
+		, new BibEntrySuppcollection("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_SUPPPERIODICAL(
+		"Periodical Supplement Bib Entry"
+		, new BibEntrySuppperiodical("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_THESIS(
+		"Thesis Bib Entry"
+		, new BibEntryThesis("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
+,	NEW_BIBENTRY_UNPUBLISHED(
+		"Unpublished Bib Entry"
+		, new BibEntryUnpublished("","")
+		, ENDPOINTS_DB_API.DOCS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		)
 , NEW_CONCEPT(
 		"Concept"
 		, new ConceptCreateForm("")

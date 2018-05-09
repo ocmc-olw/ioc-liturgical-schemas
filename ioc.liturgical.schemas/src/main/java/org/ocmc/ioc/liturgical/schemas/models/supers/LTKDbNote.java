@@ -2,6 +2,8 @@ package org.ocmc.ioc.liturgical.schemas.models.supers;
 
 import com.google.gson.annotations.Expose;
 
+import java.util.Comparator;
+
 import org.jsoup.Jsoup;
 import org.ocmc.ioc.liturgical.schemas.annotations.UiWidget;
 import org.ocmc.ioc.liturgical.schemas.constants.Constants;
@@ -14,7 +16,7 @@ import com.github.reinert.jjschema.Attributes;
  *
  */
 @Attributes(title = "LTKDbNote", description = "Abstract note Entry")
-public class LTKDbNote extends LTKDb {
+public class LTKDbNote extends LTKDb  {
 
 	@UiWidget(Constants.UI_WIDGET_TEXTAREA)
 	@Attributes(id="top", required = false, description = "A note made about the text by a user, with formatting removed")
@@ -27,6 +29,9 @@ public class LTKDbNote extends LTKDb {
 	@Attributes(id="bottom", readonly=true, required = false, description = "Sequence.  Used for sort order when listing instances of notes.")
 	@Expose public String seq = "";
 
+	@Attributes(id="bottom", readonly=false, required = false, description = "The ID of the note that this note follows.  This allow for the ordering of notes in a user specified order.")
+	@Expose public String followsNoteId = "";
+
 	public LTKDbNote(
 			String library
 			, String topic
@@ -34,7 +39,7 @@ public class LTKDbNote extends LTKDb {
 			, String schema
 			, double serialVersion
 			, TOPICS ontologyTopic
-			) {
+			)  {
 		super(
 				library
 				, topic
@@ -93,5 +98,23 @@ public class LTKDbNote extends LTKDb {
 		this.setValue(valueFormatted);
 	}
 
-
+		public static Comparator<LTKDbNote> noteTopicComparator = new Comparator<LTKDbNote>() {
+		public int compare(LTKDbNote note1, LTKDbNote note2) {
+			String topic1 = note1.getTopic();
+			String topic2 = note2.getTopic();
+		      
+		      //ascending order
+		      return topic1.compareTo(topic2);
+		    }
+		};
+		public static Comparator<LTKDbNote> noteTopicComparatorDesc = new Comparator<LTKDbNote>() {
+			public int compare(LTKDbNote note1, LTKDbNote note2) {
+		    	
+				String topic1 = note1.getTopic();
+				String topic2 = note2.getTopic();
+			      
+			      //descending order
+			      return topic2.compareTo(topic1);
+			    }
+			};
 }

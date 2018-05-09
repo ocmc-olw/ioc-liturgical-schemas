@@ -2,8 +2,10 @@ package org.ocmc.ioc.liturgical.schemas.constants.nlp;
 
 public enum DEPENDENCY_LABELS {
 	ADV("ADV","adverb","")
+	, ADV_CO("ADV_CO","adverb - coordinated","")
 	, APOS("APOS","apposing element","PM")
 	, ATR("ATR","attributive","")
+	, ATR_CO("ATR_CO","attributive - coordinated","")
 	, ATV("ATV","complement","")
 	, AuxC("AuxC","conjunction","CONJ")
 	, AuxG("AuxG","bracketing punctuation","")
@@ -16,11 +18,15 @@ public enum DEPENDENCY_LABELS {
 	, COORD("COORD","coordinator","CONJ")
 	, ExD("ExD","ellipsis","")
 	, OBJ("OBJ","object","")
+	, OBJ_CO("OBJ_CO","object - coordinated","")
 	, OCOMP("OCOMP","object complement","")
 	, PNOM("PNOM","predicate nominal","")
 	, PRED("PRED","predicate","")
+	, PRED_CO("PRED_CO","predicate - coordinated","")
 	, ROOT("ROOT","root of a dependency tree","")
 	, SBJ("SBJ","subject","")
+	, SBJ_CO("SUB_CO","adverb - coordinated","")
+	, SCAN("SCAN","scansion","")
 	, ST("ST","sub-tree","")
 	, TBD("TBD","to-be-determined","tbd")
 	;

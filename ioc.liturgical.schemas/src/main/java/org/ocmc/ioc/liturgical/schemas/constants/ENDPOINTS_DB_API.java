@@ -18,18 +18,6 @@ public enum ENDPOINTS_DB_API {
 			, "AgesIndex"
 			,"Endpoint for an index of available AGES HTML files"
 			)
-	, AGES_PDF(
-			"agespdf"
-			, ENDPOINT_TYPES.PDF
-			, "AgesPdf"
-			,"Endpoint for an AGES html file converted to a PDF file"
-			)
-	, AGES_TEX(
-			"agestex"
-			, ENDPOINT_TYPES.TEX
-			, "AgesTex"
-			,"Endpoint for an AGES html file converted to a Tex file"
-			)
 	, AGES_READ_ONLY_TEMPLATE(
 			"agesreadonlytemplate"
 			, ENDPOINT_TYPES.HTML
@@ -168,6 +156,12 @@ public enum ENDPOINTS_DB_API {
 			, "LDOM"
 			,"Endpoint for Liturgical Document Object Model"
 			)
+	, LITURGICAL_TEXT_DOWNLOADS(
+			"textdownloads"
+			, ENDPOINT_TYPES.HTML
+			, "textdownloads"
+			,"Endpoint for Liturgical text downloads"
+			)
 	, LINKS(
 			""
 			, ENDPOINT_TYPES.RELATIONSHIP
@@ -270,6 +264,12 @@ public enum ENDPOINTS_DB_API {
 			, "ontology"
 			,"Endpoint for ontology entries"
 			)
+	, PDF(
+			"agespdf"
+			, ENDPOINT_TYPES.PDF
+			, "AgesPdf"
+			,"Endpoint for data (e.g., an AGES html file) converted to a PDF file"
+			)
 	, PLACES(
 			"places"
 			, ENDPOINT_TYPES.ONTOLOGY
@@ -311,6 +311,12 @@ public enum ENDPOINTS_DB_API {
 			, ENDPOINT_TYPES.NODE
 			, "Text"
 			,"Endpoint for text docs"
+			)
+	, TEX(
+			"agestex"
+			, ENDPOINT_TYPES.TEX
+			, "AgesTex"
+			,"Endpoint for data (e.g., an AGES html file) converted to a Tex file"
 			)
 	, TEXT_ANALYSIS(
 			"text/analysis"

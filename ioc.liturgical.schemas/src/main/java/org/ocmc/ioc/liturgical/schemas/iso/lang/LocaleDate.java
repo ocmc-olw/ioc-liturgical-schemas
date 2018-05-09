@@ -83,7 +83,7 @@ public class LocaleDate {
 					.withLocale(this.locale);
 			this.dayOfWeekShort = date.format(pattern);
 			pattern = DateTimeFormatter
-					.ofPattern("e MMMM (EEEE)")
+					.ofPattern("d MMMM (EEEE)")
 					.withLocale(this.locale);
 			this.dayOfWeekAlt = date.format(pattern);
 			// month year

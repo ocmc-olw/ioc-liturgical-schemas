@@ -1,6 +1,7 @@
 package org.ocmc.ioc.liturgical.schemas.models.db.docs.notes;
 
 import java.time.Instant;
+import java.util.Comparator;
 
 import org.ocmc.ioc.liturgical.schemas.constants.NOTE_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
@@ -186,4 +187,36 @@ public class TextualNote extends LTKDbNote {
 		this.ontologicalEntityId = ontologicalEntityId;
 	}
 	
+	public static Comparator<TextualNote> noteLiturgicalLemmaComparator = new Comparator<TextualNote>() {
+		public int compare(TextualNote note1, TextualNote note2) {
+			String topic1 = note1.getLiturgicalLemma();
+			String topic2 = note2.getLiturgicalLemma();
+		      //ascending order
+		      return topic1.compareTo(topic2);
+		}
+	};
+	public static Comparator<TextualNote> noteLiturgicalScopeComparator = new Comparator<TextualNote>() {
+		public int compare(TextualNote note1, TextualNote note2) {
+			String topic1 = note1.getLiturgicalScope();
+			String topic2 = note2.getLiturgicalScope();
+		      //ascending order
+		      return topic1.compareTo(topic2);
+		}
+	};
+	public static Comparator<TextualNote> noteTypeLiturgicalScopeComparator = new Comparator<TextualNote>() {
+		public int compare(TextualNote note1, TextualNote note2) {
+			String topic1 = note1.getNoteType().fullname + note1.getLiturgicalScope();
+			String topic2 = note2.getNoteType().fullname + note2.getLiturgicalScope();
+		      //ascending order
+		      return topic1.compareTo(topic2);
+		}
+	};
+	public static Comparator<TextualNote> noteTypeLiturgicalLemmaComparator = new Comparator<TextualNote>() {
+		public int compare(TextualNote note1, TextualNote note2) {
+			String topic1 = note1.getNoteType() + note1.getLiturgicalLemma();
+			String topic2 = note2.getNoteType() + note2.getLiturgicalLemma();
+		      //ascending order
+		      return topic1.compareTo(topic2);
+		}
+	};
 }

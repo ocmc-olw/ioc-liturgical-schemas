@@ -85,7 +85,7 @@ public enum GRAMMAR_ABBREVIATIONS {
 	,SUP("SUP",  "", "", "", "", "superlative")
 	,SYM("SYM",  "", "", "", "SYM", "symbol")
 	,VERB("VERB",  "", "2", "v", "VB", "verb")
-	,VERB_PST("VERB",  "", "2", "v", "VBD", "verb, past tense")
+	,VERB_PST("VERB_PST",  "", "2", "v", "VBD", "verb, past tense")
 	,VERB_PRS_PART("VERB.PRS.PART",  "", "2", "v", "VBG", "verb, present participle or gerund")
 	,VERB_PST_PART("VERB.PST.PART",  "", "2", "v", "VBG", "verb, past participle")
 	,VERB_PST_NOT_P3("VERB.PST",  "", "2", "v", "VBP", "verb, present tense, not 3rd person singular")

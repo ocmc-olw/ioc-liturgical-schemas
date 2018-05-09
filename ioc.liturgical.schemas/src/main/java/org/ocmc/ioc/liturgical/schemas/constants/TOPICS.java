@@ -61,6 +61,11 @@ public enum TOPICS {
 			, "A being that is a living organizm capable of independent movement.",
 			TOPICS.BEING
 			)
+	, BIBLIOGRAPHY(
+			"Biography"
+			,"A bibliographical entry."
+			, TOPICS.ROOT
+			)
 	, CONCEPT(
 			"Concept"
 			,"An abstract concept about something."

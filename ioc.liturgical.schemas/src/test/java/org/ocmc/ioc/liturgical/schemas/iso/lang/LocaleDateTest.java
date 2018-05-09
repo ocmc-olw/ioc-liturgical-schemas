@@ -14,8 +14,8 @@ public class LocaleDateTest {
 		String dataKey = "sy.m06.d10_spa_GT_odg|cl.S01.commemoration.text";
 		IdManager idManager = new IdManager(IdManager.dataKeyToId(dataKey));
 		Locale locale = idManager.getLocale();
-		LocaleDate localeDate = new LocaleDate(locale, "2018", "4","2");
-		assertTrue(localeDate.getDateFull().equals("lunes 2 de abril de 2018"));
+		LocaleDate localeDate = new LocaleDate(locale, "2018", "6","1");
+		assertTrue(localeDate.getDateFull().equals("viernes 1 de junio de 2018"));
 	}
 
 }

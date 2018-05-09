@@ -90,6 +90,7 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbGenerationUnit;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKLink;
 import org.ocmc.ioc.liturgical.schemas.models.DropdownItem;
 import org.ocmc.ioc.liturgical.schemas.models.ModelHelpers;
+import org.ocmc.ioc.liturgical.schemas.models.bibliography.*;
 
 /**
  * Enumerates classes that have schemas for storing in the database
@@ -105,6 +106,110 @@ public enum SCHEMA_CLASSES {
 			new BeingCreateForm(" ")
 			, new Being(" ")
 			)
+	, BibEntryArticle(
+	new BibEntryArticle(" "," ")
+	, new BibEntryArticle(" "," ")
+	)
+	, BibEntryBook(
+	new BibEntryBook(" "," ")
+	, new BibEntryBook(" "," ")
+	)
+	, BibEntryMvbook(
+	new BibEntryMvbook(" "," ")
+	, new BibEntryMvbook(" "," ")
+	)
+	, BibEntryInbook(
+	new BibEntryInbook(" "," ")
+	, new BibEntryInbook(" "," ")
+	)
+	, BibEntryBookinbook(
+	new BibEntryBookinbook(" "," ")
+	, new BibEntryBookinbook(" "," ")
+	)
+	, BibEntrySuppbook(
+	new BibEntrySuppbook(" "," ")
+	, new BibEntrySuppbook(" "," ")
+	)
+	, BibEntryBooklet(
+	new BibEntryBooklet(" "," ")
+	, new BibEntryBooklet(" "," ")
+	)
+	, BibEntryCollection(
+	new BibEntryCollection(" "," ")
+	, new BibEntryCollection(" "," ")
+	)
+	, BibEntryMvcollection(
+	new BibEntryMvcollection(" "," ")
+	, new BibEntryMvcollection(" "," ")
+	)
+	, BibEntryIncollection(
+	new BibEntryIncollection(" "," ")
+	, new BibEntryIncollection(" "," ")
+	)
+	, BibEntrySuppcollection(
+	new BibEntrySuppcollection(" "," ")
+	, new BibEntrySuppcollection(" "," ")
+	)
+	, BibEntryManual(
+	new BibEntryManual(" "," ")
+	, new BibEntryManual(" "," ")
+	)
+	, BibEntryMisc(
+	new BibEntryMisc(" "," ")
+	, new BibEntryMisc(" "," ")
+	)
+	, BibEntryOnline(
+	new BibEntryOnline(" "," ")
+	, new BibEntryOnline(" "," ")
+	)
+	, BibEntryPatent(
+	new BibEntryPatent(" "," ")
+	, new BibEntryPatent(" "," ")
+	)
+	, BibEntryPeriodical(
+	new BibEntryPeriodical(" "," ")
+	, new BibEntryPeriodical(" "," ")
+	)
+	, BibEntrySuppperiodical(
+	new BibEntrySuppperiodical(" "," ")
+	, new BibEntrySuppperiodical(" "," ")
+	)
+	, BibEntryProceedings(
+	new BibEntryProceedings(" "," ")
+	, new BibEntryProceedings(" "," ")
+	)
+	, BibEntryMvproceedings(
+	new BibEntryMvproceedings(" "," ")
+	, new BibEntryMvproceedings(" "," ")
+	)
+	, BibEntryInproceedings(
+	new BibEntryInproceedings(" "," ")
+	, new BibEntryInproceedings(" "," ")
+	)
+	, BibEntryReference(
+	new BibEntryReference(" "," ")
+	, new BibEntryReference(" "," ")
+	)
+	, BibEntryMvreference(
+	new BibEntryMvreference(" "," ")
+	, new BibEntryMvreference(" "," ")
+	)
+	, BibEntryInreference(
+	new BibEntryInreference(" "," ")
+	, new BibEntryInreference(" "," ")
+	)
+	, BibEntryReport(
+	new BibEntryReport(" "," ")
+	, new BibEntryReport(" "," ")
+	)
+	, BibEntryThesis(
+	new BibEntryThesis(" "," ")
+	, new BibEntryThesis(" "," ")
+	)
+	, BibEntryUnpublished(
+	new BibEntryUnpublished(" "," ")
+	, new BibEntryUnpublished(" "," ")
+	)
 	, CONCORDANCE_LINE(
 			new ConcordanceLine(" ",0,0," "," "," ")
 			, new ConcordanceLine(" ",0,0," "," "," ")

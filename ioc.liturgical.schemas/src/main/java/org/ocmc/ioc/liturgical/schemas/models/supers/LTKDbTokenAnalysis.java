@@ -272,7 +272,7 @@ public class LTKDbTokenAnalysis extends LTKDb {
 	        case ("INF"): {
 	          return this.getGrammarForInfinitive();
 	        }
-	        case ("PART"): {
+	        case ("PTCP"): {
 	          return this.getGrammarForParticiple();
 	        }
 	        case ("PRON"): {
