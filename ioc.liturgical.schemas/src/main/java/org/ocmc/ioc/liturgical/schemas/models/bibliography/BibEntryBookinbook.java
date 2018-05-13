@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Book in Book", description = "This type is similar to @inbook but intended for works originally published as a stand-alone book. A typical example are books reprinted in the collected works of an author")
 public class BibEntryBookinbook extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryBookinbook.class);

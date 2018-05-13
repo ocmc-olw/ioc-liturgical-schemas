@@ -61,7 +61,6 @@ public class EventCreateForm extends LTKOntologyCreateFormEntry {
 	public static void main(String [] args) {
 		EventCreateForm f = new EventCreateForm("");
 		f.setPrettyPrint(true);
-		System.out.println(f.toUiSchema());
 	}
 
 

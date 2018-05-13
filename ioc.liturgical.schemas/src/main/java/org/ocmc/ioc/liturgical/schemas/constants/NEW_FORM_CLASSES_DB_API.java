@@ -3,6 +3,7 @@ package org.ocmc.ioc.liturgical.schemas.constants;
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
 import org.ocmc.ioc.liturgical.schemas.models.supers.BibliographyEntry;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.WsPaths;
+import org.ocmc.ioc.liturgical.schemas.models.abbreviations.Abbreviation;
 import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryArticle;
 import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryBook;
 import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryBookinbook;
@@ -86,11 +87,20 @@ import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.UserNoteCreateForm;
  *
  */
 public enum NEW_FORM_CLASSES_DB_API {
-	NEW_ANIMAL(
-			"Animal"
+	ABBREVIATION(
+			"Abbreviation"
+			, new Abbreviation(" "," ", " ")
+			, ENDPOINTS_DB_API.DOCS
+			, RESTRICTION_FILTERS.NONE
+			, false
+			, true
+			)
+,	NEW_ANIMAL(
+			"Animal (Ontology)"
 			, new AnimalCreateForm("")
 			, ENDPOINTS_DB_API.DOCS
 			, RESTRICTION_FILTERS.NONE
+			, true
 			, true
 			)
 ,	NEW_LINK_REFERS_TO_ANIMAL(
@@ -99,12 +109,14 @@ public enum NEW_FORM_CLASSES_DB_API {
 			, ENDPOINTS_DB_API.LINKS
 			, RESTRICTION_FILTERS.NONE
 			, false
+			, false
 			)
 ,	NEW_BEING(
-		"Being"
+		"Being (Ontology)"
 		, new BeingCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		, true
 		)
 ,	NEW_LINK_REFERS_TO_BEING(
@@ -113,6 +125,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 			, ENDPOINTS_DB_API.LINKS
 			, RESTRICTION_FILTERS.NONE
 			, false
+			, false
 			)
 ,	NEW_LINK_REFERS_TO_BIBLICAL_TEXT(
 			"doc refers to biblical text"
@@ -120,194 +133,222 @@ public enum NEW_FORM_CLASSES_DB_API {
 			, ENDPOINTS_DB_API.LINKS
 			, RESTRICTION_FILTERS.NONE
 			, false
+			, false
 			)
 ,	NEW_BIBENTRY_ARTICLE(
-		"Article Bib Entry"
+		"Article (Bibliography Entry)"
 		, new BibEntryArticle("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_BOOK(
-		"Book Bib Entry"
+		"Book (Bibliography Entry)"
 		, new BibEntryBook("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_BOOK_IN_BOOK(
-		"Book in Book Bib Entry"
+		"Book in Book (Bibliography Entry)"
 		, new BibEntryBookinbook("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_BOOKLET(
-		"Booklet Bib Entry"
+		"Booklet (Bibliography Entry)"
 		, new BibEntryBooklet("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_COLLECTION(
-		"Collection Bib Entry"
+		"Collection (Bibliography Entry)"
 		, new BibEntryCollection("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_INBOOK(
-		"In Book Bib Entry"
+		"In Book (Bibliography Entry)"
 		, new BibEntryInbook("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_INCOLLECTION(
-		"In Collection Bib Entry"
+		"In Collection (Bibliography Entry)"
 		, new BibEntryIncollection("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_INPROCEEDINGS(
-		"In Proceedings Bib Entry"
+		"In Proceedings (Bibliography Entry)"
 		, new BibEntryInproceedings("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_INREFERENCE(
-		"In Reference Bib Entry"
+		"In Reference (Bibliography Entry)"
 		, new BibEntryInreference("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_MANUAL(
-		"Manual Bib Entry"
+		"Manual (Bibliography Entry)"
 		, new BibEntryManual("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_MISC(
-		"Micsellaneous Bib Entry"
+		"Micsellaneous (Bibliography Entry)"
 		, new BibEntryMisc("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_MVBOOK(
-		"Multi-Volume Book Bib Entry"
+		"Multi-Volume Book (Bibliography Entry)"
 		, new BibEntryMvbook("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_MVCOLLECTION(
-		"Multi-Volume Collection Bib Entry"
+		"Multi-Volume Collection (Bibliography Entry)"
 		, new BibEntryMvcollection("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_MVPROCEEDINGS(
-		"Multi-Volume Proceedings Bib Entry"
+		"Multi-Volume Proceedings (Bibliography Entry)"
 		, new BibEntryMvproceedings("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_MVREFERENCE(
-		"Multi-Volume Reference Bib Entry"
+		"Multi-Volume Reference (Bibliography Entry)"
 		, new BibEntryMvreference("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_ONLINE(
-		"Online Bib Entry"
+		"Online (Bibliography Entry)"
 		, new BibEntryOnline("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_PATENT(
-		"Patent Bib Entry"
+		"Patent (Bibliography Entry)"
 		, new BibEntryPatent("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_PERIODICAL(
-		"Periodical Bib Entry"
+		"Periodical (Bibliography Entry)"
 		, new BibEntryPeriodical("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_PROCEEDINGS(
-		"Proceedings Bib Entry"
+		"Proceedings (Bibliography Entry)"
 		, new BibEntryProceedings("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_REFERENCE(
-		"Reference Bib Entry"
+		"Reference (Bibliography Entry)"
 		, new BibEntryReference("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_REPORT(
-		"Report Bib Entry"
+		"Report (Bibliography Entry)"
 		, new BibEntryReport("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_SUPPBOOK(
-		"Book Supplement Bib Entry"
+		"Book Supplement (Bibliography Entry)"
 		, new BibEntrySuppbook("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_SUPPCOLLECTION(
-		"Collection Supplement Bib Entry"
+		"Collection Supplement (Bibliography Entry)"
 		, new BibEntrySuppcollection("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_SUPPPERIODICAL(
-		"Periodical Supplement Bib Entry"
+		"Periodical Supplement (Bibliography Entry)"
 		, new BibEntrySuppperiodical("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_THESIS(
-		"Thesis Bib Entry"
+		"Thesis (Bibliography Entry)"
 		, new BibEntryThesis("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 ,	NEW_BIBENTRY_UNPUBLISHED(
-		"Unpublished Bib Entry"
+		"Unpublished (Bibliography Entry)"
 		, new BibEntryUnpublished("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, true
 		)
 , NEW_CONCEPT(
-		"Concept"
+		"Concept (Ontology)"
 		, new ConceptCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		, true
 		)
 , NEW_CONCORDANCE_LINE(
@@ -316,6 +357,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, false
 		)
 , NEW_LINK_REFERS_TO_CONCEPT(
 		"doc refers to concept"
@@ -323,12 +365,14 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, false
 		)
 , NEW_EVENT(
-		"Event"
+		"Event (Ontology)"
 		, new EventCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		, true
 		)
 , NEW_LINK_REFERS_TO_EVENT(
@@ -337,6 +381,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, false
 		)
 , NEW_LINK_REFERS_TO_GOD(
 		"doc refers to God"
@@ -344,12 +389,14 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, false
 		)
 , NEW_GROUP(
-		"Group"
+		"Group (Ontology)"
 		, new GroupCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		, true
 		)
 , NEW_LINK_REFERS_TO_GROUP(
@@ -358,12 +405,14 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, false
 		)
 , NEW_HUMAN(
-		"Human"
+		"Human (Ontology)"
 		, new HumanCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		, true
 		)
 , NEW_LINK_REFERS_TO_HUMAN(
@@ -372,12 +421,14 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, false
 		)
 , NEW_MYSTERY(
-		"Mystery"
+		"Mystery (Ontology)"
 		, new MysteryCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		, true
 		)
 , NEW_LINK_REFERS_TO_MYSTERY(
@@ -386,12 +437,14 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, false
 		)
 , NEW_NOTE_TEXTUAL(
 		"Note (textual)"
 		, new TextualNote(" ", " ", " ")
 		, ENDPOINTS_DB_API.NOTES
 		, RESTRICTION_FILTERS.NONE
+		, false
 		, false
 		)
 , NEW_NOTE_USER(
@@ -400,12 +453,14 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, ENDPOINTS_DB_API.NOTES
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, false
 		)
 , NEW_OBJECT(
-		"Object"
+		"Object (Ontology)"
 		, new ObjectCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		, true
 		)
 , NEW_LINK_REFERS_TO_OBJECT(
@@ -414,6 +469,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, false
 		)
 , NEW_WORD_ANALYSIS(
 		"Word Analysis"
@@ -421,12 +477,14 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, ENDPOINTS_DB_API.WORD_ANALYSIS
 		, RESTRICTION_FILTERS.WS_ADMIN
 		, false
+		, false
 		)
 , NEW_PLACE(
-		"Place"
+		"Place (Ontology)"
 		, new PlaceCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		, true
 		)
 , NEW_TEMPLATE(
@@ -434,6 +492,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, new Template("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		, false
 		)
 //, NEW_TEMPLATE_NODE(
@@ -448,6 +507,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, false
 		)
 , NEW_LINK_REFERS_TO_PLACE(
 		"doc refers to place"
@@ -455,12 +515,14 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, false
 		)
 , NEW_PLANT(
-		"Plant"
+		"Plant (Ontology)"
 		, new PlantCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		, true
 		)
 , NEW_LINK_REFERS_TO_PLANT(
@@ -469,12 +531,14 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, false
 		)
 , NEW_ROLE(
-		"Role"
+		"Role (Ontology)"
 		, new RoleCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, true
 		, true
 		)
 , NEW_LINK_REFERS_TO_ROLE(
@@ -483,12 +547,14 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, ENDPOINTS_DB_API.LINKS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, false
 		)
 , NEW_TEXT_BIBLICAL_SOURCE(
 		"Biblical Text (Source)"
 		, new TextBiblicalSourceCreateForm("","","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		, false
 		)
 , NEW_TEXT_BIBLICAL_TRANSLATION(
@@ -497,12 +563,14 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, false
 		)
 , NEW_TEXT_LITURGICAL_TRANSLATION(
 		"Liturgical Text (Translation)"
 		, new TextLiturgicalTranslationCreateForm("","","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		, false
 		)
 , NEW_TEXT_LITURGICAL_SOURCE(
@@ -511,12 +579,14 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
+		, false
 		)
 , NEW_TOKEN_ANALYSIS(
 		"Token Analysis"
 		, new TokenAnalysisCreateForm("","")
 		, ENDPOINTS_DB_API.TOKEN_ANALYSIS
 		, RESTRICTION_FILTERS.NONE
+		, false
 		, false
 		)
 	;
@@ -526,6 +596,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 	public String name;
 	public RESTRICTION_FILTERS restriction;
 	public boolean pureOntology;
+	public boolean includeForSchemaEditor;
 	
 	/**
 	 * 
@@ -540,12 +611,14 @@ public enum NEW_FORM_CLASSES_DB_API {
 			 , ENDPOINTS_DB_API endpoint
 			 , RESTRICTION_FILTERS restriction
 			 , boolean pureOntology
+			 , boolean includeForSchemaEditor
 			) {
 		this.name = name;
 		this.obj = obj;
 		this.endpoint = endpoint;
 		this.restriction = restriction;
 		this.pureOntology = pureOntology;
+		this.includeForSchemaEditor = includeForSchemaEditor;
 	}
 	
 	public WsPaths toEndpointPaths() {

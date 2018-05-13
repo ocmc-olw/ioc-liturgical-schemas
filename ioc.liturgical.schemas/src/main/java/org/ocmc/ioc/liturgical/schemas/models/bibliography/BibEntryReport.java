@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Report", description = "A technical report, research report, or white paper published by a university or some other institution. Use the type field to specify the type of report. The sponsoring institution goes in the institution field.")
 public class BibEntryReport extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryReport.class);

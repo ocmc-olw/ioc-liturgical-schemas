@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Online", description = "An online resource. This entry type is intended for sources such as web sites which are intrinsically online resources. Note that all entry types support the url field. For example, when adding an article from an online journal, it may be preferable to use the @article type and its url field.")
 public class BibEntryOnline extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryOnline.class);

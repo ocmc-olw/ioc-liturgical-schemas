@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Unpublished", description = "A work with an author and a title which has not been formally published, such as a manuscript or the script of a talk. Use the fields howpublished and note to supply additional information in free format, if applicable.")
 public class BibEntryUnpublished extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryUnpublished.class);

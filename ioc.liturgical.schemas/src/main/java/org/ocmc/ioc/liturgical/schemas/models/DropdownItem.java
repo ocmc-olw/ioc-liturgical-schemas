@@ -1,6 +1,9 @@
 package org.ocmc.ioc.liturgical.schemas.models;
 
+import java.util.Comparator;
+
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
+import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDb;
 
 import com.google.gson.annotations.Expose;
 
@@ -9,7 +12,7 @@ import com.google.gson.annotations.Expose;
  * @author mac002
  *
  */
-public class DropdownItem extends AbstractModel {
+public class DropdownItem extends AbstractModel implements Comparable<DropdownItem>  {
 	@Expose String label = "";
 	@Expose String value = "";
 	
@@ -38,6 +41,7 @@ public class DropdownItem extends AbstractModel {
 		this.value = value;
 	}
 	
+
 	/**
 	 * 
 	 * @return the label for this dropdown item
@@ -67,6 +71,11 @@ public class DropdownItem extends AbstractModel {
 	 */
 	public void setValue(String value) {
 		this.value = value;
+	}
+
+	@Override
+	public int compareTo(DropdownItem o) {
+		return this.label.compareTo(o.label);
 	}
 
 }

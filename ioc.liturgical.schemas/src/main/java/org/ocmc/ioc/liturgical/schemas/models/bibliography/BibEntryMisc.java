@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Miscellaneous", description = "A fallback type for entries which do not fit into any other category. Use the field howpublished to supply publishing information in free format, if applicable. The field type may be useful as well.")
 public class BibEntryMisc extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryMisc.class);

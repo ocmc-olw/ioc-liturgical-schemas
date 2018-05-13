@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Patent", description = "A patent or patent request. The number or record token is given in the number field. Use the type field to specify the type and the location field to indicate the scope of the patent, if different from the scope implied by the type")
 public class BibEntryPatent extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryPatent.class);

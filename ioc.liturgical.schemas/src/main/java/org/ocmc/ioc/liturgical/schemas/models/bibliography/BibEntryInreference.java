@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "In Reference", description = "An article in a work of reference. This is a more specific variant of the generic @incollection entry type. The standard styles will treat this entry type as an alias for @incollection.")
 public class BibEntryInreference extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryInreference.class);

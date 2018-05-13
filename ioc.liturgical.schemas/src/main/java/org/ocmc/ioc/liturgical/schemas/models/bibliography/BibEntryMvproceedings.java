@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Multi-Volume Proceedings", description = "A multi-volume @proceedings entry. For backwards compatibility, multi-volume proceedings are also supported by the entry type @proceedings. However, it is advisable to make use of the dedicated entry type @mvproceedings")
 public class BibEntryMvproceedings extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryMvproceedings.class);

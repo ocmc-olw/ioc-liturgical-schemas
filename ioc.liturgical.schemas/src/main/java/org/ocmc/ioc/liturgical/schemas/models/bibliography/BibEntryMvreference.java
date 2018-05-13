@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Multi-Volume Reference", description = "A multi-volume @reference entry. The standard styles will treat this entry type as an alias for @mvcollection. For backwards compatibility, multi-volume references are also supported by the entry type @reference. However, it is advisable to make use of the dedicated entry type @mvreference.")
 public class BibEntryMvreference extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryMvreference.class);

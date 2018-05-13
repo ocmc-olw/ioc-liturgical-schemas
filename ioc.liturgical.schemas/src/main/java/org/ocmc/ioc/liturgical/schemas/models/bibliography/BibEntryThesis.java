@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Thesis", description = "A thesis written for an educational institution to satisfy the requirements for a degree. Use the type field to specify the type of thesis, e.g. Master's Thesis, Doctoral Thesis, Ph.D Dissertation.")
 public class BibEntryThesis extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryThesis.class);

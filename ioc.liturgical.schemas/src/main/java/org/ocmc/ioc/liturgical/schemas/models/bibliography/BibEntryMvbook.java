@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Multi-Volume Book", description = "A multi-volume @book. For backwards compatibility, multi-volume books are also supported by the entry type @book. However, it is advisable to make use of the dedicated entry type @mvbook")
 public class BibEntryMvbook extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryMvbook.class);

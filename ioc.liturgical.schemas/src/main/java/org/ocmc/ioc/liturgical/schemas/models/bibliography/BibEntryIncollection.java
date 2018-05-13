@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "In Collection", description = "A contribution to a collection which forms a self-contained unit with a distinct author and title. The author refers to the title, the editor to the booktitle, i. e., the title of the collection.")
 public class BibEntryIncollection extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryIncollection.class);

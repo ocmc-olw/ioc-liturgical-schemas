@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "In Proceedings", description = "An article in a conference proceedings. This type is similar to @incollection. Itsupports an optional organization field.")
 public class BibEntryInproceedings extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryInproceedings.class);

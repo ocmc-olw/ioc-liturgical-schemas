@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Booklet", description = "A book-like work without a formal publisher or sponsoring institution. Use the field howpublished to supply publishing information in free format, if applicable. The field type may be useful as well.")
 public class BibEntryBooklet extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryBooklet.class);

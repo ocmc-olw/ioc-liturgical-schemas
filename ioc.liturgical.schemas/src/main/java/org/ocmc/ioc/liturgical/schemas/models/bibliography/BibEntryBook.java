@@ -9,6 +9,7 @@ import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
 
+@Attributes(title = "Book", description = "A single-volume book with one or more authors where the authors share credit for the work as a whole. This entry type also covers the function of the @inbook type of traditional BibTeX")
 public class BibEntryBook extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryBook.class);

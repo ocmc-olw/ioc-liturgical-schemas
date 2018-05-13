@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Periodical", description = "An complete issue of a periodical, such as a special issue of a journal. The title of the periodical is given in the title field. If the issue has its own title in addition to the main title of the periodical, it goes in the issuetitle field")
 public class BibEntryPeriodical extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryPeriodical.class);

@@ -11,14 +11,22 @@ package org.ocmc.ioc.liturgical.schemas.constants;
  *
  */
 public enum ID_PART_TYPES {
-	BIBLICAL_BOOK_ABBREVIATION(
+	ABBREVIATION(
+			   Constants.TOPIC_BIBLIOGRAPHY_ENTRY
+			   , "A subclass of BibliographyEntry"
+			   )
+	, BIBLICAL_BOOK_ABBREVIATION(
 			"BiblicalBookAbbreviation"
 			, "The abbreviation of the name of the biblical book containing the verse."
 			)
-,	BIBLICAL_CHAPTER_VERSE(
-			"BiblicalChapterVerse"
-			, "The chapter and verse number of the biblical verse."
-			)
+	,	BIBLICAL_CHAPTER_VERSE(
+				"BiblicalChapterVerse"
+				, "The chapter and verse number of the biblical verse."
+				)
+   , BIBLIOGRAPHY(
+		   Constants.TOPIC_BIBLIOGRAPHY_ENTRY
+		   , "A subclass of BibliographyEntry"
+		   )
 	, ID_OF_SELECTED_BIBLICAL_VERSE(
 			"IdOfSelectedBiblicalVerse"
 			, "The ID from a user selected biblical verse."

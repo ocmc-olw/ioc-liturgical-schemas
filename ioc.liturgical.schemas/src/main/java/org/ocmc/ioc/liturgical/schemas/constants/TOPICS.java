@@ -19,6 +19,11 @@ import com.google.gson.JsonArray;
  */
 public enum TOPICS {
 	ROOT("Root", "The root node of the topics.", null)
+	, ABBREVIATION(
+			"Abbreviation"
+			,"An entry for an abbreviation or acronym."
+			, TOPICS.ROOT
+			)
 	, COMMENTS_ROOT(
 			"CommentsRoot"
 			, "The root node for comments about a text or a relationship."
@@ -62,7 +67,7 @@ public enum TOPICS {
 			TOPICS.BEING
 			)
 	, BIBLIOGRAPHY(
-			"Biography"
+			"Bibliography"
 			,"A bibliographical entry."
 			, TOPICS.ROOT
 			)

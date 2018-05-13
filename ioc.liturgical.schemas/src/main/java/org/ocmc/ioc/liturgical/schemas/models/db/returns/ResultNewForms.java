@@ -35,6 +35,7 @@ public class ResultNewForms extends AbstractModel {
 	@Expose public List<DropdownItem> ontologyTypesDropdown = new ArrayList<DropdownItem>();
 	@Expose public Map<String,JsonArray> ontologyDropdowns = new TreeMap<String,JsonArray>();
 	@Expose public List<JsonObject> formsDropdown = new ArrayList<JsonObject>();
+	@Expose public List<JsonObject> schemaEditorFormsDropdown = new ArrayList<JsonObject>();
 	@Expose public List<DropdownItem> noteTypesDropdown = new ArrayList<DropdownItem>();
 	@Expose public List<DropdownItem> noteTypesBilDropdown = new ArrayList<DropdownItem>();
 	@Expose public List<DropdownItem> liturgicalBooksDropdown = new ArrayList<DropdownItem>();
@@ -57,6 +58,9 @@ public class ResultNewForms extends AbstractModel {
 		status = new RequestStatus();
 	}
 	
+	public void addSchemaEditorForm(DropdownItem item) {
+		this.schemaEditorFormsDropdown.add(item.toJsonObject());
+	}
 	public void addSchema(String id, JsonObject schema) {
 		if (! valueSchemas.containsKey(id)) {
 			valueSchemas.put(id, schema);
@@ -321,6 +325,14 @@ public class ResultNewForms extends AbstractModel {
 
 	public void setNoteTypesBilDropdown(List<DropdownItem> noteTypesBilDropdown) {
 		this.noteTypesBilDropdown = noteTypesBilDropdown;
+	}
+
+	public List<JsonObject> getSchemaEditorFormsDropdown() {
+		return schemaEditorFormsDropdown;
+	}
+
+	public void setSchemaEditorFormsDropdown(List<JsonObject> schemaEditorFormsDropdown) {
+		this.schemaEditorFormsDropdown = schemaEditorFormsDropdown;
 	}
 
 

@@ -12,7 +12,13 @@ package org.ocmc.ioc.liturgical.schemas.constants;
  *
  */
 public enum ENDPOINTS_DB_API {
-	AGES_INDEX(
+	ABBREVIATION(
+			"abbreviation"
+			, ENDPOINT_TYPES.NODE
+			, "abbreviation"
+			,"Endpoint for abbreviations"
+			)
+	, AGES_INDEX(
 			"agesindex"
 			, ENDPOINT_TYPES.TABLE
 			, "AgesIndex"
@@ -72,6 +78,18 @@ public enum ENDPOINTS_DB_API {
 			, "domain"
 			,"Endpoint for domains."
 			)
+	, DROPDOWNS_ABBREVIATIONS(
+			"abbreviations"
+			, ENDPOINT_TYPES.DROPDOWN
+			, "abbreviations"
+			,"Endpoint for dropdown values for abbreviations."
+			)
+	, DROPDOWNS_BIBLIOGRAPHY(
+			"bibliography"
+			, ENDPOINT_TYPES.DROPDOWN
+			, "bibliography"
+			,"Endpoint for dropdown values for bibliographys."
+			)
 	, DROPDOWNS_DOMAINS(
 			"domains"
 			, ENDPOINT_TYPES.DROPDOWN
@@ -125,6 +143,18 @@ public enum ENDPOINTS_DB_API {
 			, ENDPOINT_TYPES.DROPDOWN
 			, "treebanks"
 			,"Endpoint for dropdown values to search treebanks."
+			)
+	, EXISTS(
+			"genericexists"
+			, ENDPOINT_TYPES.GENERIC
+			, "genericexists"
+			,"Endpoint for generic check of ID for any schema type to see if exists in database"
+			)
+	, GENERIC(
+			"generic"
+			, ENDPOINT_TYPES.GENERIC
+			, "generic"
+			,"Endpoint for generic searches for any schema type"
 			)
 	, GROUPS(
 			"groups"
@@ -293,6 +323,12 @@ public enum ENDPOINTS_DB_API {
 			, ENDPOINT_TYPES.TEMPLATE
 			, "Section"
 			,"Endpoint for template sections"
+			)
+	, SUGGESTIONS(
+			"suggestions"
+			, ENDPOINT_TYPES.NODE
+			, "suggestions"
+			,"Endpoint for suggestions used in a RichText editor in a browser"
 			)
 	, TABLES(
 			"tables"

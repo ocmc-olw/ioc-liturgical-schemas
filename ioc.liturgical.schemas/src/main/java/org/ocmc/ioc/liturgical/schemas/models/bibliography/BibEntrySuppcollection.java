@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Collection Supplement", description = "Supplemental material in a @collection. This type is similar to @suppbook but related to the @collection entry type. The standard styles will treat this entry type as an alias for @incollection.")
 public class BibEntrySuppcollection extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntrySuppcollection.class);

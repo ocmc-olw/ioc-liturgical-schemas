@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "In Book", description = "A part of a book which forms a self-contained unit with its own title.")
 public class BibEntryInbook extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryInbook.class);

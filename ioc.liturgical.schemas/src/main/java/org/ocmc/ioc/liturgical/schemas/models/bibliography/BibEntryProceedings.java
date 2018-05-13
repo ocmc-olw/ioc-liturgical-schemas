@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Proceedings", description = "A single-volume conference proceedings. This type is very similar to @collection. It supports an optional organization field which holds the sponsoring institution.")
 public class BibEntryProceedings extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryProceedings.class);

@@ -129,9 +129,6 @@ public class LinkRefersToBiblicalTextCreateForm extends LTKLinkCreateForm {
 	public static void main(String[] args) {
 		LinkRefersToBiblicalTextCreateForm form = new LinkRefersToBiblicalTextCreateForm("","","");
 		form.setPrettyPrint(true);
-		System.out.println(form.toJsonUiSchemaObject().toString());
-		System.out.println(form.toJsonSchemaObject().toString());
-		System.out.println(form.toJsonObject().toString());
 	}
 
 	public String getText() {

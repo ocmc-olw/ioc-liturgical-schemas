@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Manual", description = "Technical or other documentation, not necessarily in printed form.")
 public class BibEntryManual extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryManual.class);

@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Reference", description = "A single-volume work of reference such as an encyclopedia or a dictionary. This is a more specific variant of the generic @collection entry type. The standard styles will treat this entry type as an alias for @collection.")
 public class BibEntryReference extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryReference.class);

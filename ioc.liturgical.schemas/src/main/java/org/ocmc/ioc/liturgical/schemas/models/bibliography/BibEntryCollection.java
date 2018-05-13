@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-
+@Attributes(title = "Collection", description = "A single-volume collection with multiple, self-contained contributions by distinct authors which have their own title. The work as a whole has no overall author but it will usually have an editor.")
 public class BibEntryCollection extends BibliographyEntry {
 
 	private static final Logger logger = LoggerFactory.getLogger(BibEntryCollection.class);

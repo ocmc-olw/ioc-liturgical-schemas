@@ -28,9 +28,9 @@ public class Constants {
 	public static final String TOPIC_CALENDAR = "calendar";
 	
 	public static final String LIBRARY_BIBLIOGRAPHY = "en_sys_bibliography";
-	public static final String TOPIC_BIBLIOGRAPHY_ENTRY = "entry";
+	public static final String TOPIC_BIBLIOGRAPHY_ENTRY = "biblioentry";
 
-	public static final String LIBRARY_ABBREVIATION = "en_sys_abbreviation";
+	public static final String TOPIC_ABBREVIATION = "abbreviation";
 
 	public static final String INTERNAL_DATASTORE_API_PATH = "/admin/api/v1";
 

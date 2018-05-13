@@ -4,6 +4,7 @@ package org.ocmc.ioc.liturgical.schemas.models.supers;
 import org.ocmc.ioc.liturgical.schemas.constants.BIBTEX_SOURCE_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.Constants;
 import org.ocmc.ioc.liturgical.schemas.constants.GENDERS;
+import org.ocmc.ioc.liturgical.schemas.constants.ID_PART_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.ontology.Human;
 import org.slf4j.Logger;
@@ -25,9 +26,10 @@ import org.slf4j.Logger;
 	@Attributes(title = "Bibliographical Entry", description = "This is a doc that records information about a bibliographical entry, e.g. an Article, Book, etc.")
 	public class BibliographyEntry extends LTKDb {
 
-		public BIBTEX_ENTRY_TYPES entryType = BIBTEX_ENTRY_TYPES.UNPUBLISHED;
+		@Attributes(id = "bottom", readonly = true, required = false, description = "Type of Bibliographic Entry")
+		@Expose public BIBTEX_ENTRY_TYPES entryType = BIBTEX_ENTRY_TYPES.UNPUBLISHED;
 		
-		@Attributes(required = false, description = "Year of Publication")
+		@Attributes(required = false, description = "Entry is a Primary, Secondary, or Tertiary Source")
 		@Expose public BIBTEX_SOURCE_TYPES sourceType = BIBTEX_SOURCE_TYPES.PRIMARY;
 
 		public BibliographyEntry(
@@ -45,6 +47,7 @@ import org.slf4j.Logger;
 					, version
 					, TOPICS.BIBLIOGRAPHY
 					);
+			this.setPartTypeOfTopic(ID_PART_TYPES.BIBLIOGRAPHY);
 			this.setPrettyPrint(false);
 			this.entryType = type;
 		}
@@ -59,6 +62,22 @@ import org.slf4j.Logger;
 				sb.append("}, \n");
 			}
 			return sb.toString();
+		}
+
+		public BIBTEX_SOURCE_TYPES getSourceType() {
+			return sourceType;
+		}
+
+		public void setSourceType(BIBTEX_SOURCE_TYPES sourceType) {
+			this.sourceType = sourceType;
+		}
+
+		public BIBTEX_ENTRY_TYPES getEntryType() {
+			return entryType;
+		}
+
+		public void setEntryType(BIBTEX_ENTRY_TYPES entryType) {
+			this.entryType = entryType;
 		}
 		
 	}

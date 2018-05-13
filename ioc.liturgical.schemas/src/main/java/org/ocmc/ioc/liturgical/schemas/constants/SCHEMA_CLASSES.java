@@ -81,6 +81,7 @@ import org.ocmc.ioc.liturgical.schemas.models.db.links.LinkRefersToObject;
 import org.ocmc.ioc.liturgical.schemas.models.db.links.LinkRefersToPlace;
 import org.ocmc.ioc.liturgical.schemas.models.db.links.LinkRefersToPlant;
 import org.ocmc.ioc.liturgical.schemas.models.db.links.LinkRefersToRole;
+import org.ocmc.ioc.liturgical.schemas.models.supers.BibliographyEntry;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTK;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDb;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbNote;
@@ -90,6 +91,7 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbGenerationUnit;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKLink;
 import org.ocmc.ioc.liturgical.schemas.models.DropdownItem;
 import org.ocmc.ioc.liturgical.schemas.models.ModelHelpers;
+import org.ocmc.ioc.liturgical.schemas.models.abbreviations.Abbreviation;
 import org.ocmc.ioc.liturgical.schemas.models.bibliography.*;
 
 /**
@@ -98,274 +100,346 @@ import org.ocmc.ioc.liturgical.schemas.models.bibliography.*;
  *
  */
 public enum SCHEMA_CLASSES {
-	ANIMAL(
+	ABBREVIATION(
+			new Abbreviation(" "," ", " ")
+			, new Abbreviation(" "," ", " ")
+			, "Abbreviation"
+			)
+	, ANIMAL(
 			new AnimalCreateForm(" ")
 			, new Animal(" ")
+			, "Animal"
 			)
 	, BEING(
 			new BeingCreateForm(" ")
 			, new Being(" ")
+			, "Being"
 			)
 	, BibEntryArticle(
 	new BibEntryArticle(" "," ")
 	, new BibEntryArticle(" "," ")
+	, "Article"
 	)
 	, BibEntryBook(
 	new BibEntryBook(" "," ")
 	, new BibEntryBook(" "," ")
+	, "Book"
 	)
 	, BibEntryMvbook(
 	new BibEntryMvbook(" "," ")
 	, new BibEntryMvbook(" "," ")
+	, "Multi-Volume Book"
 	)
 	, BibEntryInbook(
 	new BibEntryInbook(" "," ")
 	, new BibEntryInbook(" "," ")
+	, "In Book"
 	)
 	, BibEntryBookinbook(
 	new BibEntryBookinbook(" "," ")
 	, new BibEntryBookinbook(" "," ")
+	, "Book in Book"
 	)
 	, BibEntrySuppbook(
 	new BibEntrySuppbook(" "," ")
 	, new BibEntrySuppbook(" "," ")
+	, "Book Supplement"
 	)
 	, BibEntryBooklet(
 	new BibEntryBooklet(" "," ")
 	, new BibEntryBooklet(" "," ")
+	, "Booklet"
 	)
 	, BibEntryCollection(
 	new BibEntryCollection(" "," ")
 	, new BibEntryCollection(" "," ")
+	, "Collection"
 	)
 	, BibEntryMvcollection(
 	new BibEntryMvcollection(" "," ")
 	, new BibEntryMvcollection(" "," ")
+	, "Multi-Volume Collection"
 	)
 	, BibEntryIncollection(
 	new BibEntryIncollection(" "," ")
 	, new BibEntryIncollection(" "," ")
+	, "In Collection"
 	)
 	, BibEntrySuppcollection(
 	new BibEntrySuppcollection(" "," ")
 	, new BibEntrySuppcollection(" "," ")
+	, "Collection Supplement"
 	)
 	, BibEntryManual(
 	new BibEntryManual(" "," ")
 	, new BibEntryManual(" "," ")
+	, "Manual"
 	)
 	, BibEntryMisc(
 	new BibEntryMisc(" "," ")
 	, new BibEntryMisc(" "," ")
+	, "Miscellaneous"
 	)
 	, BibEntryOnline(
 	new BibEntryOnline(" "," ")
 	, new BibEntryOnline(" "," ")
+	, "Online (web, or Internet)"
 	)
 	, BibEntryPatent(
 	new BibEntryPatent(" "," ")
 	, new BibEntryPatent(" "," ")
+	, "Patent"
 	)
 	, BibEntryPeriodical(
 	new BibEntryPeriodical(" "," ")
 	, new BibEntryPeriodical(" "," ")
+	, "Periodical"
 	)
 	, BibEntrySuppperiodical(
 	new BibEntrySuppperiodical(" "," ")
 	, new BibEntrySuppperiodical(" "," ")
+	, "Periodical Supplement"
 	)
 	, BibEntryProceedings(
 	new BibEntryProceedings(" "," ")
 	, new BibEntryProceedings(" "," ")
+	, "Proceedings"
 	)
 	, BibEntryMvproceedings(
 	new BibEntryMvproceedings(" "," ")
 	, new BibEntryMvproceedings(" "," ")
+	, "Multi-Volume Proceedings"
 	)
 	, BibEntryInproceedings(
 	new BibEntryInproceedings(" "," ")
 	, new BibEntryInproceedings(" "," ")
+	, "In Proceedings"
 	)
 	, BibEntryReference(
 	new BibEntryReference(" "," ")
 	, new BibEntryReference(" "," ")
+	, "Reference"
 	)
 	, BibEntryMvreference(
 	new BibEntryMvreference(" "," ")
 	, new BibEntryMvreference(" "," ")
+	, "Multi-Volume Reference"
 	)
 	, BibEntryInreference(
 	new BibEntryInreference(" "," ")
 	, new BibEntryInreference(" "," ")
+	, "In Reference"
 	)
 	, BibEntryReport(
 	new BibEntryReport(" "," ")
 	, new BibEntryReport(" "," ")
+	, "Report"
 	)
 	, BibEntryThesis(
 	new BibEntryThesis(" "," ")
 	, new BibEntryThesis(" "," ")
+	, "Thesis"
 	)
 	, BibEntryUnpublished(
 	new BibEntryUnpublished(" "," ")
 	, new BibEntryUnpublished(" "," ")
+	, "Unpublished"
 	)
 	, CONCORDANCE_LINE(
 			new ConcordanceLine(" ",0,0," "," "," ")
 			, new ConcordanceLine(" ",0,0," "," "," ")
+			, "Concordance Line"
 			)
 	, CONCEPT(
 			new ConceptCreateForm(" ")
 			, new Concept(" ")
+			, "Concept"
 			)
 	, EVENT(
 			new EventCreateForm(" ")
 			, new Event(" ")
+			, "Event"
 			)
 	, GOD(
 			new GodCreateForm(" ")
 			, new God(" ")
+			, "God"
 			)
 	, GROUP(
 			new GroupCreateForm(" ")
 			, new Group(" ")
+			, "Group"
 			)
 	, HUMAN(
 			new HumanCreateForm(" ")
 			, new Human(" ")
+			, "Human"
 			)
 	, LEXICAL_FORM(
 			new WordInflected("", 0)
 			, new WordInflected("", 0)
+			, "Lexical Form"
 			)
 	, LINK_REFERS_TO_ANIMAL(
 			new LinkRefersToAnimalCreateForm(" "," ","")
 			, new LinkRefersToAnimal(" "," ","")
+			, "Reference to Animal"
 			)
 	, LINK_REFERS_TO_BEING(
 			new LinkRefersToBeingCreateForm(" "," ","")
 			, new LinkRefersToBeing(" "," ","")
+			, "Reference to Being"
 			)
 	, LINK_REFERS_TO_BIBLICAL_TEXT(
 			new LinkRefersToBiblicalTextCreateForm(" "," ","")
 			, new LinkRefersToBiblicalText(" "," ","")
+			, "Reference to Biblical Text"
 			)
 	, LINK_REFERS_TO_CONCEPT(
 			new LinkRefersToConceptCreateForm(" "," ","")
 			, new LinkRefersToConcept(" "," ","")
+			, "Reference to Concept"
 			)
 	, LINK_REFERS_TO_EVENT(
 			new LinkRefersToEventCreateForm(" "," ","")
 			, new LinkRefersToEvent(" "," ","")
+			, "Reference to Event"
 			)
 	, LINK_REFERS_TO_GOD(
 			new LinkRefersToGodCreateForm(" "," ","")
 			, new LinkRefersToGod(" "," ","")
+			, "Reference to God"
 			)
 	, LINK_REFERS_TO_GROUP(
 			new LinkRefersToGroupCreateForm(" "," ","")
 			, new LinkRefersToGroup(" "," ","")
+			, "Reference to Group"
 			)
 	, LINK_REFERS_TO_HUMAN(
 			new LinkRefersToHumanCreateForm(" "," ","")
 			, new LinkRefersToHuman(" "," ","")
+			, "Reference to Human"
 			)
 	, LINK_REFERS_TO_MYSTERY(
 			new LinkRefersToMysteryCreateForm(" "," ","")
 			, new LinkRefersToMystery(" "," ","")
+			, "Reference to Mystery"
 			)
 	, LINK_REFERS_TO_OBJECT(
 			new LinkRefersToObjectCreateForm(" "," ","")
 			, new LinkRefersToObject(" "," ","")
+			, "Reference to Object"
 			)
 	, LINK_REFERS_TO_PLACE(
 			new LinkRefersToPlaceCreateForm(" "," ","")
 			, new LinkRefersToPlace(" "," ","")
+			, "Reference to Place"
 			)
 	, LINK_REFERS_TO_PLANT(
 			new LinkRefersToPlantCreateForm(" "," ","")
 			, new LinkRefersToPlant(" "," ","")
+			, "Reference to Plant"
 			)
 	, LINK_REFERS_TO_ROLE(
 			new LinkRefersToRoleCreateForm(" "," ","")
 			, new LinkRefersToRole(" "," ","")
+			, "Reference to Role"
 			)
 	, MYSTERY(
 			new MysteryCreateForm(" ")
 			, new Mystery(" ")
+			, "Reference to Mystery"
 			)
 	, NOTE_TEXTUAL(
 			new TextNoteCreateForm(" "," ","")
 			, new TextualNote(" "," ","")
+			, "Note about a Text"
 			)
 	, NOTE_USER(
 			new UserNoteCreateForm(" "," ","")
 			, new UserNote(" "," ","")
+			, "Personal Note"
 			)
 	, OBJECT(
 			new ObjectCreateForm(" ")
 			, new Object(" ")
+			, "Object"
 			)
 	, WORD_ANALYSIS(
 			new WordAnalysis()
 			, new WordAnalysis()
+			, "Word Analysis"
 			)
 	, PERSEUS_TREEBANK_SENTENCE(
 			new PtbSentence("","0")
 			, new PtbSentence("","0")
+			, "Perseus Treebank Sentence"
 			)
 	, PERSEUS_TREEBANK_WORD(
 			new PtbWord("","0")
 			, new PtbWord("","0")
+			, "Perseus Treebank Word"
 			)
 	, PLACE(
 			new PlaceCreateForm(" ")
 			, new Place(" ")
+			, "Place"
 			)
 	, PLANT(
 			new PlantCreateForm(" ")
 			, new Plant(" ")
-			)
+			, "Plant"
+		)
 	, ROLE(
 			new RoleCreateForm(" ")
 			, new Role(" ")
+			, "Role"
 			)
 	, SECTION(
 			new Section(" ", "", "")
 			, new Section(" ", "", "")
+			, "Section"
 			)
 	, TABLE_DATA_FOR_REACT_BOOTSTRAP(
 			new ReactBootstrapTableData(TOPICS.TABLES_ROOT, "")
 			, new ReactBootstrapTableData(TOPICS.TABLES_ROOT,"")
+			, "Table Data for React Bootstrap"
 			)
 	, TEMPLATE(
 			new Template(" ", "")
 			, new Template(" ", "")
+			, "Template"
 			)
 	, TEXT_BIBLICAL_SOURCE(
 			new TextBiblicalSourceCreateForm(" "," ", " ")
 			, new TextBiblical(" "," ", " ")
+			, "Biblical Source Text"
 			)
 	, TEXT_BIBLICAL_TRANSLATION(
 			new TextBiblicalTranslationCreateForm(" "," ", " ")
 			, new TextBiblical(" "," ", " ")
+			, "Translation of Biblical Source Text"
 			)
 	, TEXT_LITURGICAL_SOURCE(
 			new TextLiturgicalSourceCreateForm(" "," ", " ")
 			, new TextLiturgical(" "," ", " ")
+			, "Liturgical Source Text"
 			)
 	, TEXT_LITURGICAL_TRANSLATION(
 			new TextLiturgicalTranslationCreateForm(" "," ", " ")
 			, new TextLiturgical(" "," ", " ")
+			, "Translation of Liturgical Source Text"
 			)
 	, TREE_NODE(
 			new TokenAnalysisCreateForm("","0")
 			, new TokenAnalysis("","0")
+			, "Token Analysis"
 			)
 	;
 
 	public LTK ltk;
 	public LTKDb ltkDb;
+	public String label = "";
 	
 	private static Gson gson = new Gson();
 	
@@ -378,9 +452,11 @@ public enum SCHEMA_CLASSES {
 	private SCHEMA_CLASSES(
 			 LTK ltk
 			 , LTKDb ltkDb
+			 , String label
 			) {
 		this.ltk = ltk;
 		this.ltkDb = ltkDb;
+		this.label = label;
 	}
 
 	/**
@@ -582,6 +658,40 @@ public enum SCHEMA_CLASSES {
 		return result;
 	}
 
+	public static JsonObject abbreviationPropertyJson() {
+		JsonObject result = new JsonObject();
+		JsonArray anyProps = new JsonArray();
+		anyProps.add(new DropdownItem("Any","*").toJsonObject());
+		anyProps.add(new DropdownItem("id","id").toJsonObject());
+		result.add("*", anyProps);
+		for (SCHEMA_CLASSES s : SCHEMA_CLASSES.values()) {
+			if (s.ltkDb instanceof org.ocmc.ioc.liturgical.schemas.models.abbreviations.Abbreviation) {
+				Abbreviation entry = (Abbreviation) s.ltkDb;
+				result.add(
+						entry.getOntologyTopic().label
+						, ModelHelpers.getPropertiesAsDropdownItems(entry)
+				);
+			}
+		}
+		return result;
+	}
+	public static JsonObject bibliographyPropertyJson() {
+		JsonObject result = new JsonObject();
+		JsonArray anyProps = new JsonArray();
+		anyProps.add(new DropdownItem("Any","*").toJsonObject());
+		anyProps.add(new DropdownItem("id","id").toJsonObject());
+		result.add("*", anyProps);
+		for (SCHEMA_CLASSES s : SCHEMA_CLASSES.values()) {
+			if (s.ltkDb instanceof org.ocmc.ioc.liturgical.schemas.models.supers.BibliographyEntry) {
+				BibliographyEntry entry = (BibliographyEntry) s.ltkDb;
+				result.add(
+						entry.getOntologyTopic().label
+						, ModelHelpers.getPropertiesAsDropdownItems(entry)
+				);
+			}
+		}
+		return result;
+	}
 	public static JsonArray noteTypesJson() {
 		JsonArray result = new JsonArray();
 		result.add(new DropdownItem("Any","*").toJsonObject());
@@ -589,6 +699,30 @@ public enum SCHEMA_CLASSES {
 			if (s.ltkDb instanceof org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbNote) {
 				LTKDbNote entry = (LTKDbNote) s.ltkDb;
 				result.add(new DropdownItem(entry.getOntologyTopic().label).toJsonObject());
+			}
+		}
+		return result;
+	}
+
+	public static JsonArray bibliographyTypesJson() {
+		JsonArray result = new JsonArray();
+		result.add(new DropdownItem("Any", TOPICS.BIBLIOGRAPHY.label).toJsonObject());
+		for (SCHEMA_CLASSES s : SCHEMA_CLASSES.values()) {
+			if (s.ltkDb instanceof org.ocmc.ioc.liturgical.schemas.models.supers.BibliographyEntry) {
+				BibliographyEntry entry = (BibliographyEntry) s.ltkDb;
+				result.add(new DropdownItem(s.label, entry.toSchemaAsLabel()).toJsonObject());
+			}
+		}
+		return result;
+	}
+
+	public static JsonArray abbreviationTypesJson() {
+		JsonArray result = new JsonArray();
+		result.add(new DropdownItem("Any","*").toJsonObject());
+		for (SCHEMA_CLASSES s : SCHEMA_CLASSES.values()) {
+			if (s.ltkDb instanceof org.ocmc.ioc.liturgical.schemas.models.abbreviations.Abbreviation) {
+				Abbreviation entry = (Abbreviation) s.ltkDb;
+				result.add(new DropdownItem(entry.toSchemaAsLabel(), entry.getOntologyTopic().label).toJsonObject());
 			}
 		}
 		return result;
