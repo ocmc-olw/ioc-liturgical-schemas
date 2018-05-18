@@ -180,4 +180,5 @@ public class LTKDb extends LTK  implements Comparable<LTKDb> {
 		      return topic1.compareTo(topic2);
 		}
 	};
+
 }

@@ -18,8 +18,11 @@ public class BibliographyEntryTest {
 		article.setVolume("5");
 		article.setDate("2015");
 		String bibTex = article.toBibtex();
-		System.out.println(bibTex);
-		assertTrue(bibTex.length() > 0);
+//		System.out.println(bibTex);
+		BibliographyEntry theSuper = article;
+		String bibTex2 = theSuper.toBibtex();
+//		System.out.println(theSuper.toBibtex());
+		assertTrue(bibTex.compareTo(bibTex2) == 0);
 	}
 
 }

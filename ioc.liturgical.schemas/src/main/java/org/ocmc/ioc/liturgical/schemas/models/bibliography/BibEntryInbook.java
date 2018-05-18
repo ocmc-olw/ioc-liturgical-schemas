@@ -23,22 +23,28 @@ public class BibEntryInbook extends BibliographyEntry {
 		this.library = library;
 		this.key = key;
 	}
-	@Attributes(required = true, description = "author")
+	@Attributes(id="top", required = true, description = "author")
 	@Expose public String author = "";
 
-	@Attributes(required = true, description = "title")
+	@Attributes(id="top", required = true, description = "title")
 	@Expose public String title = "";
 
-	@Attributes(required = true, description = "booktitle")
+	@Attributes(id="top", required = true, description = "booktitle")
 	@Expose public String booktitle = "";
 
-	@Attributes(required = true, description = "date")
+	@Attributes(id="top", required = true, description = "date")
 	@Expose public String date = "";
 
-	@Attributes(required = false, description = "bookauthor")
+	@Attributes(id="top", required = false, description = "bookauthor")
 	@Expose public String bookauthor = "";
 
-	@Attributes(required = false, description = "editor")
+	@Attributes(id="top", required = false, description = "publisher")
+	@Expose public String publisher = "";
+
+	@Attributes(id="top", required = false, description = "location")
+	@Expose public String location = "";
+
+	@Attributes(id="top", required = false, description = "editor")
 	@Expose public String editor = "";
 
 	@Attributes(required = false, description = "editora")
@@ -116,12 +122,6 @@ public class BibEntryInbook extends BibliographyEntry {
 	@Attributes(required = false, description = "note")
 	@Expose public String note = "";
 
-	@Attributes(required = false, description = "publisher")
-	@Expose public String publisher = "";
-
-	@Attributes(required = false, description = "location")
-	@Expose public String location = "";
-
 	@Attributes(required = false, description = "isbn")
 	@Expose public String isbn = "";
 
@@ -155,6 +155,7 @@ public class BibEntryInbook extends BibliographyEntry {
 	@Attributes(required = false, description = "urldate")
 	@Expose public String urldate = "";
 
+	@Override
 public String toBibtex() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("@");

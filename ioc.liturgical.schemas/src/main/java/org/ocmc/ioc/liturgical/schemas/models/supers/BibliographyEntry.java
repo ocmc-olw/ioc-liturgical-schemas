@@ -80,5 +80,10 @@ import org.slf4j.Logger;
 			this.entryType = entryType;
 		}
 		
+		// must be overridden by subclasses
+		public String toBibtex() {
+			return "";
+		}
+		
 	}
 

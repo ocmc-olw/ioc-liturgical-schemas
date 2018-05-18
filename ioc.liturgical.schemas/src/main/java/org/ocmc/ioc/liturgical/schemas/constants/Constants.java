@@ -18,6 +18,7 @@ public class Constants {
 	public static final String LIBRARY_MESSAGES = "en_sys_messages";
 	public static final String TOPIC_MESSAGES = "digest";
 
+	public static final String LIBRARY_GENERATOR = "en_sys_generator";
 	public static final String LIBRARY_SYNCH = "en_sys_synch";
 	public static final String TOPIC_SYNCH = "cypher";
 	public static final String TOPIC_SYNCH_LOG = "synch";

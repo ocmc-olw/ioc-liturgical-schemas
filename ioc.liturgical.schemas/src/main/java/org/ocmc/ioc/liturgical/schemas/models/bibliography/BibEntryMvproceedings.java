@@ -23,14 +23,20 @@ public class BibEntryMvproceedings extends BibliographyEntry {
 		this.library = library;
 		this.key = key;
 	}
-	@Attributes(required = true, description = "title")
+	@Attributes(id="top", required = true, description = "title")
 	@Expose public String title = "";
 
-	@Attributes(required = true, description = "date")
+	@Attributes(id="top", required = true, description = "date")
 	@Expose public String date = "";
 
-	@Attributes(required = false, description = "editor")
+	@Attributes(id="top", required = false, description = "editor")
 	@Expose public String editor = "";
+
+	@Attributes(id="top", required = false, description = "publisher")
+	@Expose public String publisher = "";
+
+	@Attributes(id="top", required = false, description = "location")
+	@Expose public String location = "";
 
 	@Attributes(required = false, description = "subtitle")
 	@Expose public String subtitle = "";
@@ -68,12 +74,6 @@ public class BibEntryMvproceedings extends BibliographyEntry {
 	@Attributes(required = false, description = "organization")
 	@Expose public String organization = "";
 
-	@Attributes(required = false, description = "publisher")
-	@Expose public String publisher = "";
-
-	@Attributes(required = false, description = "location")
-	@Expose public String location = "";
-
 	@Attributes(required = false, description = "month")
 	@Expose public String month = "";
 
@@ -107,6 +107,7 @@ public class BibEntryMvproceedings extends BibliographyEntry {
 	@Attributes(required = false, description = "urldate")
 	@Expose public String urldate = "";
 
+	@Override
 public String toBibtex() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("@");

@@ -117,4 +117,12 @@ public class LTKDbNote extends LTKDb  {
 			      return topic2.compareTo(topic1);
 			    }
 			};
+
+		public String getFollowsNoteId() {
+			return followsNoteId;
+		}
+
+		public void setFollowsNoteId(String followsNoteId) {
+			this.followsNoteId = followsNoteId;
+		}
 }

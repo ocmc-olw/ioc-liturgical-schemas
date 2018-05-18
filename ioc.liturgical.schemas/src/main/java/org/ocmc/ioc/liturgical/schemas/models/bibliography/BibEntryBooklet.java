@@ -23,14 +23,21 @@ public class BibEntryBooklet extends BibliographyEntry {
 		this.library = library;
 		this.key = key;
 	}
-	@Attributes(required = true, description = "editor")
-	@Expose public String editor = "";
 
-	@Attributes(required = true, description = "title")
+	@Attributes(id="top", required = true, description = "author")
+	@Expose public String author = "";
+
+	@Attributes(id="top", required = true, description = "title")
 	@Expose public String title = "";
 
-	@Attributes(required = true, description = "date")
+	@Attributes(id="top", required = true, description = "date")
 	@Expose public String date = "";
+
+	@Attributes(id="top", required = false, description = "location")
+	@Expose public String location = "";
+
+	@Attributes(required = false, description = "howpublished")
+	@Expose public String howpublished = "";
 
 	@Attributes(required = false, description = "subtitle")
 	@Expose public String subtitle = "";
@@ -38,20 +45,17 @@ public class BibEntryBooklet extends BibliographyEntry {
 	@Attributes(required = false, description = "titleaddon")
 	@Expose public String titleaddon = "";
 
+	@Attributes(required = true, description = "editor")
+	@Expose public String editor = "";
+
 	@Attributes(required = false, description = "language")
 	@Expose public String language = "";
-
-	@Attributes(required = false, description = "howpublished")
-	@Expose public String howpublished = "";
 
 	@Attributes(required = false, description = "type")
 	@Expose public String type = "";
 
 	@Attributes(required = false, description = "note")
 	@Expose public String note = "";
-
-	@Attributes(required = false, description = "location")
-	@Expose public String location = "";
 
 	@Attributes(required = false, description = "chapter")
 	@Expose public String chapter = "";
@@ -86,6 +90,7 @@ public class BibEntryBooklet extends BibliographyEntry {
 	@Attributes(required = false, description = "urldate")
 	@Expose public String urldate = "";
 
+	@Override
 public String toBibtex() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("@");
@@ -284,5 +289,13 @@ public String getUrldate() {
 
 public void setUrldate(String urldate) {
 	this.urldate = urldate;
+}
+
+public String getAuthor() {
+	return author;
+}
+
+public void setAuthor(String author) {
+	this.author = author;
 }
 }

@@ -101,6 +101,7 @@ public class BibEntryPeriodical extends BibliographyEntry {
 	@Attributes(required = false, description = "urldate")
 	@Expose public String urldate = "";
 
+	@Override
 public String toBibtex() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("@");

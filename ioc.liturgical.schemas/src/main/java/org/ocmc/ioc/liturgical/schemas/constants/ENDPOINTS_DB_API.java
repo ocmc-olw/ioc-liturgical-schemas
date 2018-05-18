@@ -150,6 +150,12 @@ public enum ENDPOINTS_DB_API {
 			, "genericexists"
 			,"Endpoint for generic check of ID for any schema type to see if exists in database"
 			)
+	, GENERATION_STATUS(
+			"genstatus"
+			, ENDPOINT_TYPES.NODE
+			, "genstatus"
+			,"Endpoint for getting the status of the generation of something, usually a PDF file"
+			)
 	, GENERIC(
 			"generic"
 			, ENDPOINT_TYPES.GENERIC

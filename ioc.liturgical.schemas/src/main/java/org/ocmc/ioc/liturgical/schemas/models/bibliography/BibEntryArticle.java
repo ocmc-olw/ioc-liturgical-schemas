@@ -23,16 +23,16 @@ public class BibEntryArticle extends BibliographyEntry {
 		this.library = library;
 		this.key = key;
 	}
-	@Attributes(required = true, description = "author")
+	@Attributes(id="top", required = true, description = "author")
 	@Expose public String author = "";
 
-	@Attributes(required = true, description = "title")
+	@Attributes(id="top", required = true, description = "title")
 	@Expose public String title = "";
 
-	@Attributes(required = true, description = "journaltitle")
+	@Attributes(id="top", required = true, description = "journaltitle")
 	@Expose public String journaltitle = "";
 
-	@Attributes(required = true, description = "date")
+	@Attributes(id="top", required = true, description = "date")
 	@Expose public String date = "";
 
 	@Attributes(required = false, description = "translator")
@@ -131,6 +131,7 @@ public class BibEntryArticle extends BibliographyEntry {
 	@Attributes(required = false, description = "urldate")
 	@Expose public String urldate = "";
 
+	@Override
 public String toBibtex() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("@");

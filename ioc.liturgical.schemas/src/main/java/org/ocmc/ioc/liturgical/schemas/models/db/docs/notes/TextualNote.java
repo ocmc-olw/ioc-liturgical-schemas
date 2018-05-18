@@ -189,34 +189,81 @@ public class TextualNote extends LTKDbNote {
 	
 	public static Comparator<TextualNote> noteLiturgicalLemmaComparator = new Comparator<TextualNote>() {
 		public int compare(TextualNote note1, TextualNote note2) {
-			String topic1 = note1.getLiturgicalLemma();
-			String topic2 = note2.getLiturgicalLemma();
-		      //ascending order
-		      return topic1.compareTo(topic2);
+			try {
+				String topic1 = note1.getLiturgicalLemma();
+				String topic2 = note2.getLiturgicalLemma();
+			      //ascending order
+			      return topic1.compareTo(topic2);
+			} catch (Exception e) {
+				return 0;
+			}
 		}
 	};
 	public static Comparator<TextualNote> noteLiturgicalScopeComparator = new Comparator<TextualNote>() {
 		public int compare(TextualNote note1, TextualNote note2) {
-			String topic1 = note1.getLiturgicalScope();
-			String topic2 = note2.getLiturgicalScope();
-		      //ascending order
-		      return topic1.compareTo(topic2);
+			try {
+				String topic1 = note1.getLiturgicalScope();
+				String topic2 = note2.getLiturgicalScope();
+			      //ascending order
+			      return topic1.compareTo(topic2);
+			} catch (Exception e) {
+				return 0;
+			}
 		}
 	};
 	public static Comparator<TextualNote> noteTypeLiturgicalScopeComparator = new Comparator<TextualNote>() {
 		public int compare(TextualNote note1, TextualNote note2) {
-			String topic1 = note1.getNoteType().fullname + note1.getLiturgicalScope();
-			String topic2 = note2.getNoteType().fullname + note2.getLiturgicalScope();
-		      //ascending order
-		      return topic1.compareTo(topic2);
+			try {
+				String topic1 = note1.getNoteType().fullname + note1.getLiturgicalScope();
+				String topic2 = note2.getNoteType().fullname + note2.getLiturgicalScope();
+			      //ascending order
+			      return topic1.compareTo(topic2);
+			} catch (Exception e) {
+				return 0;
+			}
 		}
 	};
 	public static Comparator<TextualNote> noteTypeLiturgicalLemmaComparator = new Comparator<TextualNote>() {
 		public int compare(TextualNote note1, TextualNote note2) {
-			String topic1 = note1.getNoteType() + note1.getLiturgicalLemma();
-			String topic2 = note2.getNoteType() + note2.getLiturgicalLemma();
-		      //ascending order
-		      return topic1.compareTo(topic2);
+			try {
+				String topic1 = note1.getNoteType() + note1.getLiturgicalLemma();
+				String topic2 = note2.getNoteType() + note2.getLiturgicalLemma();
+			      //ascending order
+			      return topic1.compareTo(topic2);
+			} catch (Exception e) {
+				return 0;
+			}
+		}
+	};
+	public static Comparator<TextualNote> noteTypeAdHocComparator = new Comparator<TextualNote>() {
+		public int compare(TextualNote note1, TextualNote note2) {
+			try {
+				String topic1 = "";
+				String topic2 = "";
+				if (note1.adhocSortKey.length() > 0 && note2.adhocSortKey.length() > 0) {
+					topic1 = note1.getNoteType().fullname + note1.adhocSortKey;
+					topic2 = note2.getNoteType().fullname + note2.adhocSortKey;
+				} else {
+					topic1 = note1.getNoteType().fullname + note1.getLiturgicalScope();
+					topic2 = note2.getNoteType().fullname + note2.getLiturgicalScope();
+				}
+			      //ascending order
+			      return topic1.compareTo(topic2);
+			} catch (Exception e) {
+				return 0;
+			}
+		}
+	};
+	public static Comparator<TextualNote> adHocComparator = new Comparator<TextualNote>() {
+		public int compare(TextualNote note1, TextualNote note2) {
+			try {
+				String topic1 = note1.adhocSortKey;
+				String topic2 = note2.adhocSortKey;
+			      //ascending order
+			      return topic1.compareTo(topic2);
+			} catch (Exception e) {
+				return 0;
+			}
 		}
 	};
 }
