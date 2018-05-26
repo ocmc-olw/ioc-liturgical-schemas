@@ -7,18 +7,18 @@ import java.util.TreeMap;
 public class MONTHS_OF_YEAR_MAP {
     private static Map<String, String> map = new TreeMap<String,String>();
     static {
-        map.put("m01", "m01 - January (Ιανουάριος)");
-        map.put("m02", "m02 - February (Φεβρουάριος)");
-        map.put("m03", "m03 - March (Μάρτιος)");
-        map.put("m04", "m04 - April (Απρίλιος)");
-        map.put("m05", "m05 - May (Μάιος)");
-        map.put("m06", "m06 - June (Ιούνιος)");
-        map.put("m07", "m07 - July (Ιούλιος)");
-        map.put("m08", "m08 - August (Αύγουστος)");
-        map.put("m09", "m09 - September (Σεπτέμβριος)");
-        map.put("m10", "m10 - October (Οκτώβριος)");
-        map.put("m11", "m11 - November (Νοέμβριος )");
-        map.put("m12", "m12 - December (Δεκέμβριος)");
+        map.put("m01", "January (Ιανουάριος)");
+        map.put("m02", "February (Φεβρουάριος)");
+        map.put("m03", "March (Μάρτιος)");
+        map.put("m04", "April (Απρίλιος)");
+        map.put("m05", "May (Μάιος)");
+        map.put("m06", "June (Ιούνιος)");
+        map.put("m07", "July (Ιούλιος)");
+        map.put("m08", "August (Αύγουστος)");
+        map.put("m09", "September (Σεπτέμβριος)");
+        map.put("m10", "October (Οκτώβριος)");
+        map.put("m11", "November (Νοέμβριος )");
+        map.put("m12", "December (Δεκέμβριος)");
         map = Collections.unmodifiableMap(map);
 	}
     
@@ -27,12 +27,12 @@ public class MONTHS_OF_YEAR_MAP {
     }
     
     public static String get(String key) {
-    	return map.get(key);
+    	return key + " - " + map.get(key);
     }
     
     public static String getLabel(String key) {
     	if (map.containsKey(key)) {
-    		return get(key);
+    		return map.get(key);
     	} else {
     		return key;
     	}

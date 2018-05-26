@@ -30,7 +30,7 @@ public class Transaction extends LTKLite {
 	@Expose public String aresTransId = "";
 	
 	/**
-	 * Constructor for a Cypher transaction that creates or updates a doc
+	 * Constructor for a Cypher transaction 
 	 * 
 	 * The library will be set to "en_sys_synch"
 	 * The topic will be set to transaction.getId()
@@ -62,7 +62,7 @@ public class Transaction extends LTKLite {
 	}
 
 	/**
-	 * Constructor for a Cypher transaction that creates or updates a doc
+	 * Constructor for a Cypher transaction that processes a constraint
 	 * 
 	 * The library will be set to "en_sys_synch"
 	 * The topic will be set to "cypher"
@@ -74,11 +74,12 @@ public class Transaction extends LTKLite {
 	 */
 	public Transaction(
 			String cypher
+			, String id
 			, String requestingServer
 			) throws BadIdException {
 		super(
 				Constants.LIBRARY_SYNCH
-				, Constants.TOPIC_SYNCH
+				, id
 				, Instant.now().toString()
 				, schema
 				, version

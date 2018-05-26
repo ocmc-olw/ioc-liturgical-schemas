@@ -7,11 +7,11 @@ import java.util.TreeMap;
 public class HEIRMOI_TYPES {
     private static Map<String, String> map = new TreeMap<String,String>();
     static {
-        map.put("a", "a - Automela (Αυτόμελα)");
-        map.put("h", "h - Heirmoi (Εἱρμοί)");
-        map.put("ga", "ga - General Apolytikia (Απολυτίκια)");
-        map.put("k", "k - Katavasias (Καταβασία)");
-        map.put("o", "o - Other (Ἄλλα)");
+        map.put("a", "Automela (Αυτόμελα)");
+        map.put("h", "Heirmoi (Εἱρμοί)");
+        map.put("ga", "General Apolytikia (Απολυτίκια)");
+        map.put("k", "Katavasias (Καταβασία)");
+        map.put("o", "Other (Ἄλλα)");
         map = Collections.unmodifiableMap(map);
 	}
     
@@ -24,12 +24,12 @@ public class HEIRMOI_TYPES {
     }
     
     public static String get(String key) {
-    	return map.get(key);
+    	return key + " - " + map.get(key);
     }
     
     public static String getLabel(String key) {
     	if (map.containsKey(key)) {
-    		return get(key);
+    		return map.get(key);
     	} else {
     		return key;
     	}

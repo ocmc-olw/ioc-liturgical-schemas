@@ -2,6 +2,7 @@ package org.ocmc.ioc.liturgical.schemas.models.db.docs.notes;
 
 import java.time.Instant;
 import java.util.Comparator;
+import java.util.regex.Pattern;
 
 import org.ocmc.ioc.liturgical.schemas.constants.NOTE_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
@@ -17,6 +18,7 @@ public class TextualNote extends LTKDbNote {
 	private static String schema = TextualNote.class.getSimpleName();
 	private static double version = 1.1;
 	private static TOPICS ontoTopic = TOPICS.NOTE_TEXTUAL;
+	private static Pattern punctPattern = Pattern.compile("[˙·,.;!?(){}\\[\\]<>%]"); // punctuation
 	
 	@Attributes(id = "top", required = true, readonly = false, minLength = 1, description = "The type of this note.")
 	@Expose public NOTE_TYPES noteType = NOTE_TYPES.GENERAL;
@@ -29,7 +31,9 @@ public class TextualNote extends LTKDbNote {
 
 	@Attributes(id = "top", required = true, readonly = false, minLength = 1, description = "The textual scope of this note.")
 	@Expose public String liturgicalScope = ""; 
-
+	
+	private String liturgicalScopeNnp = "";
+	
 	@Attributes(id = "top", required = true, readonly = false, minLength = 1, description = "The title of this note.")
 	@Expose public String noteTitle = "";
 
@@ -136,7 +140,8 @@ public class TextualNote extends LTKDbNote {
 		return liturgicalScope;
 	}
 	public void setLiturgicalScope(String liturgicalScope) {
-		this.liturgicalScope = liturgicalScope;
+		this.liturgicalScope = liturgicalScope.trim();
+		this.setTheLiturgicalScopeNnp();
 	}
 	public NOTE_TYPES getNoteType() {
 		return noteType;
@@ -187,6 +192,27 @@ public class TextualNote extends LTKDbNote {
 		this.ontologicalEntityId = ontologicalEntityId;
 	}
 	
+	public String getTheLiturgicalScopeNnp() {
+		if (this.liturgicalScopeNnp == null || this.liturgicalScopeNnp.length() == 0) {
+			if (this.liturgicalScope != null && this.liturgicalScope.length() > 0) {
+				this.setTheLiturgicalScopeNnp();
+			}
+		}
+		return this.liturgicalScopeNnp;
+	}
+	
+	public void setTheLiturgicalScopeNnp() {
+		try {
+			this.liturgicalScopeNnp = punctPattern.matcher(
+					this.liturgicalScope.trim())
+					.replaceAll("")
+					.toLowerCase()
+					;
+		} catch (Exception e) {
+			// ignore
+		}
+	}
+	
 	public static Comparator<TextualNote> noteLiturgicalLemmaComparator = new Comparator<TextualNote>() {
 		public int compare(TextualNote note1, TextualNote note2) {
 			try {
@@ -202,8 +228,9 @@ public class TextualNote extends LTKDbNote {
 	public static Comparator<TextualNote> noteLiturgicalScopeComparator = new Comparator<TextualNote>() {
 		public int compare(TextualNote note1, TextualNote note2) {
 			try {
-				String topic1 = note1.getLiturgicalScope();
-				String topic2 = note2.getLiturgicalScope();
+				
+				String topic1 = note1.getTheLiturgicalScopeNnp();
+				String topic2 = note2.getTheLiturgicalScopeNnp();
 			      //ascending order
 			      return topic1.compareTo(topic2);
 			} catch (Exception e) {
@@ -214,8 +241,8 @@ public class TextualNote extends LTKDbNote {
 	public static Comparator<TextualNote> noteTypeLiturgicalScopeComparator = new Comparator<TextualNote>() {
 		public int compare(TextualNote note1, TextualNote note2) {
 			try {
-				String topic1 = note1.getNoteType().fullname + note1.getLiturgicalScope();
-				String topic2 = note2.getNoteType().fullname + note2.getLiturgicalScope();
+				String topic1 = note1.getNoteType().fullname + note1.getTheLiturgicalScopeNnp();
+				String topic2 = note2.getNoteType().fullname + note2.getTheLiturgicalScopeNnp();
 			      //ascending order
 			      return topic1.compareTo(topic2);
 			} catch (Exception e) {
@@ -244,8 +271,8 @@ public class TextualNote extends LTKDbNote {
 					topic1 = note1.getNoteType().fullname + note1.adhocSortKey;
 					topic2 = note2.getNoteType().fullname + note2.adhocSortKey;
 				} else {
-					topic1 = note1.getNoteType().fullname + note1.getLiturgicalScope();
-					topic2 = note2.getNoteType().fullname + note2.getLiturgicalScope();
+					topic1 = note1.getNoteType().fullname + note1.getTheLiturgicalScopeNnp();
+					topic2 = note2.getNoteType().fullname + note2.getTheLiturgicalScopeNnp();
 				}
 			      //ascending order
 			      return topic1.compareTo(topic2);

@@ -29,7 +29,7 @@ public class MODES {
     
     public static String getLabel(String key) {
     	if (map.containsKey(key)) {
-    		return get(key);
+    		return map.get(key);
     	} else {
     		return key;
     	}

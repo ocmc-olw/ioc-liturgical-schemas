@@ -99,7 +99,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 			"Animal (Ontology)"
 			, new AnimalCreateForm("")
 			, ENDPOINTS_DB_API.DOCS
-			, RESTRICTION_FILTERS.NONE
+			, RESTRICTION_FILTERS.DOMAIN_AUTHOR
 			, true
 			, true
 			)
@@ -115,7 +115,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		"Being (Ontology)"
 		, new BeingCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.NONE
+		, RESTRICTION_FILTERS.DOMAIN_AUTHOR
 		, true
 		, true
 		)
@@ -347,7 +347,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		"Concept (Ontology)"
 		, new ConceptCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.NONE
+		, RESTRICTION_FILTERS.DOMAIN_AUTHOR
 		, true
 		, true
 		)
@@ -371,7 +371,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		"Event (Ontology)"
 		, new EventCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.NONE
+		, RESTRICTION_FILTERS.DOMAIN_AUTHOR
 		, true
 		, true
 		)
@@ -395,7 +395,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		"Group (Ontology)"
 		, new GroupCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.NONE
+		, RESTRICTION_FILTERS.DOMAIN_AUTHOR
 		, true
 		, true
 		)
@@ -411,7 +411,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		"Human (Ontology)"
 		, new HumanCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.NONE
+		, RESTRICTION_FILTERS.DOMAIN_AUTHOR
 		, true
 		, true
 		)
@@ -427,7 +427,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		"Mystery (Ontology)"
 		, new MysteryCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.NONE
+		, RESTRICTION_FILTERS.DOMAIN_AUTHOR
 		, true
 		, true
 		)
@@ -459,7 +459,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		"Object (Ontology)"
 		, new ObjectCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.NONE
+		, RESTRICTION_FILTERS.DOMAIN_AUTHOR
 		, true
 		, true
 		)
@@ -483,7 +483,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		"Place (Ontology)"
 		, new PlaceCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.NONE
+		, RESTRICTION_FILTERS.DOMAIN_AUTHOR
 		, true
 		, true
 		)
@@ -521,7 +521,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		"Plant (Ontology)"
 		, new PlantCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.NONE
+		, RESTRICTION_FILTERS.DOMAIN_AUTHOR
 		, true
 		, true
 		)
@@ -537,7 +537,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		"Role (Ontology)"
 		, new RoleCreateForm("")
 		, ENDPOINTS_DB_API.DOCS
-		, RESTRICTION_FILTERS.NONE
+		, RESTRICTION_FILTERS.DOMAIN_AUTHOR
 		, true
 		, true
 		)
