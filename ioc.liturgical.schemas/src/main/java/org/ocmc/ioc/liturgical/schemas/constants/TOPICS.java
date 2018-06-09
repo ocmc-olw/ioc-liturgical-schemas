@@ -141,6 +141,11 @@ public enum TOPICS {
 			, "Grammatical Information about a token (e.g., a word or punctuation mark) from the Persesus Treebank."
 			, TOPICS.PERSEUS_TREEBANK
 			)
+	, PREFERENCES(
+			"Preferences"
+			,"A user's preferences when using the software."
+			, TOPICS.ROOT
+			)
 	, ROLE(
 			"Role"
 			, "A role that entity can play or be."
