@@ -16,16 +16,20 @@ import com.google.gson.annotations.Expose;
 
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
 import org.ocmc.ioc.liturgical.schemas.models.ws.response.RequestStatus;
+import org.ocmc.ioc.liturgical.schemas.constants.BIBTEX_STYLES;
+import org.ocmc.ioc.liturgical.schemas.constants.USER_INTERFACE_DOMAINS;
+import org.ocmc.ioc.liturgical.schemas.constants.USER_INTERFACE_LANGUAGES;
+import org.ocmc.ioc.liturgical.schemas.constants.USER_INTERFACE_SYSTEMS;
 import org.ocmc.ioc.liturgical.schemas.models.DropdownItem;
 import org.ocmc.ioc.liturgical.utils.ErrorUtils;
 
 /**
- * Holds the results for a request for the forms to create new instances of things.
+ * Holds various dropdowns, the forms to create new instances, and UI labels
  * @author mac002
  *
  */
-public class ResultNewForms extends AbstractModel {
-	private static final Logger logger = LoggerFactory.getLogger(ResultNewForms.class);
+public class ResultDropdowns extends AbstractModel {
+	private static final Logger logger = LoggerFactory.getLogger(ResultDropdowns.class);
 	@Expose public String query;
 	@Expose public RequestStatus status;
 	@Expose public Long valueCount = Long.parseLong("0");
@@ -51,8 +55,13 @@ public class ResultNewForms extends AbstractModel {
 	@Expose public JsonArray templateWhenCasesDropdown;
 	@Expose public JsonArray templateWhenModeOfWeekCasesDropdown;
 	@Expose public JsonArray templateWhenMonthNameCasesDropdown;
+	@Expose public JsonArray bibTexStyles = BIBTEX_STYLES.toDropdownJsonArray();
+	@Expose public JsonArray uiDomains = USER_INTERFACE_DOMAINS.toDropdownJsonArray();
+	@Expose public JsonArray uiLanguages = USER_INTERFACE_LANGUAGES.toDropdownJsonArray();
+	@Expose public JsonObject uiLabels = new JsonObject();
+	@Expose public JsonArray uiSystems = USER_INTERFACE_SYSTEMS.toDropdownJsonArray();
 
-	public ResultNewForms(boolean prettyPrint) {
+	public ResultDropdowns(boolean prettyPrint) {
 		super();
 		super.setPrettyPrint(prettyPrint);
 		status = new RequestStatus();
@@ -333,6 +342,46 @@ public class ResultNewForms extends AbstractModel {
 
 	public void setSchemaEditorFormsDropdown(List<JsonObject> schemaEditorFormsDropdown) {
 		this.schemaEditorFormsDropdown = schemaEditorFormsDropdown;
+	}
+
+	public JsonArray getBibTexStyles() {
+		return bibTexStyles;
+	}
+
+	public void setBibTexStyles(JsonArray bibTexStyles) {
+		this.bibTexStyles = bibTexStyles;
+	}
+
+	public JsonObject getUiLabels() {
+		return uiLabels;
+	}
+
+	public void setUiLabels(JsonObject uiLabels) {
+		this.uiLabels = uiLabels;
+	}
+
+	public JsonArray getUiSystems() {
+		return uiSystems;
+	}
+
+	public void setUiSystems(JsonArray uiSystems) {
+		this.uiSystems = uiSystems;
+	}
+
+	public JsonArray getUiDomains() {
+		return uiDomains;
+	}
+
+	public void setUiDomains(JsonArray uiDomains) {
+		this.uiDomains = uiDomains;
+	}
+
+	public JsonArray getUiLanguages() {
+		return uiLanguages;
+	}
+
+	public void setUiLanguages(JsonArray uiLanguages) {
+		this.uiLanguages = uiLanguages;
 	}
 
 

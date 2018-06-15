@@ -11,6 +11,9 @@ public class UserPreferences extends WsDbAbstractModel {
 	@Attributes(required = false, description = "User Interface Language")
 	@Expose public USER_INTERFACE_LANGUAGES langUserInterface = USER_INTERFACE_LANGUAGES.ENGLISH;
 
+	@Attributes(required = false, description = "When generating a PDF, what name do you want displayed as the author?")
+	@Expose public String author = "";
+
 	@Attributes(required = false, description = "When generating a PDF, what personal title do you want displayed?")
 	@Expose public String authorTitle = "";
 
@@ -121,6 +124,14 @@ public class UserPreferences extends WsDbAbstractModel {
 
 	public void setIncludeTransHandbookInstructions(boolean includeTransHandbookInstructions) {
 		this.includeTransHandbookInstructions = includeTransHandbookInstructions;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 }

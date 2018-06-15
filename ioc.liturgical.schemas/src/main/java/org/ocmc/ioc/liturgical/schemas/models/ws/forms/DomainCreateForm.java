@@ -22,6 +22,9 @@ import com.github.reinert.jjschema.Attributes;
 @Attributes(title = "Domain", description = "A domain identifies the text of a doc as being in a specific language as spoken in a specific country for a specific realm.  A realm can be a version of a translation, e.g. the King James Version (KJV), or a particular translator, e.g. by Fr. Seraphim Dedes (dedes), or for a particular metropolis, e.g. the Orthodox Church of Kenya (oak)")
 public class DomainCreateForm extends AbstractModel {
 	
+	@Attributes(id="bottom", required = true, description = "Is this doc active?")
+	@Expose public boolean active = true;
+
 	@Attributes(required = true, description = "ISO code for the language, e.g. en.  Must be 2 to 3 characters, with no spaces.", minLength=2, maxLength=3, pattern=FormRegExConstants.NOSPACES)
 	@Expose public String languageCode = "";
 
@@ -140,6 +143,14 @@ public class DomainCreateForm extends AbstractModel {
 
 	public void setType(DOMAIN_TYPES type) {
 		this.type = type;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 
 }

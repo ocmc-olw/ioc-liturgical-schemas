@@ -109,6 +109,22 @@ public enum ENDPOINTS_ADMIN_API {
 			, USER_TOPICS.CONTACT.lib
 			, INCLUDE_IN_RESOURCE_LIST.YES.value
 			)
+	, USERS_PREFERENCES(
+			"users"
+			, "prefs"
+			,"Preferences made by people who have access to the system."
+			, SYSTEM_LIBS.USERS.libname
+			, USER_TOPICS.PREFERENCES.lib
+			, INCLUDE_IN_RESOURCE_LIST.YES.value
+			)
+	, USERS_PREFERENCES_NEW(
+			"prefs"
+			, "new"
+			,"Create a new user preference."
+			, SYSTEM_LIBS.USERS.libname
+			, USER_TOPICS.PREFERENCES.lib
+			, INCLUDE_IN_RESOURCE_LIST.NO.value
+			)
 	, USERS_NEW(
 			"users"
 			, "new"

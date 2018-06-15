@@ -50,10 +50,20 @@ public enum BIBTEX_STYLES {
     	}
     	return null;
 	}
-    public static JsonArray toDropdownJsonArray() {
+
+	public static BIBTEX_STYLES getEnumForName(String name) {
+    	for (BIBTEX_STYLES e : BIBTEX_STYLES.values()) {
+    		if (e.name().equals(name)) {
+    			return e;
+    		}
+    	}
+    	return null;
+	}
+
+	public static JsonArray toDropdownJsonArray() {
     	JsonArray result = new JsonArray();
     	for (BIBTEX_STYLES e : BIBTEX_STYLES.values()) {
-    		result.add(new DropdownItem(e.keyname + " - " + e.title, e.keyname).toJsonObject());
+    		result.add(new DropdownItem(e.keyname, e.name()).toJsonObject());
     	}
     	return result;
     }

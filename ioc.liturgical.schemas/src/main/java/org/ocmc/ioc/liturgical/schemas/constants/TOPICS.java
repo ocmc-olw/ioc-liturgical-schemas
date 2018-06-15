@@ -201,6 +201,11 @@ public enum TOPICS {
 			, "Grammatical Information about a token (e.g., a word or punctuation mark)."
 			, TOPICS.GRAMMAR
 			)
+	, UI_LABEL(
+			"uilabel"
+			,"An entry for a user interface label."
+			, TOPICS.ROOT
+			)
 	, WORDNET(
 			"WordNet"
 			, "Lexical database for English, developed by Princeton University."

@@ -1,13 +1,12 @@
 package org.ocmc.ioc.liturgical.schemas.constants;
 
-import com.google.gson.Gson;
-
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.Domain;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.Label;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.User;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.UserAuth;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.UserContact;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.UserHash;
+import org.ocmc.ioc.liturgical.schemas.models.ws.db.UserPreferences;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.UserStatistics;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.Utility;
 import org.ocmc.ioc.liturgical.schemas.models.ws.forms.AuthorizationCreateForm;
@@ -38,6 +37,7 @@ public enum INTERNAL_DB_SCHEMA_CLASSES {
 	, USER(new User())
 	, USER_AUTH(new UserAuth())
 	, USER_CONTACT(new UserContact())
+	, USER_PREFERENCES(new UserPreferences())
 	, USER_HASH(new UserHash())
 	, USER_PASSWORD_CHANGE(new UserPasswordChangeForm())
 	, USER_PASSWORD_SELF_CHANGE(new UserPasswordSelfChangeForm())

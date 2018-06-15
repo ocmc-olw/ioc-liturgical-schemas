@@ -6,7 +6,7 @@ public enum USER_TOPICS {
 	CONTACT("contact", "docs for the topic Contact.")
 	, HASH("hash", "docs for the topic Hash, i.e. the hashed user password.")
 	, NEW("new","place holder for a new user")
-	, PREFERENCES("preferences","user preferences")
+	, PREFERENCES("prefs","user preferences")
 	, STATISTICS("statistics", "docs for the topic Stats, i.e. statistics about the user's access to the system.")
 	, STATUS("status", "docs for the topic Status, i.e. whether the user's accout is active/inactive.")
 	, UTILITIES("utilities", "docs for the topic Utilities.  Basically a dummy placeholder.")

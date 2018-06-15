@@ -1,6 +1,7 @@
 package org.ocmc.ioc.liturgical.schemas.constants;
 
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
+import org.ocmc.ioc.liturgical.schemas.models.ws.db.UserPreferences;
 import org.ocmc.ioc.liturgical.schemas.models.ws.forms.AuthorizationCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.ws.forms.DomainCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.ws.forms.LabelCreateForm;
@@ -49,6 +50,11 @@ public enum NEW_FORM_CLASSES_ADMIN_API {
 			, new UserCreateForm()
 			, ENDPOINTS_ADMIN_API.USERS_NEW
 			, RESTRICTION_FILTERS.DOMAIN_ADMIN)
+	, NEW_USER_PREFERENCES(
+			"userprefs"
+			, new UserPreferences()
+			, ENDPOINTS_ADMIN_API.USERS_PREFERENCES
+			, RESTRICTION_FILTERS.NONE)
 	;
 
 	public AbstractModel obj;

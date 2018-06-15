@@ -42,6 +42,7 @@ import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextNoteCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TokenAnalysisCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.UserNoteCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.template.TemplateConfig;
+import org.ocmc.ioc.liturgical.schemas.models.labels.UiLabel;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.ConcordanceLine;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.PtbSentence;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.PtbWord;
@@ -89,6 +90,7 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbOntologyEntry;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbTokenAnalysis;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbGenerationUnit;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKLink;
+import org.ocmc.ioc.liturgical.schemas.models.ws.db.UserPreferences;
 import org.ocmc.ioc.liturgical.schemas.models.DropdownItem;
 import org.ocmc.ioc.liturgical.schemas.models.ModelHelpers;
 import org.ocmc.ioc.liturgical.schemas.models.abbreviations.Abbreviation;
@@ -434,6 +436,11 @@ public enum SCHEMA_CLASSES {
 			new TokenAnalysisCreateForm("","0")
 			, new TokenAnalysis("","0")
 			, "Token Analysis"
+			)
+	, UI_LABEL(
+			new UiLabel(" "," ", " ", " ")
+			, new UiLabel(" "," ", " ", " ")
+			, "UiLabel"
 			)
 	;
 

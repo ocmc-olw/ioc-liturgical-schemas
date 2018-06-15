@@ -408,6 +408,12 @@ public enum ENDPOINTS_DB_API {
 			, "Token Analysis"
 			,"Endpoint for a grammatical analysis of tokens"
 			)
+	, UI_LABELS(
+			"uilabels"
+			, ENDPOINT_TYPES.NODE
+			, "uilabels"
+			,"Endpoint for User Interface Labels"
+			)
 	, WORD_ANALYSIS(
 			"word/analysis"
 			, ENDPOINT_TYPES.NLP

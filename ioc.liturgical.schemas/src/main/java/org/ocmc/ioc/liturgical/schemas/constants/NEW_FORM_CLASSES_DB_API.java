@@ -66,6 +66,7 @@ import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextLiturgicalSourc
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextLiturgicalTranslationCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TokenAnalysisCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.UserNoteCreateForm;
+import org.ocmc.ioc.liturgical.schemas.models.labels.UiLabel;
 
 /**
  * Enumerates classes that are a form for creating a new doc.
@@ -585,6 +586,14 @@ public enum NEW_FORM_CLASSES_DB_API {
 		"Token Analysis"
 		, new TokenAnalysisCreateForm("","")
 		, ENDPOINTS_DB_API.TOKEN_ANALYSIS
+		, RESTRICTION_FILTERS.NONE
+		, false
+		, false
+		)
+, NEW_UI_LABEL(
+		"uilabel"
+		, new UiLabel(" "," ", " ", " ")
+		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE
 		, false
 		, false
