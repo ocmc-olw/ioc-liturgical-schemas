@@ -38,7 +38,7 @@ public enum USER_INTERFACE_LANGUAGES {
     public static JsonArray toDropdownJsonArray() {
     	JsonArray result = new JsonArray();
     	for (USER_INTERFACE_LANGUAGES e : USER_INTERFACE_LANGUAGES.values()) {
-    		result.add(new DropdownItem(e.description, e.topic).toJsonObject());
+    		result.add(new DropdownItem(e.topic + " - " + e.description, e.topic).toJsonObject());
     	}
     	return result;
     }
@@ -46,7 +46,7 @@ public enum USER_INTERFACE_LANGUAGES {
     public static List<JsonObject> toDropdownList() {
     	List<JsonObject> result = new ArrayList<JsonObject>();
     	for (USER_INTERFACE_LANGUAGES e : USER_INTERFACE_LANGUAGES.values()) {
-    		result.add(new DropdownItem(e.description, e.topic).toJsonObject());
+    		result.add(new DropdownItem(e.topic + " - " + e.description, e.topic).toJsonObject());
     	}
     	return result;
     }

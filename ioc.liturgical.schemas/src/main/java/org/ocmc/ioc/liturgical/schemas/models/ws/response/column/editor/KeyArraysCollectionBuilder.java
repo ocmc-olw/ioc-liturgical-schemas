@@ -66,11 +66,13 @@ public class KeyArraysCollectionBuilder {
 			, String key
 			, String value
 			, String seq
+			, String modifiedWhen
 			)  throws MissingSeparatorException {
 		this.addTemplateKey(
 				topic + Constants.ID_DELIMITER + key
 				, value
 				, seq
+				, modifiedWhen
 		);
 	}
 	
@@ -86,6 +88,7 @@ public class KeyArraysCollectionBuilder {
 			String key
 			, String value
 			, String seq
+			, String modifiedWhen
 			) throws MissingSeparatorException {
 		// update the topic list
 		if (key.contains(Constants.ID_DELIMITER)) {
@@ -110,6 +113,7 @@ public class KeyArraysCollectionBuilder {
 				ltkv.set_id(key);
 				ltkv.setValue(value);
 				ltkv.setSeq(seq);
+				ltkv.setModifiedWhen(modifiedWhen);
 			}
 			ltk.addIdIndex(templateKeyIndex);
 			ltkv.addIdIndex(templateKeyIndex);

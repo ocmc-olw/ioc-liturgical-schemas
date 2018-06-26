@@ -42,7 +42,7 @@ public class AresTransaction extends LTKLite {
 
 	@Expose public String requestingServer = "";
 	@Expose public String requestingMac = "";
-	@Expose public String requestingUser = "";
+	@Expose public String requestingUser = "agesgithub";
 	
 	@Expose public String fromLibrary = "";
 	@Expose public String fromTopic = "";
@@ -229,7 +229,11 @@ public class AresTransaction extends LTKLite {
 	}
 
 	public void setRequestingUser(String requestingUser) {
-		this.requestingUser = requestingUser;
+		if (requestingUser.equals("Unknown")) {
+			this.requestingUser = "agesgithub";
+		} else {
+			this.requestingUser = requestingUser;
+		}
 	}
 
 	public SOURCES getSource() {

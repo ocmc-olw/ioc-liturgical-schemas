@@ -15,6 +15,7 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
 public class LibraryTopicKeyValue extends AbstractModel {
 	@Expose String _id = "";
 	@Expose String seq = "";
+	@Expose String modifiedWhen = "";
 	@Expose String value = ""; // will hold the value from the library we are using, e.g. gr_gr_cog
 	@Expose List<Integer> ids = new ArrayList<Integer>(); // indexes into the templateKeys array
 	
@@ -61,6 +62,14 @@ public class LibraryTopicKeyValue extends AbstractModel {
 
 	public void setSeq(String seq) {
 		this.seq = seq;
+	}
+
+	public String getModifiedWhen() {
+		return modifiedWhen;
+	}
+
+	public void setModifiedWhen(String modifiedWhen) {
+		this.modifiedWhen = modifiedWhen;
 	}
 
 	}

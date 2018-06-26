@@ -39,9 +39,9 @@ public class LiturgicalDayPropertiesForm extends AbstractModel {
 	@Expose public String paschaDateThisYear = "";
 	@Attributes(readonly = true, description = "")
 	@Expose public String allSaintsDateThisYear = "";
-	@Attributes(readonly = true, description = "")
+	@Attributes(readonly = true, description = "The number of Sundays from January 15 to the start of the Triodion")
 	@Expose public int numberOfSundaysBeforeStartOfTriodion = 0;
-	@Attributes(readonly = true, description = "")
+	@Attributes(readonly = true, description = "The number of days from January 15 to the start of the Triodion")
 	@Expose public int daysUntilStartOfTriodion = 0;
 	@Attributes(readonly = true, description = "")
 	@Expose public String lastSundayAfterElevationOfCross = "";
@@ -64,15 +64,10 @@ public class LiturgicalDayPropertiesForm extends AbstractModel {
 		super();
 		this.serialVersionUID = 1.1; // this is used to set a version number for the schema
 
-		/**
-		 * Paul: you need to finish this off...
-		 * Just like below, for each property in this class, set it by using the day parameter.
-		 */
 		this.theLiturgicalDate = formattedDate(day.getGregorianCalendar(), ymd);
 		this.theJulianDate     = formattedDate(day.getTheDayJulian(), ymd);
 		this.theGregorianDate  = formattedDate(day.getTheDayGregorian(), eymd);
 
-		// PFB Done - completed the rest of the properties
 	    this.dayOfWeek  = day.getDayOfWeek();
 	    this.modeOfWeek = day.getModeOfWeek();
 
