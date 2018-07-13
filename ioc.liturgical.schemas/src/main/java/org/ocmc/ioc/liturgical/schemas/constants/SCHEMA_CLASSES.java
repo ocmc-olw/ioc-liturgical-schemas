@@ -41,12 +41,15 @@ import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextLiturgicalTrans
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TextNoteCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.TokenAnalysisCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.UserNoteCreateForm;
-import org.ocmc.ioc.liturgical.schemas.models.forms.template.TemplateConfig;
 import org.ocmc.ioc.liturgical.schemas.models.labels.UiLabel;
+import org.ocmc.ioc.liturgical.schemas.models.libraries.VersionLibrary;
+import org.ocmc.ioc.liturgical.schemas.models.libraries.VersionRealm;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.ConcordanceLine;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.PtbSentence;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.PtbWord;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.TokenAnalysis;
+import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.UDtbSentence;
+import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.UDtbWord;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.WordAnalysis;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.nlp.WordInflected;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.notes.TextualNote;
@@ -442,6 +445,26 @@ public enum SCHEMA_CLASSES {
 			, new UiLabel(" "," ", " ", " ")
 			, "UiLabel"
 			)
+	, UD_TREEBANK_SENTENCE(
+			new UDtbSentence("","0")
+			, new UDtbSentence("","0")
+			, "Universal Dependency Treebank Sentence"
+			)
+	, UD_TREEBANK_WORD(
+			new UDtbWord("","0")
+			, new UDtbWord("","0")
+			, "Universal Dependency Treebank Word"
+			)
+	, VERSION_LIBRARY(
+			new VersionLibrary(" "," ", " ")
+			, new VersionLibrary(" "," ", " ")
+			, "VersionLibrary"
+			)
+	, VERSION_REALM(
+			new VersionRealm(" ")
+			, new VersionRealm(" ")
+			, "VersionRealm"
+			)
 	;
 
 	public LTK ltk;
@@ -788,13 +811,32 @@ public enum SCHEMA_CLASSES {
 				LTKDbTokenAnalysis entry = (LTKDbTokenAnalysis) s.ltkDb;
 				result.add(
 						entry.getOntologyTopic().label
-						, ModelHelpers.getPropertiesAsDropdownItems(entry)
+						, ModelHelpers.getPropertiesAsDropdownItems(entry, SCHEMA_CLASSES.getExclusions())
 				);
 			}
 		}
 		return result;
 	}
 
+	private static List<String> getExclusions() {
+		List<String> list = new ArrayList<String>();
+		list.add("_valueSchemaId");
+		list.add("active");
+		list.add("adHocLabel");
+		list.add("assignedToUser");
+		list.add("createdBy");
+		list.add("createdWhen");
+		list.add("dataSource");
+		list.add("modifiedBy");
+		list.add("modifiedWhen");
+		list.add("ontologyTopic");
+		list.add("partTypeOfKey");
+		list.add("partTypeOfTopic");
+		list.add("seq");
+		list.add("status");
+		list.add("tags");
+		return list;
+	}
 	public static JsonArray tokenAnalysisTypesJson() {
 		JsonArray result = new JsonArray();
 		result.add(new DropdownItem("Any","*").toJsonObject());

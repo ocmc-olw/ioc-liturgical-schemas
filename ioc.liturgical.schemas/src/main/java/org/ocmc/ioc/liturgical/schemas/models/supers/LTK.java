@@ -81,6 +81,9 @@ public class LTK extends AbstractModel {
 	@Attributes(id = "bottom", required = true, readonly = true, minLength = 1, description = "The unique identifier for the schema.")
 	@Expose public String _valueSchemaId = "";
 	
+	@Attributes(id = "bottom", required = false, description = "An additional Neo4j node label")
+	@Expose public String adHocLabel = "";
+
 	/**
 	 * Visibility is at the record level.  It works in conjunction with the domain of the record ID.
 	 * 
@@ -192,16 +195,16 @@ public class LTK extends AbstractModel {
 	}
 
 	public String toSchemaAsLabel() {
-		String result = this._valueSchemaId;
+		StringBuffer result = new StringBuffer();
 		try {
 			String [] parts = this._valueSchemaId.split(":");
 			if (parts.length > 1) {
-				result = parts[0];
+				result.append(parts[0]);
 			}
 		} catch (Exception e) {
-			// ignore
+			result.append(this._valueSchemaId);
 		}
-		return result;
+		return result.toString();
 	}
 
 	public String getId() {
@@ -256,6 +259,9 @@ public class LTK extends AbstractModel {
 			}
 		}
 		labels.add(this.toSchemaAsLabel());
+		if (this.adHocLabel.length() > 0) {
+			labels.add(this.adHocLabel);
+		}
 		return labels;
 	}
 	
@@ -312,5 +318,13 @@ public class LTK extends AbstractModel {
 
 	public void setAssignedToUser(String assignedToUser) {
 		this.assignedToUser = assignedToUser;
+	}
+
+	public String getAdHocLabel() {
+		return adHocLabel;
+	}
+
+	public void setAdHocLabel(String adHocLabel) {
+		this.adHocLabel = adHocLabel;
 	}
 }

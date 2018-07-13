@@ -148,4 +148,16 @@ public class ModelHelpers {
 		}
 		return result;
 	}
+	public static JsonArray getPropertiesAsDropdownItems(AbstractModel model, List<String> exclusions) {
+		JsonArray result = new JsonArray();
+		result.add(new DropdownItem("Any","*").toJsonObject());
+		List<String> props = getPropertiesList(model);
+		java.util.Collections.sort(props);
+		for (String prop : props) {
+			if (! exclusions.contains(prop)) {
+				result.add(new DropdownItem(prop).toJsonObject());
+			}
+		}
+		return result;
+	}
 }

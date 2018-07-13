@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.ocmc.ioc.liturgical.schemas.models.DropdownItem;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.Utility;
+import org.ocmc.ioc.liturgical.schemas.models.ws.db.UtilityPdfGeneration;
+import org.ocmc.ioc.liturgical.schemas.models.ws.db.UtilityUdLoader;
 
 import com.google.gson.JsonArray;
 
@@ -20,6 +22,24 @@ public enum UTILITIES {
 	EngSensesOne(
 			"EngSensesOne"
 			, 	"Gets English One senses"
+			, new ArrayList<UTILITIES>()
+			, new ArrayList<UTILITIES>()
+			) 
+	, HtmlToMetadata(   // TODO: not implemented yet
+			"HtmlToMetadata"
+			, 	"For each url found in AGES and Liml, converts the HTML to metadata for use by the AGES Editor and Viewer.  Stores the metadata in the database for future use."
+			, new ArrayList<UTILITIES>()
+			, new ArrayList<UTILITIES>()
+			) 
+	, GeneratePdfFiles(   
+			"GeneratePdfFiles"
+			, 	"For each url found in AGES and Liml, generate a PDF file."
+			, new ArrayList<UTILITIES>()
+			, new ArrayList<UTILITIES>()
+			) 
+	, LoadUniversalDependencyTreebank(   
+			"LoadUdTreebank"
+			, 	"Load data from Github for a repo in Universal Dependencies."
 			, new ArrayList<UTILITIES>()
 			, new ArrayList<UTILITIES>()
 			) 
@@ -100,7 +120,14 @@ public enum UTILITIES {
     public static List<Utility> toUtilityList() {
     	List<Utility> result = new ArrayList<Utility>();
     	for (UTILITIES e : UTILITIES.values()) {
-    		Utility u = new Utility();
+    		Utility u = null;
+    		if (e.equals(UTILITIES.GeneratePdfFiles)) {
+    			u = new UtilityPdfGeneration();
+    		} else	if (e.equals(UTILITIES.LoadUniversalDependencyTreebank)) {
+        			u = new UtilityUdLoader();
+    		} else {
+    			u = new Utility();
+    		}
     		u.setName(e.keyname);
     		u.setDescription(e.description);
     		for (UTILITIES p : e.preProcessors) {

@@ -141,6 +141,21 @@ public enum TOPICS {
 			, "Grammatical Information about a token (e.g., a word or punctuation mark) from the Persesus Treebank."
 			, TOPICS.PERSEUS_TREEBANK
 			)
+	, UD_TREEBANK(
+			"UDtb"
+			, "A Treebank based on Universal Dependency."
+			, TOPICS.GRAMMAR
+			)
+	, UD_TREEBANK_SENTENCE(
+			"UDtbSentence"
+			, "A sentence from a text from a Universal Dependency Treebank."
+			, TOPICS.UD_TREEBANK
+			)
+	, UD_TREEBANK_WORD(
+			"UDtbWord"
+			, "Grammatical Information about a token (e.g., a word or punctuation mark) from a Universal Dependency Treebank."
+			, TOPICS.UD_TREEBANK
+			)
 	, PREFERENCES(
 			"Preferences"
 			,"A user's preferences when using the software."
@@ -160,6 +175,16 @@ public enum TOPICS {
 			"GenerationUnit"
 			, "A container of information to generate a book or service."
 			, TOPICS.ROOT
+			)
+	, TABLE_REALMS(
+			"versionRealm"
+			, "A table of Reams that are used with libraries"
+			, TOPICS.TABLES_ROOT
+			)
+	, TABLE_LIBRARIES(
+			"versionLibrary"
+			, "A table of libraries for that identify the version of a translation"
+			, TOPICS.TABLES_ROOT
 			)
 	, SECTION(
 			"Section"
@@ -331,7 +356,9 @@ public enum TOPICS {
 		List<String> result = new ArrayList<String>();
 		String [] labels = toLabels(this).split(":");
 		for (String label : labels) {
-			result.add(label);
+			if (!result.contains(label)) {
+				result.add(label);
+			}
 		}
 		return result;
 	}

@@ -58,5 +58,15 @@ public class LITURGICAL_BOOKS {
     	}
     	return result;
     }
+    public static String getKeyForValue(String value) {
+    	String result = value;
+    	for (Entry<String,String> entry : LITURGICAL_BOOKS.getMap().entrySet()) {
+    		if (entry.getValue().equals(value)) {
+    			result = entry.getKey();
+    			break;
+    		}
+    	}
+    	return result;
+    }
 
 }

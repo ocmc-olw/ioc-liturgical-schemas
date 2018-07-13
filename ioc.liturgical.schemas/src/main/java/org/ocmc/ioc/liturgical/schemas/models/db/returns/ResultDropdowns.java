@@ -63,6 +63,7 @@ public class ResultDropdowns extends AbstractModel {
 	@Expose public JsonObject uiLabelTopics = new JsonObject();
 	@Expose public JsonArray isoCountries = new JsonArray();
 	@Expose public JsonArray isoLanguages = new JsonArray();
+	@Expose public JsonObject adminForms = new JsonObject();
 	
 	public ResultDropdowns(boolean prettyPrint) {
 		super();
@@ -409,6 +410,14 @@ public class ResultDropdowns extends AbstractModel {
 
 	public void setIsoLanguages(JsonArray isoLanguages) {
 		this.isoLanguages = isoLanguages;
+	}
+
+	public JsonObject getAdminForms() {
+		return adminForms;
+	}
+
+	public void setAdminForms(JsonObject adminForms) {
+		this.adminForms = adminForms;
 	}
 
 

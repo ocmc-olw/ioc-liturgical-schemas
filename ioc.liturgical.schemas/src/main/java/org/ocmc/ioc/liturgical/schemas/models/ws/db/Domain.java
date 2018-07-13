@@ -8,20 +8,14 @@ import org.ocmc.ioc.liturgical.schemas.constants.STATUS;
 import org.ocmc.ioc.liturgical.schemas.annotations.UiWidget;
 import org.ocmc.ioc.liturgical.schemas.constants.Constants;
 import org.ocmc.ioc.liturgical.schemas.constants.DOMAIN_TYPES;
+import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDb;
 import org.ocmc.ioc.liturgical.schemas.models.ws.supers.WsDbAbstractModel;
 
 import com.github.reinert.jjschema.Attributes;
 import com.google.gson.annotations.Expose;
 
-//import ioc.liturgical.ws.annotations.UiWidget;
-//import ioc.liturgical.ws.constants.Constants;
-//import ioc.liturgical.ws.constants.DOMAIN_TYPES;
-//import ioc.liturgical.ws.constants.STATUS;
-//import ioc.liturgical.ws.forms.manager.FormRegExConstants;
-//import ioc.liturgical.ws.models.ws.supers.WsDbAbstractModel;
-
 @Attributes(title = "Domain", description = "A domain identifies the text of a doc as being in a specific language as spoken in a specific country for a specific realm.  A realm can be a version of a translation, e.g. the King James Version (KJV), or a particular translator, e.g. by Fr. Seraphim Dedes (dedes), or for a particular metropolis, e.g. the Orthodox Church of Kenya (oak)")
-public class Domain extends WsDbAbstractModel {
+public class Domain extends WsDbAbstractModel implements Comparable<Domain> {
 	
 	@Attributes(required = true, readonly=true, description = "The combination of language and country code and realm, separated by the underscore character, e.g. en_us_dedes", minLength=7)
 	@Expose public String domain = "";
@@ -166,6 +160,11 @@ public class Domain extends WsDbAbstractModel {
 
 	public void setType(DOMAIN_TYPES type) {
 		this.type = type;
+	}
+	
+	@Override
+	public int compareTo(Domain o) {
+		return this.domain.compareTo(o.getDomain());
 	}
 
 }

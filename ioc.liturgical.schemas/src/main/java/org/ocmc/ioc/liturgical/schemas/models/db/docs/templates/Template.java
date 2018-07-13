@@ -10,7 +10,7 @@ import org.ocmc.ioc.liturgical.schemas.constants.LIBRARIES;
 import org.ocmc.ioc.liturgical.schemas.constants.TEMPLATE_NODE_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.TEMPLATE_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
-import org.ocmc.ioc.liturgical.schemas.constants.nlp.DEPENDENCY_LABELS;
+import org.ocmc.ioc.liturgical.schemas.constants.nlp.DEPENDENCY_LABELS_PERSEUS;
 import org.ocmc.ioc.liturgical.schemas.constants.nlp.PARTS_OF_SPEECH;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.ontology.Animal;
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;

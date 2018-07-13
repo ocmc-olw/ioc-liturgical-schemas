@@ -61,6 +61,14 @@ public enum ENDPOINTS_ADMIN_API {
 			, ""
 			, INCLUDE_IN_RESOURCE_LIST.NO.value
 			)
+	, DOMAINS_COLLECTIVE(
+			"domains"
+			, "collective"
+			,"Domains that are liturgical and collective, that is non-personal."
+			, SYSTEM_MISC_LIBRARY_TOPICS.DOMAINS.lib
+			, ""
+			, INCLUDE_IN_RESOURCE_LIST.YES.value
+			)
 	, LABELS(
 			""
 			, "labels"

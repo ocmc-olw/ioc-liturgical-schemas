@@ -19,8 +19,10 @@ public class Constants {
 	public static final String TOPIC_MESSAGES = "digest";
 
 	public static final String LIBRARY_GENERATOR = "en_sys_generator";
+	public static final String LIBRARY_LITURGICAL_DOCUMENT_MODEL = "en_sys_ldom";
 	public static final String LIBRARY_ETHNOLOGUE = "en_sys_ethnologue";
 	public static final String LIBRARY_SYNCH = "en_sys_synch";
+	public static final String TOPIC_LITURGICAL_DOCUMENT_MODEL = "ldom";
 	public static final String TOPIC_COUNTRY = "country";
 	public static final String TOPIC_SYNCH = "cypher";
 	public static final String TOPIC_SYNCH_LOG = "synch";

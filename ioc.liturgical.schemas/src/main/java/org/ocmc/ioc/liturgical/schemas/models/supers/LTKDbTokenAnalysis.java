@@ -105,11 +105,25 @@ public class LTKDbTokenAnalysis extends LTKDb {
 	private String toSeq() {
 		String key = this.key;
 		if (NumberUtils.isNumber(key)) {
-			key = GeneralUtils.padNumber(
-					"0"
-					, 3
-					, Integer.parseInt(this.key)
-					);
+			int nbr = 0;
+			try {
+				key = GeneralUtils.padNumber(
+						"0"
+						, 3
+						, Integer.parseInt(this.key)
+						);
+			} catch (Exception e) {
+				try {
+					key = this.padNumber(
+							"0"
+							, 3
+							, Double.parseDouble(this.key)
+							)
+					;
+				} catch (Exception innerE) {
+					key = this.key;
+				}
+			}
 		} else if (key.equals("root")) {
 			key = "000";
 		}
@@ -122,6 +136,9 @@ public class LTKDbTokenAnalysis extends LTKDb {
 				;
 	}
 
+	private String padNumber(String firstChar, int width, double value) {
+		return firstChar + String.format("%0" + width + "d", value);
+	}
 	public String getDependsOn() {
 		return dependsOn;
 	}

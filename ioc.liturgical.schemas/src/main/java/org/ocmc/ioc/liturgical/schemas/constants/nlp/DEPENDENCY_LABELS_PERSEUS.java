@@ -1,6 +1,6 @@
 package org.ocmc.ioc.liturgical.schemas.constants.nlp;
 
-public enum DEPENDENCY_LABELS {
+public enum DEPENDENCY_LABELS_PERSEUS {
 	ADV("ADV","adverb","")
 	, ADV_CO("ADV_CO","adverb - coordinated","")
 	, APOS("APOS","apposing element","PM")
@@ -34,7 +34,7 @@ public enum DEPENDENCY_LABELS {
 	public String description = "";
 	public String parse = "";
 	
-	private DEPENDENCY_LABELS(
+	private DEPENDENCY_LABELS_PERSEUS(
 			String keyname
 			, String description
 			, String parse
@@ -49,12 +49,12 @@ public enum DEPENDENCY_LABELS {
 	 * @param name to search for
 	 * @return Entry the enum for that name
 	 */
-	public static DEPENDENCY_LABELS forName(String name) {
-		for (DEPENDENCY_LABELS v : DEPENDENCY_LABELS.values()) {
+	public static DEPENDENCY_LABELS_PERSEUS forName(String name) {
+		for (DEPENDENCY_LABELS_PERSEUS v : DEPENDENCY_LABELS_PERSEUS.values()) {
 			if (v.keyname.equals(name)) {
 				return v;
 			}
 		}
-		return DEPENDENCY_LABELS.TBD;
+		return DEPENDENCY_LABELS_PERSEUS.TBD;
 	}
 }

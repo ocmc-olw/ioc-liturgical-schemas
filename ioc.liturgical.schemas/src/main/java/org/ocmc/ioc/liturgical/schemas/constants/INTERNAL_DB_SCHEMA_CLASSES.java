@@ -9,6 +9,8 @@ import org.ocmc.ioc.liturgical.schemas.models.ws.db.UserHash;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.UserPreferences;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.UserStatistics;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.Utility;
+import org.ocmc.ioc.liturgical.schemas.models.ws.db.UtilityPdfGeneration;
+import org.ocmc.ioc.liturgical.schemas.models.ws.db.UtilityUdLoader;
 import org.ocmc.ioc.liturgical.schemas.models.ws.forms.AuthorizationCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.ws.forms.DomainCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.ws.forms.LabelCreateForm;
@@ -44,6 +46,8 @@ public enum INTERNAL_DB_SCHEMA_CLASSES {
 	, USER_NEW(new UserCreateForm())
 	, USER_STATISTICS(new UserStatistics())
 	, UTILITY(new Utility())
+	, UTILITY_LOAD_UD_TREEBANK(new UtilityUdLoader())
+	, UTILITY_PDF_GENERATION(new UtilityPdfGeneration())
 	;
 
 	public AbstractModel obj;

@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 
 import org.ocmc.ioc.liturgical.schemas.constants.LIBRARIES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
-import org.ocmc.ioc.liturgical.schemas.constants.nlp.DEPENDENCY_LABELS;
+import org.ocmc.ioc.liturgical.schemas.constants.nlp.DEPENDENCY_LABELS_PERSEUS;
 import org.ocmc.ioc.liturgical.schemas.constants.nlp.PARTS_OF_SPEECH;
 
 import com.github.reinert.jjschema.Attributes;
@@ -34,7 +34,7 @@ public class LTKDbGrammarAnalysis extends LTKDb {
 	@Expose public PARTS_OF_SPEECH pos = PARTS_OF_SPEECH.UNKNOWN;
 
 	@Attributes(required = true, description = "Dependency label for this token")
-	@Expose public DEPENDENCY_LABELS label = DEPENDENCY_LABELS.TBD;
+	@Expose public DEPENDENCY_LABELS_PERSEUS label = DEPENDENCY_LABELS_PERSEUS.TBD;
 
 	public LTKDbGrammarAnalysis(
 			String form
@@ -93,11 +93,11 @@ public class LTKDbGrammarAnalysis extends LTKDb {
 		this.pos = pos;
 	}
 
-	public DEPENDENCY_LABELS getLabel() {
+	public DEPENDENCY_LABELS_PERSEUS getLabel() {
 		return label;
 	}
 
-	public void setLabel(DEPENDENCY_LABELS label) {
+	public void setLabel(DEPENDENCY_LABELS_PERSEUS label) {
 		this.label = label;
 	}
 	

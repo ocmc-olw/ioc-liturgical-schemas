@@ -590,7 +590,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, false
 		, false
 		)
-, NEW_UI_LABEL(
+	, NEW_UI_LABEL(
 		"uilabel"
 		, new UiLabel(" "," ", " ", " ")
 		, ENDPOINTS_DB_API.DOCS
