@@ -5,7 +5,7 @@ import org.ocmc.ioc.liturgical.schemas.models.DropdownItem;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-public enum UD_PARTS_OF_SPEECH {
+public enum UD_POS {
 	ADJ(
 			"ADJ"
 			, "adjective"
@@ -29,8 +29,8 @@ public enum UD_PARTS_OF_SPEECH {
 			)
 	, AUX(
 			"auxiliary"
+			, "auxiliary"
 			, "An auxiliary is a function word that accompanies the lexical verb of a verb phrase and expresses grammatical distinctions not carried by the lexical verb, such as person, number, tense, mood, aspect, voice or evidentiality. It is often a verb (which may have non-auxiliary uses as well) but many languages have nonverbal TAME markers and these should also be tagged AUX. The class AUX also include copulas (in the narrow sense of pure linking words for nonverbal predication)."
-			, ""
 			,""
 			, ""
 			)
@@ -113,8 +113,8 @@ public enum UD_PARTS_OF_SPEECH {
 			)
 	, VERB(
 			"VERB"
+			, "verb"
 			, "A verb is a member of the syntactic class of words that typically signal events and actions, can constitute a minimal predicate in a clause, and govern the number and types of other constituents which may occur in the clause. Verbs are often associated with grammatical categories like tense, mood, aspect and voice, which can either be expressed inflectionally or using auxilliary verbs or particles."
-			, ""
 			,""
 			, ""
 			)
@@ -139,7 +139,7 @@ public enum UD_PARTS_OF_SPEECH {
 	public String parse = "";
 	public String gev = "";
 	
-	private UD_PARTS_OF_SPEECH(
+	private UD_POS(
 			String keyname
 			, String fullname
 			, String description
@@ -158,13 +158,13 @@ public enum UD_PARTS_OF_SPEECH {
 	 * @param name to search for
 	 * @return Entry the enum for that name
 	 */
-	public static UD_PARTS_OF_SPEECH forName(String name) {
-		for (UD_PARTS_OF_SPEECH v : UD_PARTS_OF_SPEECH.values()) {
+	public static UD_POS forName(String name) {
+		for (UD_POS v : UD_POS.values()) {
 			if (v.keyname.equals(name)) {
 				return v;
 			}
 		}
-		return UD_PARTS_OF_SPEECH.TBD;
+		return UD_POS.TBD;
 	}
 	
     public static JsonArray toDropdownJsonArray(boolean includeAny) {
@@ -172,7 +172,7 @@ public enum UD_PARTS_OF_SPEECH {
     	if (includeAny) {
         	result.add(new DropdownItem("Any","*").toJsonObject());
     	}
-    	for (UD_PARTS_OF_SPEECH e : UD_PARTS_OF_SPEECH.values()) {
+    	for (UD_POS e : UD_POS.values()) {
     		result.add(new DropdownItem(e.keyname + " - " + e.fullname, e.keyname).toJsonObject());
     	}
     	return result;
@@ -180,7 +180,7 @@ public enum UD_PARTS_OF_SPEECH {
     
     public static JsonArray toJsonArray() {
     	JsonArray result = new JsonArray();
-    	for (UD_PARTS_OF_SPEECH e : UD_PARTS_OF_SPEECH.values()) {
+    	for (UD_POS e : UD_POS.values()) {
     		JsonObject entry = new JsonObject();
     		entry.addProperty("key", e.keyname);
     		entry.addProperty("value", e.fullname);

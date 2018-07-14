@@ -29,7 +29,7 @@ public enum UD_MOOD {
 			)
 	, SUB(
 			"Sub"
-			, "Subjunctive"
+			, "subjunctive"
 			, "The subjunctive mood is used under certain circumstances in subordinate clauses, typically for actions that are subjective or otherwise uncertain. In German, it may be also used to convey the conditional meaning."
 			,""
 			, ""
