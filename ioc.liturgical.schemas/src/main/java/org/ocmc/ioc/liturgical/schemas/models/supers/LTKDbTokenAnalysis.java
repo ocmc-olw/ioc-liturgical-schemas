@@ -46,10 +46,35 @@ public class LTKDbTokenAnalysis extends LTKDb {
     @Expose String number = "";
     @Expose String person = "";
     @Expose String pos = "";
-    @Expose String tense = "";
+    public String getNnpToken() {
+		return nnpToken;
+	}
+
+	public void setNnpToken(String nnpToken) {
+		this.nnpToken = nnpToken;
+	}
+
+	public String getNnpLemma() {
+		return nnpLemma;
+	}
+
+	public void setNnpLemma(String nnpLemma) {
+		this.nnpLemma = nnpLemma;
+	}
+
+	public String getAnswersQuestion() {
+		return answersQuestion;
+	}
+
+	public void setAnswersQuestion(String answersQuestion) {
+		this.answersQuestion = answersQuestion;
+	}
+
+	@Expose String tense = "";
     @Expose String voice = "";
     @Expose String grammar = "";
     @Expose String refersTo = "";
+    @Expose String answersQuestion = "";
     @Expose String seq = "";
 
 	public LTKDbTokenAnalysis(

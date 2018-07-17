@@ -719,7 +719,7 @@ public String getOslwSetDomain(COLUMNS column) {
 				if (parts.length == 4) {
 					String topic = parts[0];
 					String library = parts[1] + "_" + parts[2] + "_" + parts[3];
-					result.append(library);
+					result.append(library.toLowerCase());
 					result.append(Constants.ID_DELIMITER);
 					result.append(topic);
 					result.append(Constants.ID_DELIMITER);
