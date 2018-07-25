@@ -20,11 +20,11 @@ public enum UD_DEFINITE {
 		,""
 		, ""
 		)
-	, TBD(
-			"TBD"
-			,"to-be-determined"
-			,"to be explained"
-			,"tbd"
+	, USP(
+			"_"
+			,"unspecified"
+			,"unspecified"
+			,""
 			, ""
 			)
 	;
@@ -59,7 +59,7 @@ public enum UD_DEFINITE {
 				return v;
 			}
 		}
-		return UD_DEFINITE.TBD;
+		return UD_DEFINITE.USP;
 	}
 	
     public static JsonArray toDropdownJsonArray(boolean includeAny) {

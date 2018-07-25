@@ -41,11 +41,11 @@ public enum UD_TENSE {
 			,""
 			, ""
 			)
-	, TBD(
-			"TBD"
-			,"to-be-determined"
-			,"to be explained"
-			,"tbd"
+	, USP(
+			"_"
+			,"unspecified"
+			,"unspecified"
+			,""
 			, ""
 			)
 	;
@@ -80,7 +80,7 @@ public enum UD_TENSE {
 				return v;
 			}
 		}
-		return UD_TENSE.TBD;
+		return UD_TENSE.USP;
 	}
 	
     public static JsonArray toDropdownJsonArray(boolean includeAny) {

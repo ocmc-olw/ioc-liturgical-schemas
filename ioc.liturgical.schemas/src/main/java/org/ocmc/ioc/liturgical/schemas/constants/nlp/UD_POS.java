@@ -125,11 +125,11 @@ public enum UD_POS {
 			,""
 			, ""
 			)
-	, TBD(
-			"TBD"
-			,"to-be-determined"
-			,"to be explained"
-			,"tbd"
+	, USP(
+			"_"
+			,"unspecified"
+			,"unspecified"
+			,""
 			, ""
 			)
 	;
@@ -164,7 +164,7 @@ public enum UD_POS {
 				return v;
 			}
 		}
-		return UD_POS.TBD;
+		return UD_POS.USP;
 	}
 	
     public static JsonArray toDropdownJsonArray(boolean includeAny) {

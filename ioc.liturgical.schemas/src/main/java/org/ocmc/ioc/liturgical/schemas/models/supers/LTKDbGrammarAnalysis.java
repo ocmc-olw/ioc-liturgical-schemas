@@ -27,6 +27,9 @@ public class LTKDbGrammarAnalysis extends LTKDb {
 	@Attributes(required = true, description = "Expanded Form")
 	@Expose public String expandedForm = "";
 
+	@Attributes(required = false, description = "Answers question")
+	@Expose public String answersQuestion = "";
+
 	@Attributes(required = true, description = "Dialect in which this form and analysis occurs")
 	@Expose public String dialect = "";
 
@@ -116,6 +119,14 @@ public class LTKDbGrammarAnalysis extends LTKDb {
 		result.append("/");
 		result.append(this.lemma);
 		return result.toString();
+	}
+
+	public String getAnswersQuestion() {
+		return answersQuestion;
+	}
+
+	public void setAnswersQuestion(String answersQuestion) {
+		this.answersQuestion = answersQuestion;
 	}
 
 

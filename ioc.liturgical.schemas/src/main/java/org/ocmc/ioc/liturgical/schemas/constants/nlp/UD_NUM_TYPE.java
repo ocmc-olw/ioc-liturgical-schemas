@@ -5,39 +5,53 @@ import org.ocmc.ioc.liturgical.schemas.models.DropdownItem;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-public enum UD_CASE {
-	NOM(
-			"Nom"
-			, "nominative"
-			, "The base form of the noun, typically used as citation form (lemma). In many languages this is the word form used for subjects of clauses. "
+public enum UD_NUM_TYPE {
+	CARD(
+			"Card"
+			, "cardinal numerals"
+			, " cardinal number or corresponding interrogative / relative / indefinite / demonstrative word"
 			,""
 			, ""
 			)
-	, ACC(
-		"Acc"
-		, "accusative"
-		, "In many languages this is the word form used for direct objects of verbs. "
+	,DIST(
+		"Frac"
+		, "fraction"
+		, "This is a subtype of cardinal numbers, occasionally distinguished in corpora. It may denote a fraction or just the denominator of the fraction. In various languages these words may behave morphologically and syntactically as nouns or ordinal numerals."
 		,""
 		, ""
 		)
-	, DAT(
-			"Dat"
-			, "dative"
-			, "In many languages this is the word form used for indirect objects of verbs."
+	, FRAC(
+			"Dual"
+			, "dual number"
+			, "A dual noun denotes two persons, animals or things."
 			,""
 			, ""
 			)
-	, GEN(
-			"Gen"
-			, "genitive"
-			, "Prototypical meaning of genitive is that the noun phrase somehow belongs to its governor; it would often be translated by the English preposition of. "
+	,MULT(
+			"Mult"
+			, "multiplicative numeral or corresponding interrogative / relative / indefinite / demonstrative word"
+			, "This is subtype of adjective or adverb."
 			,""
 			, ""
 			)
-	, VOC(
-			"Voc"
-			, "vocative"
-			, "The vocative case is a special form of noun used to address someone. Thus it predominantly appears with animate nouns (see the feature of Animacy). Nevertheless this is not a grammatical restriction and inanimate things can be addressed as well."
+	,ORD(
+			"Ord"
+			, "ordinal numeral or corresponding interrogative / relative / indefinite / demonstrative word"
+			, "This is subtype of adjective or (in some languages) of adverb."
+			,""
+			, ""
+			)
+	, RANGE(
+			"Range"
+			,"range of values"
+			,"e.g. two to five"
+			,""
+			, ""
+			)
+	, SET(
+			"Set"
+			,"number of sets of things; collective numera"
+			,"Morphologically distinct class of numerals used to count sets of things, or nouns that are pluralia tantum. Some authors call this type collective numeral."
 			,""
 			, ""
 			)
@@ -55,7 +69,7 @@ public enum UD_CASE {
 	public String parse = "";
 	public String gev = "";
 	
-	private UD_CASE(
+	private UD_NUM_TYPE(
 			String keyname
 			, String fullname
 			, String description
@@ -74,13 +88,13 @@ public enum UD_CASE {
 	 * @param name to search for
 	 * @return Entry the enum for that name
 	 */
-	public static UD_CASE forName(String name) {
-		for (UD_CASE v : UD_CASE.values()) {
+	public static UD_NUM_TYPE forName(String name) {
+		for (UD_NUM_TYPE v : UD_NUM_TYPE.values()) {
 			if (v.keyname.equals(name)) {
 				return v;
 			}
 		}
-		return UD_CASE.USP;
+		return UD_NUM_TYPE.USP;
 	}
 	
     public static JsonArray toDropdownJsonArray(boolean includeAny) {
@@ -88,7 +102,7 @@ public enum UD_CASE {
     	if (includeAny) {
         	result.add(new DropdownItem("Any","*").toJsonObject());
     	}
-    	for (UD_CASE e : UD_CASE.values()) {
+    	for (UD_NUM_TYPE e : UD_NUM_TYPE.values()) {
     		result.add(new DropdownItem(e.keyname + " - " + e.fullname, e.keyname).toJsonObject());
     	}
     	return result;
@@ -96,7 +110,7 @@ public enum UD_CASE {
     
     public static JsonArray toJsonArray() {
     	JsonArray result = new JsonArray();
-    	for (UD_CASE e : UD_CASE.values()) {
+    	for (UD_NUM_TYPE e : UD_NUM_TYPE.values()) {
     		JsonObject entry = new JsonObject();
     		entry.addProperty("key", e.keyname);
     		entry.addProperty("value", e.fullname);

@@ -34,11 +34,11 @@ public enum UD_MOOD {
 			,""
 			, ""
 			)
-	, TBD(
-			"TBD"
-			,"to-be-determined"
-			,"to be explained"
-			,"tbd"
+	, USP(
+			"_"
+			,"unspecified"
+			,"unspecified"
+			,""
 			, ""
 			)
 	;
@@ -73,7 +73,7 @@ public enum UD_MOOD {
 				return v;
 			}
 		}
-		return UD_MOOD.TBD;
+		return UD_MOOD.USP;
 	}
 	
     public static JsonArray toDropdownJsonArray(boolean includeAny) {

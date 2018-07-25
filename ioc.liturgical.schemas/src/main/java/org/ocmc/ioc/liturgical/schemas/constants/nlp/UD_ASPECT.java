@@ -20,11 +20,11 @@ public enum UD_ASPECT {
 		,""
 		, ""
 		)
-	, TBD(
-			"TBD"
-			,"to-be-determined"
-			,"to be explained"
-			,"tbd"
+	, USP(
+			"_"
+			,"unspecified"
+			,"unspecified"
+			,""
 			, ""
 			)
 	;
@@ -59,7 +59,7 @@ public enum UD_ASPECT {
 				return v;
 			}
 		}
-		return UD_ASPECT.TBD;
+		return UD_ASPECT.USP;
 	}
 	
     public static JsonArray toDropdownJsonArray(boolean includeAny) {

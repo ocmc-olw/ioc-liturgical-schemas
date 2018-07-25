@@ -5,7 +5,7 @@ import org.ocmc.ioc.liturgical.schemas.models.DropdownItem;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-public enum UD_DEP_REL_LABEL {
+public enum UD_DEPENDENCY_LABELS {
 	ACL(
 			"acl"
 			,"clausal modifier of noun (adjectival clause)"
@@ -244,7 +244,7 @@ public enum UD_DEP_REL_LABEL {
 			,""
 			, ""
 			)
-	, mark(
+	, MARK(
 			"mark"
 			,"marker"
 			,"A marker is the word introducing a finite clause subordinate to another clause. For a complement clause, this is words like [en] that or whether. For an adverbial clause, the marker is typically a subordinating conjunction like [en] while or although. The mark is a dependent of the subordinate clause head. In a relative clause, it is a normally uninflected word, which simply introduces a relative clause, such as [he] še. (In this last use, one needs to distinguish between relative clause markers, which are mark from relative pronouns, which fill a regular verbal argument or modifier grammatical relation."
@@ -349,11 +349,11 @@ public enum UD_DEP_REL_LABEL {
 			,""
 			, ""
 			)
-	, TBD(
-			"TBD"
-			,"to-be-determined"
-			,"to be explained"
-			,"tbd"
+	, USP(
+			"_"
+			,"unspecified"
+			,"unspecified"
+			,""
 			, ""
 			)
 	;
@@ -363,7 +363,7 @@ public enum UD_DEP_REL_LABEL {
 	public String parse = "";
 	public String gev = "";
 	
-	private UD_DEP_REL_LABEL(
+	private UD_DEPENDENCY_LABELS(
 			String keyname
 			, String fullname
 			, String description
@@ -382,13 +382,13 @@ public enum UD_DEP_REL_LABEL {
 	 * @param name to search for
 	 * @return Entry the enum for that name
 	 */
-	public static UD_DEP_REL_LABEL forName(String name) {
-		for (UD_DEP_REL_LABEL v : UD_DEP_REL_LABEL.values()) {
+	public static UD_DEPENDENCY_LABELS forName(String name) {
+		for (UD_DEPENDENCY_LABELS v : UD_DEPENDENCY_LABELS.values()) {
 			if (v.keyname.equals(name)) {
 				return v;
 			}
 		}
-		return UD_DEP_REL_LABEL.TBD;
+		return UD_DEPENDENCY_LABELS.USP;
 	}
 	
     public static JsonArray toDropdownJsonArray(boolean includeAny) {
@@ -396,7 +396,7 @@ public enum UD_DEP_REL_LABEL {
     	if (includeAny) {
         	result.add(new DropdownItem("Any","*").toJsonObject());
     	}
-    	for (UD_DEP_REL_LABEL e : UD_DEP_REL_LABEL.values()) {
+    	for (UD_DEPENDENCY_LABELS e : UD_DEPENDENCY_LABELS.values()) {
     		result.add(new DropdownItem(e.keyname + " - " + e.fullname, e.keyname).toJsonObject());
     	}
     	return result;
@@ -404,7 +404,7 @@ public enum UD_DEP_REL_LABEL {
     
     public static JsonArray toJsonArray() {
     	JsonArray result = new JsonArray();
-    	for (UD_DEP_REL_LABEL e : UD_DEP_REL_LABEL.values()) {
+    	for (UD_DEPENDENCY_LABELS e : UD_DEPENDENCY_LABELS.values()) {
     		JsonObject entry = new JsonObject();
     		entry.addProperty("key", e.keyname);
     		entry.addProperty("value", e.fullname);

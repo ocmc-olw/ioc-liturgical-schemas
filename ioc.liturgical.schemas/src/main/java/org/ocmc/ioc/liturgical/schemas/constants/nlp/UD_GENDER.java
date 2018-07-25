@@ -27,11 +27,11 @@ public enum UD_GENDER {
 			,""
 			, ""
 			)
-	, TBD(
-			"TBD"
-			,"to-be-determined"
-			,"to be explained"
-			,"tbd"
+	, USP(
+			"_"
+			,"unspecified"
+			,"unspecified"
+			,""
 			, ""
 			)
 	;
@@ -66,7 +66,7 @@ public enum UD_GENDER {
 				return v;
 			}
 		}
-		return UD_GENDER.TBD;
+		return UD_GENDER.USP;
 	}
 	
     public static JsonArray toDropdownJsonArray(boolean includeAny) {

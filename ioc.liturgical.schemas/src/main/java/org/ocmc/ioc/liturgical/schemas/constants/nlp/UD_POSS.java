@@ -5,25 +5,11 @@ import org.ocmc.ioc.liturgical.schemas.models.DropdownItem;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-public enum UD_VOICE {
-	ACT(
-			"Act"
-			, "active voice"
-			, "The subject of the verb is the doer of the action (agent), the object is affected by the action (patient)."
-			,""
-			, ""
-			)
-	, MID(
-		"Mid"
-		, "middle voice"
-		, "Between active and passive."
-		,""
-		, ""
-		)
-	, PASS(
-			"Pass"
-			, "passive voice"
-			, "The subject of the verb is affected by the action (patient). The doer (agent) is either unexpressed or it appears as an object of the verb."
+public enum UD_POSS {
+	YES(
+			"y"
+			, "yes, is possessive"
+			, "Boolean feature of pronouns, determiners or adjectives. It tells whether the word is possessive."
 			,""
 			, ""
 			)
@@ -41,7 +27,7 @@ public enum UD_VOICE {
 	public String parse = "";
 	public String gev = "";
 	
-	private UD_VOICE(
+	private UD_POSS(
 			String keyname
 			, String fullname
 			, String description
@@ -60,13 +46,13 @@ public enum UD_VOICE {
 	 * @param name to search for
 	 * @return Entry the enum for that name
 	 */
-	public static UD_VOICE forName(String name) {
-		for (UD_VOICE v : UD_VOICE.values()) {
+	public static UD_POSS forName(String name) {
+		for (UD_POSS v : UD_POSS.values()) {
 			if (v.keyname.equals(name)) {
 				return v;
 			}
 		}
-		return UD_VOICE.USP;
+		return UD_POSS.USP;
 	}
 	
     public static JsonArray toDropdownJsonArray(boolean includeAny) {
@@ -74,7 +60,7 @@ public enum UD_VOICE {
     	if (includeAny) {
         	result.add(new DropdownItem("Any","*").toJsonObject());
     	}
-    	for (UD_VOICE e : UD_VOICE.values()) {
+    	for (UD_POSS e : UD_POSS.values()) {
     		result.add(new DropdownItem(e.keyname + " - " + e.fullname, e.keyname).toJsonObject());
     	}
     	return result;
@@ -82,7 +68,7 @@ public enum UD_VOICE {
     
     public static JsonArray toJsonArray() {
     	JsonArray result = new JsonArray();
-    	for (UD_VOICE e : UD_VOICE.values()) {
+    	for (UD_POSS e : UD_POSS.values()) {
     		JsonObject entry = new JsonObject();
     		entry.addProperty("key", e.keyname);
     		entry.addProperty("value", e.fullname);

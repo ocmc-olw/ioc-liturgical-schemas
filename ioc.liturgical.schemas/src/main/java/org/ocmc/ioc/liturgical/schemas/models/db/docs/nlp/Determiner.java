@@ -10,16 +10,15 @@ import com.google.gson.annotations.Expose;
  * @author mac002
  *
  */
-@Attributes(title = "Noun", description = "This is a doc that records information about a grammatical analysis of a noun.")
-public class Article extends LTKDbGrammarAnalysisGenderNumberCase {
+@Attributes(title = "Determiner", description = "Determiners are words that modify nouns or noun phrases and express the reference of the noun phrase in context. That is, a determiner may indicate whether the noun is referring to a definite or indefinite element of a class, to a closer or more distant element, to an element belonging to a specified person or thing, to a particular number or quantity, etc.")
+public class Determiner extends LTKDbGrammarAnalysisGenderNumberCase {
 	
-	private static String schema = Article.class.getSimpleName();
+	private static String schema = Determiner.class.getSimpleName();
 	private static double version = 1.1;
 	
 	   @Expose String definite = "_";
 
-	
-	public Article(
+	public Determiner(
 			String form
 			, String key
 			) {

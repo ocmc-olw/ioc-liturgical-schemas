@@ -41,11 +41,11 @@ public enum UD_DEGREE {
 			,""
 			, ""
 			)
-	, TBD(
-			"TBD"
-			,"to-be-determined"
-			,"to be explained"
-			,"tbd"
+	, USP(
+			"_"
+			,"unspecified"
+			,"unspecified"
+			,""
 			, ""
 			)
 	;
@@ -80,7 +80,7 @@ public enum UD_DEGREE {
 				return v;
 			}
 		}
-		return UD_DEGREE.TBD;
+		return UD_DEGREE.USP;
 	}
 	
     public static JsonArray toDropdownJsonArray(boolean includeAny) {

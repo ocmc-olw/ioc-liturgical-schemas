@@ -27,11 +27,11 @@ public enum UD_VERB_FORM {
 		,""
 		, ""
 		)
-	, TBD(
-			"TBD"
-			,"to-be-determined"
-			,"to be explained"
-			,"tbd"
+	, USP(
+			"_"
+			,"unspecified"
+			,"unspecified"
+			,""
 			, ""
 			)
 	;
@@ -66,7 +66,7 @@ public enum UD_VERB_FORM {
 				return v;
 			}
 		}
-		return UD_VERB_FORM.TBD;
+		return UD_VERB_FORM.USP;
 	}
 	
     public static JsonArray toDropdownJsonArray(boolean includeAny) {

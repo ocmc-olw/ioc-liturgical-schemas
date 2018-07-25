@@ -27,11 +27,11 @@ public enum UD_PERSON {
 			,""
 			, ""
 			)
-	, TBD(
-			"TBD"
-			,"to-be-determined"
-			,"to be explained"
-			,"tbd"
+	, USP(
+			"_"
+			,"unspecified"
+			,"unspecified"
+			,""
 			, ""
 			)
 	;
@@ -66,7 +66,7 @@ public enum UD_PERSON {
 				return v;
 			}
 		}
-		return UD_PERSON.TBD;
+		return UD_PERSON.USP;
 	}
 	
     public static JsonArray toDropdownJsonArray(boolean includeAny) {

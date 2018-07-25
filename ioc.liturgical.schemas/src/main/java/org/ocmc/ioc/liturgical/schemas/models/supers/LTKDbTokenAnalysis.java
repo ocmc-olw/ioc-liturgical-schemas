@@ -5,6 +5,7 @@ import com.google.gson.annotations.Expose;
 import java.text.Normalizer;
 
 import org.apache.commons.lang3.math.NumberUtils;
+import org.ocmc.ioc.liturgical.schemas.constants.ANNOTATION_SCHEMA;
 import org.ocmc.ioc.liturgical.schemas.constants.Constants;
 import org.ocmc.ioc.liturgical.schemas.constants.LIBRARIES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
@@ -33,6 +34,7 @@ import com.github.reinert.jjschema.Attributes;
 @Attributes(title = "Token Analysis", description = "Grammatical analysis of a token")
 public class LTKDbTokenAnalysis extends LTKDb {
 	
+    @Expose ANNOTATION_SCHEMA annotationSchema = ANNOTATION_SCHEMA.PERSEUS;
     @Expose String dependsOn = "root";
     @Expose String token = "";
     @Expose String lemma = "";
@@ -46,6 +48,7 @@ public class LTKDbTokenAnalysis extends LTKDb {
     @Expose String number = "";
     @Expose String person = "";
     @Expose String pos = "";
+   
     public String getNnpToken() {
 		return nnpToken;
 	}
@@ -311,9 +314,15 @@ public class LTKDbTokenAnalysis extends LTKDb {
 	        case ("ART.INDF"): {
 	          return this.getGrammarForNounLikeWords();
 	        }
+	        case ("DET"): {
+		          return this.getGrammarForNounLikeWords();
+		   }
 	        case ("INF"): {
 	          return this.getGrammarForInfinitive();
 	        }
+	        case ("NUM"): {
+		          return this.getGrammarForNounLikeWords();
+		        }
 	        case ("PTCP"): {
 	          return this.getGrammarForParticiple();
 	        }
@@ -412,6 +421,14 @@ public class LTKDbTokenAnalysis extends LTKDb {
 
 	public void setRefersTo(String refersTo) {
 		this.refersTo = refersTo;
+	}
+
+	public ANNOTATION_SCHEMA getAnnotationSchema() {
+		return annotationSchema;
+	}
+
+	public void setAnnotationSchema(ANNOTATION_SCHEMA annotationSchema) {
+		this.annotationSchema = annotationSchema;
 	}
 
 }
