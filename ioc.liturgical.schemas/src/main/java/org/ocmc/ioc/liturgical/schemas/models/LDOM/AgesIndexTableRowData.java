@@ -7,8 +7,11 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
 public class AgesIndexTableRowData extends AbstractModel {
 	@Expose String url = ""; // url to the file
 	@Expose String type = ""; // Sacrament name, matins, vespers, liturgy, etc.
+	@Expose String typeCode = ""; // 
 	@Expose String date = "";
 	@Expose String dayOfWeek = "";
+	@Expose String fileType = "";
+	@Expose String languages = "";
 	@Expose long keyCount = 0; 
 	@Expose long sentenceCount = 0;
 	@Expose long tokenCount = 0;
@@ -16,7 +19,6 @@ public class AgesIndexTableRowData extends AbstractModel {
 	@Expose long textTokenCount = 0;
 	@Expose long uniqueTokenCount = 0;
 	@Expose long noEnglishCount = 0;
-
 	
 	public AgesIndexTableRowData() {
 		super();
@@ -110,5 +112,29 @@ public class AgesIndexTableRowData extends AbstractModel {
 
 	public void setNoEnglishCount(long noEnglishCount) {
 		this.noEnglishCount = noEnglishCount;
+	}
+
+	public String getLanguages() {
+		return languages;
+	}
+
+	public void setLanguages(String languages) {
+		this.languages = languages;
+	}
+
+	public String getFileType() {
+		return fileType;
+	}
+
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
+	}
+
+	public String getTypeCode() {
+		return typeCode;
+	}
+
+	public void setTypeCode(String typeCode) {
+		this.typeCode = typeCode;
 	}
 }

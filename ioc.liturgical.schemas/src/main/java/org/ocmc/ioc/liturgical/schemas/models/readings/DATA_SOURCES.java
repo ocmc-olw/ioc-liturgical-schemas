@@ -1,4 +1,4 @@
-package org.ocmc.ioc.liturgical.schemas.constants;
+package org.ocmc.ioc.liturgical.schemas.models.readings;
 
 import java.util.ArrayList;
 import java.util.Collections;

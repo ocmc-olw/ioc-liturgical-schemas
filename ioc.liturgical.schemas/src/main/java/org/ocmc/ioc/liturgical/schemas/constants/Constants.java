@@ -18,15 +18,22 @@ public class Constants {
 	public static final String LIBRARY_MESSAGES = "en_sys_messages";
 	public static final String TOPIC_MESSAGES = "digest";
 
+	public static final String LIBRARY_LOCATION = "en_sys_location";
+	public static final String LIBRARY_SEARCH = "en_sys_search";
+	public static final String LIBRARY_LOGIN = "en_sys_login";
+	public static final String LIBRARY_READINGS = "en_sys_readings";
 	public static final String LIBRARY_GENERATOR = "en_sys_generator";
 	public static final String LIBRARY_LITURGICAL_DOCUMENT_MODEL = "en_sys_ldom";
 	public static final String LIBRARY_ETHNOLOGUE = "en_sys_ethnologue";
 	public static final String LIBRARY_SYNCH = "en_sys_synch";
 	public static final String TOPIC_LITURGICAL_DOCUMENT_MODEL = "ldom";
 	public static final String TOPIC_COUNTRY = "country";
+	public static final String TOPIC_PERICOPE = "pericope";
+	public static final String TOPIC_PERICOPE_BLOCK = "pericopeBlock";
+	public static final String TOPIC_STATS = "stats";
 	public static final String TOPIC_SYNCH = "cypher";
 	public static final String TOPIC_SYNCH_LOG = "synch";
-	public static final String KEY_SYNCH_LOG = "log";
+	public static final String KEY_LOG = "log";
 	public static final String GITHUB = "github";
 	public static final String REPOS = "repos";
 

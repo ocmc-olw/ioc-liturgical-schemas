@@ -186,6 +186,16 @@ public enum TOPICS {
 			, "A table of libraries for that identify the version of a translation"
 			, TOPICS.TABLES_ROOT
 			)
+	, DAILY_READING(
+			"dailyreading"
+			,"An entry for a daily reading."
+			, TOPICS.ROOT
+			)
+	, PERICOPE(
+			"pericode"
+			,"A selection of Biblical texts to be read as a unit."
+			, TOPICS.ROOT
+			)
 	, SECTION(
 			"Section"
 			, "A subunit of a template."

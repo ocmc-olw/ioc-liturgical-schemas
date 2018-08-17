@@ -20,7 +20,7 @@ public class SynchLog extends LTKLite {
 			+ Constants.ID_DELIMITER 
 			+ Constants.TOPIC_SYNCH_LOG
 			+ Constants.ID_DELIMITER 
-			+ Constants.KEY_SYNCH_LOG
+			+ Constants.KEY_LOG
 			;
 	@Expose  public String lastUsedSynchTimestamp = "2000-01-01T12:00:23.764Z";
 	@Expose  public String whenSynchLastRan = "";
@@ -29,7 +29,7 @@ public class SynchLog extends LTKLite {
 		super(
 				Constants.LIBRARY_SYNCH
 				, Constants.TOPIC_SYNCH_LOG
-				, Constants.KEY_SYNCH_LOG
+				, Constants.KEY_LOG
 				, schema
 				, version
 				);		

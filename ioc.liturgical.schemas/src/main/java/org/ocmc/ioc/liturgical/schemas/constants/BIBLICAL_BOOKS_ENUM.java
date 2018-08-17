@@ -1,0 +1,96 @@
+package org.ocmc.ioc.liturgical.schemas.constants;
+
+public enum BIBLICAL_BOOKS_ENUM {
+	ACT
+	, AMO
+	, BAR
+	, BEL
+	, CH1
+	, CH2
+	, CO1
+	, CO2
+	, COL
+	, DAN
+	, DEU
+	, ECC
+	, EPH
+	, ES1
+	, ES2
+	, ES4
+	, EST
+	, EXO
+	, EZE
+	, EZR
+	, GAL
+	, GEN
+	, HAB
+	, HAG
+	, HEB
+	, HOS
+	, ISA
+	, JAM
+	, JDE
+	, JDG
+	, JDT
+	, JER
+	, JO1
+	, JO2
+	, JO3
+	, JOB
+	, JOE
+	, JOH
+	, JON
+	, JOS
+	, KI1
+	, KI2
+	, LAM
+	, LEV
+	, LJE
+	, LUK
+	, MA1
+	, MA2
+	, MA3
+	, MA4
+	, MAL
+	, MAR
+	, MAT
+	, MIC
+	, NAH
+	, NEH
+	, NT
+	, NUM
+	, OBA
+	, ODE
+	, OT
+	, PE1
+	, PE2
+	, PHM
+	, PHP
+	, POS
+	, PRA
+	, PRM
+	, PRO
+	, PSA
+	, PSX
+	, REV
+	, ROM
+	, RUT
+	, SA1
+	, SA2
+	, SIR
+	, SOS
+	, STY
+	, SUS
+	, TH1
+	, TH2
+	, TI1
+	, TI2
+	, TIT
+	, TOB
+	, WIS
+	, ZEC
+	, ZEP
+	;
+	
+
+}

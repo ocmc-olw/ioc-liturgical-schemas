@@ -73,6 +73,16 @@ public enum VISIBILITY {
     	}
     	return result;
     }
+    public static VISIBILITY getVisibilityForName(String name) {
+    	VISIBILITY result = VISIBILITY.PERSONAL;
+    	for (VISIBILITY e : VISIBILITY.values()) {
+    		if (e.name().equals(name)) {
+    			result = e;
+    			break;
+    		}
+    	}
+    	return result;
+    }
 
 		
 }

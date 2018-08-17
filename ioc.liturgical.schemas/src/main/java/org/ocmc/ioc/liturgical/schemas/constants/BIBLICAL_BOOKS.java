@@ -171,5 +171,11 @@ public class BIBLICAL_BOOKS {
     	}
     	return result;
     }
+    
+    public static void main(String [] args) {
+    	for (String key : BIBLICAL_BOOKS.map.keySet()) {
+    		System.out.println("\t\t, " + key);
+    	}
+    }
 
 }

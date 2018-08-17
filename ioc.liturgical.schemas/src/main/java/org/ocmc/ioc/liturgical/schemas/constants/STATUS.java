@@ -69,6 +69,17 @@ public enum STATUS {
     	}
     	return result;
     }
+    
+    public static STATUS getStatusForName(String name) {
+    	STATUS result = STATUS.EDITING;
+    	for (STATUS e : STATUS.values()) {
+    		if (e.name().equals(name)) {
+    			result = e;
+    			break;
+    		}
+    	}
+    	return result;
+    }
 
 		
 }
