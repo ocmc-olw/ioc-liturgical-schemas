@@ -34,7 +34,7 @@ public class TextLiturgical extends LTKDb {
 	private static double serialVersion = 1.1;
 	private static String schema = TextLiturgical.class.getSimpleName();
 	private static Pattern punctPattern = Pattern.compile("[;˙·,.;!?\\-(){}\\[\\]/:<>%͵·\"'`’_«»‘*•+…‧′|]"); // punctuation
-
+    
 	@UiWidget(Constants.UI_WIDGET_TEXTAREA)
 	@Attributes(required = true, description = "The value of the text.")
 	@Expose  public String value = "";
@@ -44,6 +44,9 @@ public class TextLiturgical extends LTKDb {
 
 	@Attributes(id = "bottom", required = false, readonly = true, description = "Normalized text with no punctuation.")
 	@Expose  public String nnp = "";
+
+	@Attributes(id = "bottom", required = false, readonly = true, description = "First five words of normalized text with no punctuation.")
+	@Expose  public String nnpFirstFive = "";
 
 	@Attributes(id = "bottom", required = false, readonly = true, description = "Value without punctuation.")
 	@Expose  public String vnp = "";
@@ -112,6 +115,24 @@ public class TextLiturgical extends LTKDb {
 					.replaceAll("\\p{InCombiningDiacriticalMarks}+", "").toLowerCase();
 			this.nnp = punctPattern.matcher(this.nwp).replaceAll("");
 			this.vnp = punctPattern.matcher(this.value).replaceAll("").toLowerCase();
+			try {
+				String [] tokens = this.nnp.split(" ");
+				StringBuffer sb = new StringBuffer();
+				int cnt = 0;
+				for (int i = 0; i < tokens.length; i++) {
+					if (sb.length() > 0) {
+						sb.append(" ");
+					}
+					sb.append(tokens[i]);
+					cnt++;
+					if (cnt == 5) {
+						break;
+					}
+				}
+				this.nnpFirstFive = sb.toString();
+			} catch (Exception e) {
+				ErrorUtils.report(logger, e);
+			}
 		} catch (Exception e) {
 			ErrorUtils.report(logger, e);
 			throw e;
@@ -164,6 +185,14 @@ public class TextLiturgical extends LTKDb {
 
 	public void setRedirectId(String redirectId) {
 		this.redirectId = redirectId;
+	}
+
+	public String getNnpFirstFive() {
+		return nnpFirstFive;
+	}
+
+	public void setNnpFirstFive(String nnpFirstFive) {
+		this.nnpFirstFive = nnpFirstFive;
 	}
 
 }
