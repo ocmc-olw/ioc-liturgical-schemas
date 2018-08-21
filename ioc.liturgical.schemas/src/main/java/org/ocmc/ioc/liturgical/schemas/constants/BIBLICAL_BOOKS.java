@@ -36,7 +36,7 @@ public class BIBLICAL_BOOKS {
         map.put("CH2", "2 Chr - II Chronicles (Παραλειπομένων Βʹ)");
         map.put("ES1", "1 Esd - 1 Esdras ( Ἔσδρας Αʹ)");
         map.put("ES2", "2 Esd - Ezra-Nehemiah ( Ἔσδρας Βʹ)");
-        map.put("ES4", "4 Esd - 4 Esdras ( Ἔσδρας Δʹ)");
+//        map.put("ES4", "4 Esd - 4 Esdras ( Ἔσδρας Δʹ)");
         map.put("EZR", "Ezra - Ezra ( Ἔσδρας)");
         map.put("NEH", "Neh - Nehemiah ( Νεεμίας)");
         map.put("PRA", "Pr Azar - Prayer of Azariah (Προσευχή του Αζαρίου)");

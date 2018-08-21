@@ -111,27 +111,33 @@ public class TextLiturgical extends LTKDb {
 	public void setValue(String value) {
 		this.value = GeneralUtils.toNfc(value);
 		try {
-			this.nwp = Normalizer.normalize(value, Normalizer.Form.NFD)
-					.replaceAll("\\p{InCombiningDiacriticalMarks}+", "").toLowerCase();
-			this.nnp = punctPattern.matcher(this.nwp).replaceAll("");
-			this.vnp = punctPattern.matcher(this.value).replaceAll("").toLowerCase();
-			try {
-				String [] tokens = this.nnp.split(" ");
-				StringBuffer sb = new StringBuffer();
-				int cnt = 0;
-				for (int i = 0; i < tokens.length; i++) {
-					if (sb.length() > 0) {
-						sb.append(" ");
+			if (this.key.endsWith("chapverse")) {
+				this.nnp = this.value;
+				this.nnpFirstFive = this.id + "~" + this.value;
+				this.nwp = this.value;
+			} else {
+				this.nwp = Normalizer.normalize(value, Normalizer.Form.NFD)
+						.replaceAll("\\p{InCombiningDiacriticalMarks}+", "").toLowerCase();
+				this.nnp = punctPattern.matcher(this.nwp).replaceAll("");
+				this.vnp = punctPattern.matcher(this.value).replaceAll("").toLowerCase();
+				try {
+					String [] tokens = this.nnp.split(" ");
+					StringBuffer sb = new StringBuffer();
+					int cnt = 0;
+					for (int i = 0; i < tokens.length; i++) {
+						if (sb.length() > 0) {
+							sb.append(" ");
+						}
+						sb.append(tokens[i]);
+						cnt++;
+						if (cnt == 5) {
+							break;
+						}
 					}
-					sb.append(tokens[i]);
-					cnt++;
-					if (cnt == 5) {
-						break;
-					}
+					this.nnpFirstFive = this.id + "~" + sb.toString();
+				} catch (Exception e) {
+					ErrorUtils.report(logger, e);
 				}
-				this.nnpFirstFive = sb.toString();
-			} catch (Exception e) {
-				ErrorUtils.report(logger, e);
 			}
 		} catch (Exception e) {
 			ErrorUtils.report(logger, e);
