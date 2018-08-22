@@ -93,16 +93,16 @@ public enum BIBLICAL_BOOKS_ENUM {
 		this.seqNbr = seqNbr;
 	}
 	
-	public BIBLICAL_BOOKS_ENUM enumForAbbrev(String abr) {
+	public static BIBLICAL_BOOKS_ENUM enumForAbbrev(String abr) {
 		String abrLower = abr.toLowerCase();
 		for (BIBLICAL_BOOKS_ENUM e : BIBLICAL_BOOKS_ENUM.values()) {
 			if (e.name().toLowerCase().equals(abrLower)) return e;
 		}
 		return null;
 	}
-	public BIBLICAL_BOOKS_ENUM enumForFullname(String fullName) {
+	public static BIBLICAL_BOOKS_ENUM enumForFullname(String fullName) {
 		for (BIBLICAL_BOOKS_ENUM e : BIBLICAL_BOOKS_ENUM.values()) {
-			if (e.fullname.equals(fullname)) return e;
+			if (e.fullname.equals(fullName)) return e;
 		}
 		return null;
 	}

@@ -28,39 +28,34 @@ import com.google.gson.annotations.Expose;
 
 		@Attributes(id="top", required = true, description = "Book code")
 		@Expose BIBLICAL_BOOKS_ENUM book = null;
-		@Attributes(id="top", required = true, description = "Section id")
-		@Expose String section = "";
+	
 		@Attributes(id="top", required = true, description = "ID of text used to introduce the reading.")
 		@Expose String leadinId = "";
+	
+		@Attributes(id="top", required = true, description = "The readings")
 		@Expose List<PericopeBlock> blocks = new ArrayList<PericopeBlock>();
+	
+		@Attributes(id="top", required = true, description = "Where the readings are used.")
+		@Expose List<String> whereUsed = new ArrayList<String>();
 		
 		public Pericope(
 				BIBLICAL_BOOKS_ENUM book
-				, String section
+				, String key
 				)  {
 			super(
 					Constants.LIBRARY_READINGS
 					, Constants.TOPIC_PERICOPE
-					, book.name() + ":" + String.format("%03d", Integer.parseInt(section))
+					, key
 					, schema
 					, version
 					, TOPICS.PERICOPE
 					);
 			this.book = book;
-			this.section = String.format("%03d", Integer.parseInt(section));
 			this.setPrettyPrint(false);
 		}
 		
 		public void addBlock(PericopeBlock block) {
 			this.blocks.add(block);
-		}
-
-		public String getSection() {
-			return section;
-		}
-
-		public void setSection(String section) {
-			this.section = section;
 		}
 
 		public List<PericopeBlock> getBlocks() {
@@ -85,6 +80,14 @@ import com.google.gson.annotations.Expose;
 
 		public void setBook(BIBLICAL_BOOKS_ENUM book) {
 			this.book = book;
+		}
+
+		public List<String> getWhereUsed() {
+			return whereUsed;
+		}
+
+		public void setWhereUsed(List<String> whereUsed) {
+			this.whereUsed = whereUsed;
 		}
 		
 	}

@@ -42,8 +42,16 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.LTKLite;
 		@Attributes(id="top", required = true, description = "Ending verse number")
 		@Expose String verseTo = "";
 		
+		@Attributes(id="bottom", required = true, description = "ID of the Pericope this block belongs to")
+		@Expose String pericopeParentId = "";
+
+		@Attributes(id="bottom", required = true, description = "ID of the Pericope this block belongs to")
+		@Expose String blockSeqNbr = "";
+
 		public PericopeBlock(
-				BIBLICAL_BOOKS_ENUM book
+				String pericopeParentId
+				, String blockSeqNbr
+				, BIBLICAL_BOOKS_ENUM book
 				, String chapter
 				, String verseFrom
 				, String verseTo
@@ -51,33 +59,20 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.LTKLite;
 			super(
 					Constants.LIBRARY_READINGS
 					, Constants.TOPIC_PERICOPE_BLOCK
-					, PericopeBlock.format(book.name(), chapter, verseFrom, verseTo)
+					, pericopeParentId + "." + blockSeqNbr
 					, schema
 					, version
 					, TOPICS.PERICOPE
 					);
+			this.pericopeParentId = pericopeParentId;
+			this.blockSeqNbr = blockSeqNbr;
 			this.book = book;
-			this.chapter = "C" + PericopeBlock.pad(chapter);
-			this.verseFrom = PericopeBlock.pad(verseFrom);
-			this.verseTo = PericopeBlock.pad(verseTo);
+			this.chapter = chapter;
+			this.verseFrom = verseFrom;
+			this.verseTo = verseTo;
 			this.setPrettyPrint(false);
 		}
 		
-		public static String pad(String s) {
-			return String.format("%03d", s); 
-		}
-		
-		public static String format(String b, String c, String vf, String vt) {
-			return b 
-			+ "~C" 
-				+ PericopeBlock.pad(c) 
-				+ ":" 
-				+ PericopeBlock.pad(vf) 
-				+ "-" 
-				+ PericopeBlock.pad(vt)
-				;
-		}
-
 		public BIBLICAL_BOOKS_ENUM getBook() {
 			return book;
 		}

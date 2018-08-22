@@ -176,7 +176,7 @@
 	                <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
 	                <branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
 	                <includes><include>**/*</include></includes>
-	                <merge>true</merge>                                        <!-- don't delete old artifacts -->
+	                <merge>false</merge>                                        <!-- don't delete old artifacts -->
 	                <repositoryName>ioc-liturgical-schemas</repositoryName>      <!-- github repo name -->
 	                <repositoryOwner>OCMC-Translation-Projects</repositoryOwner>    <!-- github username  -->
 	            </configuration>
