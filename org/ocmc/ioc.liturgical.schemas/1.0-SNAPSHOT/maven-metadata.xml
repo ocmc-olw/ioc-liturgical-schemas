@@ -5,76 +5,76 @@
   <version>1.0-SNAPSHOT</version>
   <versioning>
     <snapshot>
-      <timestamp>20180822.183628</timestamp>
-      <buildNumber>15</buildNumber>
+      <timestamp>20180905.165057</timestamp>
+      <buildNumber>18</buildNumber>
     </snapshot>
-    <lastUpdated>20180822183628</lastUpdated>
+    <lastUpdated>20180905165057</lastUpdated>
     <snapshotVersions>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>1.0-20180822.183628-15</value>
-        <updated>20180822183628</updated>
+        <value>1.0-20180905.165057-18</value>
+        <updated>20180905165057</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.0-20180822.183628-15</value>
-        <updated>20180822183628</updated>
+        <value>1.0-20180905.165057-18</value>
+        <updated>20180905165057</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>1.0-20180822.183628-15</value>
-        <updated>20180822183628</updated>
+        <value>1.0-20180905.165057-18</value>
+        <updated>20180905165057</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>javadoc</classifier>
         <extension>jar</extension>
-        <value>1.0-20180822.183628-15</value>
-        <updated>20180822183628</updated>
+        <value>1.0-20180905.165057-18</value>
+        <updated>20180905165057</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar.asc</extension>
-        <value>1.0-20180822.183628-15</value>
-        <updated>20180822183628</updated>
+        <value>1.0-20180905.165057-18</value>
+        <updated>20180905165057</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom.asc</extension>
-        <value>1.0-20180822.183628-15</value>
-        <updated>20180822183628</updated>
+        <value>1.0-20180905.165057-18</value>
+        <updated>20180905165057</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar.asc</extension>
-        <value>1.0-20180822.183628-15</value>
-        <updated>20180822183628</updated>
+        <value>1.0-20180905.165057-18</value>
+        <updated>20180905165057</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>javadoc</classifier>
         <extension>jar.asc</extension>
-        <value>1.0-20180822.183628-15</value>
-        <updated>20180822183628</updated>
+        <value>1.0-20180905.165057-18</value>
+        <updated>20180905165057</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar.asc.asc</extension>
-        <value>1.0-20180822.183628-15</value>
-        <updated>20180822183628</updated>
+        <value>1.0-20180905.165057-18</value>
+        <updated>20180905165057</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom.asc.asc</extension>
-        <value>1.0-20180822.183628-15</value>
-        <updated>20180822183628</updated>
+        <value>1.0-20180905.165057-18</value>
+        <updated>20180905165057</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar.asc.asc</extension>
-        <value>1.0-20180822.183628-15</value>
-        <updated>20180822183628</updated>
+        <value>1.0-20180905.165057-18</value>
+        <updated>20180905165057</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>javadoc</classifier>
         <extension>jar.asc.asc</extension>
-        <value>1.0-20180822.183628-15</value>
-        <updated>20180822183628</updated>
+        <value>1.0-20180905.165057-18</value>
+        <updated>20180905165057</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
