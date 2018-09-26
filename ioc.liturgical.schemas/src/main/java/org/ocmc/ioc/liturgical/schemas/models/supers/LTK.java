@@ -259,8 +259,12 @@ public class LTK extends AbstractModel {
 			}
 		}
 		labels.add(this.toSchemaAsLabel());
-		if (this.adHocLabel.length() > 0) {
-			labels.add(this.adHocLabel);
+		if (this.adHocLabel == null) {
+			this.adHocLabel = "";
+		} else {
+			if (this.adHocLabel.length() > 0) {
+				labels.add(this.adHocLabel);
+			}
 		}
 		return labels;
 	}

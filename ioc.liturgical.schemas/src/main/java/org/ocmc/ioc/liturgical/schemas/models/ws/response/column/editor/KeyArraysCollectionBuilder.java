@@ -59,6 +59,7 @@ public class KeyArraysCollectionBuilder {
 	 * @param key the key
 	 * @param value the value
 	 * @param seq the sequence
+	 * @param modifiedWhen when it was modified
 	 * @throws MissingSeparatorException if there is no separator
 	 */
 	public void addTemplateKey(

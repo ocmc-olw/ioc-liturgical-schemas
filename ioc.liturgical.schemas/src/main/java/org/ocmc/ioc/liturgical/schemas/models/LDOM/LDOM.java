@@ -133,7 +133,7 @@ public class LDOM extends AbstractLDOM {
 	
 	/**
 	 * Get the set of IDs used in this template
-	 * @return
+	 * @return the value
 	 */
 	public Set<String> getIds() {
 		return this.values.keySet();
@@ -270,7 +270,7 @@ public class LDOM extends AbstractLDOM {
 	/**
 	 * If this is a service, then this method returns a date
 	 * formatted to the locale of the leftLibrary
-	 * @return
+	 * @return the value
 	 */
 	public String getLeftTitleDate() {
 		return leftTitleDate;
@@ -283,7 +283,7 @@ public class LDOM extends AbstractLDOM {
 	/**
 	 * If this is a service, then this method returns a date
 	 * formatted to the locale of the centerLibrary
-	 * @return
+	 * @return the value
 	 */
 	public String getCenterTitleDate() {
 		return centerTitleDate;
@@ -296,7 +296,7 @@ public class LDOM extends AbstractLDOM {
 	/**
 	 * If this is a service, then this method returns a date
 	 * formatted to the locale of the rightLibrary
-	 * @return
+	 * @return the value
 	 */
 	public String getRightTitleDate() {
 		return rightTitleDate;
@@ -321,7 +321,7 @@ public class LDOM extends AbstractLDOM {
 	 * for the PDF tex file.  This is can be set in the
 	 * template so that a client can later on ask for
 	 * this specific PDF file.
-	 * @return
+	 * @return the value
 	 */
 	public String getPdfId() {
 		return pdfId;

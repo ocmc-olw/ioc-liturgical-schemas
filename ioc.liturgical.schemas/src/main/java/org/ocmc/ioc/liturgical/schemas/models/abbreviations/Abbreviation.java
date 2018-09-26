@@ -14,18 +14,14 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.LTKLite;
 	import com.github.reinert.jjschema.Attributes;
 	import com.google.gson.annotations.Expose;
 
-	// see the OCMC github project for abbreviations as the source of data for an initial load.
-	
 	/**
-	 * Provides a model for recording information about a Github Repo
-	 * that will be synched
+	 * Provides a model for an abbreviation
 	 * 
 	 * @author mac002
 	 *
 	 */
 	@Attributes(title = "Abbreviation", description = "This is a doc that records information about an abbreviation.")
 	public class Abbreviation extends LTKDb {
-		private static final Logger logger = LoggerFactory.getLogger(Abbreviation.class);
 		private static String schema = Abbreviation.class.getSimpleName();
 		private static double version = 1.1;
 

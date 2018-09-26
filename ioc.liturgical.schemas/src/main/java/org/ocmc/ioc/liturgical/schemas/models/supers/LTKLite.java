@@ -33,6 +33,9 @@ public class LTKLite extends AbstractModel {
 	@Attributes(id = "bottom", required = true, readonly = true, minLength = 1, description = "The unique identifier for the schema.")
 	@Expose public String _valueSchemaId = "";
 	
+	@Attributes(id = "bottom", required = true, readonly = true, minLength = 1, description = "The unique identifier for the schema.")
+	@Expose public String label = "";
+	
 	/**
 	 * Visibility is at the record level.  It works in conjunction with the domain of the record ID.
 	 * 
@@ -56,6 +59,7 @@ public class LTKLite extends AbstractModel {
 		this.key = key;
 		this.joinIdParts();
 		this._valueSchemaId = schema + ":" + this.serialVersionUID;
+		this.label = "Root:" + schema;
 	}
 
 	public String getLibrary() {
@@ -143,6 +147,14 @@ public class LTKLite extends AbstractModel {
 
 	public void setStatus(STATUS status) {
 		this.status = status;
+	}
+
+	public String getLabel() {
+		return label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
 	}
 
 }

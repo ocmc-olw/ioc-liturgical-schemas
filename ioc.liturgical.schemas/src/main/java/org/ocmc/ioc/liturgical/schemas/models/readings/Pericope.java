@@ -27,16 +27,19 @@ import com.google.gson.annotations.Expose;
 		private static double version = 1.1;
 
 		@Attributes(id="top", required = true, description = "Book code")
-		@Expose BIBLICAL_BOOKS_ENUM book = null;
+		@Expose  public BIBLICAL_BOOKS_ENUM book = null;
 	
 		@Attributes(id="top", required = true, description = "ID of text used to introduce the reading.")
-		@Expose String leadinId = "";
+		@Expose  public String leadinId = "";
 	
+		@Attributes(id="top", required = true, description = "The citation form of the book, chapter, verse for the reading")
+		@Expose  public String citation = "";
+
 		@Attributes(id="top", required = true, description = "The readings")
-		@Expose List<PericopeBlock> blocks = new ArrayList<PericopeBlock>();
+		@Expose  public List<PericopeBlock> blocks = new ArrayList<PericopeBlock>();
 	
 		@Attributes(id="top", required = true, description = "Where the readings are used.")
-		@Expose List<String> whereUsed = new ArrayList<String>();
+		@Expose  public List<String> whereUsed = new ArrayList<String>();
 		
 		public Pericope(
 				BIBLICAL_BOOKS_ENUM book
@@ -88,6 +91,56 @@ import com.google.gson.annotations.Expose;
 
 		public void setWhereUsed(List<String> whereUsed) {
 			this.whereUsed = whereUsed;
+		}
+
+		public String getCitation() {
+			return citation;
+		}
+
+		public void setCitation(String citation) {
+			this.citation = citation;
+		}
+		
+		public void createCitation() {
+			StringBuffer sb = new StringBuffer();
+			String lastBook = "";
+			String lastChapter = "";
+			for (PericopeBlock b : this.blocks) {
+				if (sb.length() > 0) {
+					sb.append(";");
+				}
+				if (! lastBook.equals(b.book.name())) {
+					if (sb.length() > 0) {
+						sb.append(" ");
+					}
+					lastBook = b.book.name();
+					sb.append(lastBook);
+				}
+//				if (! lastChapter.equals(b.chapter)) {
+					sb.append(" ");
+					lastChapter = b.chapter;
+					try { 
+						sb.append(Integer.parseInt(lastChapter.substring(1)));
+					} catch (Exception e) {
+						sb.append(lastChapter);
+					}
+	//			}
+				sb.append(".");
+				try {
+					sb.append(Integer.parseInt(b.verseFrom));
+				} catch (Exception e) {
+					sb.append(b.verseFrom);
+				}
+				if (! b.verseTo.equals(b.verseFrom)) {
+					sb.append("-");
+					try {
+						sb.append(Integer.parseInt(b.verseTo));
+					} catch (Exception e) {
+						sb.append(b.verseTo);
+					}
+				}
+			}
+			this.citation = sb.toString();
 		}
 		
 	}

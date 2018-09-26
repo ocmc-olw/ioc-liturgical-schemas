@@ -23,9 +23,11 @@ public class Constants {
 	public static final String LIBRARY_LOGIN = "en_sys_login";
 	public static final String LIBRARY_READINGS = "en_sys_readings";
 	public static final String LIBRARY_GENERATOR = "en_sys_generator";
+	public static final String LIBRARY_HTML_INDEX = "en_sys_htmlindex";
 	public static final String LIBRARY_LITURGICAL_DOCUMENT_MODEL = "en_sys_ldom";
 	public static final String LIBRARY_ETHNOLOGUE = "en_sys_ethnologue";
 	public static final String LIBRARY_SYNCH = "en_sys_synch";
+	public static final String LIBRARY_TRANS_LIB = "en_us_translib";
 	public static final String TOPIC_LITURGICAL_DOCUMENT_MODEL = "ldom";
 	public static final String TOPIC_COUNTRY = "country";
 	public static final String TOPIC_PERICOPE = "pericope";
@@ -33,6 +35,7 @@ public class Constants {
 	public static final String TOPIC_STATS = "stats";
 	public static final String TOPIC_SYNCH = "cypher";
 	public static final String TOPIC_SYNCH_LOG = "synch";
+	public static final String TOPIC_URLS = "urls";
 	public static final String KEY_LOG = "log";
 	public static final String GITHUB = "github";
 	public static final String REPOS = "repos";
@@ -42,7 +45,9 @@ public class Constants {
 	public static final String LIBRARY_BIBLIOGRAPHY = "en_sys_bibliography";
 	public static final String TOPIC_BIBLIOGRAPHY_ENTRY = "biblioentry";
 
-	public static final String TOPIC_ABBREVIATION = "abbreviation";
+	public static final String TOPIC_ABBREVIATION = "abbreviations";
+	public static final String TOPIC_DICTIONARY = "words";
+	public static final String TOPIC_BLOCKS = "blocks";
 
 	public static final String INTERNAL_DATASTORE_API_PATH = "/admin/api/v1";
 

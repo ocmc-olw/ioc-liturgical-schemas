@@ -86,7 +86,7 @@ public class AbstractLDOM extends LTKLite  {
 	 * for the PDF tex file.  This is can be set in the
 	 * template so that a client can later on ask for
 	 * this specific PDF file.
-	 * @return
+	 * @return the value
 	 */
 	public String getPdfId() {
 		return pdfId;

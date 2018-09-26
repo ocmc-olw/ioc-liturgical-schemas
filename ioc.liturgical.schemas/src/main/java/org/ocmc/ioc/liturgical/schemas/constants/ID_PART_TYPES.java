@@ -27,6 +27,10 @@ public enum ID_PART_TYPES {
 		   Constants.TOPIC_BIBLIOGRAPHY_ENTRY
 		   , "A subclass of BibliographyEntry"
 		   )
+   , DICTIONARY_ENTRY(
+		   Constants.TOPIC_DICTIONARY
+		   , "A Generic FormattedText"
+		   )
 	, ID_OF_SELECTED_BIBLICAL_VERSE(
 			"IdOfSelectedBiblicalVerse"
 			, "The ID from a user selected biblical verse."

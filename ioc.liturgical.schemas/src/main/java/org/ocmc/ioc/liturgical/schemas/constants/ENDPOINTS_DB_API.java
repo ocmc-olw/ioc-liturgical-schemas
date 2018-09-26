@@ -66,6 +66,12 @@ public enum ENDPOINTS_DB_API {
 			, "DependencyTree"
 			,"Endpoint for dependency tree information"
 			)
+	, DICTIONARY_ENTRIES(
+			"dictionaryentries"
+			, ENDPOINT_TYPES.NODE
+			, "DictionaryEntries"
+			,"Endpoint for dictionary entries"
+			)
 	, DOCS(
 			""
 			, ENDPOINT_TYPES.NODE
@@ -365,6 +371,12 @@ public enum ENDPOINTS_DB_API {
 			, ENDPOINT_TYPES.NLP
 			, "Text Analysis"
 			,"Endpoint for a grammatical analysis of words in a text"
+			)
+	, FORMATTED_TEXT(
+			"formattedtext"
+			, ENDPOINT_TYPES.NODE
+			, "formattedtext"
+			,"Endpoint for formatted text"
 			)
 	, TREEBANKS(
 			"treebanks"

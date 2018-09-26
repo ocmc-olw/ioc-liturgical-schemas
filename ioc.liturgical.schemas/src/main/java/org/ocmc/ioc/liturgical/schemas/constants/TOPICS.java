@@ -29,6 +29,11 @@ public enum TOPICS {
 			, "The root node for comments about a text or a relationship."
 			, TOPICS.ROOT
 			)
+	, DICTIONARY_ENTRY(
+			"DictionaryEntry"
+			, "An entry for a dictionary"
+			, TOPICS.ROOT
+			)
 	, LINGUISTICS_ROOT(
 			"LinguisticsRoot"
 			, "The root node for Information about a language: its lexicon, semantics, phonology, morphology, grammar."
@@ -192,7 +197,7 @@ public enum TOPICS {
 			, TOPICS.ROOT
 			)
 	, PERICOPE(
-			"pericode"
+			"pericope"
 			,"A selection of Biblical texts to be read as a unit."
 			, TOPICS.ROOT
 			)

@@ -31,22 +31,22 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.LTKLite;
 		private static double version = 1.1;
 
 		@Attributes(id="top", required = true, description = "Book code")
-		@Expose BIBLICAL_BOOKS_ENUM book = null;
+		@Expose  public BIBLICAL_BOOKS_ENUM book = null;
 
 		@Attributes(id="top", required = true, description = "Chapter Number")
-		@Expose String chapter = "";
+		@Expose  public String chapter = "";
 
 		@Attributes(id="top", required = true, description = "Starting verse number")
-		@Expose String verseFrom = "";
+		@Expose  public String verseFrom = "";
 
 		@Attributes(id="top", required = true, description = "Ending verse number")
-		@Expose String verseTo = "";
+		@Expose  public String verseTo = "";
 		
 		@Attributes(id="bottom", required = true, description = "ID of the Pericope this block belongs to")
-		@Expose String pericopeParentId = "";
+		@Expose  public String pericopeParentId = "";
 
 		@Attributes(id="bottom", required = true, description = "ID of the Pericope this block belongs to")
-		@Expose String blockSeqNbr = "";
+		@Expose  public String blockSeqNbr = "";
 
 		public PericopeBlock(
 				String pericopeParentId

@@ -36,8 +36,8 @@ public class Transaction extends LTKLite {
 	 * The topic will be set to transaction.getId()
 	 * The key will be set to transaction.getModifiedWhen()
 	 * 
-	 * @param doc - the Json Doc for the transaction
 	 * @param cypher - the Neo4j Cypher statement(s) used for the transaction
+	 * @param doc - the Json Doc for the transaction
 	 * @param requestingServer - the address of the server that made the request to save this transaction
 	 * @throws BadIdException if the ID is not composed correctly
 	 */
@@ -68,6 +68,7 @@ public class Transaction extends LTKLite {
 	 * The topic will be set to "cypher"
 	 * The key will be set to Instant.now().toString(), i.e. it is a timestamp
 	 * 
+	 * @param id the id
 	 * @param cypher - the Neo4j Cypher statement(s) used for the transaction
 	 * @param requestingServer - the address of the server that made the request to save this transaction
 	 * @throws BadIdException - if the ID is not composed properly

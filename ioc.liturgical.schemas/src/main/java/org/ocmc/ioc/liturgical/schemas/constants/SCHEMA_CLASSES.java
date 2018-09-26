@@ -85,6 +85,8 @@ import org.ocmc.ioc.liturgical.schemas.models.db.links.LinkRefersToObject;
 import org.ocmc.ioc.liturgical.schemas.models.db.links.LinkRefersToPlace;
 import org.ocmc.ioc.liturgical.schemas.models.db.links.LinkRefersToPlant;
 import org.ocmc.ioc.liturgical.schemas.models.db.links.LinkRefersToRole;
+import org.ocmc.ioc.liturgical.schemas.models.dictionary.DictionaryEntry;
+import org.ocmc.ioc.liturgical.schemas.models.dictionary.DictionaryEntryCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.supers.BibliographyEntry;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTK;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDb;
@@ -434,6 +436,11 @@ public enum SCHEMA_CLASSES {
 			new TextLiturgicalTranslationCreateForm(" "," ", " ")
 			, new TextLiturgical(" "," ", " ")
 			, "Translation of Liturgical Source Text"
+			)
+	, DICTIONARY_ENTRY(
+			new DictionaryEntry("")
+			, new DictionaryEntry("")
+			, "A entry for a dictionary."
 			)
 	, TREE_NODE(
 			new TokenAnalysisCreateForm("","0")

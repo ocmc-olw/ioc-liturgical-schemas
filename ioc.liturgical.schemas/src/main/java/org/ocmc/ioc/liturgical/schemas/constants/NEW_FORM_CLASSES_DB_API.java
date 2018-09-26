@@ -1,7 +1,6 @@
 package org.ocmc.ioc.liturgical.schemas.constants;
 
 import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
-import org.ocmc.ioc.liturgical.schemas.models.supers.BibliographyEntry;
 import org.ocmc.ioc.liturgical.schemas.models.ws.db.WsPaths;
 import org.ocmc.ioc.liturgical.schemas.models.abbreviations.Abbreviation;
 import org.ocmc.ioc.liturgical.schemas.models.bibliography.BibEntryArticle;
@@ -36,6 +35,8 @@ import org.ocmc.ioc.liturgical.schemas.models.db.docs.notes.TextualNote;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.Section;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.Template;
 import org.ocmc.ioc.liturgical.schemas.models.db.docs.templates.TemplateNode;
+import org.ocmc.ioc.liturgical.schemas.models.dictionary.DictionaryEntry;
+import org.ocmc.ioc.liturgical.schemas.models.dictionary.DictionaryEntryCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.AnimalCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.BeingCreateForm;
 import org.ocmc.ioc.liturgical.schemas.models.forms.ontology.ConceptCreateForm;
@@ -91,6 +92,14 @@ public enum NEW_FORM_CLASSES_DB_API {
 	ABBREVIATION(
 			"Abbreviation"
 			, new Abbreviation(" "," ", " ")
+			, ENDPOINTS_DB_API.DOCS
+			, RESTRICTION_FILTERS.NONE
+			, false
+			, true
+			)
+	, NEW_DICTIONARY_ENTRY(
+			"Dictionary Entry"
+			, new DictionaryEntry("")
 			, ENDPOINTS_DB_API.DOCS
 			, RESTRICTION_FILTERS.NONE
 			, false

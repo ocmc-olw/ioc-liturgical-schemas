@@ -12,7 +12,7 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.LTK;
 import com.github.reinert.jjschema.Attributes;
 
 /**
- * This class provides a POJO for use in web forms to create or update a domain
+ * This class provides a POJO for use in web forms to create or update a translation of a liturgical text
  * @author mac002
  *
  */
