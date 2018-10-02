@@ -22,19 +22,19 @@ public class LTKDbLexicalItem extends LTKDb {
 
 	
 	@Attributes(id="bottom", readonly=true, description="The normalized form (lowercase, no accents or punctuation")
-	@Expose public String nnp;
+	@Expose public String nnp = "";
 
 	@Attributes(id="top", readonly=true, description="The number of times it occurs in the database")
 	@Expose public int frequency = 0;
 
 	@Attributes(id="top", readonly=true, description="The ID of an example of where this word occurs")
-	@Expose public String exampleId;
+	@Expose public String exampleId = "";
 
 	@Attributes(id="top", readonly=true, description="The letters occurring to the immediate left of the word in an example")
-	@Expose public String exampleLeftContext;
+	@Expose public String exampleLeftContext = "";
 
 	@Attributes(id="top", readonly=true, description="The letters occurring to the immediate right of the word in an example")
-	@Expose public String exampleRightContext;
+	@Expose public String exampleRightContext = "";
 
 	/**
 	 * 
