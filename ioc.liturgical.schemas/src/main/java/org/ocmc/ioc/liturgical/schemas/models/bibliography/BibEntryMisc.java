@@ -23,11 +23,14 @@ public class BibEntryMisc extends BibliographyEntry {
 		this.library = library;
 		this.key = key;
 	}
-	@Attributes(required = true, description = "editor")
+	@Attributes(required = false, description = "editor")
 	@Expose public String editor = "";
 
 	@Attributes(required = true, description = "title")
 	@Expose public String title = "";
+
+	@Attributes(id="top", required = false, description = "shorttitle")
+	@Expose public String shorttitle = "";
 
 	@Attributes(required = false, description = "subtitle")
 	@Expose public String subtitle = "";
@@ -111,8 +114,10 @@ public String toBibtex() {
 		sb.append(keyValue("note", this.note));
 		sb.append(keyValue("organization", this.organization));
 		sb.append(keyValue("pubstate", this.pubstate));
+		sb.append(keyValue("shorttitle", this.shorttitle));
 		sb.append(keyValue("subtitle", this.subtitle));
 		sb.append(keyValue("title", this.title));
+		sb.append(keyValue("keywords", this.getSourceType().keyname));
 		sb.append(keyValue("titleaddon", this.titleaddon));
 		sb.append(keyValue("type", this.type));
 		sb.append(keyValue("url", this.url));
@@ -213,6 +218,14 @@ public void setLocation(String location) {
 
 public String getDate() {
 	return date;
+}
+
+public String getShorttitle() {
+	return shorttitle;
+}
+
+public void setShorttitle(String shorttitle) {
+	this.shorttitle = shorttitle;
 }
 
 public void setDate(String date) {

@@ -29,6 +29,9 @@ public class BibEntryPeriodical extends BibliographyEntry {
 	@Attributes(required = true, description = "title")
 	@Expose public String title = "";
 
+	@Attributes(id="top", required = false, description = "shorttitle")
+	@Expose public String shorttitle = "";
+
 	@Attributes(required = false, description = "editora")
 	@Expose public String editora = "";
 
@@ -129,8 +132,10 @@ public String toBibtex() {
 		sb.append(keyValue("number", this.number));
 		sb.append(keyValue("pubstate", this.pubstate));
 		sb.append(keyValue("series", this.series));
+		sb.append(keyValue("shorttitle", this.shorttitle));
 		sb.append(keyValue("subtitle", this.subtitle));
 		sb.append(keyValue("title", this.title));
+		sb.append(keyValue("keywords", this.getSourceType().keyname));
 		sb.append(keyValue("url", this.url));
 		sb.append(keyValue("urldate", this.urldate));
 		sb.append(keyValue("volume", this.volume));
@@ -241,6 +246,14 @@ public String getIssue() {
 
 public void setIssue(String issue) {
 	this.issue = issue;
+}
+
+public String getShorttitle() {
+	return shorttitle;
+}
+
+public void setShorttitle(String shorttitle) {
+	this.shorttitle = shorttitle;
 }
 
 public String getDate() {

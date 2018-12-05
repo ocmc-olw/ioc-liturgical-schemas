@@ -1,6 +1,7 @@
 package org.ocmc.ioc.liturgical.schemas.models.supers;
 
-	import org.ocmc.ioc.liturgical.schemas.constants.BIBTEX_ENTRY_TYPES;
+	import org.ocmc.ioc.liturgical.schemas.constants.BIBLIOGRAPHY_CITATION_OVERRIDE;
+import org.ocmc.ioc.liturgical.schemas.constants.BIBTEX_ENTRY_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.BIBTEX_SOURCE_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.Constants;
 import org.ocmc.ioc.liturgical.schemas.constants.GENDERS;
@@ -29,8 +30,11 @@ import org.slf4j.Logger;
 		@Attributes(id = "bottom", readonly = true, required = false, description = "Type of Bibliographic Entry")
 		@Expose public BIBTEX_ENTRY_TYPES entryType = BIBTEX_ENTRY_TYPES.UNPUBLISHED;
 		
-		@Attributes(required = false, description = "Entry is a Primary, Secondary, or Tertiary Source")
+		@Attributes(id = "bottom", required = false, description = "Entry is a Primary, Secondary, or Tertiary Source")
 		@Expose public BIBTEX_SOURCE_TYPES sourceType = BIBTEX_SOURCE_TYPES.PRIMARY;
+		
+		@Attributes(id="bottom", required = false, description = "citeoverride: default is NONE.")
+		@Expose public BIBLIOGRAPHY_CITATION_OVERRIDE citeoverride = BIBLIOGRAPHY_CITATION_OVERRIDE.NONE;
 
 		public BibliographyEntry(
 				String library
@@ -83,6 +87,14 @@ import org.slf4j.Logger;
 		// must be overridden by subclasses
 		public String toBibtex() {
 			return "";
+		}
+
+		public BIBLIOGRAPHY_CITATION_OVERRIDE getCiteoverride() {
+			return citeoverride;
+		}
+
+		public void setCiteoverride(BIBLIOGRAPHY_CITATION_OVERRIDE citeoverride) {
+			this.citeoverride = citeoverride;
 		}
 		
 	}

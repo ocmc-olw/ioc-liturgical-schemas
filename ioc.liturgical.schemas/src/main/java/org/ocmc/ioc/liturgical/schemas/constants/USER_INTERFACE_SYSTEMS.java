@@ -20,12 +20,9 @@ public class USER_INTERFACE_SYSTEMS {
     
     public static List<String> toDomainsForLanguage(String language) {
     	List<String> result = new ArrayList<String>();
-		IdManager idManager = new IdManager();
-		idManager.setLibraryCountry("sys");
-		idManager.setLibraryLanguage(language);
+    	String lang_country = language + "_sys_";
     	for (String system : map.keySet()) {
-    		idManager.setLibraryRealm(system);
-    		result.add(idManager.getLibrary());
+    		result.add(lang_country + system);
     	}
     	return result;
     }

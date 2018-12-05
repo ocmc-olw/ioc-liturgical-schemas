@@ -30,7 +30,10 @@ public class BibEntryBook extends BibliographyEntry {
 	@Attributes(id="top", required = true, description = "title")
 	@Expose public String title = "";
 
-	@Attributes(id="top", required = true, description = "date")
+	@Attributes(id="top", required = false, description = "shorttitle")
+	@Expose public String shorttitle = "";
+
+	@Attributes(id="top", required = true, description = "date.  For a range use year/year")
 	@Expose public String date = "";
 
 	@Attributes(id="top", required = false, description = "publisher")
@@ -189,14 +192,16 @@ public String toBibtex() {
 		sb.append(keyValue("pubstate", this.pubstate));
 		sb.append(keyValue("series", this.series));
 		sb.append(keyValue("subtitle", this.subtitle));
+		sb.append(keyValue("shorttitle", this.shorttitle));
 		sb.append(keyValue("title", this.title));
+		sb.append(keyValue("keywords", this.getSourceType().keyname));
 		sb.append(keyValue("titleaddon", this.titleaddon));
 		sb.append(keyValue("translator", this.translator));
 		sb.append(keyValue("url", this.url));
 		sb.append(keyValue("urldate", this.urldate));
 		sb.append(keyValue("volume", this.volume));
 		sb.append(keyValue("volumes", this.volumes));
-		sb.append("}\n");
+		sb.append("}\\n");
 		return sb.toString();
 	}
 
@@ -430,6 +435,14 @@ public String getLocation() {
 
 public void setLocation(String location) {
 	this.location = location;
+}
+
+public String getShorttitle() {
+	return shorttitle;
+}
+
+public void setShorttitle(String shorttitle) {
+	this.shorttitle = shorttitle;
 }
 
 public String getIsbn() {

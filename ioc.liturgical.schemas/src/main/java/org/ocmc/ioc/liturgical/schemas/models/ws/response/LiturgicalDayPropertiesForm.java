@@ -10,7 +10,7 @@ import org.ocmc.ioc.liturgical.schemas.models.supers.AbstractModel;
 import org.ocmc.ioc.liturgical.utils.LiturgicalDayProperties;
 
 /**
- * Model for return a Resource description to a REST requestor.
+ * Model for return a Resource description to a REST requester.
  * 
  * @author mac002
  *
@@ -24,6 +24,8 @@ public class LiturgicalDayPropertiesForm extends AbstractModel {
 	@Attributes(readonly = true, description = "The Gregorian date of the liturgical date")
 	@Expose public String theGregorianDate = "";
 	@Attributes(readonly = true, description = "")
+	@Expose public int dayOfSeason = 0;
+	@Attributes(readonly = true, description = "")
 	@Expose public String dayOfWeek = "";
 	@Attributes(readonly = true, description = "")
 	@Expose public int modeOfWeek = 1;
@@ -33,6 +35,10 @@ public class LiturgicalDayPropertiesForm extends AbstractModel {
 	@Expose public String triodionStartDateLastYear = "";
 	@Attributes(readonly = true, description = "")
 	@Expose public String triodionStartDateThisYear = "";
+	@Attributes(readonly = true, description = "")
+	@Expose public String startDateOfLukanCycleLast = "";
+	@Attributes(readonly = true, description = "")
+	@Expose public String lukanCycleNextStartDate = "";
 	@Attributes(readonly = true, description = "")
 	@Expose public String triodionStartDateNext = "";
 	@Attributes(readonly = true, description = "")
@@ -47,10 +53,25 @@ public class LiturgicalDayPropertiesForm extends AbstractModel {
 	@Expose public String lastSundayAfterElevationOfCross = "";
 	@Attributes(readonly = true, description = "")
 	@Expose public int daysSinceLastSundayAfterElevationOfCross = 0;
+	public boolean isDaysOfLuke() {
+		return isDaysOfLuke;
+	}
+
+	public void setDaysOfLuke(boolean isDaysOfLuke) {
+		this.isDaysOfLuke = isDaysOfLuke;
+	}
+
+	@Attributes(readonly = true, description = "")
+	@Expose public int daysSinceSundayAfterLastElevationOfCross = 0;
+	@Attributes(readonly = true, description = "")
+	@Expose public int daysSinceStartLastLukanCycle = 0;
+
 	@Attributes(readonly = true, description = "")
 	@Expose public boolean isTriodion = false;
 	@Attributes(readonly = true, description = "")
 	@Expose public boolean isPentecostarion = false;
+	@Attributes(readonly = true, description = "")
+	@Expose public boolean  isDaysOfLuke = false;
 	
 	SimpleDateFormat ymd = new SimpleDateFormat("yyyy/MM/dd");
 	SimpleDateFormat eymd = new SimpleDateFormat("EEEE yyyy/MM/dd");
@@ -68,11 +89,14 @@ public class LiturgicalDayPropertiesForm extends AbstractModel {
 		this.theJulianDate     = formattedDate(day.getTheDayJulian(), ymd);
 		this.theGregorianDate  = formattedDate(day.getTheDayGregorian(), eymd);
 
+	    this.dayOfSeason  = day.getDayOfSeason();
+
 	    this.dayOfWeek  = day.getDayOfWeek();
 	    this.modeOfWeek = day.getModeOfWeek();
 
 	    this.eothinonNumber = day.getEothinonNumber();
-	    
+
+	    this.startDateOfLukanCycleLast = formattedDate(day.getStartDateOfLukanCycleLast(), ymd);
 	    this.triodionStartDateLastYear       = formattedDate(day.getTriodionStartDateLastYear(), ymd);
 	    this.triodionStartDateThisYear       = formattedDate(day.getTriodionStartDateThisYear(), ymd);
 	    this.triodionStartDateNext       = formattedDate(day.getTriodionStartDateNextYear(), ymd);
@@ -82,9 +106,20 @@ public class LiturgicalDayPropertiesForm extends AbstractModel {
 	    this.numberOfSundaysBeforeStartOfTriodion     = day.getNumberOfSundaysBeforeStartOfTriodion();
 	    this.daysUntilStartOfTriodion                 = day.getDaysUntilStartOfTriodion();
 	    this.daysSinceLastSundayAfterElevationOfCross = day.getDaysSinceSundayAfterLastElevationOfCross();
+	    this.daysSinceStartLastLukanCycle = day.getDaysSinceStartLastLukanCycle();
 	    this.isTriodion = day.getIsTriodion();
 	    this.isPentecostarion = day.getIsPentecostarion();
+	    this.isDaysOfLuke = day.getIsDaysOfLuke();
+	    this.daysSinceLastSundayAfterElevationOfCross = day.getDaysSinceSundayAfterLastElevationOfCross();
 	}
+	public int getDayOfSeason() {
+		return dayOfSeason;
+	}
+
+	public void setDayOfSeason(int dayOfSeason) {
+		this.dayOfSeason = dayOfSeason;
+	}
+
 	public String getDayOfWeek() {
 		return dayOfWeek;
 	}
@@ -208,5 +243,23 @@ public class LiturgicalDayPropertiesForm extends AbstractModel {
 	public String getTheLiturgicalDate() {
 		return theLiturgicalDate;
 	}
+	
+	public int getDaysSinceSundayAfterLastElevationOfCross() {
+		return daysSinceSundayAfterLastElevationOfCross;
+	}
+
+	public void setDaysSinceSundayAfterLastElevationOfCross(int daysSinceSundayAfterLastElevationOfCross) {
+		this.daysSinceSundayAfterLastElevationOfCross = daysSinceSundayAfterLastElevationOfCross;
+	}
+
+	public int getDaysSinceStartLastLukanCycle() {
+		return daysSinceStartLastLukanCycle;
+	}
+
+	public void setDaysSinceStartLastLukanCycle(int daysSinceStartLastLukanCycle) {
+		this.daysSinceStartLastLukanCycle = daysSinceStartLastLukanCycle;
+	}
+
+
 
 }

@@ -226,7 +226,7 @@ public enum NEW_FORM_CLASSES_DB_API {
 		, true
 		)
 ,	NEW_BIBENTRY_MISC(
-		"Micsellaneous (Bibliography Entry)"
+		"Miscellaneous (Bibliography Entry)"
 		, new BibEntryMisc("","")
 		, ENDPOINTS_DB_API.DOCS
 		, RESTRICTION_FILTERS.NONE

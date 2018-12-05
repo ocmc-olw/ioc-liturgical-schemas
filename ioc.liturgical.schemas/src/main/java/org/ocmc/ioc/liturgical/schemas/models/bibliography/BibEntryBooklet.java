@@ -30,6 +30,9 @@ public class BibEntryBooklet extends BibliographyEntry {
 	@Attributes(id="top", required = true, description = "title")
 	@Expose public String title = "";
 
+	@Attributes(id="top", required = false, description = "shorttitle")
+	@Expose public String shorttitle = "";
+
 	@Attributes(id="top", required = true, description = "date")
 	@Expose public String date = "";
 
@@ -113,13 +116,15 @@ public String toBibtex() {
 		sb.append(keyValue("pages", this.pages));
 		sb.append(keyValue("pagetotal", this.pagetotal));
 		sb.append(keyValue("pubstate", this.pubstate));
+		sb.append(keyValue("shorttitle", this.shorttitle));
 		sb.append(keyValue("subtitle", this.subtitle));
 		sb.append(keyValue("title", this.title));
+		sb.append(keyValue("keywords", this.getSourceType().keyname));
 		sb.append(keyValue("titleaddon", this.titleaddon));
 		sb.append(keyValue("type", this.type));
 		sb.append(keyValue("url", this.url));
 		sb.append(keyValue("urldate", this.urldate));
-		sb.append("}\n");
+		sb.append("}\\n");
 		return sb.toString();
 	}
 
@@ -253,6 +258,14 @@ public void setDoi(String doi) {
 
 public String getEprint() {
 	return eprint;
+}
+
+public String getShorttitle() {
+	return shorttitle;
+}
+
+public void setShorttitle(String shorttitle) {
+	this.shorttitle = shorttitle;
 }
 
 public void setEprint(String eprint) {

@@ -29,6 +29,9 @@ public class BibEntryInbook extends BibliographyEntry {
 	@Attributes(id="top", required = true, description = "title")
 	@Expose public String title = "";
 
+	@Attributes(id="top", required = false, description = "shorttitle")
+	@Expose public String shorttitle = "";
+
 	@Attributes(id="top", required = true, description = "booktitle")
 	@Expose public String booktitle = "";
 
@@ -199,8 +202,10 @@ public String toBibtex() {
 		sb.append(keyValue("publisher", this.publisher));
 		sb.append(keyValue("pubstate", this.pubstate));
 		sb.append(keyValue("series", this.series));
+		sb.append(keyValue("shorttitle", this.shorttitle));
 		sb.append(keyValue("subtitle", this.subtitle));
 		sb.append(keyValue("title", this.title));
+		sb.append(keyValue("keywords", this.getSourceType().keyname));
 		sb.append(keyValue("titleaddon", this.titleaddon));
 		sb.append(keyValue("translator", this.translator));
 		sb.append(keyValue("url", this.url));
@@ -477,6 +482,14 @@ public void setLocation(String location) {
 
 public String getIsbn() {
 	return isbn;
+}
+
+public String getShorttitle() {
+	return shorttitle;
+}
+
+public void setShorttitle(String shorttitle) {
+	this.shorttitle = shorttitle;
 }
 
 public void setIsbn(String isbn) {
