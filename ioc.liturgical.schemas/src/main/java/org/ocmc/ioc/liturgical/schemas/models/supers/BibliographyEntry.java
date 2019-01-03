@@ -58,12 +58,16 @@ import org.slf4j.Logger;
 
 		public static String keyValue(String key, String value) {
 			StringBuffer sb = new StringBuffer();
-			if (value.length() > 0) {
-				sb.append("\t");
-				sb.append(key);
-				sb.append(" = {");
-				sb.append(value);
-				sb.append("}, \n");
+			if (key == null || value == null) {
+				// this is an error, but we will ignore it
+			} else {
+				if (value.length() > 0) {
+					sb.append("\t");
+					sb.append(key);
+					sb.append(" = {");
+					sb.append(value);
+					sb.append("}, \n");
+				}
 			}
 			return sb.toString();
 		}

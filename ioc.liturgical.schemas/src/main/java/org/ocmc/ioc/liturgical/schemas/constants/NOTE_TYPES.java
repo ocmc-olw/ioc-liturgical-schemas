@@ -10,6 +10,8 @@ import com.google.gson.JsonArray;
 /**
  *
  * Grammatical Parts of Speech used with Greek
+ * Note that there is a boolean that controls whether the item is included 
+ * in the generic notes or in the list specific to ones requested by Fr. Eugene Pentiuc.
  * 
  * @author mac002
  *
@@ -24,7 +26,7 @@ ADVICE_FOR_TRANSLATORS("TNAFT","Advice - for Translators", false, "ADVICE FOR TR
 , GENERAL("TNGEO","General", false, "GENERAL")
 , GEOGRAPHY("TNGEO","Geography", false, "GEOGRAPHY")
 , GRAMMAR("TNLINGGRAM","Grammar", false, "GRAMMAR")
-, LITERARY_DEVICE("TNLITERARY","Literary Device", true, "LITERARY DEVICE")
+, LITERARY_DEVICE("TNLITERARY","Literary Device", false, "LITERARY DEVICE")
 , LEMMA("TNLEMMA","Lemma", true, "LEMMA")
 , HISTORY("TNH","History", false, "HISTORY")
 , LITURGICAL_USAGE("TNLITURGYUSE","Liturgical Usage", false, "LITURGICAL USAGE")
@@ -42,8 +44,9 @@ ADVICE_FOR_TRANSLATORS("TNAFT","Advice - for Translators", false, "ADVICE FOR TR
 , REF_TO_PLACE("TNONTOPLACE", "Reference - to Place", false, "REFERS TO PLACE")
 , REF_TO_PLANT("TNONTOPLANT", "Reference - to Plant", false, "REFERS TO PLANT")
 , REF_TO_ROLE("TNONTOROLE", "Reference - to Role", false, "REFERS TO ROLE")
+, SUPPLEMENTAL_NOTE("TNSUPN","Supplemental Note", false, "SUPPLEMENTAL NOTE")
 , THEOLOGY("TNTHEO","Theology", false, "THEOLOGY")
-, TRANSLATORS_NOTE("TNTN","Translator's Note", false, "TRANLATOR'S NOTE")
+, TRANSLATORS_NOTE("TNTN","Translator's Note", false, "TRANSLATOR'S NOTE")
 , UNIT("TNUNIT","Unit", false, "SUMMARY")
 , VOCABULARY("TNV","Vocabulary", false, "VOCABULARY")
 ;

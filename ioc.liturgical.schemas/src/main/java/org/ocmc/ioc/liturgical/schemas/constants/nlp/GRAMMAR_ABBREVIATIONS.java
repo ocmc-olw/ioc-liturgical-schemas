@@ -47,6 +47,7 @@ public enum GRAMMAR_ABBREVIATIONS {
 	,IPFV("IPFV",  "", "", "", "", "imperfective")
 	,MASCULINE("M",  "", "", "", "", "masculine")
 	, MIDDLE("MID",  "", "", "", "", "middle")
+	, MIDDLE_PASSIVE("MP",  "", "", "", "", "middle-passive")
 	,NEUTER("N",  "", "", "", "", "neuter")
 	,NEG("NEG",  "", "", "", "", "negation, negative")
 	,NOM("NOM",  "", "", "", "", "nominative")
