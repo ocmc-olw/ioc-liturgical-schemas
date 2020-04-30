@@ -1,6 +1,5 @@
 package org.ocmc.ioc.liturgical.schemas.models.db.docs.templates;
 
-import org.ocmc.ioc.liturgical.schemas.constants.Constants;
 import org.ocmc.ioc.liturgical.schemas.constants.TEMPLATE_NODE_TYPES;
 import org.ocmc.ioc.liturgical.schemas.constants.TOPICS;
 import org.ocmc.ioc.liturgical.schemas.models.supers.LTKDbGenerationUnit;

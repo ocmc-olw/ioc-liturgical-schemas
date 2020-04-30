@@ -27,7 +27,10 @@ public class TemplateNode  extends AbstractModel {
     private static final Logger logger = LoggerFactory.getLogger(TemplateNode.class);
 	@Expose public TEMPLATE_NODE_TYPES title = null;
 	@Expose public String subtitle = "";
-	@Expose public String config = "";
+	@Expose public String format = "";
+	@Expose public String name = "";
+	@Expose public String desc = "";
+	@Expose public String jurisdiction = "";
 	@Expose public List<TemplateNode> children = new ArrayList<TemplateNode>();
 	
 	public TemplateNode() {
@@ -47,6 +50,9 @@ public class TemplateNode  extends AbstractModel {
 	}
 	public void setTitle(TEMPLATE_NODE_TYPES title) {
 		this.title = title;
+		if (title != null) {
+			this.format = this.title.keyname;
+		}
 	}
 	public String getSubtitle() {
 		return subtitle;
@@ -85,16 +91,12 @@ public class TemplateNode  extends AbstractModel {
 		return result;
 	}
 
-	/**
-	 * The configuration for this node.
-	 * @return the string representation of the json for this node.  A subclass of AbstractSchemaModel.
-	 */
-	public String getConfig() {
-		return config;
+	public String getFormat() {
+		return format;
 	}
 
-	public void setConfig(String config) {
-		this.config = config;
+	public void setFormat(String format) {
+		this.format = format;
 	}
 
 	/**
@@ -105,12 +107,36 @@ public class TemplateNode  extends AbstractModel {
 		AbstractSchemaModel result = null;
 		try {
 			result = AbstractModel.gson.fromJson(
-					this.config
+					this.format
 					, AbstractSchemaModel.class
 					);
 		} catch (Exception e) {
 			ErrorUtils.report(logger, e);
 		}
 		return result;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+	public String getJurisdiction() {
+		return jurisdiction;
+	}
+
+	public void setJurisdiction(String jurisdiction) {
+		this.jurisdiction = jurisdiction;
 	}
 }
